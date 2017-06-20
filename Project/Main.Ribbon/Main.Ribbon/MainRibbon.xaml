@@ -1,0 +1,48 @@
+﻿<dxr:DXRibbonWindow x:Class="Main.Ribbon.MainRibbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="379" Width="643"
+
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        Icon="{dxc:DXImage Image=Home_16x16.png}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <dxr:RibbonControl x:Name="RibbonControl" Grid.Row="0" 
+                               ApplicationButtonSmallIcon="{dxc:DXImage Image=Home_16x16.png}" 
+                               ApplicationButtonLargeIcon="{dxc:DXImage Image=Home_32x32.png}" 
+                               ApplicationButtonText="File" 
+                               PageCategoryAlignment="Right"
+                               RibbonStyle="Office2010"
+                               >
+
+            <dxr:RibbonDefaultPageCategory>
+                <dxr:RibbonPage Caption="Home">
+                    <dxr:RibbonPageGroup Name="pgFile" Caption="File" 
+                                         ShowCaptionButton="True"
+                                         CaptionButtonClick="groupFile_CaptionButtonClick"
+                                         >
+                        <dxb:BarButtonItem Name="bNew" Content="New" 
+                               Glyph="{dxc:DXImage Image=New_16x16.png}" 
+                               LargeGlyph="{dxc:DXImage Image=New_32x32.png}"  
+                               Description="Creates a new document."
+                               Hint="Creates a blank document."
+                               RibbonStyle="Large"/>
+                        <dxb:BarButtonItem Name="bOpen" Content="Open" 
+                               Glyph="{dxc:DXImage Image=Open_16x16.png}" 
+                               LargeGlyph="{dxc:DXImage Image=Open_32x32.png}" 
+                               Description="Opens a file."
+                               Hint="Opens a file."
+                               RibbonStyle="SmallWithText"/>
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+    </Grid>
+</dxr:DXRibbonWindow>

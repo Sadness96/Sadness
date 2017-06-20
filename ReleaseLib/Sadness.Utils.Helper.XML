@@ -1,0 +1,797 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sadness.Utils.Helper</name>
+    </assembly>
+    <members>
+        <member name="T:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper">
+            <summary>
+            效验正确性帮助类
+            创建日期:2017年6月18日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckPhoneNumber(System.String)">
+            <summary>
+            效验中国大陆手机号码
+            </summary>
+            <param name="strPhoneNumber">中国大陆手机号码</param>
+            <returns>效验通过返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckEMail(System.String)">
+            <summary>
+            效验E-Mail
+            </summary>
+            <param name="strEMail">E-Mail</param>
+            <returns>效验通过返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckIDNumber(System.String)">
+            <summary>
+            效验身份证号码
+            </summary>
+            <param name="strIDNumber">身份证号码</param>
+            <returns>效验通过返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckIDCard15(System.String)">
+            <summary>
+            15位身份证号验证
+            </summary>
+            <param name="idNumber">身份证号</param>
+            <returns>效验通过返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckIDCard18(System.String)">
+            <summary>  
+            18位身份证号码验证  
+            </summary>  
+            <param name="idNumber">身份证号</param>  
+            <returns>效验通过返回true,失败返回false</returns>  
+        </member>
+        <member name="T:Utils.Helper.ClosedForm.ClosedFormHelper">
+            <summary>
+            关闭窗体帮助类
+            创建日期:2017年6月6日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.ClosedForm.ClosedFormHelper.ByHandleIsClosedForm(System.String,System.String)">
+            <summary>
+            通过句柄关闭窗体
+            </summary>
+            <param name="lpClassName">指向包含了窗口类名的空中止(C语言)字串的指针;或设为零,表示接收任何类</param>
+            <param name="lpWindowName">指向包含了窗口文本(或标签)的空中止(C语言)字串的指针;或设为零,表示接收任何窗口标题</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.ClosedForm.ClosedFormHelper.FindWindow(System.String,System.String)">
+            <summary>
+            获得指定窗口类名或窗口名的窗口的句柄
+            </summary>
+            <param name="lpClassName">指向包含了窗口类名的空中止(C语言)字串的指针;或设为零,表示接收任何类</param>
+            <param name="lpWindowName">指向包含了窗口文本(或标签)的空中止(C语言)字串的指针;或设为零,表示接收任何窗口标题</param>
+            <returns>执行成功,则返回值是拥有指定窗口类名或窗口名的窗口的句柄;执行失败,则返回值为NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.ClosedForm.ClosedFormHelper.SendMessage(System.IntPtr,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            该函数将指定的消息发送到一个或多个窗口.此函数为指定的窗口调用窗口程序,直到窗口程序处理完消息再返回.而和函数PostMessage不同,PostMessage是将一个消息寄送到一个线程的消息队列后就立即返回.
+            </summary>
+            <param name="hWnd">其窗口程序将接收消息的窗口的句柄.如果此参数为HWND_BROADCAST,则消息将被发送到系统中所有顶层窗口,包括无效或不可见的非自身拥有的窗口、被覆盖的窗口和弹出式窗口,但消息不被发送到子窗口</param>
+            <param name="Msg">指定被发送的消息</param>
+            <param name="wParam">指定附加的消息特定信息</param>
+            <param name="lParam">指定附加的消息特定信息</param>
+            <returns>返回值指定消息处理的结果，依赖于所发送的消息</returns>
+        </member>
+        <member name="T:Utils.Helper.EMail.EMailHelper">
+            <summary>
+            E-Mail邮件帮助类
+            创建日期:2017年6月18日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.EMail.EMailHelper.SendMail_163SMTP(System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            发送邮件(163SMTP)(未测试)
+            </summary>
+            <param name="strSender">发件人邮箱(163)</param>
+            <param name="strSenderPassword">发件人密码(163)</param>
+            <param name="listAddressee">收件人</param>
+            <param name="listCC">抄送</param>
+            <param name="strSubject">邮件标题</param>
+            <param name="strBody">邮件内容</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.EMail.EMailHelper.SendMail_QQSMTP(System.String,System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>
+            发送邮件(QQSMTP)(未测试)
+            </summary>
+            <param name="strSender">发件人邮箱(QQ)</param>
+            <param name="strAuthorizationCode">发件人密码(QQ)</param>
+            <param name="listAddressee">收件人</param>
+            <param name="listCC">抄送</param>
+            <param name="strSubject">邮件标题</param>
+            <param name="strBody">邮件内容</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="T:Utils.Helper.Encryption.CRC32Helper">
+            <summary>
+            循环沉余效验帮助类
+            创建日期:2017年6月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.CRC32Helper.CRC32Encrypt_8Lower(System.String)">
+            <summary>
+            CRC32加密(8位小写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>CRC32密文(8位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.CRC32Helper.CRC32Encrypt_8Upper(System.String)">
+            <summary>
+            CRC32加密(8位大写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>CRC32密文(8位大写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.CRC32Helper.FileCRC32Encrypt_8Lower(System.String)">
+            <summary>
+            获取文件CRC32值(8位小写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件CRC32值(8位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.CRC32Helper.FileCRC32Encrypt_8Upper(System.String)">
+            <summary>
+            获取文件CRC32值(8位大写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件CRC32值(8位大写)</returns>
+        </member>
+        <member name="T:Utils.Helper.Encryption.Crc32">
+            <summary>
+            提供 CRC32 算法的实现
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.Encryption.DESHelper">
+            <summary>
+            DES加密解密帮助类
+            创建日期:2017年6月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.DESHelper.DESEncrypt(System.String,System.String,System.String)">
+            <summary>
+            DES加密
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <param name="strKey">秘钥(8位)</param>
+            <param name="strIV">向量(8位)</param>
+            <returns>DES密文</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.DESHelper.DESDecrypt(System.String,System.String,System.String)">
+            <summary>
+            DES解密
+            </summary>
+            <param name="strCiphertext">DES密文</param>
+            <param name="strKey">秘钥(8位)</param>
+            <param name="strIV">向量(8位)</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.DESHelper.FileDESEncrypt(System.String,System.String,System.String,System.String)">
+            <summary>
+            文件DES加密
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <param name="strSaveFilePath">加密文件目录</param>
+            <param name="strKey">秘钥(8位)</param>
+            <param name="strIV">向量(8位)</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.DESHelper.FileDESDecrypt(System.String,System.String,System.String,System.String)">
+            <summary>
+            文件DES解密
+            </summary>
+            <param name="strFilePath">被加密的文件路径</param>
+            <param name="strSaveFilePath">解密文件目录</param>
+            <param name="strKey">秘钥(8位)</param>
+            <param name="strIV">向量(8位)</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="T:Utils.Helper.Encryption.MD5Helper">
+            <summary>
+            MD5加密帮助类
+            创建日期:2017年6月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.MD5Encrypt_16Lower(System.String)">
+            <summary>
+            MD5加密(16位小写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>MD5密文(16位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.MD5Encrypt_16Upper(System.String)">
+            <summary>
+            MD5加密(16位大写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>MD5密文(16位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.MD5Encrypt_32Lower(System.String)">
+            <summary>
+            MD5加密(32位小写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>MD5密文(32位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.MD5Encrypt_32Upper(System.String)">
+            <summary>
+            MD5加密(32位大写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>MD5密文(32位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.FileMD5Encrypt_32Lower(System.String)">
+            <summary>
+            获取文件MD5值(32位小写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件MD5值(32位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.MD5Helper.FileMD5Encrypt_32Upper(System.String)">
+            <summary>
+            获取文件MD5值(32位大写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件MD5值(32位大写)</returns>
+        </member>
+        <member name="T:Utils.Helper.Encryption.RSAHelper">
+            <summary>
+            RSA加密解密帮助类
+            创建日期:2017年6月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.RSAHelper.RSAKey(System.String@,System.String@)">
+            <summary>
+            RSA产生秘钥
+            </summary>
+            <param name="xmlPublicKey">公钥</param>
+            <param name="xmlPrivateKey">私钥</param>
+        </member>
+        <member name="M:Utils.Helper.Encryption.RSAHelper.RSAEncrypt(System.String,System.String)">
+            <summary>
+            RSA加密
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <param name="xmlPublicKey">公钥</param>
+            <returns>RSA密文</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.RSAHelper.RSADecrypt(System.String,System.String)">
+            <summary>
+            RSA解密
+            </summary>
+            <param name="strCiphertext">RSA密文</param>
+            <param name="xmlPrivateKey">私钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="T:Utils.Helper.Encryption.SHA1Helper">
+            <summary>
+            SHA1加密帮助类
+            创建日期:2017年6月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.SHA1Helper.SHA1Encrypt_40Lower(System.String)">
+            <summary>
+            SHA1加密(40位小写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>SHA1密文(40位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.SHA1Helper.SHA1Encrypt_40Upper(System.String)">
+            <summary>
+            SHA1加密(40位大写)
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <returns>SHA1密文(40位大写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.SHA1Helper.FileSHA1Encrypt_40Lower(System.String)">
+            <summary>
+            获取文件SHA1值(40位小写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件SHA1值(40位小写)</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.SHA1Helper.FileSHA1Encrypt_40Upper(System.String)">
+            <summary>
+            获取文件SHA1值(40位大写)
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <returns>文件SHA1值(40位大写)</returns>
+        </member>
+        <member name="T:Utils.Helper.HookProc.HookProcHelper">
+            <summary>
+            钩子程序帮助类
+            创建日期:2017年6月7日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.HookProcHelper.StartTestHookListeners">
+            <summary>
+            启动钩子测试程序
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.HookProcHelper.StopTestHookListeners">
+            <summary>
+            停止钩子测试程序
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.HookProcHelper.StartRecordOperation">
+            <summary>
+            启动记录电脑操作
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.HookProcHelper.StopRecordOperation">
+            <summary>
+            停止记录电脑操作(测试开启后无法关闭,直到所有线程关闭)
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.HookProc.RecordOperation">
+            <summary>
+            记录电脑操作窗体(不显示界面)
+            创建日期:2017年6月9日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.GetKeyboardState(System.Byte[])">
+            <summary>
+            获取键盘状态
+            </summary>
+            <param name="pbKeyState">指向一个256字节的数组,数组用于接收每个虚拟键的状态.</param>
+            <returns>若函数调用成功,则返回非0值.若函数调用不成功,则返回值为0.若要获得更多的错误信息,可以调用GetLastError函数</returns>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            键盘按键
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            键盘按下
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            键盘弹起
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标移动
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标点击
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseDown(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标按下
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseUp(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标弹起
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标双击
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_MouseWheel(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            鼠标中间滑轮
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.RecordOperationLogs(System.String)">
+            <summary>
+            RecordOperation日志文件
+            </summary>
+            <param name="strLogs">异常信息</param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.KeyboardOperationLogs(System.String)">
+            <summary>
+            KeyboardOperation日志文件
+            </summary>
+            <param name="strLogs">异常信息</param>
+        </member>
+        <member name="F:Utils.Helper.HookProc.RecordOperation.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
+            <summary>
+            大写锁定状态
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
+            <summary>
+            鼠标当前X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
+            <summary>
+            鼠标当前Y坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
+            <summary>
+            鼠标按下时X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
+            <summary>
+            鼠标按下时Y坐标
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.HookProc.TestFormHookListeners">
+            <summary>
+            测试钩子监听器
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.TestFormHookListeners.#ctor">
+            <summary>
+            测试钩子监听器
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.HookProc.TestFormHookListeners.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.TestFormHookListeners.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Utils.Helper.HookProc.TestFormHookListeners.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.PCInformation.EncryptionHelper">
+            <summary>
+            加密注册码帮助类
+            创建日期:2017年6月6日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.EncryptionHelper.RequestCode">
+            <summary>
+            注册请求码
+            </summary>
+            <returns>请求码</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.EncryptionHelper.ActivationCode(System.String)">
+            <summary>
+            注册激活码
+            </summary>
+            <returns>激活码</returns>
+        </member>
+        <member name="T:Utils.Helper.PCInformation.PCInformationHelper">
+            <summary>
+            获取电脑信息帮助类
+            创建日期:2017年6月6日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.MAC">
+            <summary>
+            读取网卡MAC地址
+            </summary>
+            <returns>成功返回网卡MAC地址,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.CPU">
+            <summary>
+            读取CPU-ID
+            </summary>
+            <returns>成功返回CPU-ID,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.DESK">
+            <summary>
+            读取硬盘序列号
+            </summary>
+            <returns>成功返回硬盘序列号,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.Memory">
+            <summary>
+            读取内存序列号
+            </summary>
+            <returns>成功返回内存序列号,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.Motherboard">
+            <summary>
+            读取主板序列号
+            </summary>
+            <returns>成功返回主板序列号,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.BIOS">
+            <summary>
+            读取BIOS序列号
+            </summary>
+            <returns>成功返回BIOS序列号,失败返回NULL</returns>
+        </member>
+        <member name="M:Utils.Helper.PCInformation.PCInformationHelper.Video">
+            <summary>
+            读取显卡信息
+            </summary>
+            <returns>成功返回显卡信息,失败返回NULL</returns>
+        </member>
+        <member name="T:Utils.Helper.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.QRCode.QRCodeHelper">
+            <summary>
+            二维码帮助类
+            创建日期:2017年6月6日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.DeleteObject(System.IntPtr)">
+            <summary>
+            注销对象方法API
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.GetQRCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            生成二维码
+            </summary>
+            <param name="strContent">二维码文本</param>
+            <param name="iWidth">二维码宽度</param>
+            <param name="iHeigth">二维码高度</param>
+            <returns>二维码位图</returns>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.GetQRCode_logo(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            生成二维码(带LOGO)
+            </summary>
+            <param name="strContent">二维码文本</param>
+            <param name="iWidth">二维码宽度</param>
+            <param name="iHeigth">二维码高度</param>
+            <param name="strLogoPath">LOGO图片路径</param>
+            <returns>二维码位图</returns>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.GetImageSourceFromBitmap(System.Drawing.Bitmap)">
+            <summary>
+            从位图获取图像源
+            </summary>
+            <param name="bitmapQRCode">位图二维码</param>
+            <returns>图像源(用以显示在控件上)</returns>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.BarcodeReader(System.Drawing.Bitmap)">
+            <summary>
+            识别二维码和条形码
+            </summary>
+            <param name="bitmapQRCode">二维码和条形码位图</param>
+            <returns>成功返回二维码和条形码内容,失败返回NULL或Empty</returns>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.BarcodeReader(System.String)">
+            <summary>
+            识别二维码和条形码
+            </summary>
+            <param name="strQRCodePath">二维码和条形码文件路径</param>
+            <returns>成功返回二维码和条形码内容,失败返回NULL或Empty</returns>
+        </member>
+        <member name="M:Utils.Helper.QRCode.QRCodeHelper.SaveBitmap(System.String,System.Drawing.Bitmap)">
+            <summary>
+            保存二维码和条形码位图到指定位置
+            </summary>
+            <param name="strSavePath">文件保存位置</param>
+            <param name="bitmapQRCode">二维码和条形码位图</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="T:Utils.Helper.Shutdown.ShutdownHelper">
+            <summary>
+            加密注册码帮助类
+            创建日期:2017年6月6日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Shutdown.ShutdownHelper.DoExitWin(System.Int32)">
+            <summary>
+            关闭Windows
+            </summary>
+            <param name="flg"></param>
+        </member>
+        <member name="M:Utils.Helper.Shutdown.ShutdownHelper.Shutdown">
+            <summary>
+            关闭计算机
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Shutdown.ShutdownHelper.Logoff">
+            <summary>
+            注销计算机
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Shutdown.ShutdownHelper.Reboot">
+            <summary>
+            重启计算机
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.TXT.TXTHelper">
+            <summary>
+            TXT文本帮助类
+            创建日期:2016年12月8日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.WriteFile(System.String,System.String)">
+            <summary>
+            写入文本到TXT(如果有文件不进行操作)
+            </summary>
+            <param name="strPath">TXT储存路径</param>
+            <param name="strTXT">文本内容</param>
+            <returns>成功返回0,失败返回-1</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.WriteFile(System.String,System.String,System.Boolean)">
+            <summary>
+            写入文本到TXT(选择是否覆盖)
+            </summary>
+            <param name="strPath">TXT储存路径</param>
+            <param name="strTXT">文本内容</param>
+            <param name="boolCover">(true)如果冲突覆盖文件,(false)如果冲突不进行操作</param>
+            <returns>成功返回0,失败返回-1</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.AppendFile(System.String,System.String)">
+            <summary>
+            写入文本到TXT,追加写入文件(如果不存在自动创建)
+            </summary>
+            <param name="strPath">TXT储存路径</param>
+            <param name="strTXT">文本内容</param>
+            <returns>成功返回0,失败返回-1</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.AppendFile(System.String,System.String,System.Boolean)">
+            <summary>
+            写入文本到TXT,追加写入文件(如果不存在自动创建)(是否换行)
+            </summary>
+            <param name="strPath">TXT储存路径</param>
+            <param name="strTXT">文本内容</param>
+            <param name="boolWrap">(true)换行,(false)不换行</param>
+            <returns>成功返回0,失败返回-1</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.Logs(System.String)">
+            <summary>
+            ADO.Helper帮助类日志文件
+            </summary>
+            <param name="strLogs">异常信息</param>
+            <returns>成功返回0,失败返回-1</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.GetFileString(System.String)">
+            <summary>
+            读取TXT文件中的文本
+            </summary>
+            <param name="strPath">TXT文件路径</param>
+            <returns>TXT文件中的文本</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.GetFileArray(System.String)">
+            <summary>
+            读取TXT文件中的文本(按照每行存到string[]中)
+            </summary>
+            <param name="strPath">TXT文件路径</param>
+            <returns>TXT文件中的文本(string[])</returns>
+        </member>
+        <member name="M:Utils.Helper.TXT.TXTHelper.GetFileList(System.String)">
+            <summary>
+            读取TXT文件中的文本(按照每行存到listString中)
+            </summary>
+            <param name="strPath">TXT文件路径</param>
+            <returns>TXT文件中的文本(listString)</returns>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitForm.#ctor">
+            <summary>
+            WaitForm 的构造函数
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitForm.Refresh">
+            <summary>
+            刷新页面
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.WaitingMessage.WaitForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
+            <summary>
+            处理进度信息
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.WaitingMessage.WaitMessage.wait">
+            <summary>
+            创建窗体
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.WaitingMessage.WaitMessage.openprogress">
+            <summary>
+            打开进展
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitMessage.Show(System.String)">
+            <summary>
+            显示等待状态
+            </summary>
+            <param name="title">标题</param>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitMessage.Show(System.String,System.Drawing.Size)">
+            <summary>
+            显示等待状态
+            </summary>
+            <param name="title">标题</param>
+            <param name="size">大小</param>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitMessage.Close">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitMessage.innerShow(System.String,System.Drawing.Size)">
+            <summary>
+            等待状态
+            </summary>
+            <param name="title">标题</param>
+            <param name="showtime">显示时间</param>
+            <param name="size">窗体大小</param>
+        </member>
+        <member name="M:Utils.Helper.WaitingMessage.WaitMessage.innerShowForm">
+            <summary>
+            线程上执行的方法
+            </summary>
+        </member>
+    </members>
+</doc>
