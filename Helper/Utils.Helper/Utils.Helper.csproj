@@ -83,6 +83,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QRCode\QRCodeHelper.cs" />
+    <Compile Include="Screenshot\ScreenshotHelper.cs" />
     <Compile Include="Shutdown\ShutdownHelper.cs" />
     <Compile Include="TXT\TXTHelper.cs" />
     <Compile Include="WaitingMessage\WaitForm.cs">
