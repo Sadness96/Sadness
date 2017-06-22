@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinaryFile\BinaryFileHelper.cs" />
+    <Compile Include="CSV\CSVHelper.cs" />
     <Compile Include="FileSharing\FileSharingHelper.cs" />
     <Compile Include="FileSharing\SharingPermissions.cs" />
     <Compile Include="Folder\FolderHelper.cs" />
