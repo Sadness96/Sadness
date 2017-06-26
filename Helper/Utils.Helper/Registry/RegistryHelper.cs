@@ -977,5 +977,71 @@ namespace Utils.Helper.Registry
             }
         }
         #endregion
+
+        #region Registry URL Protocol
+        /// <summary>
+        /// 创建 URL Protocol 协议,通过网页打开本地应用
+        /// </summary>
+        /// <param name="strName">键值名称</param>
+        /// <param name="strSoftwarePath">启动软件路径</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool CreateURLProtocol(string strName, string strSoftwarePath)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(strName) || string.IsNullOrEmpty(strSoftwarePath))
+                {
+                    return false;
+                }
+                //Web端调用方法:<a href="strName://"%1"参数>URL Protocol</a>
+                RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(strName + @"\shell\open\command", true);
+                if (registryKey == null)
+                {
+                    registryKey = Microsoft.Win32.Registry.ClassesRoot.CreateSubKey(strName + @"\shell\open\command");
+                }
+                registryKey.SetValue("", strSoftwarePath);
+                registryKey.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 删除 URL Protocol 协议
+        /// </summary>
+        /// <param name="strName">键值名称</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool DeleteURLProtocol(string strName)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(strName))
+                {
+                    return false;
+                }
+                RegistryKey registryKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(strName, true);
+                if (registryKey == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    registryKey = Microsoft.Win32.Registry.ClassesRoot;
+                    registryKey.DeleteSubKeyTree(strName);
+                }
+                registryKey.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return false;
+            }
+        }
+        #endregion
     }
 }
