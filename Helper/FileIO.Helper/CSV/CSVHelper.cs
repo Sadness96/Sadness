@@ -70,7 +70,7 @@ namespace FileIO.Helper.CSV
         }
 
         /// <summary>
-        /// CSV转换为DataTable
+        /// CSV转换为DataTable(默认 UTF8 编码)
         /// </summary>
         /// <param name="strSource">CSV文件路径</param>
         /// <returns>成功返回CSV的DataTable,失败返回NULL</returns>
@@ -87,6 +87,71 @@ namespace FileIO.Helper.CSV
                 FileStream fileStreamOpen = new FileStream(strSource, FileMode.Open, FileAccess.Read);
                 //从当前流中读取一行字符并将数据作为字符串返回
                 StreamReader streamReader = new StreamReader(fileStreamOpen, Encoding.UTF8);
+                //记录当前读取到的一行数据
+                string strRowOfData;
+                //记录当前是否为标题行
+                bool boolIsFirst = true;
+                //循环获得CSV文件数据
+                while ((strRowOfData = streamReader.ReadLine()) != null)
+                {
+                    //从当前 System.String 对象中移除所有前导和尾随空白字符
+                    strRowOfData.Trim();
+                    //替换两遍连续两个 ,, 为 ,"",(希望数据里不存在两个逗号相连的情况)
+                    strRowOfData = strRowOfData.Replace(",,", ",\"\",");
+                    strRowOfData = strRowOfData.Replace(",,", ",\"\",");
+                    //根据CSV规则分割字符串
+                    string strRegexCSV = string.Format("[^\",]+|\"(?:[^\"]|\"\")*\"");
+                    Regex regexCSV = new Regex(strRegexCSV);
+                    MatchCollection matchCollection = regexCSV.Matches(strRowOfData);
+                    //判断是否为标题行
+                    if (boolIsFirst)
+                    {
+                        foreach (Match mColumnValue in matchCollection)
+                        {
+                            dtTargetData.Columns.Add(InterceptionQuotes(mColumnValue.Value));
+                        }
+                        boolIsFirst = false;
+                    }
+                    else
+                    {
+                        DataRow drTargetData = dtTargetData.NewRow();
+                        for (int iColumn = 0; iColumn < dtTargetData.Columns.Count && iColumn < matchCollection.Count; iColumn++)
+                        {
+                            drTargetData[iColumn] = InterceptionQuotes(matchCollection[iColumn].Value);
+                        }
+                        dtTargetData.Rows.Add(drTargetData);
+                    }
+                }
+                streamReader.Close();
+                fileStreamOpen.Close();
+                return dtTargetData;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// CSV转换为DataTable
+        /// </summary>
+        /// <param name="strSource">CSV文件路径</param>
+        /// <param name="encoding">The character encoding to use.</param>
+        /// <returns>成功返回CSV的DataTable,失败返回NULL</returns>
+        public static DataTable CSVConversionDataTable(string strSource, Encoding encoding)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(strSource) || !File.Exists(strSource))
+                {
+                    return null;
+                }
+                DataTable dtTargetData = new DataTable();
+                //初始化 System.IO.FileStream 类的新实例
+                FileStream fileStreamOpen = new FileStream(strSource, FileMode.Open, FileAccess.Read);
+                //从当前流中读取一行字符并将数据作为字符串返回
+                StreamReader streamReader = new StreamReader(fileStreamOpen, encoding);
                 //记录当前读取到的一行数据
                 string strRowOfData;
                 //记录当前是否为标题行
