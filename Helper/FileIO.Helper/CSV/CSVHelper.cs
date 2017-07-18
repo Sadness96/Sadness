@@ -99,6 +99,11 @@ namespace FileIO.Helper.CSV
                     //替换两遍连续两个 ,, 为 ,"",(希望数据里不存在两个逗号相连的情况)
                     strRowOfData = strRowOfData.Replace(",,", ",\"\",");
                     strRowOfData = strRowOfData.Replace(",,", ",\"\",");
+                    //如果截取第一个字符是 ',' 则在最前面加双引号
+                    if (strRowOfData.Substring(0, 1) == ",")
+                    {
+                        strRowOfData = string.Format("\"\"{0}", strRowOfData);
+                    }
                     //根据CSV规则分割字符串
                     string strRegexCSV = string.Format("[^\",]+|\"(?:[^\"]|\"\")*\"");
                     Regex regexCSV = new Regex(strRegexCSV);
@@ -164,6 +169,11 @@ namespace FileIO.Helper.CSV
                     //替换两遍连续两个 ,, 为 ,"",(希望数据里不存在两个逗号相连的情况)
                     strRowOfData = strRowOfData.Replace(",,", ",\"\",");
                     strRowOfData = strRowOfData.Replace(",,", ",\"\",");
+                    //如果截取第一个字符是 ',' 则在最前面加双引号
+                    if (strRowOfData.Substring(0, 1) == ",")
+                    {
+                        strRowOfData = string.Format("\"\"{0}", strRowOfData);
+                    }
                     //根据CSV规则分割字符串
                     string strRegexCSV = string.Format("[^\",]+|\"(?:[^\"]|\"\")*\"");
                     Regex regexCSV = new Regex(strRegexCSV);
