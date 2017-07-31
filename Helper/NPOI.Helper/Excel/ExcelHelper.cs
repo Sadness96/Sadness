@@ -541,7 +541,7 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// DataTable转换为Excel
+        /// DataSet转换为Excel
         /// 存在文件则新建DataTableName的分页(如果分页名冲突则或为空则使用默认名称)
         /// 不存在文件则新建(Excel,名称为DataTableName,如果没有则使用默认名称)
         /// </summary>
