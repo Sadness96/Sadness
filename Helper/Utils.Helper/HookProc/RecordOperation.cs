@@ -63,6 +63,9 @@ namespace Utils.Helper.HookProc
         /// </summary>
         string strMouseDownMouseY { get; set; }
 
+        /// <summary>
+        /// 记录操作
+        /// </summary>
         public RecordOperation()
         {
             InitializeComponent();

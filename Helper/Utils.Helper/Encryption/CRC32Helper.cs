@@ -142,50 +142,104 @@ namespace Utils.Helper.Encryption
     /// </summary>
     public class Crc32 : System.Security.Cryptography.HashAlgorithm
     {
+        /// <summary>
+        /// Default Polynomial
+        /// </summary>
         public const UInt32 DefaultPolynomial = 0xedb88320;
+        /// <summary>
+        /// Default Seed
+        /// </summary>
         public const UInt32 DefaultSeed = 0xffffffff;
         private UInt32 hash;
         private UInt32 seed;
         private UInt32[] table;
         private static UInt32[] defaultTable;
+
+        /// <summary>
+        /// Crc32
+        /// </summary>
         public Crc32()
         {
             table = InitializeTable(DefaultPolynomial);
             seed = DefaultSeed;
             Initialize();
         }
+
+        /// <summary>
+        /// Crc32
+        /// </summary>
+        /// <param name="polynomial"></param>
+        /// <param name="seed"></param>
         public Crc32(UInt32 polynomial, UInt32 seed)
         {
             table = InitializeTable(polynomial);
             this.seed = seed;
             Initialize();
         }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public override void Initialize()
         {
             hash = seed;
         }
+
+        /// <summary>
+        /// Hash Core
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="start"></param>
+        /// <param name="length"></param>
         protected override void HashCore(byte[] buffer, int start, int length)
         {
             hash = CalculateHash(table, hash, buffer, start, length);
         }
+
+        /// <summary>
+        /// Hash Final
+        /// </summary>
+        /// <returns></returns>
         protected override byte[] HashFinal()
         {
             byte[] hashBuffer = UInt32ToBigEndianBytes(~hash);
             this.HashValue = hashBuffer;
             return hashBuffer;
         }
+
+        /// <summary>
+        /// Compute
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
         public static UInt32 Compute(byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(DefaultPolynomial), DefaultSeed, buffer, 0, buffer.Length);
         }
+
+        /// <summary>
+        /// Compute
+        /// </summary>
+        /// <param name="seed"></param>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
         public static UInt32 Compute(UInt32 seed, byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(DefaultPolynomial), seed, buffer, 0, buffer.Length);
         }
+
+        /// <summary>
+        /// Compute
+        /// </summary>
+        /// <param name="polynomial"></param>
+        /// <param name="seed"></param>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
         public static UInt32 Compute(UInt32 polynomial, UInt32 seed, byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(polynomial), seed, buffer, 0, buffer.Length);
         }
+
         private static UInt32[] InitializeTable(UInt32 polynomial)
         {
             if (polynomial == DefaultPolynomial && defaultTable != null)

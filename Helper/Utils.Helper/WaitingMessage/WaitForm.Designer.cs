@@ -97,9 +97,12 @@
 
         #endregion
 
+        /// <summary>
+        /// 进度信息
+        /// </summary>
+        protected System.Windows.Forms.Label lblProgressInfo;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        protected System.Windows.Forms.Label lblProgressInfo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }

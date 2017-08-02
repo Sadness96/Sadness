@@ -9,6 +9,9 @@ using Utils.Helper.TXT;
 
 namespace Utils.Helper.WaitingMessage
 {
+    /// <summary>
+    /// 等待消息窗口
+    /// </summary>
     public class WaitMessage
     {
         /// <summary>
@@ -73,7 +76,6 @@ namespace Utils.Helper.WaitingMessage
         /// 等待状态
         /// </summary>
         /// <param name="title">标题</param>
-        /// <param name="showtime">显示时间</param>
         /// <param name="size">窗体大小</param>
         internal static void innerShow(string title, Size size)
         {

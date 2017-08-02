@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Utils.Helper.WaitingMessage
 {
+    /// <summary>
+    /// 等待窗体
+    /// </summary>
     public partial class WaitForm : Form
     {
         /// <summary>
