@@ -85,6 +85,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QRCode\QRCodeHelper.cs" />
+    <Compile Include="Reflect\ReflectHelper.cs" />
     <Compile Include="Registry\RegistryHelper.cs" />
     <Compile Include="Registry\SecondaryMenuModel.cs" />
     <Compile Include="Screenshot\ScreenshotHelper.cs" />
