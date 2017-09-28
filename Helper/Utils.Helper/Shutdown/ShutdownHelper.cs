@@ -9,7 +9,7 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Shutdown
 {
     /// <summary>
-    /// 加密注册码帮助类
+    /// Win32关机帮助类
     /// 创建日期:2017年6月6日
     /// </summary>
     public class ShutdownHelper
