@@ -71,7 +71,7 @@ namespace NPOI.Helper.Excel
                 {
                     return false;
                 }
-                XSSFWorkbook WorkBook2007 = new XSSFWorkbook();  //新建xlsx工作簿  
+                XSSFWorkbook WorkBook2007 = new XSSFWorkbook();
                 if (string.IsNullOrEmpty(strSheetName))
                 {
                     WorkBook2007.CreateSheet("Sheet1");
