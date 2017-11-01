@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Data;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using NPOI.Helper.TXT;
 using NPOI.SS.Util;
@@ -101,7 +102,7 @@ namespace NPOI.Helper.Excel
         /// <param name="strDataSourcePath">Excel文件路径</param>
         /// <param name="strSheetName">需要添加的Sheet名称</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public static bool CreateSheet(string strDataSourcePath, string strSheetName)
+        public static bool CreateExcelSheet(string strDataSourcePath, string strSheetName)
         {
             try
             {
@@ -143,12 +144,53 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
+        /// 在指定Excel中添加分页
+        /// </summary>
+        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strSheetName">需要添加的Sheet名称</param>
+        /// <returns>成功返回Excel工作表,失败返回null</returns>
+        public static ISheet CreateExcelSheetAt(string strDataSourcePath, string strSheetName, out IWorkbook iWorkBook)
+        {
+            try
+            {
+                iWorkBook = null;
+                if (string.IsNullOrEmpty(strDataSourcePath) || string.IsNullOrEmpty(strSheetName) || !File.Exists(strDataSourcePath))
+                {
+                    return null;
+                }
+                ISheet iSheet = null;
+                FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
+                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                {
+                    iWorkBook = new HSSFWorkbook(fileStream);
+                    iSheet = iWorkBook.CreateSheet(strSheetName);
+                }
+                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                {
+                    iWorkBook = new XSSFWorkbook(fileStream);
+                    iSheet = iWorkBook.CreateSheet(strSheetName);
+                }
+                else
+                {
+                    return null;
+                }
+                return iSheet;
+            }
+            catch (Exception ex)
+            {
+                iWorkBook = null;
+                TXTHelper.Logs(ex.ToString());
+                return null;
+            }
+        }
+
+        /// <summary>
         /// 在指定Excel中删除分页(至少有一个Sheet分页文件才能打开)
         /// </summary>
         /// <param name="strDataSourcePath">Excel文件路径</param>
         /// <param name="strSheetName">需要删除的Sheet名称</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public static bool RemoveSheet(string strDataSourcePath, string strSheetName)
+        public static bool RemoveExcelSheet(string strDataSourcePath, string strSheetName)
         {
             try
             {
@@ -228,6 +270,82 @@ namespace NPOI.Helper.Excel
             {
                 TXTHelper.Logs(ex.ToString());
                 return new Dictionary<int, string>();
+            }
+        }
+
+        /// <summary>
+        /// 获得指定Excel中的指定Sheet页
+        /// </summary>
+        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strSheetName">Excel中所有Sheet名</param>
+        /// <returns>成功返回Excel工作表,失败返回null</returns>
+        public static ISheet GetExcelSheetAt(string strDataSourcePath, string strSheetName, out IWorkbook iWorkBook)
+        {
+            try
+            {
+                iWorkBook = null;
+                if (string.IsNullOrEmpty(strDataSourcePath) || !File.Exists(strDataSourcePath) || string.IsNullOrEmpty(strSheetName))
+                {
+                    return null;
+                }
+                FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
+                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                {
+                    iWorkBook = new HSSFWorkbook(fileStream);
+                }
+                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                {
+                    iWorkBook = new XSSFWorkbook(fileStream);
+                }
+                else
+                {
+                    return null;
+                }
+                return iWorkBook.GetSheet(strSheetName);
+            }
+            catch (Exception ex)
+            {
+                iWorkBook = null;
+                TXTHelper.Logs(ex.ToString());
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 获得指定Excel中的指定Sheet页
+        /// </summary>
+        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="iNumberOfSheet">Excel中所有Sheet序号</param>
+        /// <returns>成功返回Excel工作表,失败返回null</returns>
+        public static ISheet GetExcelSheetAt(string strDataSourcePath, int iNumberOfSheet, out IWorkbook iWorkBook)
+        {
+            try
+            {
+                iWorkBook = null;
+                if (string.IsNullOrEmpty(strDataSourcePath) || !File.Exists(strDataSourcePath) || iNumberOfSheet < 0)
+                {
+                    return null;
+                }
+                FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
+                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                {
+                    iWorkBook = new HSSFWorkbook(fileStream);
+                }
+                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                {
+                    iWorkBook = new XSSFWorkbook(fileStream);
+                }
+                else
+                {
+                    return null;
+                }
+                return iWorkBook.GetSheetAt(iNumberOfSheet);
+            }
+            catch (Exception ex)
+            {
+                iWorkBook = null;
+                TXTHelper.Logs(ex.ToString());
+                return null;
             }
         }
 
@@ -340,6 +458,80 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
+        /// 在指定Excel中指定Sheet指定位置填充DataTable(仅拷贝,不提供保存方法)
+        /// </summary>
+        /// <param name="iDataSourceSheet">指定Excel元数据Sheet页</param>
+        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
+        /// <param name="iRows">起始行</param>
+        /// <param name="iColumn">起始列</param>
+        /// <returns>成功返回拷贝后的Sheet页,失败返回null</returns>
+        public static ISheet FillDataTable(ISheet iDataSourceSheet, DataTable dtSourceData, bool WhetherThereFieldName, int iRows, int iColumn)
+        {
+            try
+            {
+                if (iDataSourceSheet == null)
+                {
+                    return null;
+                }
+                if (WhetherThereFieldName)
+                {
+                    IRow rowDataTableField = iDataSourceSheet.CreateRow(iRows);
+                    for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
+                    {
+                        ICell cellErrstatist = rowDataTableField.CreateCell(iDataTableColumns + iColumn);
+                        cellErrstatist.SetCellValue(dtSourceData.Columns[iDataTableColumns].ColumnName);
+                    }
+                    for (int iDataTableRows = 0; iDataTableRows < dtSourceData.Rows.Count; iDataTableRows++)
+                    {
+                        IRow rowDataTable = iDataSourceSheet.CreateRow(iDataTableRows + iRows + 1);
+                        for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
+                        {
+                            ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
+                            string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                            Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                            if (regexIsNumeric.IsMatch(strSourceData))
+                            {
+                                cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                            }
+                            else
+                            {
+                                cellErrstatist.SetCellValue(strSourceData);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    for (int iDataTableRows = 0; iDataTableRows < dtSourceData.Rows.Count; iDataTableRows++)
+                    {
+                        IRow rowDataTable = iDataSourceSheet.CreateRow(iDataTableRows + iRows);
+                        for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
+                        {
+                            ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
+                            string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                            Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                            if (regexIsNumeric.IsMatch(strSourceData))
+                            {
+                                cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                            }
+                            else
+                            {
+                                cellErrstatist.SetCellValue(strSourceData);
+                            }
+                        }
+                    }
+                }
+                return iDataSourceSheet;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return null;
+            }
+        }
+
+        /// <summary>
         /// 在指定Excel中指定Sheet指定位置填充DataTable
         /// </summary>
         /// <param name="strDataSourcePath">Excel文件路径(如果文件不存在则重新创建)</param>
@@ -387,7 +579,16 @@ namespace NPOI.Helper.Excel
                                 for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
                                 {
                                     ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
-                                    cellErrstatist.SetCellValue(dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString());
+                                    string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                                    Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                                    if (regexIsNumeric.IsMatch(strSourceData))
+                                    {
+                                        cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                                    }
+                                    else
+                                    {
+                                        cellErrstatist.SetCellValue(strSourceData);
+                                    }
                                 }
                             }
                         }
@@ -399,7 +600,16 @@ namespace NPOI.Helper.Excel
                                 for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
                                 {
                                     ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
-                                    cellErrstatist.SetCellValue(dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString());
+                                    string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                                    Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                                    if (regexIsNumeric.IsMatch(strSourceData))
+                                    {
+                                        cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                                    }
+                                    else
+                                    {
+                                        cellErrstatist.SetCellValue(strSourceData);
+                                    }
                                 }
                             }
                         }
@@ -434,7 +644,16 @@ namespace NPOI.Helper.Excel
                                 for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
                                 {
                                     ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
-                                    cellErrstatist.SetCellValue(dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString());
+                                    string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                                    Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                                    if (regexIsNumeric.IsMatch(strSourceData))
+                                    {
+                                        cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                                    }
+                                    else
+                                    {
+                                        cellErrstatist.SetCellValue(strSourceData);
+                                    }
                                 }
                             }
                         }
@@ -446,7 +665,16 @@ namespace NPOI.Helper.Excel
                                 for (int iDataTableColumns = 0; iDataTableColumns < dtSourceData.Columns.Count; iDataTableColumns++)
                                 {
                                     ICell cellErrstatist = rowDataTable.CreateCell(iDataTableColumns + iColumn);
-                                    cellErrstatist.SetCellValue(dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString());
+                                    string strSourceData = dtSourceData.Rows[iDataTableRows][iDataTableColumns].ToString();
+                                    Regex regexIsNumeric = new Regex(@"^(-?\d+)(\.\d+)?$");
+                                    if (regexIsNumeric.IsMatch(strSourceData))
+                                    {
+                                        cellErrstatist.SetCellValue(double.Parse(strSourceData));
+                                    }
+                                    else
+                                    {
+                                        cellErrstatist.SetCellValue(strSourceData);
+                                    }
                                 }
                             }
                         }
@@ -522,7 +750,7 @@ namespace NPOI.Helper.Excel
                 string strTableName = string.IsNullOrEmpty(dtSourceData.TableName) ? string.Format("Sheet{0}", dicAllSheet.Count + 1) : dtSourceData.TableName;
                 if (dicAllSheet.ContainsValue(dtSourceData.TableName))
                 {
-                    RemoveSheet(strDataSourcePath, dtSourceData.TableName);
+                    RemoveExcelSheet(strDataSourcePath, dtSourceData.TableName);
                 }
                 if (FillDataTable(strDataSourcePath, strTableName, dtSourceData, true, 0, 0))
                 {
@@ -562,7 +790,7 @@ namespace NPOI.Helper.Excel
                     string strTableName = string.IsNullOrEmpty(dtSourceData.TableName) ? string.Format("Sheet{0}", dicAllSheet.Count + 1) : dtSourceData.TableName;
                     if (dicAllSheet.ContainsValue(dtSourceData.TableName))
                     {
-                        RemoveSheet(strDataSourcePath, dtSourceData.TableName);
+                        RemoveExcelSheet(strDataSourcePath, dtSourceData.TableName);
                     }
                     if (!FillDataTable(strDataSourcePath, strTableName, dtSourceData, true, 0, 0))
                     {
@@ -575,6 +803,107 @@ namespace NPOI.Helper.Excel
             {
                 TXTHelper.Logs(ex.ToString());
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 获得指定Excel指定分页指定起始终止位置的DataTable
+        /// </summary>
+        /// <param name="iDataSourceSheet">指定Excel元数据Sheet页</param>
+        /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
+        /// <param name="iStartRows">起始行</param>
+        /// <param name="iStartColumn">起始列</param>
+        /// <param name="iStopRows">终止行(如果小于等于0则默认Length)</param>
+        /// <param name="iStopColumn">终止列(如果小于等于0则默认Length)</param>
+        /// <returns>成功返回Excel的DataTable,失败返回NULL</returns>
+        public static DataTable GetDataTable(ISheet iDataSourceSheet, bool WhetherThereFieldName, int iStartRows, int iStartColumn, int iStopRows, int iStopColumn)
+        {
+            try
+            {
+                if (iDataSourceSheet == null)
+                {
+                    return null;
+                }
+                DataTable dtTargetData = new DataTable();
+                if (WhetherThereFieldName)
+                {
+                    //构建DataTable列(第一行为列名)
+                    IRow iRowFirst = iDataSourceSheet.GetRow(iStartRows);
+                    for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
+                    {
+                        ICell iCell = iRowFirst.GetCell(iFirst);
+                        if (iCell != null)
+                        {
+                            if (iCell.StringCellValue != null)
+                            {
+                                DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                dtTargetData.Columns.Add(dColumn);
+                            }
+                        }
+                    }
+                    //构建DataTable行(第二行往下为数据)
+                    for (int iRowNum = iStartRows + 1; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
+                    {
+                        IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
+                        DataRow drTargetData = dtTargetData.NewRow();
+                        for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
+                        {
+                            ICell iCell = iRowData.GetCell(iRowCell);
+                            if (iCell != null)
+                            {
+                                iCell.SetCellType(CellType.String);
+                                if (iCell.StringCellValue != null)
+                                {
+                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                }
+                            }
+                        }
+                        dtTargetData.Rows.Add(drTargetData);
+                    }
+                }
+                else
+                {
+                    //构建DataTable列,以读取第一行的长度填充列名(使用默认命名初始化列名Column1)
+                    IRow iRowFirst = iDataSourceSheet.GetRow(iStartRows);
+                    for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
+                    {
+                        ICell iCell = iRowFirst.GetCell(iFirst);
+                        if (iCell != null)
+                        {
+                            if (iCell.StringCellValue != null)
+                            {
+                                dtTargetData.Columns.Add(string.Format("Column{0}", iFirst - iStartColumn));
+                            }
+                        }
+                    }
+                    //构建DataTable行(第一行往下为数据)
+                    for (int iRowNum = iStartRows; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
+                    {
+                        IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
+                        DataRow drTargetData = dtTargetData.NewRow();
+                        for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
+                        {
+                            ICell iCell = iRowData.GetCell(iRowCell);
+                            if (iCell != null)
+                            {
+                                iCell.SetCellType(CellType.String);
+                                if (iCell.StringCellValue != null)
+                                {
+                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                }
+                            }
+                        }
+                        dtTargetData.Rows.Add(drTargetData);
+                    }
+                }
+                return dtTargetData;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return null;
             }
         }
 
@@ -646,6 +975,7 @@ namespace NPOI.Helper.Excel
                             ICell iCell = iRowData.GetCell(iRowCell);
                             if (iCell != null)
                             {
+                                iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
                                     DataColumn dColumn = new DataColumn(iCell.StringCellValue);
@@ -681,6 +1011,7 @@ namespace NPOI.Helper.Excel
                             ICell iCell = iRowData.GetCell(iRowCell);
                             if (iCell != null)
                             {
+                                iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
                                     DataColumn dColumn = new DataColumn(iCell.StringCellValue);
@@ -724,7 +1055,7 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// Excel指定分页转换为DataSet
+        /// Excel所有分页转换为DataSet
         /// </summary>
         /// <param name="strDataSourcePath">Excel文件路径</param>
         /// <returns>成功返回Excel的DataSet,失败返回NULL</returns>
@@ -755,6 +1086,238 @@ namespace NPOI.Helper.Excel
             {
                 TXTHelper.Logs(ex.ToString());
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// 拷贝Sheet页到另一个Sheet页(浅拷贝,不提供保存方法)
+        /// Office2003单Sheet页仅支持4000个样式
+        /// </summary>
+        /// <param name="iSourceWorkbook">源Excel工作簿</param>
+        /// <param name="iFromSheet">源Sheet页</param>
+        /// <param name="iTargetWorkbook">目标Excel工作簿</param>
+        /// <param name="iToSheet">目标Sheet页</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool CopySheetAt(IWorkbook iSourceWorkbook, ISheet iFromSheet, IWorkbook iTargetWorkbook, ISheet iToSheet)
+        {
+            try
+            {
+                //拷贝数据
+                DataTable dtExcelFromData = GetDataTable(iFromSheet, false, 0, 0, 0, 0);
+                iToSheet = FillDataTable(iToSheet, dtExcelFromData, false, 0, 0);
+                //拷贝单元格合并
+                for (int iMergedRegions = 0; iMergedRegions < iFromSheet.NumMergedRegions; iMergedRegions++)
+                {
+                    iToSheet.AddMergedRegion(iFromSheet.GetMergedRegion(iMergedRegions));
+                }
+                //拷贝样式(遍历Sheet页行)
+                List<ICellStyle> listCellStyle = new List<ICellStyle>();
+                for (int iRowNum = 0; iRowNum <= iFromSheet.LastRowNum; iRowNum++)
+                {
+                    IRow iFromRowData = iFromSheet.GetRow(iRowNum);
+                    IRow iToRowData = iToSheet.GetRow(iRowNum);
+                    //设置行高
+                    short sFromHeight = iFromRowData.Height;
+                    iToRowData.Height = sFromHeight;
+                    //遍历Sheet页列
+                    for (int iRowCell = 0; iRowCell <= iFromRowData.LastCellNum; iRowCell++)
+                    {
+                        //设置列宽
+                        int iFromColumnWidth = iFromSheet.GetColumnWidth(iRowNum) / 256;
+                        iToSheet.SetColumnWidth(iRowNum, iFromColumnWidth * 256);
+                        //复制数据
+                        ICell iFromCell = iFromRowData.GetCell(iRowCell);
+                        if (iFromCell != null)
+                        {
+                            //获得源Sheet页的样式
+                            ICellStyle iFromCellStyle = iFromCell.CellStyle;
+                            //获得目标Excel指定Cell
+                            ICell iToCell = iToRowData.GetCell(iRowCell);
+                            #region 复制单元格样式
+                            //指定Cell创新目标Excel工作簿新样式
+                            ICellStyle iToNewCellStyle = null;
+                            foreach (ICellStyle vCellStyle in listCellStyle)
+                            {
+                                IFont iVToFont = vCellStyle.GetFont(iTargetWorkbook);
+                                IFont iFromFont = iFromCellStyle.GetFont(iSourceWorkbook);
+                                if (vCellStyle.Alignment == iFromCellStyle.Alignment &&
+                                    vCellStyle.BorderBottom == iFromCellStyle.BorderBottom &&
+                                    vCellStyle.BorderLeft == iFromCellStyle.BorderLeft &&
+                                    vCellStyle.BorderRight == iFromCellStyle.BorderRight &&
+                                    vCellStyle.BorderTop == iFromCellStyle.BorderTop &&
+                                    vCellStyle.BottomBorderColor == iFromCellStyle.BottomBorderColor &&
+                                    vCellStyle.DataFormat == iFromCellStyle.DataFormat &&
+                                    vCellStyle.FillBackgroundColor == iFromCellStyle.FillBackgroundColor &&
+                                    vCellStyle.FillForegroundColor == iFromCellStyle.FillForegroundColor &&
+                                    vCellStyle.FillPattern == iFromCellStyle.FillPattern &&
+                                    vCellStyle.Indention == iFromCellStyle.Indention &&
+                                    vCellStyle.IsHidden == iFromCellStyle.IsHidden &&
+                                    vCellStyle.IsLocked == iFromCellStyle.IsLocked &&
+                                    vCellStyle.LeftBorderColor == iFromCellStyle.LeftBorderColor &&
+                                    vCellStyle.RightBorderColor == iFromCellStyle.RightBorderColor &&
+                                    vCellStyle.Rotation == iFromCellStyle.Rotation &&
+                                    vCellStyle.TopBorderColor == iFromCellStyle.TopBorderColor &&
+                                    vCellStyle.VerticalAlignment == iFromCellStyle.VerticalAlignment &&
+                                    vCellStyle.WrapText == iFromCellStyle.WrapText &&
+                                    //字体比对
+                                    iVToFont.Color == iFromFont.Color &&
+                                    iVToFont.FontHeightInPoints == iFromFont.FontHeightInPoints &&
+                                    iVToFont.FontName == iFromFont.FontName &&
+                                    iVToFont.IsBold == iFromFont.IsBold &&
+                                    iVToFont.IsItalic == iFromFont.IsItalic &&
+                                    iVToFont.IsStrikeout == iFromFont.IsStrikeout &&
+                                    iVToFont.Underline == iFromFont.Underline)
+                                {
+                                    iToNewCellStyle = vCellStyle;
+                                    break;
+                                }
+                            }
+                            if (iToNewCellStyle == null)
+                            {
+                                //创建新样式
+                                iToNewCellStyle = iTargetWorkbook.CreateCellStyle();
+                                //复制样式
+                                iToNewCellStyle.Alignment = iFromCellStyle.Alignment;//对齐
+                                iToNewCellStyle.BorderBottom = iFromCellStyle.BorderBottom;//下边框
+                                iToNewCellStyle.BorderLeft = iFromCellStyle.BorderLeft;//左边框
+                                iToNewCellStyle.BorderRight = iFromCellStyle.BorderRight;//右边框
+                                iToNewCellStyle.BorderTop = iFromCellStyle.BorderTop;//上边框
+                                iToNewCellStyle.BottomBorderColor = iFromCellStyle.BottomBorderColor;//下边框颜色
+                                iToNewCellStyle.DataFormat = iFromCellStyle.DataFormat;//数据格式
+                                iToNewCellStyle.FillBackgroundColor = iFromCellStyle.FillBackgroundColor;//填充背景色
+                                iToNewCellStyle.FillForegroundColor = iFromCellStyle.FillForegroundColor;//填充前景色
+                                iToNewCellStyle.FillPattern = iFromCellStyle.FillPattern;//填充图案
+                                iToNewCellStyle.Indention = iFromCellStyle.Indention;//压痕
+                                iToNewCellStyle.IsHidden = iFromCellStyle.IsHidden;//隐藏
+                                iToNewCellStyle.IsLocked = iFromCellStyle.IsLocked;//锁定
+                                iToNewCellStyle.LeftBorderColor = iFromCellStyle.LeftBorderColor;//左边框颜色
+                                iToNewCellStyle.RightBorderColor = iFromCellStyle.RightBorderColor;//右边框颜色
+                                iToNewCellStyle.Rotation = iFromCellStyle.Rotation;//旋转
+                                iToNewCellStyle.TopBorderColor = iFromCellStyle.TopBorderColor;//上边框颜色
+                                iToNewCellStyle.VerticalAlignment = iFromCellStyle.VerticalAlignment;//垂直对齐
+                                iToNewCellStyle.WrapText = iFromCellStyle.WrapText;//文字换行
+                                //复制字体
+                                IFont iFromFont = iFromCellStyle.GetFont(iSourceWorkbook);
+                                IFont iToFont = iTargetWorkbook.CreateFont();
+                                iToFont.Color = iFromFont.Color;//颜色
+                                iToFont.FontHeightInPoints = iFromFont.FontHeightInPoints;//字号
+                                iToFont.FontName = iFromFont.FontName;//字体
+                                iToFont.IsBold = iFromFont.IsBold;//加粗
+                                iToFont.IsItalic = iFromFont.IsItalic;//斜体
+                                iToFont.IsStrikeout = iFromFont.IsStrikeout;//删除线
+                                iToFont.Underline = iFromFont.Underline;//下划线
+                                iToNewCellStyle.SetFont(iToFont);
+                                //保存到缓存集合中
+                                listCellStyle.Add(iToNewCellStyle);
+                            }
+                            //复制样式到指定表格中
+                            iToCell.CellStyle = iToNewCellStyle;
+                            #endregion
+                        }
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 拷贝Sheet页到另一个Sheet页
+        /// </summary>
+        /// <param name="strSourceExcelPath">源Excel路径</param>
+        /// <param name="strFromSheetName">源Excel拷贝Sheet</param>
+        /// <param name="strTargetExcelPath">目标Excel路径</param>
+        /// <param name="strToSheetName">目标Excel拷贝Sheet</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool CopySheet(string strSourceExcelPath, string strFromSheetName, string strTargetExcelPath, string strToSheetName)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(strSourceExcelPath) || string.IsNullOrEmpty(strTargetExcelPath) || !File.Exists(strSourceExcelPath))
+                {
+                    TXTHelper.Logs(string.Format("源数据和目标数据参数为空或文件不存在!"));
+                    return false;
+                }
+                if (string.IsNullOrEmpty(strFromSheetName) || string.IsNullOrEmpty(strToSheetName))
+                {
+                    TXTHelper.Logs(string.Format("源Sheet页和目标Sheet页参数为空!"));
+                    return false;
+                }
+                //获得源数据和目标数据的Sheet页
+                IWorkbook iSourceWorkbook = null;
+                ISheet iSourceSheet = GetExcelSheetAt(strSourceExcelPath, strFromSheetName, out iSourceWorkbook);
+                IWorkbook iTargetWorkbook = null;
+                ISheet iTargetSheet = null;
+                if (iSourceSheet == null)
+                {
+                    TXTHelper.Logs(string.Format("指定源数据Sheet页为空!"));
+                    return false;
+                }
+                if (!File.Exists(strTargetExcelPath))
+                {
+                    //如果文件不存在则创建Excel
+                    if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xls")
+                    {
+                        bool bCreare = CreateExcel_Office2003(strTargetExcelPath, strToSheetName);
+                    }
+                    else if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xlsx")
+                    {
+                        bool bCreare = CreateExcel_Office2007(strTargetExcelPath, strToSheetName);
+                    }
+                    else
+                    {
+                        TXTHelper.Logs(string.Format("指定目标Excel文件路径格式错误!"));
+                        return false;
+                    }
+                    iTargetSheet = GetExcelSheetAt(strTargetExcelPath, strToSheetName, out iTargetWorkbook);
+                }
+                else
+                {
+                    //如果文件存在则判断是否存在执行Sheet
+                    Dictionary<int, string> dicAllSheet = GetExcelAllSheet(strTargetExcelPath);
+                    if (dicAllSheet.ContainsValue(strToSheetName))
+                    {
+                        iTargetSheet = GetExcelSheetAt(strTargetExcelPath, strToSheetName, out iTargetWorkbook);
+                    }
+                    else
+                    {
+                        iTargetSheet = CreateExcelSheetAt(strTargetExcelPath, strToSheetName, out iTargetWorkbook);
+                    }
+                }
+                //调用Sheet拷贝Sheet方法
+                bool bCopySheet = CopySheetAt(iSourceWorkbook, iSourceSheet, iTargetWorkbook, iTargetSheet);
+                if (bCopySheet)
+                {
+                    if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xls")
+                    {
+                        FileStream fileStream2003 = new FileStream(Path.ChangeExtension(strTargetExcelPath, "xls"), FileMode.Create);
+                        iTargetWorkbook.Write(fileStream2003);
+                        fileStream2003.Close();
+                        iTargetWorkbook.Close();
+                    }
+                    else if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xlsx")
+                    {
+                        FileStream fileStream2007 = new FileStream(Path.ChangeExtension(strTargetExcelPath, "xlsx"), FileMode.Create);
+                        iTargetWorkbook.Write(fileStream2007);
+                        fileStream2007.Close();
+                        iTargetWorkbook.Close();
+                    }
+                    return true;
+                }
+                else
+                {
+                    TXTHelper.Logs(string.Format("拷贝失败!"));
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return false;
             }
         }
     }
