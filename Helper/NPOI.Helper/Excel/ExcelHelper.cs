@@ -845,6 +845,7 @@ namespace NPOI.Helper.Excel
                     for (int iRowNum = iStartRows + 1; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
+                        if (iRowData == null) continue;
                         DataRow drTargetData = dtTargetData.NewRow();
                         for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
                         {
@@ -854,8 +855,12 @@ namespace NPOI.Helper.Excel
                                 iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
-                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
-                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                    int iNumberIsColums = iRowCell - iStartColumn;
+                                    if (iNumberIsColums < dtTargetData.Columns.Count)
+                                    {
+                                        DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                        drTargetData[iNumberIsColums] = dColumn;
+                                    }
                                 }
                             }
                         }
@@ -881,6 +886,7 @@ namespace NPOI.Helper.Excel
                     for (int iRowNum = iStartRows; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
+                        if (iRowData == null) continue;
                         DataRow drTargetData = dtTargetData.NewRow();
                         for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
                         {
@@ -890,8 +896,12 @@ namespace NPOI.Helper.Excel
                                 iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
-                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
-                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                    int iNumberIsColums = iRowCell - iStartColumn;
+                                    if (iNumberIsColums < dtTargetData.Columns.Count)
+                                    {
+                                        DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                        drTargetData[iNumberIsColums] = dColumn;
+                                    }
                                 }
                             }
                         }
@@ -969,6 +979,7 @@ namespace NPOI.Helper.Excel
                     for (int iRowNum = iStartRows + 1; iRowNum <= (iStopRows <= 0 ? iSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iSheet.GetRow(iRowNum);
+                        if (iRowData == null) continue;
                         DataRow drTargetData = dtTargetData.NewRow();
                         for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
                         {
@@ -978,8 +989,12 @@ namespace NPOI.Helper.Excel
                                 iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
-                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
-                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                    int iNumberIsColums = iRowCell - iStartColumn;
+                                    if (iNumberIsColums < dtTargetData.Columns.Count)
+                                    {
+                                        DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                        drTargetData[iNumberIsColums] = dColumn;
+                                    }
                                 }
                             }
                         }
@@ -1005,6 +1020,7 @@ namespace NPOI.Helper.Excel
                     for (int iRowNum = iStartRows; iRowNum <= (iStopRows <= 0 ? iSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iSheet.GetRow(iRowNum);
+                        if (iRowData == null) continue;
                         DataRow drTargetData = dtTargetData.NewRow();
                         for (int iRowCell = iStartColumn; iRowCell <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iRowCell++)
                         {
@@ -1014,8 +1030,12 @@ namespace NPOI.Helper.Excel
                                 iCell.SetCellType(CellType.String);
                                 if (iCell.StringCellValue != null)
                                 {
-                                    DataColumn dColumn = new DataColumn(iCell.StringCellValue);
-                                    drTargetData[iRowCell - iStartColumn] = dColumn;
+                                    int iNumberIsColums = iRowCell - iStartColumn;
+                                    if (iNumberIsColums < dtTargetData.Columns.Count)
+                                    {
+                                        DataColumn dColumn = new DataColumn(iCell.StringCellValue);
+                                        drTargetData[iNumberIsColums] = dColumn;
+                                    }
                                 }
                             }
                         }
@@ -1116,6 +1136,10 @@ namespace NPOI.Helper.Excel
                 {
                     IRow iFromRowData = iFromSheet.GetRow(iRowNum);
                     IRow iToRowData = iToSheet.GetRow(iRowNum);
+                    if (iFromRowData == null || iToRowData == null)
+                    {
+                        continue;
+                    }
                     //设置行高
                     short sFromHeight = iFromRowData.Height;
                     iToRowData.Height = sFromHeight;
@@ -1133,6 +1157,7 @@ namespace NPOI.Helper.Excel
                             ICellStyle iFromCellStyle = iFromCell.CellStyle;
                             //获得目标Excel指定Cell
                             ICell iToCell = iToRowData.GetCell(iRowCell);
+                            if (iToCell == null) continue;
                             #region 复制单元格样式
                             //指定Cell创新目标Excel工作簿新样式
                             ICellStyle iToNewCellStyle = null;
