@@ -355,10 +355,10 @@ namespace NPOI.Helper.Excel
         /// <param name="strDataSourcePath">Excel文件路径(如果文件不存在则重新创建)</param>
         /// <param name="strSheetName">需要填充的Sheet名称(如果没有则添加,如果冲突则使用冲突Sheet)</param>
         /// <param name="strTXT">需要填充的文本</param>
-        /// <param name="iColumn">填充行</param>
-        /// <param name="iRows">填充列</param>
+        /// <param name="iRows">填充行</param>
+        /// <param name="iColumn">填充列</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public static bool FillString(string strDataSourcePath, string strSheetName, string strTXT, int iColumn, int iRows)
+        public static bool FillString(string strDataSourcePath, string strSheetName, string strTXT, int iRows, int iColumn)
         {
             try
             {
@@ -372,6 +372,7 @@ namespace NPOI.Helper.Excel
                     Dictionary<int, string> dicAllSheet = GetExcelAllSheet(strDataSourcePath);
                     if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
                     {
+                        //获取指定Sheet页
                         IWorkbook iWorkBook = new HSSFWorkbook(fileStream);
                         ISheet iSheet = null;
                         if (dicAllSheet.ContainsValue(strSheetName))
@@ -382,8 +383,19 @@ namespace NPOI.Helper.Excel
                         {
                             iSheet = iWorkBook.CreateSheet(strSheetName);
                         }
-                        IRow iRow = iSheet.CreateRow(iRows);
-                        ICell iCell = iRow.CreateCell(iColumn);
+                        //获取指定单元格
+                        IRow iRow = iSheet.GetRow(iRows);
+                        ICell iCell = null;
+                        if (iRow == null)
+                        {
+                            //如果没有搜索到指定行则创建单元格
+                            iRow = iSheet.CreateRow(iRows);
+                            iCell = iRow.CreateCell(iColumn);
+                        }
+                        else
+                        {
+                            iCell = iRow.GetCell(iColumn);
+                        }
                         iCell.SetCellValue(strTXT);
                         FileStream fileStream2003 = new FileStream(Path.ChangeExtension(strDataSourcePath, "xls"), FileMode.Create);
                         iWorkBook.Write(fileStream2003);
@@ -392,6 +404,7 @@ namespace NPOI.Helper.Excel
                     }
                     else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
                     {
+                        //获取指定Sheet页
                         IWorkbook iWorkBook = new XSSFWorkbook(fileStream);
                         ISheet iSheet = null;
                         if (dicAllSheet.ContainsValue(strSheetName))
@@ -402,8 +415,19 @@ namespace NPOI.Helper.Excel
                         {
                             iSheet = iWorkBook.CreateSheet(strSheetName);
                         }
-                        IRow iRow = iSheet.CreateRow(iRows);
-                        ICell iCell = iRow.CreateCell(iColumn);
+                        //获取指定单元格
+                        IRow iRow = iSheet.GetRow(iRows);
+                        ICell iCell = null;
+                        if (iRow == null)
+                        {
+                            //如果没有搜索到指定行则创建单元格
+                            iRow = iSheet.CreateRow(iRows);
+                            iCell = iRow.CreateCell(iColumn);
+                        }
+                        else
+                        {
+                            iCell = iRow.GetCell(iColumn);
+                        }
                         iCell.SetCellValue(strTXT);
                         FileStream fileStream2007 = new FileStream(Path.ChangeExtension(strDataSourcePath, "xlsx"), FileMode.Create);
                         iWorkBook.Write(fileStream2007);
