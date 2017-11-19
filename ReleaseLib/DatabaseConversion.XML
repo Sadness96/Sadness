@@ -81,61 +81,6 @@
             DBConnection.xaml 的视图模型
             </summary>
         </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplaySqlServer">
-            <summary>
-            显示SqlServer
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayOracle">
-            <summary>
-            显示Oracle
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayMySql">
-            <summary>
-            显示MySql
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayAccess">
-            <summary>
-            显示Access
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplaySQLite">
-            <summary>
-            显示SQLite
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strIPAddress">
-            <summary>
-            IP地址/数据库
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strDataBase">
-            <summary>
-            数据库名称
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strUserName">
-            <summary>
-            用户名
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strPassword">
-            <summary>
-            密码
-            </summary>
-        </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strPath">
-            <summary>
-            文件路径
-            </summary>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConnectionViewModel.CloseWindow">
-            <summary>
-            关闭当前窗口
-            </summary>
-        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strDataBaseName">
             <summary>
             数据库名称(打开窗口时传值)
@@ -148,9 +93,19 @@
             Source/Target
             </summary>
         </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplaySqlServer">
+            <summary>
+            显示SqlServer
+            </summary>
+        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.DisplaySqlServer">
             <summary>
             显示SqlServer
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayOracle">
+            <summary>
+            显示Oracle
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.DisplayOracle">
@@ -158,9 +113,19 @@
             显示Oracle
             </summary>
         </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayMySql">
+            <summary>
+            显示MySql
+            </summary>
+        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.DisplayMySql">
             <summary>
             显示MySql
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplayAccess">
+            <summary>
+            显示Access
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.DisplayAccess">
@@ -168,9 +133,19 @@
             显示Access
             </summary>
         </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._DisplaySQLite">
+            <summary>
+            显示SQLite
+            </summary>
+        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.DisplaySQLite">
             <summary>
             显示SQLite
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strIPAddress">
+            <summary>
+            IP地址/数据库
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strIPAddress">
@@ -178,9 +153,19 @@
             IP地址/数据库
             </summary>
         </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strDataBase">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strDataBase">
             <summary>
             数据库名称
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strUserName">
+            <summary>
+            用户名
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strUserName">
@@ -188,9 +173,19 @@
             用户名
             </summary>
         </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strPassword">
+            <summary>
+            密码
+            </summary>
+        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strPassword">
             <summary>
             密码
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConnectionViewModel._strPath">
+            <summary>
+            文件路径
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConnectionViewModel.strPath">
@@ -228,6 +223,11 @@
             取消
             </summary>
         </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConnectionViewModel.CloseWindow">
+            <summary>
+            关闭当前窗口
+            </summary>
+        </member>
         <member name="T:DatabaseConversion.ViewModels.DBConversionViewModel">
             <summary>
             DBConversion.xaml 的视图模型
@@ -250,7 +250,17 @@
             表名Tree绑定数据
             </summary>
         </member>
+        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.TreeList">
+            <summary>
+            表名Tree绑定数据
+            </summary>
+        </member>
         <member name="F:DatabaseConversion.ViewModels.DBConversionViewModel._GridList">
+            <summary>
+            表字段Grid绑定数据
+            </summary>
+        </member>
+        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.GridList">
             <summary>
             表字段Grid绑定数据
             </summary>
@@ -260,7 +270,18 @@
             字段类型列绑定数据
             </summary>
         </member>
+        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.FieldTypeList">
+            <summary>
+            字段类型列绑定数据
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:DatabaseConversion.ViewModels.DBConversionViewModel.DicTablesStructure" -->
         <member name="F:DatabaseConversion.ViewModels.DBConversionViewModel._SourceConnectionColour">
+            <summary>
+            源数据连接颜色
+            </summary>
+        </member>
+        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.SourceConnectionColour">
             <summary>
             源数据连接颜色
             </summary>
@@ -270,79 +291,14 @@
             目标数据连接颜色
             </summary>
         </member>
-        <member name="F:DatabaseConversion.ViewModels.DBConversionViewModel._IsBusy">
-            <summary>
-            是否空闲
-            </summary>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.ParsingTableInformation(System.Collections.Generic.Dictionary{System.String,System.String})">
-            <summary>
-            解析表信息(表字段类型字典解析为Models.TableStructureGrid)
-            目前长度不支持小数位数的读取
-            </summary>
-            <returns>表结构信息ObservableCollection集合</returns>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.DBTypeGoEnum(System.String)">
-            <summary>
-            根据数据库类型得到枚举类型
-            ADO.Helper.DatabaseConversion.TypeProcessing.DataBase
-            SqlServer/Oracle/MySql/Access/SQLite
-            </summary>
-            <param name="strDBType">数据库类型</param>
-            <returns>DataBase枚举类型</returns>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.DBTypeGoFieldType(System.String)">
-            <summary>
-            根据数据库类型得到字段类型
-            </summary>
-            <param name="strDBType">数据库类型</param>
-            <returns>目标数据库字段类型</returns>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GridModelGoGridDic(System.Collections.ObjectModel.ObservableCollection{DatabaseConversion.Models.TableStructureGrid})">
-            <summary>
-            根据Grid视图模型得到Grid字段类型字典
-            </summary>
-            <param name="listTableStructure">Grid视图模型</param>
-            <returns>Grid字段类型字典</returns>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GetTargetAndSourceCorrespondenceBetween(System.Collections.ObjectModel.ObservableCollection{DatabaseConversion.Models.TableStructureGrid})">
-            <summary>
-            获得目标与源的字段名对应关系
-            </summary>
-            <param name="listTableStructure">Grid视图模型</param>
-            <returns>目标与源的字段名对应关系(目标字段名/源字段名)</returns>
-        </member>
-        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GetSourceDataTable(System.String)">
-            <summary>
-            得到源数据表的DataTable
-            </summary>
-            <param name="strTableName">源数据表名</param>
-            <returns>源数据表的DataTable</returns>
-        </member>
-        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.TreeList">
-            <summary>
-            表名Tree绑定数据
-            </summary>
-        </member>
-        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.GridList">
-            <summary>
-            表字段Grid绑定数据
-            </summary>
-        </member>
-        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.FieldTypeList">
-            <summary>
-            字段类型列绑定数据
-            </summary>
-        </member>
-        <!-- 对于成员“P:DatabaseConversion.ViewModels.DBConversionViewModel.DicTablesStructure”忽略有格式错误的 XML 注释 -->
-        <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.SourceConnectionColour">
-            <summary>
-            源数据连接颜色
-            </summary>
-        </member>
         <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.TargetConnectionColour">
             <summary>
             目标数据连接颜色
+            </summary>
+        </member>
+        <member name="F:DatabaseConversion.ViewModels.DBConversionViewModel._IsBusy">
+            <summary>
+            是否空闲
             </summary>
         </member>
         <member name="P:DatabaseConversion.ViewModels.DBConversionViewModel.IsBusy">
@@ -405,6 +361,50 @@
             表名Tree单击事件
             </summary>
         </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.ParsingTableInformation(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            解析表信息(表字段类型字典解析为Models.TableStructureGrid)
+            目前长度不支持小数位数的读取
+            </summary>
+            <returns>表结构信息ObservableCollection集合</returns>
+        </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.DBTypeGoEnum(System.String)">
+            <summary>
+            根据数据库类型得到枚举类型
+            ADO.Helper.DatabaseConversion.TypeProcessing.DataBase
+            SqlServer/Oracle/MySql/Access/SQLite
+            </summary>
+            <param name="strDBType">数据库类型</param>
+            <returns>DataBase枚举类型</returns>
+        </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.DBTypeGoFieldType(System.String)">
+            <summary>
+            根据数据库类型得到字段类型
+            </summary>
+            <param name="strDBType">数据库类型</param>
+            <returns>目标数据库字段类型</returns>
+        </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GridModelGoGridDic(System.Collections.ObjectModel.ObservableCollection{DatabaseConversion.Models.TableStructureGrid})">
+            <summary>
+            根据Grid视图模型得到Grid字段类型字典
+            </summary>
+            <param name="listTableStructure">Grid视图模型</param>
+            <returns>Grid字段类型字典</returns>
+        </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GetTargetAndSourceCorrespondenceBetween(System.Collections.ObjectModel.ObservableCollection{DatabaseConversion.Models.TableStructureGrid})">
+            <summary>
+            获得目标与源的字段名对应关系
+            </summary>
+            <param name="listTableStructure">Grid视图模型</param>
+            <returns>目标与源的字段名对应关系(目标字段名/源字段名)</returns>
+        </member>
+        <member name="M:DatabaseConversion.ViewModels.DBConversionViewModel.GetSourceDataTable(System.String)">
+            <summary>
+            得到源数据表的DataTable
+            </summary>
+            <param name="strTableName">源数据表名</param>
+            <returns>源数据表的DataTable</returns>
+        </member>
         <member name="T:DatabaseConversion.Views.DBConnection">
             <summary>
             DBConnection.xaml 的交互逻辑
@@ -441,27 +441,14 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:DatabaseConversion.App">
-            <summary>
-            App.xaml 的交互逻辑
-            </summary>
-            <summary>
-            App
-            </summary>
-        </member>
-        <member name="M:DatabaseConversion.App.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="M:DatabaseConversion.App.Main">
-            <summary>
-            Application Entry Point.
-            </summary>
-        </member>
         <member name="M:DatabaseConversion.Views.WaitingMessage.WaitForm.#ctor">
             <summary>
             WaitForm 的构造函数
+            </summary>
+        </member>
+        <member name="P:DatabaseConversion.Views.WaitingMessage.WaitForm.ProgressInfo">
+            <summary>
+            处理进度信息
             </summary>
         </member>
         <member name="M:DatabaseConversion.Views.WaitingMessage.WaitForm.Refresh">
@@ -484,11 +471,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:DatabaseConversion.Views.WaitingMessage.WaitForm.ProgressInfo">
-            <summary>
-            处理进度信息
             </summary>
         </member>
         <member name="F:DatabaseConversion.Views.WaitingMessage.WaitMessage.wait">
@@ -530,6 +512,24 @@
         <member name="M:DatabaseConversion.Views.WaitingMessage.WaitMessage.innerShowForm">
             <summary>
             线程上执行的方法
+            </summary>
+        </member>
+        <member name="T:DatabaseConversion.App">
+            <summary>
+            App.xaml 的交互逻辑
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:DatabaseConversion.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:DatabaseConversion.App.Main">
+            <summary>
+            Application Entry Point.
             </summary>
         </member>
         <member name="T:DatabaseConversion.Properties.Resources">

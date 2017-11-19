@@ -77,6 +77,75 @@
             <param name="lParam">指定附加的消息特定信息</param>
             <returns>返回值指定消息处理的结果，依赖于所发送的消息</returns>
         </member>
+        <member name="T:Utils.Helper.Cookie.CookieHelper">
+            <summary>
+            浏览器缓存帮助类
+            创建日期:2017年7月31日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.SetCookie(System.String,System.String,System.DateTime)">
+            <summary>
+            添加Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <param name="strCookieValue">Cookie值</param>
+            <param name="dtExpires">到期时间(如果为空默认为7天)</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.SetCookie(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.DateTime)">
+            <summary>
+            添加带有子键的Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <param name="dicCookieValue">Cookie子键值</param>
+            <param name="dtExpires">到期时间(如果为空默认为7天)</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.GetCookie(System.String)">
+            <summary>
+            获取Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <returns>指定Cookie的Value值</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.GetCookie(System.String,System.String)">
+            <summary>
+            获取子键Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <param name="strCookieSubkey">Cookie子键名</param>
+            <returns>指定Cookie子键的Value值</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.ModifyCookie(System.String,System.String)">
+            <summary>
+            修改指定Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <param name="strCookieValue">Cookie值</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.ModifyCookie(System.String,System.String,System.String)">
+            <summary>
+            修改指定子键Cookie
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <param name="strCookieSubkey">Cookie子键名</param>
+            <param name="strCookieValue">Cookie子键值</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.RemoveAllCookie">
+            <summary>
+            移除所有Cookie
+            </summary>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Cookie.CookieHelper.RemoveCookie(System.String)">
+            <summary>
+            移除指定Cookie(测试无效)
+            </summary>
+            <param name="strCookieName">Cookie名</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
         <member name="T:Utils.Helper.EMail.EMailHelper">
             <summary>
             E-Mail邮件帮助类
@@ -145,6 +214,71 @@
             <summary>
             提供 CRC32 算法的实现
             </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.Crc32.DefaultPolynomial">
+            <summary>
+            Default Polynomial
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.Crc32.DefaultSeed">
+            <summary>
+            Default Seed
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.#ctor">
+            <summary>
+            Crc32
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.#ctor(System.UInt32,System.UInt32)">
+            <summary>
+            Crc32
+            </summary>
+            <param name="polynomial"></param>
+            <param name="seed"></param>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.Initialize">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.HashCore(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Hash Core
+            </summary>
+            <param name="buffer"></param>
+            <param name="start"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.HashFinal">
+            <summary>
+            Hash Final
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.Compute(System.Byte[])">
+            <summary>
+            Compute
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.Compute(System.UInt32,System.Byte[])">
+            <summary>
+            Compute
+            </summary>
+            <param name="seed"></param>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.Crc32.Compute(System.UInt32,System.UInt32,System.Byte[])">
+            <summary>
+            Compute
+            </summary>
+            <param name="polynomial"></param>
+            <param name="seed"></param>
+            <param name="buffer"></param>
+            <returns></returns>
         </member>
         <member name="T:Utils.Helper.Encryption.DESHelper">
             <summary>
@@ -340,6 +474,36 @@
             <param name="pbKeyState">指向一个256字节的数组,数组用于接收每个虚拟键的状态.</param>
             <returns>若函数调用成功,则返回非0值.若函数调用不成功,则返回值为0.若要获得更多的错误信息,可以调用GetLastError函数</returns>
         </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
+            <summary>
+            大写锁定状态
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
+            <summary>
+            鼠标当前X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
+            <summary>
+            鼠标当前Y坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
+            <summary>
+            鼠标按下时X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
+            <summary>
+            鼠标按下时Y坐标
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.HookProc.RecordOperation.#ctor">
+            <summary>
+            记录操作
+            </summary>
+        </member>
         <member name="M:Utils.Helper.HookProc.RecordOperation.HookManager_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
             <summary>
             键盘按键
@@ -430,31 +594,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
-            <summary>
-            大写锁定状态
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
-            <summary>
-            鼠标当前X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
-            <summary>
-            鼠标当前Y坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
-            <summary>
-            鼠标按下时X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
-            <summary>
-            鼠标按下时Y坐标
             </summary>
         </member>
         <member name="T:Utils.Helper.HookProc.TestFormHookListeners">
@@ -625,9 +764,277 @@
             <param name="bitmapQRCode">二维码和条形码位图</param>
             <returns>成功返回true,失败返回false</returns>
         </member>
+        <member name="T:Utils.Helper.Reflect.ReflectHelper">
+            <summary>
+            反射帮助类(调用参考,没有价值)
+            创建日期:2017年8月16日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Reflect.ReflectHelper.LoadAssembly(System.String)">
+            <summary>
+            加载指定路径上的程序集文件的内容
+            </summary>
+            <param name="strFilePath">指定类库路径</param>
+            <returns>程序集</returns>
+        </member>
+        <member name="M:Utils.Helper.Reflect.ReflectHelper.GetAssemblyType(System.Reflection.Assembly)">
+            <summary>
+            获得指定程序集类型
+            </summary>
+            <param name="assembly">程序集</param>
+            <returns>程序集类型</returns>
+        </member>
+        <member name="M:Utils.Helper.Reflect.ReflectHelper.IsAssignableFrom(System.Type,System.Type)">
+            <summary>
+            判断程序集类型一是否实现了程序集类型二接口
+            </summary>
+            <param name="typeOne">程序集类型一(方法)</param>
+            <param name="typeTWO">程序集类型二(接口)</param>
+            <returns>实现接口返回true,未实现返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Reflect.ReflectHelper.CreateInstance(System.Type)">
+            <summary>
+            使用指定类型的默认构造函数来创建该类型的实例。
+            </summary>
+            <param name="type">要创建的对象的类型</param>
+            <returns>对新创建对象的引用</returns>
+        </member>
+        <member name="M:Utils.Helper.Reflect.ReflectHelper.GetSpecifiedDirectoryFiles(System.String,System.String)">
+            <summary>
+            获得指定路径下文件的路径和文件名(限定后缀名)
+            </summary>
+            <param name="strPath">文件夹路径</param>
+            <param name="strSuffixName">限定后缀名,如:"*.txt"、"*.xml"</param>
+            <returns>成功返回文件全路径或文件名,失败返回NULL</returns>
+        </member>
+        <member name="T:Utils.Helper.Registry.RegistryHelper">
+            <summary>
+            注册表帮助类
+            创建日期:2017年6月22日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateStartupItems(System.String,System.String)">
+            <summary>
+            创建注册表启动项
+            </summary>
+            <param name="strName">键值名称</param>
+            <param name="strSoftwarePath">启动项软件路径</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteStartupItems(System.String)">
+            <summary>
+            删除注册表启动项
+            </summary>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.GetAllStartupItems">
+            <summary>
+            获得注册表中所有启动项
+            </summary>
+            <returns>注册表中启动项(键值,启动路径)</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateDesktopRightClickMenu(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建注册表桌面右键菜单项
+            </summary>
+            <param name="strName">键值名称</param>
+            <param name="strDisplayName">右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strSoftwarePath">启动软件路径</param>
+            <param name="strIcoPath">右键菜单图片路径,如果为空则不显示图片</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateDesktopRightClickMenu2(System.String,System.String,System.String,System.Collections.Generic.List{Utils.Helper.Registry.SecondaryMenuModel})">
+            <summary>
+            创建注册表桌面右键菜单项(二级菜单)(WIN7-X64下测试通过)
+            </summary>
+            <param name="strName">一级菜单键值名称</param>
+            <param name="strDisplayName">一级菜单右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strIcoPath">一级菜单右键菜单图片路径,如果为空则不显示图片</param>
+            <param name="listSecondaryMenu">二级菜单配置</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteDesktopRightClickMenu(System.String)">
+            <summary>
+            删除注册表桌面右键菜单项(二级菜单只删除一级菜单)
+            </summary>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateFolderRightClickMenu(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建注册表文件夹右键菜单项
+            </summary>
+            <param name="strName">键值名称</param>
+            <param name="strDisplayName">右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strSoftwarePath">启动软件路径</param>
+            <param name="strIcoPath">右键菜单图片路径,如果为空则不显示图片</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateFolderRightClickMenu2(System.String,System.String,System.String,System.Collections.Generic.List{Utils.Helper.Registry.SecondaryMenuModel})">
+            <summary>
+            创建注册表文件夹右键菜单项(二级菜单)(WIN7-X64下测试通过)
+            </summary>
+            <param name="strName">一级菜单键值名称</param>
+            <param name="strDisplayName">一级菜单右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strIcoPath">一级菜单右键菜单图片路径,如果为空则不显示图片</param>
+            <param name="listSecondaryMenu">二级菜单配置</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteFolderRightClickMenu(System.String)">
+            <summary>
+            删除注册表文件夹右键菜单项(二级菜单只删除一级菜单)
+            </summary>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateFileRightClickMenu(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建注册表文件右键菜单项
+            </summary>
+            <param name="strName">键值名称</param>
+            <param name="strDisplayName">右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strSoftwarePath">启动软件路径</param>
+            <param name="strIcoPath">右键菜单图片路径,如果为空则不显示图片</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateFileRightClickMenu2(System.String,System.String,System.String,System.Collections.Generic.List{Utils.Helper.Registry.SecondaryMenuModel})">
+            <summary>
+            创建注册表文件右键菜单项(二级菜单)(WIN7-X64下测试通过)
+            </summary>
+            <param name="strName">一级菜单键值名称</param>
+            <param name="strDisplayName">一级菜单右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strIcoPath">一级菜单右键菜单图片路径,如果为空则不显示图片</param>
+            <param name="listSecondaryMenu">二级菜单配置</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteFileRightClickMenu(System.String)">
+            <summary>
+            删除注册表文件右键菜单项(二级菜单只删除一级菜单)
+            </summary>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateSpecificFileRightClickMenu(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            创建注册表特定文件右键菜单项
+            </summary>
+            <param name="strFileType">特定文件类型(例:.txt|.exe)</param>
+            <param name="strName">键值名称</param>
+            <param name="strDisplayName">右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strSoftwarePath">启动软件路径</param>
+            <param name="strIcoPath">右键菜单图片路径,如果为空则不显示图片</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateSpecificFileRightClickMenu2(System.String,System.String,System.String,System.String,System.Collections.Generic.List{Utils.Helper.Registry.SecondaryMenuModel})">
+            <summary>
+            创建注册表特定文件右键菜单项(二级菜单)(WIN7-X64下测试通过)
+            </summary>
+            <param name="strFileType">特定文件类型(例:.txt|.exe)</param>
+            <param name="strName">一级菜单键值名称</param>
+            <param name="strDisplayName">一级菜单右键菜单显示名称,如果为空显示键值名称</param>
+            <param name="strIcoPath">一级菜单右键菜单图片路径,如果为空则不显示图片</param>
+            <param name="listSecondaryMenu">二级菜单配置</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteSpecificFileRightClickMenu(System.String,System.String)">
+            <summary>
+            删除注册表特定文件右键菜单项(二级菜单只删除一级菜单)
+            </summary>
+            <param name="strFileType">特定文件类型(例:.txt|.exe)</param>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.ModifyDefaultIcon(System.String,System.String)">
+            <summary>
+            修改特定后缀文件默认图标(需重启电脑)
+            </summary>
+            <param name="strFileType">特定文件类型(例:.txt|.exe)</param>
+            <param name="strIcoPath">替换图片路径</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.ModifyDefaultPrograms(System.String,System.String)">
+            <summary>
+            修改特定后缀文件默认程序
+            </summary>
+            <param name="strFileType">特定文件类型(例:.txt|.exe)</param>
+            <param name="strSoftwarePath">替换程序路径</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.CreateURLProtocol(System.String,System.String)">
+            <summary>
+            创建 URL Protocol 协议,通过网页打开本地应用
+            </summary>
+            <param name="strName">键值名称</param>
+            <param name="strSoftwarePath">启动软件路径</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Registry.RegistryHelper.DeleteURLProtocol(System.String)">
+            <summary>
+            删除 URL Protocol 协议
+            </summary>
+            <param name="strName">键值名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="T:Utils.Helper.Registry.SecondaryMenuModel">
+            <summary>
+            二级菜单数据模型
+            创建日期:2017年6月22日
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Registry.SecondaryMenuModel.strSecondaryMenuName">
+            <summary>
+            二级菜单键值名称
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Registry.SecondaryMenuModel.strDisplayName">
+            <summary>
+            二级菜单显示名称
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Registry.SecondaryMenuModel.strSoftwarePath">
+            <summary>
+            二级菜单软件启动路径
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.Registry.SecondaryMenuModel.strIcoPath">
+            <summary>
+            二级菜单显示图片路径
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.Screenshot.ScreenshotHelper">
+            <summary>
+            屏幕截图帮助类
+            创建日期:2017年6月21日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Screenshot.ScreenshotHelper.ScreenshotFullScreen">
+            <summary>
+            全屏幕截图
+            </summary>
+            <returns>截图Bitmap</returns>
+        </member>
+        <member name="M:Utils.Helper.Screenshot.ScreenshotHelper.ScreenshotsSpecifyLocation(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            截取指定位置截图
+            </summary>
+            <param name="iStartX">截取起始坐标X</param>
+            <param name="iStartY">截取起始坐标Y</param>
+            <param name="iInterceptWidth">截取宽度</param>
+            <param name="iInterceptHeight">截取高度</param>
+            <returns>截图Bitmap</returns>
+        </member>
+        <member name="M:Utils.Helper.Screenshot.ScreenshotHelper.SaveBitmap(System.String,System.Drawing.Bitmap)">
+            <summary>
+            保存屏幕截图位图到指定位置
+            </summary>
+            <param name="strSavePath">文件保存位置</param>
+            <param name="bitmapScreenshot">屏幕截图位图</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
         <member name="T:Utils.Helper.Shutdown.ShutdownHelper">
             <summary>
-            加密注册码帮助类
+            Win32关机帮助类
             创建日期:2017年6月6日
             </summary>
         </member>
@@ -651,6 +1058,44 @@
             <summary>
             重启计算机
             </summary>
+        </member>
+        <member name="T:Utils.Helper.Taskschd.TaskschdHelper">
+            <summary>
+            任务计划帮助类
+            创建日期:2017年9月18日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Taskschd.TaskschdHelper.CreateTaskschd(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            创建任务计划
+            </summary>
+            <param name="strCreator">作者</param>
+            <param name="strTaskName">任务名称</param>
+            <param name="strPath">任务计划路径</param>
+            <param name="strInterval">任务触发时间(PT1M:1分钟,PT1H30M:90分钟)</param>
+            <param name="strStartBoundary">任务开始时间(yyyy-MM-ddTHH:mm:ss)</param>
+            <param name="strDescription">任务描述</param>
+            <returns>任务状态</returns>
+        </member>
+        <member name="M:Utils.Helper.Taskschd.TaskschdHelper.DeleteTaskschd(System.String)">
+            <summary>
+            删除任务计划
+            </summary>
+            <param name="strTaskName">任务计划名称</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Taskschd.TaskschdHelper.GetAllTaskschd">
+            <summary>
+            获得所有任务计划
+            </summary>
+            <returns>所有任务计划</returns>
+        </member>
+        <member name="M:Utils.Helper.Taskschd.TaskschdHelper.IsExists(System.String)">
+            <summary>
+            任务计划是否存在
+            </summary>
+            <param name="strTaskName">任务计划名称</param>
+            <returns></returns>
         </member>
         <member name="T:Utils.Helper.TXT.TXTHelper">
             <summary>
@@ -720,9 +1165,19 @@
             <param name="strPath">TXT文件路径</param>
             <returns>TXT文件中的文本(listString)</returns>
         </member>
+        <member name="T:Utils.Helper.WaitingMessage.WaitForm">
+            <summary>
+            等待窗体
+            </summary>
+        </member>
         <member name="M:Utils.Helper.WaitingMessage.WaitForm.#ctor">
             <summary>
             WaitForm 的构造函数
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
+            <summary>
+            处理进度信息
             </summary>
         </member>
         <member name="M:Utils.Helper.WaitingMessage.WaitForm.Refresh">
@@ -747,9 +1202,14 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
+        <member name="F:Utils.Helper.WaitingMessage.WaitForm.lblProgressInfo">
             <summary>
-            处理进度信息
+            进度信息
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.WaitingMessage.WaitMessage">
+            <summary>
+            等待消息窗口
             </summary>
         </member>
         <member name="F:Utils.Helper.WaitingMessage.WaitMessage.wait">
@@ -785,7 +1245,6 @@
             等待状态
             </summary>
             <param name="title">标题</param>
-            <param name="showtime">显示时间</param>
             <param name="size">窗体大小</param>
         </member>
         <member name="M:Utils.Helper.WaitingMessage.WaitMessage.innerShowForm">

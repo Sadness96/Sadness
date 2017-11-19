@@ -35,9 +35,9 @@
             MainRibbon 的构造函数
             </summary>
         </member>
-        <member name="M:Main.Ribbon.MainRibbon.groupFile_CaptionButtonClick(System.Object,DevExpress.Xpf.Ribbon.RibbonCaptionButtonClickEventArgs)">
+        <member name="M:Main.Ribbon.MainRibbon.MainRibbon_Loaded(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
-            菜单下分组按钮
+            MainRibbon 的Load方法
             </summary>
             <param name="sender"></param>
             <param name="e"></param>
