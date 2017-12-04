@@ -324,6 +324,75 @@
             <param name="strIV">向量(8位)</param>
             <returns>成功返回true,失败返回false</returns>
         </member>
+        <member name="T:Utils.Helper.Encryption.FolderHelper">
+            <summary>
+            文件夹加密解密帮助类(可破解)
+            创建日期:2017年12月4日
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.Lock">
+            <summary>
+            加密文件
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.Control">
+            <summary>
+            控制面板
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.RunIE">
+            <summary>
+            RunIE
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.Recycle">
+            <summary>
+            回收站
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.Help">
+            <summary>
+            Help
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Encryption.FolderHelper.NetWork">
+            <summary>
+            NetWork
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.FolderHelper.FolderEncrypt(System.String,System.String)">
+            <summary>
+            文件夹加密(可破解)
+            </summary>
+            <param name="strFolderPath">文件夹路径</param>
+            <param name="strClsid">Clsid类型</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.FolderHelper.FolderDecrypt(System.String)">
+            <summary>
+            文件夹解密
+            理论上可以解密所有该方法加密的文件夹
+            </summary>
+            <param name="strFolderPath">文件夹路径</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.FolderHelper.FolderEncrypt(System.String,System.String,System.String)">
+            <summary>
+            文件夹加密(带密码)(可破解)
+            </summary>
+            <param name="strFolderPath">文件夹路径</param>
+            <param name="strClsid">Clsid类型</param>
+            <param name="strPassword">加密密码</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.FolderHelper.FolderDecrypt(System.String,System.String)">
+            <summary>
+            文件夹解密(带密码)
+            </summary>
+            <param name="strFolderPath">文件夹路径</param>
+            <param name="strPassword">加密密码</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
         <member name="T:Utils.Helper.Encryption.MD5Helper">
             <summary>
             MD5加密帮助类
@@ -474,31 +543,6 @@
             <param name="pbKeyState">指向一个256字节的数组,数组用于接收每个虚拟键的状态.</param>
             <returns>若函数调用成功,则返回非0值.若函数调用不成功,则返回值为0.若要获得更多的错误信息,可以调用GetLastError函数</returns>
         </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
-            <summary>
-            大写锁定状态
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
-            <summary>
-            鼠标当前X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
-            <summary>
-            鼠标当前Y坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
-            <summary>
-            鼠标按下时X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
-            <summary>
-            鼠标按下时Y坐标
-            </summary>
-        </member>
         <member name="M:Utils.Helper.HookProc.RecordOperation.#ctor">
             <summary>
             记录操作
@@ -594,6 +638,31 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
+            <summary>
+            大写锁定状态
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
+            <summary>
+            鼠标当前X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
+            <summary>
+            鼠标当前Y坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
+            <summary>
+            鼠标按下时X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
+            <summary>
+            鼠标按下时Y坐标
             </summary>
         </member>
         <member name="T:Utils.Helper.HookProc.TestFormHookListeners">
@@ -1175,11 +1244,6 @@
             WaitForm 的构造函数
             </summary>
         </member>
-        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
-            <summary>
-            处理进度信息
-            </summary>
-        </member>
         <member name="M:Utils.Helper.WaitingMessage.WaitForm.Refresh">
             <summary>
             刷新页面
@@ -1205,6 +1269,11 @@
         <member name="F:Utils.Helper.WaitingMessage.WaitForm.lblProgressInfo">
             <summary>
             进度信息
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
+            <summary>
+            处理进度信息
             </summary>
         </member>
         <member name="T:Utils.Helper.WaitingMessage.WaitMessage">

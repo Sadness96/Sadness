@@ -22,7 +22,91 @@
             Application Entry Point.
             </summary>
         </member>
-        <member name="T:Main.Ribbon.MainRibbon">
+        <member name="T:Main.Ribbon.ViewModels.MainLoginViewModel">
+            <summary>
+            MainLogin.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.#ctor">
+            <summary>
+            MainLogin.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="T:Main.Ribbon.ViewModels.MainRibbonViewModel">
+            <summary>
+            MainRibbon.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.ViewModels.MainRibbonViewModel.#ctor">
+            <summary>
+            MainRibbon.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.ViewModels.MainRibbonViewModel.Loaded(System.Windows.Window)">
+            <summary>
+            MainRibbon窗体Load事件
+            </summary>
+            <param name="window">主窗体</param>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainRibbonStyle">
+            <summary>
+            主界面Ribbon风格
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainApplicationButtonText">
+            <summary>
+            应用按钮文字
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainRibbonPageCategoryAlignment">
+            <summary>
+            类别对齐
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._loadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
+            <summary>
+            主界面Ribbon风格
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainApplicationButtonText">
+            <summary>
+            应用按钮文字
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonPageCategoryAlignment">
+            <summary>
+            类别对齐
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.LoadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="T:Main.Ribbon.Views.MainLogin">
+            <summary>
+            MainLogin.xaml 的交互逻辑
+            </summary>
+            <summary>
+            MainLogin
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.Views.MainLogin.#ctor">
+            <summary>
+            MainLogin.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.Views.MainLogin.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Main.Ribbon.Views.MainRibbon">
             <summary>
             MainRibbon.xaml 的交互逻辑
             </summary>
@@ -30,19 +114,12 @@
             MainRibbon
             </summary>
         </member>
-        <member name="M:Main.Ribbon.MainRibbon.#ctor">
+        <member name="M:Main.Ribbon.Views.MainRibbon.#ctor">
             <summary>
-            MainRibbon 的构造函数
+            MainRibbon.xaml 的构造函数
             </summary>
         </member>
-        <member name="M:Main.Ribbon.MainRibbon.MainRibbon_Loaded(System.Object,System.Windows.RoutedEventArgs)">
-            <summary>
-            MainRibbon 的Load方法
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="M:Main.Ribbon.MainRibbon.InitializeComponent">
+        <member name="M:Main.Ribbon.Views.MainRibbon.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -54,13 +131,13 @@
         </member>
         <member name="P:Main.Ribbon.Properties.Resources.ResourceManager">
             <summary>
-              返回此类使用的缓存的 ResourceManager 实例。
+              返回此类使用的、缓存的 ResourceManager 实例。
             </summary>
         </member>
         <member name="P:Main.Ribbon.Properties.Resources.Culture">
             <summary>
-              使用此强类型资源类，为所有资源查找
-              重写当前线程的 CurrentUICulture 属性。
+              为所有资源查找重写当前线程的 CurrentUICulture 属性，
+              方法是使用此强类型资源类。
             </summary>
         </member>
     </members>

@@ -1,0 +1,42 @@
+﻿<dxr:DXRibbonWindow x:Class="Main.Ribbon.Views.MainRibbon" x:Name="mainRibbon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        Title="MainWindow" Height="379" Width="643">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=mainRibbon}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <!--RowDefinitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--RibbonControl-->
+        <dxr:RibbonControl Name="RibbonControl" Grid.Row="0"
+                           RibbonStyle="{Binding MainRibbonStyle}" 
+                           ApplicationButtonText="{Binding MainApplicationButtonText}" 
+                           PageCategoryAlignment="{Binding MainRibbonPageCategoryAlignment}">
+            <dxr:RibbonDefaultPageCategory Name="PageCategory">
+
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+        <!--RibbonStatusBarControl-->
+        <dxr:RibbonStatusBarControl Grid.Row="2" Name="StatusBar" IsSizeGripVisible="True" Grid.ColumnSpan="2">
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarStaticItem Name="bFileName" ItemMinWidth="150" AutoSizeMode="Fill" Content="Binding"/>
+            </dxr:RibbonStatusBarControl.RightItems>
+            <dxr:RibbonStatusBarControl.LeftItems>
+                <dxb:BarStaticItem Name="bPosInfo" ItemMinWidth="150"/>
+            </dxr:RibbonStatusBarControl.LeftItems>
+        </dxr:RibbonStatusBarControl>
+    </Grid>
+</dxr:DXRibbonWindow>
