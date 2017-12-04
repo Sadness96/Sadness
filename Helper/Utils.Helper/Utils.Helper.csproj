@@ -60,6 +60,7 @@
     <Compile Include="EMail\EMailHelper.cs" />
     <Compile Include="Encryption\CRC32Helper.cs" />
     <Compile Include="Encryption\DESHelper.cs" />
+    <Compile Include="Encryption\FolderHelper.cs" />
     <Compile Include="Encryption\MD5Helper.cs" />
     <Compile Include="Encryption\RSAHelper.cs" />
     <Compile Include="Encryption\SHA1Helper.cs" />
