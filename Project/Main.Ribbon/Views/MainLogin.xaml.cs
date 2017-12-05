@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Main.Ribbon.ViewModels;
 
 namespace Main.Ribbon.Views
 {
@@ -25,6 +26,7 @@ namespace Main.Ribbon.Views
         public MainLogin()
         {
             InitializeComponent();
+            this.DataContext = new MainLoginViewModel();
         }
     }
 }
