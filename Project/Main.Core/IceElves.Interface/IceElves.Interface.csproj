@@ -4,52 +4,34 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C215C99-02FE-4936-9D2F-424DCBB6D2D8}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{83B1ED70-98C5-43B9-B613-E955852FF9F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Console_Demo</RootNamespace>
-    <AssemblyName>Console_Demo</AssemblyName>
+    <RootNamespace>IceElves.Interface</RootNamespace>
+    <AssemblyName>IceElves.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\ReleaseLib\</OutputPath>
+    <OutputPath>..\..\..\ReleaseLib\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\ReleaseLib\Console_Demo.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\ReleaseLib\IceElves.Interface.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\ReleaseLib\</OutputPath>
+    <OutputPath>..\..\..\ReleaseLib\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\ReleaseLib\Console_Demo.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\ReleaseLib\IceElves.Interface.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.FileIO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.FileIO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.NPOI.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.NPOI.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.Utils.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.Utils.Helper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -59,11 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

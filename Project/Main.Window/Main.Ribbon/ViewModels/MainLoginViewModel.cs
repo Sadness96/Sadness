@@ -18,7 +18,7 @@ namespace Main.Ribbon.ViewModels
         /// </summary>
         public MainLoginViewModel()
         {
-            byte[] byteArray = File.ReadAllBytes(@"..\Project\Main.Ribbon\Images\LoginImage.png");
+            byte[] byteArray = File.ReadAllBytes(@"..\Project\Main.Window\Main.Ribbon\Images\LoginImage.png");
             BitmapImage bitmapImage = ByteArrayToBitMapImage(byteArray);
             ImgStartPicture = bitmapImage;
         }
@@ -45,8 +45,8 @@ namespace Main.Ribbon.ViewModels
         /// <summary>
         /// 转化图片二进制流到BitMapImage
         /// </summary>
-        /// <param name="array"></param>
-        /// <returns></returns>
+        /// <param name="byteArray">二进制流</param>
+        /// <returns>BitmapImage</returns>
         private BitmapImage ByteArrayToBitMapImage(byte[] byteArray)
         {
             using (var memoryStream = new System.IO.MemoryStream(byteArray))

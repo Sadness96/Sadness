@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Console_Demo")]
+[assembly: AssemblyTitle("IceElves.Interface")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Console_Demo")]
+[assembly: AssemblyProduct("IceElves.Interface")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("96f3078b-6702-4389-be91-85d64c6fbf06")]
+[assembly: Guid("95dabdbf-0b0e-42e5-8b90-bf9f6a6e53e0")]
 
 // 程序集的版本信息由下面四个值组成: 
 //
