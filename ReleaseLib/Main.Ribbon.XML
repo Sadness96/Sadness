@@ -37,17 +37,17 @@
             软件启动图片
             </summary>
         </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
-            <summary>
-            软件启动图片
-            </summary>
-        </member>
         <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.ByteArrayToBitMapImage(System.Byte[])">
             <summary>
             转化图片二进制流到BitMapImage
             </summary>
             <param name="byteArray">二进制流</param>
             <returns>BitmapImage</returns>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
+            <summary>
+            软件启动图片
+            </summary>
         </member>
         <member name="T:Main.Ribbon.ViewModels.MainRibbonViewModel">
             <summary>
@@ -70,17 +70,7 @@
             主界面Ribbon风格
             </summary>
         </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
-            <summary>
-            主界面Ribbon风格
-            </summary>
-        </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainApplicationButtonText">
-            <summary>
-            应用按钮文字
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainApplicationButtonText">
             <summary>
             应用按钮文字
             </summary>
@@ -90,14 +80,24 @@
             类别对齐
             </summary>
         </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonPageCategoryAlignment">
-            <summary>
-            类别对齐
-            </summary>
-        </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._loadedCommand">
             <summary>
             Load命令
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
+            <summary>
+            主界面Ribbon风格
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainApplicationButtonText">
+            <summary>
+            应用按钮文字
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonPageCategoryAlignment">
+            <summary>
+            类别对齐
             </summary>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.LoadedCommand">

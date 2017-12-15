@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IceElves.SQLiteDB</name>
+    </assembly>
+    <members>
+        <member name="T:IceElves.SQLiteDB.Models.ice_system_images">
+            <summary>
+            ice_system_images 表数据模型
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_images.ice_id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_images.ice_sys_key">
+            <summary>
+            Image_Key
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_images.ice_sys_value">
+            <summary>
+            Image_Value
+            </summary>
+        </member>
+    </members>
+</doc>
