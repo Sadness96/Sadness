@@ -22,6 +22,18 @@
             Application Entry Point.
             </summary>
         </member>
+        <member name="T:Main.Ribbon.Utils.OperationImage">
+            <summary>
+            操作图片方法
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.Utils.OperationImage.ByteArrayToBitMapImage(System.Byte[])">
+            <summary>
+            转化图片二进制流到BitmapImage
+            </summary>
+            <param name="byteArray">图片二进制流</param>
+            <returns>成功返回BitmapImage,失败返回null</returns>
+        </member>
         <member name="T:Main.Ribbon.ViewModels.MainLoginViewModel">
             <summary>
             MainLogin.xaml 的视图模型
@@ -36,13 +48,6 @@
             <summary>
             软件启动图片
             </summary>
-        </member>
-        <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.ByteArrayToBitMapImage(System.Byte[])">
-            <summary>
-            转化图片二进制流到BitMapImage
-            </summary>
-            <param name="byteArray">二进制流</param>
-            <returns>BitmapImage</returns>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
             <summary>

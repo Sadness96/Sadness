@@ -4,6 +4,18 @@
         <name>IceElves.SQLiteDB</name>
     </assembly>
     <members>
+        <member name="T:IceElves.SQLiteDB.Connect.MainLogin">
+            <summary>
+            MainLogin 连接方法
+            </summary>
+        </member>
+        <member name="M:IceElves.SQLiteDB.Connect.MainLogin.GetImageByteArray(System.String)">
+            <summary>
+            从数据库获得
+            </summary>
+            <param name="strImageKey">图片Key值</param>
+            <returns>数据库中二进制图片</returns>
+        </member>
         <member name="T:IceElves.SQLiteDB.Models.ice_system_images">
             <summary>
             ice_system_images 表数据模型
@@ -23,6 +35,35 @@
             <summary>
             Image_Value
             </summary>
+        </member>
+        <member name="T:IceElves.SQLiteDB.Utils.OperationByte">
+            <summary>
+            SQLite操作二进制方法
+            </summary>
+        </member>
+        <member name="F:IceElves.SQLiteDB.Utils.OperationByte.strSQLiteConn">
+            <summary>
+            初始化获得连接串
+            </summary>
+        </member>
+        <member name="M:IceElves.SQLiteDB.Utils.OperationByte.SaveByteArray(System.String,System.String,System.String,System.String)">
+            <summary>
+            保存二进制文件到数据库中
+            </summary>
+            <param name="strTableName">表名</param>
+            <param name="strSaveField">保存列名</param>
+            <param name="strSaveFilePath">文件路径</param>
+            <param name="strWhere">查询Where条件</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:IceElves.SQLiteDB.Utils.OperationByte.GetByteArray(System.String,System.String,System.String)">
+            <summary>
+            获得数据库中二进制文件
+            </summary>
+            <param name="strTableName">表名</param>
+            <param name="strByteFieldName">二进制列名</param>
+            <param name="strWhere">查询Where条件</param>
+            <returns>成功返回指定位置二进制文件,失败返回NULL</returns>
         </member>
     </members>
 </doc>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using Main.Ribbon.Utils;
+using IceElves.SQLiteDB.Connect;
 
 namespace Main.Ribbon.ViewModels
 {
@@ -18,9 +20,8 @@ namespace Main.Ribbon.ViewModels
         /// </summary>
         public MainLoginViewModel()
         {
-            byte[] byteArray = File.ReadAllBytes(@"..\Project\Main.Window\Main.Ribbon\Images\LoginImage.png");
-            BitmapImage bitmapImage = ByteArrayToBitMapImage(byteArray);
-            ImgStartPicture = bitmapImage;
+            //设置软件启动图片
+            ImgStartPicture = OperationImage.ByteArrayToBitMapImage(MainLogin.GetImageByteArray("StartPicture"));
         }
 
         /// <summary>
@@ -39,25 +40,6 @@ namespace Main.Ribbon.ViewModels
             set
             {
                 _imgStartPicture = value;
-            }
-        }
-
-        /// <summary>
-        /// 转化图片二进制流到BitMapImage
-        /// </summary>
-        /// <param name="byteArray">二进制流</param>
-        /// <returns>BitmapImage</returns>
-        private BitmapImage ByteArrayToBitMapImage(byte[] byteArray)
-        {
-            using (var memoryStream = new System.IO.MemoryStream(byteArray))
-            {
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.StreamSource = memoryStream;
-                bitmapImage.EndInit();
-                bitmapImage.Freeze();
-                return bitmapImage;
             }
         }
     }
