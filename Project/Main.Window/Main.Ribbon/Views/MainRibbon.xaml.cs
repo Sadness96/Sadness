@@ -27,7 +27,31 @@ namespace Main.Ribbon.Views
         public MainRibbon()
         {
             InitializeComponent();
+            this.Loaded += delegate
+            {
+                CloseEventDelegate();
+            };
             this.DataContext = new MainRibbonViewModel();
+        }
+
+        /// <summary>
+        /// 关闭委托
+        /// </summary>
+        public delegate void CloseDelegate();
+        /// <summary>
+        /// 关闭事件
+        /// </summary>
+        public event CloseDelegate CloseEvent;
+
+        /// <summary>
+        /// 关闭登录窗口路由通知
+        /// </summary>
+        private void CloseEventDelegate()
+        {
+            if (CloseEvent != null)
+            {
+                CloseEvent.Invoke();
+            }
         }
     }
 }
