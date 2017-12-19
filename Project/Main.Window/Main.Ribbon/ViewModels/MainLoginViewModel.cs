@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Main.Ribbon.Utils;
 using Prism.Commands;
@@ -25,8 +26,10 @@ namespace Main.Ribbon.ViewModels
         {
             //委托Load方法
             LoadedCommand = new DelegateCommand<Window>(Loaded);
+            //设置软件图标
+            MainAppIcon = OperationImage.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
             //设置软件启动图片
-            ImgStartPicture = OperationImage.ByteArrayToBitMapImage(MainLogin.GetImageByteArray("StartPicture"));
+            ImgStartPicture = OperationImage.ByteArrayToBitMapImage(MainImage.GetImageByteArray("StartPicture"));
         }
 
         /// <summary>
@@ -45,6 +48,25 @@ namespace Main.Ribbon.ViewModels
             set
             {
                 _imgStartPicture = value;
+            }
+        }
+
+        /// <summary>
+        /// 应用程序图标
+        /// </summary>
+        private ImageSource _mainAppIcon;
+        /// <summary>
+        /// 应用程序图标
+        /// </summary>
+        public ImageSource MainAppIcon
+        {
+            get
+            {
+                return _mainAppIcon;
+            }
+            set
+            {
+                _mainAppIcon = value;
             }
         }
 

@@ -11,13 +11,21 @@ using ADO.Helper.TXT;
 
 namespace IceElves.SQLiteDB.Connect
 {
-    /// <summary>
-    /// MainLogin 连接方法
-    /// </summary>
-    public class MainLogin
+    public class MainImage
     {
         /// <summary>
-        /// 从数据库获得
+        /// 保存图片到数据库
+        /// </summary>
+        /// <param name="strImageKey">图片Key值</param>
+        /// <param name="strIamgePath">新增图片路径</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool SaveImageByteArray(string strImageKey, string strIamgePath)
+        {
+            return OperationByte.SaveByteArray("ice_system_images", "ice_sys_value", strIamgePath, string.Format("ice_sys_key = '{0}'", strImageKey));
+        }
+
+        /// <summary>
+        /// 从数据库获得图片byte[]
         /// </summary>
         /// <param name="strImageKey">图片Key值</param>
         /// <returns>数据库中二进制图片</returns>

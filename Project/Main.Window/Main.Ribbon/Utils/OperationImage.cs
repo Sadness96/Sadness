@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Main.Ribbon.Utils
@@ -35,6 +39,49 @@ namespace Main.Ribbon.Utils
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// 转化图片二进制流到ImageSource
+        /// </summary>
+        /// <param name="byteArray">图片二进制流</param>
+        /// <returns>成功返回ImageSource,失败返回null</returns>
+        public static ImageSource ByteArrayToImageSource(byte[] byteArray)
+        {
+            try
+            {
+                Bitmap bitmap = ByteArrayToBitmap(byteArray);
+                IntPtr hBitmap = bitmap.GetHbitmap();
+                ImageSource imageSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                return imageSource;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// 转化图片二进制流到Bitmap
+        /// </summary>
+        /// <param name="byteArray">图片二进制流</param>
+        /// <returns>成功返回Bitmap,失败返回null</returns>
+        public static Bitmap ByteArrayToBitmap(byte[] byteArray)
+        {
+            MemoryStream memoryStream = null;
+            try
+            {
+                memoryStream = new MemoryStream(byteArray);
+                return new Bitmap((Image)new Bitmap(memoryStream));
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                memoryStream.Close();
             }
         }
     }

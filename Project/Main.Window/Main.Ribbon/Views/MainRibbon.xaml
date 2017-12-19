@@ -7,7 +7,8 @@
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-        Title="MainWindow" Height="379" Width="643">
+        Title="MainWindow" Height="379" Width="643"
+        Icon="{Binding MainAppLargeIcon}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=mainRibbon}"></i:InvokeCommandAction>
@@ -23,6 +24,8 @@
         <!--RibbonControl-->
         <dxr:RibbonControl Name="RibbonControl" Grid.Row="0"
                            RibbonStyle="{Binding MainRibbonStyle}" 
+                           ApplicationButtonSmallIcon="{Binding MainAppSmallIcon}" 
+                           ApplicationButtonLargeIcon="{Binding MainAppLargeIcon}" 
                            ApplicationButtonText="{Binding MainApplicationButtonText}" 
                            PageCategoryAlignment="{Binding MainRibbonPageCategoryAlignment}">
             <dxr:RibbonDefaultPageCategory Name="PageCategory">

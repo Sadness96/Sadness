@@ -34,6 +34,14 @@
     <DocumentationFile>..\..\..\ReleaseLib\Main.Console.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IceElves.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ReleaseLib\IceElves.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="IceElves.SQLiteDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ReleaseLib\IceElves.SQLiteDB.dll</HintPath>
+    </Reference>
     <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>

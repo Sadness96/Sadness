@@ -41,7 +41,7 @@ namespace IceElves.SQLiteDB.Utils
                 //保存到数据库
                 SQLiteConnection SQLConnection = new SQLiteConnection(strSQLiteConn);
                 SQLConnection.Open();
-                string strSQL = string.Format("UPDATE {0} SET {1} = @ico where {2}", strTableName, strSaveField, strWhere);
+                string strSQL = string.Format("UPDATE {0} SET {1} = @file where {2}", strTableName, strSaveField, strWhere);
                 SQLiteCommand SQLCommand = new SQLiteCommand(strSQL, SQLConnection);
                 SQLCommand.Parameters.Add("@file", DbType.Binary, byteFile.Length);
                 SQLCommand.Parameters["@file"].Value = byteFile;

@@ -4,14 +4,17 @@
         <name>IceElves.SQLiteDB</name>
     </assembly>
     <members>
-        <member name="T:IceElves.SQLiteDB.Connect.MainLogin">
+        <member name="M:IceElves.SQLiteDB.Connect.MainImage.SaveImageByteArray(System.String,System.String)">
             <summary>
-            MainLogin 连接方法
+            保存图片到数据库
             </summary>
+            <param name="strImageKey">图片Key值</param>
+            <param name="strIamgePath">新增图片路径</param>
+            <returns>成功返回true,失败返回false</returns>
         </member>
-        <member name="M:IceElves.SQLiteDB.Connect.MainLogin.GetImageByteArray(System.String)">
+        <member name="M:IceElves.SQLiteDB.Connect.MainImage.GetImageByteArray(System.String)">
             <summary>
-            从数据库获得
+            从数据库获得图片byte[]
             </summary>
             <param name="strImageKey">图片Key值</param>
             <returns>数据库中二进制图片</returns>

@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using Main.Ribbon.Views;
+using System.Windows.Media;
 using DevExpress.Xpf.Ribbon;
 using DevExpress.Xpf.Bars;
+using Main.Ribbon.Utils;
+using Main.Ribbon.Views;
 using Prism.Commands;
 using Microsoft.Practices.Unity;
+using IceElves.SQLiteDB.Connect;
 
 namespace Main.Ribbon.ViewModels
 {
@@ -28,8 +31,8 @@ namespace Main.Ribbon.ViewModels
             //修改基础样式(默认RibbonStyle.Office2007)
             MainRibbonStyle = RibbonStyle.Office2010;
             //设置软件图标
-            //RibbonControl.ApplicationButtonSmallIcon = new BitmapImage(new Uri(@"F:\IC#\Ribbon_Code_Demo\Ribbon_Code_Demo\Image\10n.ico", UriKind.Absolute));
-            //RibbonControl.ApplicationButtonLargeIcon = new BitmapImage(new Uri(@"F:\IC#\Ribbon_Code_Demo\Ribbon_Code_Demo\Image\10n.ico", UriKind.Absolute));
+            MainAppSmallIcon = OperationImage.ByteArrayToImageSource(MainImage.GetImageByteArray("AppSmallIcon"));
+            MainAppLargeIcon = OperationImage.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
             //设置对齐方式
             MainApplicationButtonText = "File";
             MainRibbonPageCategoryAlignment = RibbonPageCategoryCaptionAlignment.Right;
@@ -81,6 +84,44 @@ namespace Main.Ribbon.ViewModels
             set
             {
                 _mainRibbonStyle = value;
+            }
+        }
+
+        /// <summary>
+        /// 应用程序小图标
+        /// </summary>
+        private ImageSource _mainAppSmallIcon;
+        /// <summary>
+        /// 应用程序小图标
+        /// </summary>
+        public ImageSource MainAppSmallIcon
+        {
+            get
+            {
+                return _mainAppSmallIcon;
+            }
+            set
+            {
+                _mainAppSmallIcon = value;
+            }
+        }
+
+        /// <summary>
+        /// 应用程序大图标
+        /// </summary>
+        private ImageSource _mainAppLargeIcon;
+        /// <summary>
+        /// 应用程序大图标
+        /// </summary>
+        public ImageSource MainAppLargeIcon
+        {
+            get
+            {
+                return _mainAppLargeIcon;
+            }
+            set
+            {
+                _mainAppLargeIcon = value;
             }
         }
 
