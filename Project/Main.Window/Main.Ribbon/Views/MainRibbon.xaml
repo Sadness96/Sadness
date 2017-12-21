@@ -7,7 +7,7 @@
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-        Title="MainWindow" Height="379" Width="643"
+        Title="{Binding MainTitle}" Height="379" Width="643"
         Icon="{Binding MainAppLargeIcon}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -15,24 +15,35 @@
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Grid>
-        <!--RowDefinitions-->
+        <!--RowDefinitions(网格行定义)-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <!--RibbonControl-->
+
+        <!--RibbonControl(Ribbon控制)-->
         <dxr:RibbonControl Name="RibbonControl" Grid.Row="0"
                            RibbonStyle="{Binding MainRibbonStyle}" 
                            ApplicationButtonSmallIcon="{Binding MainAppSmallIcon}" 
                            ApplicationButtonLargeIcon="{Binding MainAppLargeIcon}" 
                            ApplicationButtonText="{Binding MainApplicationButtonText}" 
                            PageCategoryAlignment="{Binding MainRibbonPageCategoryAlignment}">
-            <dxr:RibbonDefaultPageCategory Name="PageCategory">
+            <!--ApplicationMenu(Ribbon控制:应用程序菜单)-->
+            <dxr:RibbonControl.ApplicationMenu>
+                <!--ApplicationMenu(Ribbon控制:应用程序菜单)-->
+                <dxr:ApplicationMenu Name="ApplicationMenu">
+
+                </dxr:ApplicationMenu>
+            </dxr:RibbonControl.ApplicationMenu>
+
+            <!--RibbonDefaultPageCategory(Ribbon默认页面类别)-->
+            <dxr:RibbonDefaultPageCategory Name="DefaultPageCategory">
 
             </dxr:RibbonDefaultPageCategory>
         </dxr:RibbonControl>
-        <!--RibbonStatusBarControl-->
+
+        <!--RibbonStatusBarControl(Ribbon状态栏控制)-->
         <dxr:RibbonStatusBarControl Grid.Row="2" Name="StatusBar" IsSizeGripVisible="True" Grid.ColumnSpan="2">
             <dxr:RibbonStatusBarControl.RightItems>
                 <dxb:BarStaticItem Name="bFileName" ItemMinWidth="150" AutoSizeMode="Fill" Content="Binding"/>

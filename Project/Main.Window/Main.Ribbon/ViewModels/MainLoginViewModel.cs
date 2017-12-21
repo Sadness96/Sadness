@@ -25,7 +25,9 @@ namespace Main.Ribbon.ViewModels
         public MainLoginViewModel()
         {
             //委托Load方法
-            LoadedCommand = new DelegateCommand<Window>(Loaded);
+            LoadedCommand = new DelegateCommand<Window>(Window_Loaded);
+            //设置软件标题
+            MainTitle = "MainLogin";
             //设置软件图标
             MainAppIcon = OperationImage.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
             //设置软件启动图片
@@ -33,21 +35,52 @@ namespace Main.Ribbon.ViewModels
         }
 
         /// <summary>
-        /// 软件启动图片
+        /// MainLogin窗体Load事件
         /// </summary>
-        private BitmapImage _imgStartPicture;
+        /// <param name="window">主窗体</param>
+        private void Window_Loaded(Window window)
+        {
+            //全局获得Window窗体
+            this.window = window;
+            //启动MainRibbon
+            StartMainRibbon();
+        }
+
         /// <summary>
-        /// 软件启动图片
+        /// Window窗体
         /// </summary>
-        public BitmapImage ImgStartPicture
+        private Window _window;
+        /// <summary>
+        /// Window窗体
+        /// </summary>
+        public Window window
         {
             get
             {
-                return _imgStartPicture;
+                return _window;
             }
             set
             {
-                _imgStartPicture = value;
+                _window = value;
+            }
+        }
+
+        /// <summary>
+        /// 应用程序标题
+        /// </summary>
+        private string _mainTitle;
+        /// <summary>
+        /// 应用程序标题
+        /// </summary>
+        public string MainTitle
+        {
+            get
+            {
+                return _mainTitle;
+            }
+            set
+            {
+                _mainTitle = value;
             }
         }
 
@@ -67,6 +100,25 @@ namespace Main.Ribbon.ViewModels
             set
             {
                 _mainAppIcon = value;
+            }
+        }
+
+        /// <summary>
+        /// 软件启动图片
+        /// </summary>
+        private BitmapImage _imgStartPicture;
+        /// <summary>
+        /// 软件启动图片
+        /// </summary>
+        public BitmapImage ImgStartPicture
+        {
+            get
+            {
+                return _imgStartPicture;
+            }
+            set
+            {
+                _imgStartPicture = value;
             }
         }
 
@@ -105,37 +157,6 @@ namespace Main.Ribbon.ViewModels
             {
                 _loadedCommand = value;
             }
-        }
-
-        /// <summary>
-        /// Window窗体
-        /// </summary>
-        private Window _window;
-        /// <summary>
-        /// Window窗体
-        /// </summary>
-        public Window window
-        {
-            get
-            {
-                return _window;
-            }
-            set
-            {
-                _window = value;
-            }
-        }
-
-        /// <summary>
-        /// MainLogin窗体Load事件
-        /// </summary>
-        /// <param name="window">主窗体</param>
-        private void Loaded(Window window)
-        {
-            //全局获得Window窗体
-            this.window = window;
-            //启动MainRibbon
-            StartMainRibbon();
         }
     }
 }

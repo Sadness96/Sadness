@@ -58,14 +58,30 @@
             MainLogin.xaml 的视图模型
             </summary>
         </member>
-        <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._imgStartPicture">
+        <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.Window_Loaded(System.Windows.Window)">
             <summary>
-            软件启动图片
+            MainLogin窗体Load事件
+            </summary>
+            <param name="window">主窗体</param>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._mainTitle">
+            <summary>
+            应用程序标题
             </summary>
         </member>
         <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._mainAppIcon">
             <summary>
             应用程序图标
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._imgStartPicture">
+            <summary>
+            软件启动图片
             </summary>
         </member>
         <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.StartMainRibbon">
@@ -83,20 +99,14 @@
             Load命令
             </summary>
         </member>
-        <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._window">
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.window">
             <summary>
             Window窗体
             </summary>
         </member>
-        <member name="M:Main.Ribbon.ViewModels.MainLoginViewModel.Loaded(System.Windows.Window)">
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainTitle">
             <summary>
-            MainLogin窗体Load事件
-            </summary>
-            <param name="window">主窗体</param>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
-            <summary>
-            软件启动图片
+            应用程序标题
             </summary>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainAppIcon">
@@ -104,14 +114,14 @@
             应用程序图标
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
+            <summary>
+            软件启动图片
+            </summary>
+        </member>
         <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.LoadedCommand">
             <summary>
             Load命令
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.window">
-            <summary>
-            Window窗体
             </summary>
         </member>
         <member name="T:Main.Ribbon.ViewModels.MainRibbonViewModel">
@@ -124,11 +134,21 @@
             MainRibbon.xaml 的视图模型
             </summary>
         </member>
-        <member name="M:Main.Ribbon.ViewModels.MainRibbonViewModel.Loaded(System.Windows.Window)">
+        <member name="M:Main.Ribbon.ViewModels.MainRibbonViewModel.Window_Loaded(System.Windows.Window)">
             <summary>
             MainRibbon窗体Load事件
             </summary>
             <param name="window">主窗体</param>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainTitle">
+            <summary>
+            应用程序标题
+            </summary>
         </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainRibbonStyle">
             <summary>
@@ -158,6 +178,16 @@
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._loadedCommand">
             <summary>
             Load命令
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainTitle">
+            <summary>
+            应用程序标题
             </summary>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
