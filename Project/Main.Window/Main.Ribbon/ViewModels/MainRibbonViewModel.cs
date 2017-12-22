@@ -71,7 +71,10 @@ namespace Main.Ribbon.ViewModels
                 barItemStyle.SetBinding(BarEditItem.EditValueProperty, new Binding("MainRibbonStyle"));
                 ribbonControl.PageHeaderItemLinks.Add(barItemStyle);
                 //Ribbon控制:工具栏项目连接
-                //ribbonControl.ToolbarItemLinks.Add(null);
+                BarButtonItem brButtonItem = new BarButtonItem();
+                brButtonItem.Name = "bAbout";
+                brButtonItem.Content = "About";
+                ribbonControl.ToolbarItemLinks.Add(brButtonItem);
             }
             #endregion
             #region ApplicationMenu(Ribbon控制:应用程序菜单)
