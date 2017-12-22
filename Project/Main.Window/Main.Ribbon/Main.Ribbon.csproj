@@ -102,6 +102,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utils\OperationImage.cs" />
+    <Compile Include="Utils\OperationReflect.cs" />
     <Compile Include="ViewModels\MainLoginViewModel.cs" />
     <Compile Include="ViewModels\MainRibbonViewModel.cs" />
     <Compile Include="Views\MainLogin.xaml.cs">

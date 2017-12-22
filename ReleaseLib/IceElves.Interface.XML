@@ -4,5 +4,25 @@
         <name>IceElves.Interface</name>
     </assembly>
     <members>
+        <member name="T:IceElves.Interface.MenuPluginInterface">
+            <summary>
+            菜单插件接口
+            </summary>
+        </member>
+        <member name="M:IceElves.Interface.MenuPluginInterface.Click">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:IceElves.Interface.MenuPluginInterface.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:IceElves.Interface.MenuPluginInterface.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
     </members>
 </doc>

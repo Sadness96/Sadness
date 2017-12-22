@@ -68,5 +68,11 @@
             <param name="strWhere">查询Where条件</param>
             <returns>成功返回指定位置二进制文件,失败返回NULL</returns>
         </member>
+        <member name="F:IceElves.SQLiteDB.Utils.OperationEntityList.strSQLiteConn">
+            <summary>
+            初始化获得连接串
+            </summary>
+        </member>
+        <!-- 对于成员“M:IceElves.SQLiteDB.Utils.OperationEntityList.GetEntityList``1(System.String,System.String)”忽略有格式错误的 XML 注释 -->
     </members>
 </doc>

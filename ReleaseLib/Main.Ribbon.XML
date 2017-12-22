@@ -48,6 +48,19 @@
             <param name="byteArray">图片二进制流</param>
             <returns>成功返回Bitmap,失败返回null</returns>
         </member>
+        <member name="T:Main.Ribbon.Utils.OperationReflect">
+            <summary>
+            操作反射方法
+            </summary>
+        </member>
+        <member name="M:Main.Ribbon.Utils.OperationReflect.RunMenuPluginClick(System.String,System.String)">
+            <summary>
+            运行菜单插件Click事件
+            </summary>
+            <param name="strDllPath">Dll路径</param>
+            <param name="strClassName">全类名</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
         <member name="T:Main.Ribbon.ViewModels.MainLoginViewModel">
             <summary>
             MainLogin.xaml 的视图模型

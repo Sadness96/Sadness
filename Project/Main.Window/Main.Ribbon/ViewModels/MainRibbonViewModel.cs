@@ -7,6 +7,7 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Threading.Tasks;
+using System.Reflection;
 using Microsoft.Practices.Unity;
 using DevExpress.Xpf.Ribbon;
 using DevExpress.Xpf.Bars;
@@ -15,6 +16,7 @@ using DevExpress.Xpf.Editors.Settings;
 using Main.Ribbon.Utils;
 using Main.Ribbon.Views;
 using Prism.Commands;
+using IceElves.Interface;
 using IceElves.SQLiteDB.Connect;
 
 namespace Main.Ribbon.ViewModels
@@ -74,10 +76,14 @@ namespace Main.Ribbon.ViewModels
                 BarButtonItem brButtonItem = new BarButtonItem();
                 brButtonItem.Name = "bAbout";
                 brButtonItem.Content = "About";
+                brButtonItem.ItemClick += delegate
+                {
+                    MessageBox.Show("点击了bAbout");
+                };
                 ribbonControl.ToolbarItemLinks.Add(brButtonItem);
             }
             #endregion
-            #region ApplicationMenu(Ribbon控制:应用程序菜单)
+            #region ApplicationMenu(Ribbon应用程序菜单)
             ApplicationMenu applicationMenu = window.FindName("ApplicationMenu") as ApplicationMenu;
             if (applicationMenu != null)
             {
@@ -107,6 +113,9 @@ namespace Main.Ribbon.ViewModels
                 defaultPageCategory.Pages.Add(ribbonPageHome);
             }
             #endregion
+
+            //Test Command
+            OperationReflect.RunMenuPluginClick("IceElves.BasicFunction.dll", "IceElves.BasicFunction.Command.TestCommand");
         }
 
         /// <summary>

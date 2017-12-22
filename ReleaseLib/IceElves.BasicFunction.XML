@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IceElves.BasicFunction</name>
+    </assembly>
+    <members>
+        <member name="T:IceElves.BasicFunction.Command.TestCommand">
+            <summary>
+            测试Command
+            </summary>
+        </member>
+        <member name="M:IceElves.BasicFunction.Command.TestCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:IceElves.BasicFunction.Command.TestCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:IceElves.BasicFunction.Command.TestCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
+    </members>
+</doc>
