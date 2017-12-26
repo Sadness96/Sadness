@@ -287,6 +287,7 @@ namespace ADO.Helper.DatabaseConversion
             if (strFieldType.IndexOf("BINARY") > -1 || strFieldType.IndexOf("IMAGE") > -1 || strFieldType.IndexOf("RAW") > -1 || strFieldType.IndexOf("BLOB") > -1 || strFieldType.IndexOf("CLOB") > -1 || strFieldType.IndexOf("NROWID") > -1 || strFieldType.IndexOf("BIT") > -1)
             {
                 strFieldType = "IMAGE";
+                strMaxLength = string.Empty;
             }
             if (strFieldType.IndexOf("DATE") > -1)
             {
