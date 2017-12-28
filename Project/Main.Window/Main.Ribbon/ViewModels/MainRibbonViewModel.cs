@@ -105,6 +105,11 @@ namespace Main.Ribbon.ViewModels
                 barButton.RibbonStyle = RibbonItemStyles.Large;
                 barButton.Content = "New";
                 //barButton.LargeGlyph = new BitmapImage(new Uri(@"F:\IC#\Ribbon_Code_Demo\Ribbon_Code_Demo\Image\10n.ico", UriKind.Absolute));
+                barButton.ItemClick += delegate
+                {
+                    //Test Command
+                    OperationReflect.RunMenuPluginClick("IceElves.BasicFunction.dll", "IceElves.BasicFunction.Command.TestCommand");
+                };
 
                 ribbonPageGroup.ItemLinks.Add(barButton);
 
@@ -113,9 +118,6 @@ namespace Main.Ribbon.ViewModels
                 defaultPageCategory.Pages.Add(ribbonPageHome);
             }
             #endregion
-
-            //Test Command
-            OperationReflect.RunMenuPluginClick("IceElves.BasicFunction.dll", "IceElves.BasicFunction.Command.TestCommand");
         }
 
         /// <summary>
