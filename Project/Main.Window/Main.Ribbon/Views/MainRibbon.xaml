@@ -9,12 +9,14 @@
         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
         Title="{Binding MainTitle}" Height="379" Width="643"
         Icon="{Binding MainAppLargeIcon}">
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=mainRibbon}"></i:InvokeCommandAction>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
     <Grid>
+        <!--Load方法-->
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="Loaded">
+                <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=mainRibbon}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+
         <!--RowDefinitions(网格行定义)-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -45,12 +47,21 @@
 
         <!--RibbonStatusBarControl(Ribbon状态栏控制)-->
         <dxr:RibbonStatusBarControl Grid.Row="2" Name="StatusBar" IsSizeGripVisible="True" Grid.ColumnSpan="2">
-            <dxr:RibbonStatusBarControl.RightItems>
-                <dxb:BarStaticItem Name="bFileName" ItemMinWidth="150" AutoSizeMode="Fill" Content="Binding"/>
-            </dxr:RibbonStatusBarControl.RightItems>
             <dxr:RibbonStatusBarControl.LeftItems>
                 <dxb:BarStaticItem Name="bPosInfo" ItemMinWidth="150"/>
             </dxr:RibbonStatusBarControl.LeftItems>
+            <dxr:RibbonStatusBarControl.RightItems>
+                <dxb:BarStaticItem Name="bHyperlinkGitHub" Content="Github">
+                    <dxb:BarStaticItem.ContentTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Label FontSize="11" Margin="0,0,0,-1">GitHub:</Label>
+                                <dxe:HyperlinkEdit x:Name="hyperlinkGitHub" AllowAutoNavigate="True" EditValue="https://github.com/Sadness96/Sadness"/>
+                            </TextBlock>
+                        </DataTemplate>
+                    </dxb:BarStaticItem.ContentTemplate>
+                </dxb:BarStaticItem>
+            </dxr:RibbonStatusBarControl.RightItems>
         </dxr:RibbonStatusBarControl>
     </Grid>
 </dxr:DXRibbonWindow>
