@@ -801,6 +801,78 @@
             <param name="diclistFieldNameType">返回数据库表字段名和字段类型</param>
             <returns>成功返回XML的DataTable,失败返回NULL</returns>
         </member>
+        <member name="T:FileIO.Helper.ZIP.ZIP7Helper">
+            <summary>
+            7ZIP压缩文件帮助类(不支持分卷压缩)
+            创建日期:2018年1月8日
+            </summary>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.SetLibraryPath7z">
+            <summary>
+            动态链接7ZIP类库
+            </summary>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.Compression7Zip(System.String,System.String[])">
+            <summary>
+            压缩7-ZIP文件
+            </summary>
+            <param name="strZipPath">ZIP压缩文件保存位置</param>
+            <param name="fileFullNames">需要压缩的文件</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.Compression7Zip(System.String,System.String,System.String[])">
+            <summary>
+            压缩7-ZIP文件(加密)
+            </summary>
+            <param name="strZipPath">ZIP压缩文件保存位置</param>
+            <param name="strPassword">压缩文件密码</param>
+            <param name="fileFullNames">需要压缩的文件</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.Compression7ZipDirectory(System.String,System.String)">
+            <summary>
+            压缩7-ZIP文件夹
+            </summary>
+            <param name="strZipPath">ZIP压缩文件夹</param>
+            <param name="strDirectory">需要压缩的文件夹</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.Compression7ZipDirectory(System.String,System.String,System.String)">
+            <summary>
+            压缩7-ZIP文件夹(加密)
+            </summary>
+            <param name="strZipPath">ZIP压缩文件夹</param>
+            <param name="strPassword">压缩文件密码</param>
+            <param name="strDirectory">需要压缩的文件夹</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.DeCompression7Zip(System.String,System.String)">
+            <summary>
+            解压缩7-ZIP文件
+            </summary>
+            <param name="strZipPath">ZIP压缩文件保存位置</param>
+            <param name="strDeCompressionPath">需要解压到的指定位置</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.ZIP7Helper.DeCompression7Zip(System.String,System.String,System.String)">
+            <summary>
+            解压缩7-ZIP文件(加密)
+            </summary>
+            <param name="strZipPath">ZIP压缩文件保存位置</param>
+            <param name="strDeCompressionPath">需要解压到的指定位置</param>
+            <param name="strPassword">压缩文件密码</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="P:FileIO.Helper.ZIP.ZIP7Helper.strX86_DllPath">
+            <summary>
+            获得当前系统X86架构7ZIP类库路径
+            </summary>
+        </member>
+        <member name="P:FileIO.Helper.ZIP.ZIP7Helper.strX64_DllPath">
+            <summary>
+            获得当前系统X64架构7ZIP类库路径
+            </summary>
+        </member>
         <member name="T:FileIO.Helper.ZIP.ZIPHelper">
             <summary>
             ZIP压缩文件帮助类

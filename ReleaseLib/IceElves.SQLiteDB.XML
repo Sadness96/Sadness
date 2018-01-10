@@ -4,6 +4,11 @@
         <name>IceElves.SQLiteDB</name>
     </assembly>
     <members>
+        <member name="T:IceElves.SQLiteDB.Connect.MainImage">
+            <summary>
+            主方法图片操作
+            </summary>
+        </member>
         <member name="M:IceElves.SQLiteDB.Connect.MainImage.SaveImageByteArray(System.String,System.String)">
             <summary>
             保存图片到数据库
@@ -68,11 +73,24 @@
             <param name="strWhere">查询Where条件</param>
             <returns>成功返回指定位置二进制文件,失败返回NULL</returns>
         </member>
+        <member name="T:IceElves.SQLiteDB.Utils.OperationEntityList">
+            <summary>
+            操作EntityList类型
+            </summary>
+        </member>
         <member name="F:IceElves.SQLiteDB.Utils.OperationEntityList.strSQLiteConn">
             <summary>
             初始化获得连接串
             </summary>
         </member>
-        <!-- 对于成员“M:IceElves.SQLiteDB.Utils.OperationEntityList.GetEntityList``1(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:IceElves.SQLiteDB.Utils.OperationEntityList.GetEntityList``1(System.String,System.String)">
+            <summary>
+            获得EntityList类型数据
+            </summary>
+            <typeparam name="T">数据模型</typeparam>
+            <param name="strTableName">表名</param>
+            <param name="strWhere">过滤条件</param>
+            <returns>成功返回ListT,失败返回null</returns>
+        </member>
     </members>
 </doc>
