@@ -41,7 +41,7 @@ namespace Main.Ribbon.Utils
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

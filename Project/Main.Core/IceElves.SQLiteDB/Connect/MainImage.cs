@@ -10,6 +10,9 @@ using IceElves.SQLiteDB.Utils;
 
 namespace IceElves.SQLiteDB.Connect
 {
+    /// <summary>
+    /// 主方法图片操作
+    /// </summary>
     public class MainImage
     {
         /// <summary>

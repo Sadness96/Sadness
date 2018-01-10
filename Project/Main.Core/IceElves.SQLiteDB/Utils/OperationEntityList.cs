@@ -10,6 +10,9 @@ using ADO.Helper.TXT;
 
 namespace IceElves.SQLiteDB.Utils
 {
+    /// <summary>
+    /// 操作EntityList类型
+    /// </summary>
     public class OperationEntityList
     {
         /// <summary>
@@ -23,7 +26,7 @@ namespace IceElves.SQLiteDB.Utils
         /// <typeparam name="T">数据模型</typeparam>
         /// <param name="strTableName">表名</param>
         /// <param name="strWhere">过滤条件</param>
-        /// <returns>成功返回List<T>,失败返回null</returns>
+        /// <returns>成功返回ListT,失败返回null</returns>
         public static List<T> GetEntityList<T>(string strTableName, string strWhere) where T : class,new()
         {
             try

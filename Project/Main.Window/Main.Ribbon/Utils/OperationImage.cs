@@ -36,7 +36,7 @@ namespace Main.Ribbon.Utils
                     return bitmapImage;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -56,7 +56,7 @@ namespace Main.Ribbon.Utils
                 ImageSource imageSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 return imageSource;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -75,7 +75,7 @@ namespace Main.Ribbon.Utils
                 memoryStream = new MemoryStream(byteArray);
                 return new Bitmap((Image)new Bitmap(memoryStream));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
