@@ -176,6 +176,46 @@
             <param name="strBody">邮件内容</param>
             <returns>成功返回true,失败返回false</returns>
         </member>
+        <member name="T:Utils.Helper.Encryption.AESHelper">
+            <summary>
+            AES加密解密帮助类
+            创建日期:2018年1月10日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Encryption.AESHelper.AESEncrypt(System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="strPlaintext">明文</param>
+            <param name="strKey">秘钥</param>
+            <returns>AES密文</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.AESHelper.AESDecrypt(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="strCiphertext">AES密文</param>
+            <param name="strKey">秘钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.AESHelper.FileAESEncrypt(System.String,System.String,System.String)">
+            <summary>
+            文件AES加密
+            </summary>
+            <param name="strFilePath">文件路径</param>
+            <param name="strSaveFilePath">加密文件目录</param>
+            <param name="strKey">秘钥</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Utils.Helper.Encryption.AESHelper.FileAESDecrypt(System.String,System.String,System.String)">
+            <summary>
+            文件AES解密
+            </summary>
+            <param name="strFilePath">被加密的文件路径</param>
+            <param name="strSaveFilePath">解密文件目录</param>
+            <param name="strKey">秘钥</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
         <member name="T:Utils.Helper.Encryption.CRC32Helper">
             <summary>
             循环沉余效验帮助类
