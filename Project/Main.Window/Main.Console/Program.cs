@@ -15,9 +15,8 @@ namespace Main.Console
     {
         static void Main(string[] args)
         {
-            bool b1 = AESHelper.FileAESEncrypt(@"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win.pdf", @"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win(1).pdf", "123321");
-            bool b2 = AESHelper.FileAESDecrypt(@"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win(1).pdf", @"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win(2).pdf", "123321");
-            bool b3 = AESHelper.FileAESDecrypt(@"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win(1).pdf", @"C:\Users\XiaoHua\Desktop\Navicat_PDF_Win(3).pdf", "124321");
+            OperationByte.SaveByteArray("ice_system_plugin_menu", "ice_image_small", @"C:\Users\XiaoHua\Desktop\16.png", "ice_id = '1'");
+            OperationByte.SaveByteArray("ice_system_plugin_menu", "ice_image_large", @"C:\Users\XiaoHua\Desktop\32.png", "ice_id = '1'");
         }
     }
 }

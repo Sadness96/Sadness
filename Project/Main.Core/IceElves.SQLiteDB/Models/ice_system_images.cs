@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace IceElves.SQLiteDB.Models
 {
     /// <summary>
-    /// ice_system_images 表数据模型
+    /// 系统图片表数据模型
     /// </summary>
     public partial class ice_system_images
     {

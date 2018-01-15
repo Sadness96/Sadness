@@ -26,7 +26,7 @@
         </member>
         <member name="T:IceElves.SQLiteDB.Models.ice_system_images">
             <summary>
-            ice_system_images 表数据模型
+            系统图片表数据模型
             </summary>
         </member>
         <member name="P:IceElves.SQLiteDB.Models.ice_system_images.ice_id">
@@ -42,6 +42,71 @@
         <member name="P:IceElves.SQLiteDB.Models.ice_system_images.ice_sys_value">
             <summary>
             Image_Value
+            </summary>
+        </member>
+        <member name="T:IceElves.SQLiteDB.Models.ice_system_plugin_menu">
+            <summary>
+            系统菜单插件表数据模型
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_number">
+            <summary>
+            显示序号
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_function_name">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_function_alias">
+            <summary>
+            功能别名
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_function_group">
+            <summary>
+            功能分组
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_button_style">
+            <summary>
+            按钮样式
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_dllfile_path">
+            <summary>
+            类库文件路径
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_dllfile_class">
+            <summary>
+            类库文件 Class
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_page_home">
+            <summary>
+            RibbonPage 名称
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_page_group">
+            <summary>
+            RibbonPageGroup 名称
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_image_small">
+            <summary>
+            按钮小图片
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_image_large">
+            <summary>
+            按钮大图片
             </summary>
         </member>
         <member name="T:IceElves.SQLiteDB.Utils.OperationByte">

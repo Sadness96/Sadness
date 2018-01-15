@@ -6,6 +6,7 @@ using System.Text;
 using System.Data;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using IceElves.SQLiteDB.Models;
 using IceElves.SQLiteDB.Utils;
 
 namespace IceElves.SQLiteDB.Connect

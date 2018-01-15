@@ -18,6 +18,8 @@ using Main.Ribbon.Views;
 using Prism.Commands;
 using IceElves.Interface;
 using IceElves.SQLiteDB.Connect;
+using IceElves.SQLiteDB.Utils;
+using IceElves.SQLiteDB.Models;
 
 namespace Main.Ribbon.ViewModels
 {
@@ -94,28 +96,49 @@ namespace Main.Ribbon.ViewModels
             RibbonDefaultPageCategory defaultPageCategory = window.FindName("DefaultPageCategory") as RibbonDefaultPageCategory;
             if (defaultPageCategory != null)
             {
-                //创建RibbonPage
-                RibbonPage ribbonPageHome = new RibbonPage();
-                ribbonPageHome.Caption = "Home";
-                //创建RibbonPageGroup
-                RibbonPageGroup ribbonPageGroup = new RibbonPageGroup();
-                ribbonPageGroup.Caption = "File";
-                //创建BarButtonItem
-                BarButtonItem barButton = new BarButtonItem();
-                barButton.RibbonStyle = RibbonItemStyles.Large;
-                barButton.Content = "New";
-                //barButton.LargeGlyph = new BitmapImage(new Uri(@"F:\IC#\Ribbon_Code_Demo\Ribbon_Code_Demo\Image\10n.ico", UriKind.Absolute));
-                barButton.ItemClick += delegate
+                //获得 ice_system_plugin_menu 表所有数据
+                List<ice_system_plugin_menu> listSystemPluginMenu = OperationEntityList.GetEntityList<ice_system_plugin_menu>("ice_system_plugin_menu", string.Empty);
+                //获得 ice_page_home 分组出的数据
+                List<string> listPageHome = listSystemPluginMenu.Select(o => o.ice_page_home).Distinct().ToList();
+                //遍历添加分组
+                foreach (string strPageHome in listPageHome)
                 {
-                    //Test Command
-                    OperationReflect.RunMenuPluginClick("IceElves.BasicFunction.dll", "IceElves.BasicFunction.Command.TestCommand");
-                };
-
-                ribbonPageGroup.ItemLinks.Add(barButton);
-
-                ribbonPageHome.Groups.Add(ribbonPageGroup);
-
-                defaultPageCategory.Pages.Add(ribbonPageHome);
+                    //创建RibbonPage
+                    RibbonPage ribbonPageHome = new RibbonPage();
+                    ribbonPageHome.Caption = strPageHome;
+                    //获得 ice_page_group 分组出的数据
+                    List<string> listPageGroup = listSystemPluginMenu.Where(o => o.ice_page_home == strPageHome).Select(o => o.ice_page_group).Distinct().ToList();
+                    //遍历添加分组
+                    foreach (string strPageGroup in listPageGroup)
+                    {
+                        //创建RibbonPageGroup
+                        RibbonPageGroup ribbonPageGroup = new RibbonPageGroup();
+                        ribbonPageGroup.Caption = strPageGroup;
+                        //获得 ice_page_group 分组出的数据
+                        List<ice_system_plugin_menu> listPageHomeGroup = listSystemPluginMenu.Where(o => o.ice_page_home == strPageHome && o.ice_page_group == strPageGroup).ToList();
+                        //遍历添加按钮
+                        foreach (ice_system_plugin_menu itemPluginMenu in listPageHomeGroup)
+                        {
+                            //创建BarButtonItem
+                            BarButtonItem barButton = new BarButtonItem();
+                            barButton.RibbonStyle = (RibbonItemStyles)Enum.Parse(typeof(RibbonItemStyles), Enum.GetName(typeof(RibbonItemStyles), itemPluginMenu.ice_button_style));
+                            barButton.Content = itemPluginMenu.ice_function_name;
+                            barButton.Glyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_small);
+                            barButton.LargeGlyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_large);
+                            barButton.ItemClick += delegate
+                            {
+                                //Test Command
+                                OperationReflect.RunMenuPluginClick(itemPluginMenu.ice_dllfile_path, itemPluginMenu.ice_dllfile_class);
+                            };
+                            //添加按钮
+                            ribbonPageGroup.ItemLinks.Add(barButton);
+                        }
+                        //添加 PageGroup 分组
+                        ribbonPageHome.Groups.Add(ribbonPageGroup);
+                    }
+                    //添加 PageHome 分组
+                    defaultPageCategory.Pages.Add(ribbonPageHome);
+                }
             }
             #endregion
         }
