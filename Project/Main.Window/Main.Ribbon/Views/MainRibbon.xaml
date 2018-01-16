@@ -55,7 +55,7 @@
                     <dxb:BarStaticItem.ContentTemplate>
                         <DataTemplate>
                             <TextBlock>
-                                <Label FontSize="11" Margin="0,0,0,-1">GitHub:</Label>
+                                <Label FontSize="11" Margin="0,0,0,-1" Foreground="White">GitHub:</Label>
                                 <dxe:HyperlinkEdit x:Name="hyperlinkGitHub" AllowAutoNavigate="True" EditValue="https://github.com/Sadness96/Sadness"/>
                             </TextBlock>
                         </DataTemplate>

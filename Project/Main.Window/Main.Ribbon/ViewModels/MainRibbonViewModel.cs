@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Threading.Tasks;
 using System.Reflection;
 using Microsoft.Practices.Unity;
+using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Ribbon;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Editors;
@@ -46,6 +47,8 @@ namespace Main.Ribbon.ViewModels
             MainApplicationButtonText = "File";
             //设置对齐方式
             MainRibbonPageCategoryAlignment = RibbonPageCategoryCaptionAlignment.Right;
+            //设置应用程序主题
+            ApplicationThemeHelper.ApplicationThemeName = Theme.Office2013DarkGray.Name;
         }
 
         /// <summary>
