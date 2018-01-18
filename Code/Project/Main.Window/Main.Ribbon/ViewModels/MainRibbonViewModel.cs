@@ -63,7 +63,7 @@ namespace Main.Ribbon.ViewModels
             RibbonControl ribbonControl = window.FindName("RibbonControl") as RibbonControl;
             if (ribbonControl != null)
             {
-                //Ribbon控制:页眉的控制
+                #region Ribbon控制:页眉的控制
                 BarEditItem barItemStyle = new BarEditItem();
                 barItemStyle.Name = "eRibbonStyle";
                 barItemStyle.Content = "Ribbon Style:";
@@ -77,15 +77,27 @@ namespace Main.Ribbon.ViewModels
                 barItemStyle.EditSettings = comboBoxEditSettings;
                 barItemStyle.SetBinding(BarEditItem.EditValueProperty, new Binding("MainRibbonStyle"));
                 ribbonControl.PageHeaderItemLinks.Add(barItemStyle);
-                //Ribbon控制:工具栏项目连接
-                BarButtonItem brButtonItem = new BarButtonItem();
-                brButtonItem.Name = "bAbout";
-                brButtonItem.Content = "About";
-                brButtonItem.ItemClick += delegate
+                #endregion
+                #region Ribbon控制:工具栏项目连接
+                //获得 ice_system_plugin_toolbar 表所有数据
+                List<ice_system_plugin_toolbar> listSystemPluginToolBar = OperationEntityList.GetEntityList<ice_system_plugin_toolbar>("ice_system_plugin_toolbar", string.Empty);
+                foreach (ice_system_plugin_toolbar itemPluginToolBar in listSystemPluginToolBar)
                 {
-                    MessageBox.Show("点击了bAbout");
-                };
-                ribbonControl.ToolbarItemLinks.Add(brButtonItem);
+                    //创建BarButtonItem
+                    BarButtonItem barButton = new BarButtonItem();
+                    barButton.Content = itemPluginToolBar.ice_function_name;
+                    barButton.Glyph = OperationImage.ByteArrayToImageSource(itemPluginToolBar.ice_image);
+                    barButton.IsVisible = itemPluginToolBar.ice_button_visible;
+                    barButton.IsEnabled = itemPluginToolBar.ice_button_enabled;
+                    barButton.ItemClick += delegate
+                    {
+                        //运行菜单插件
+                        OperationReflect.RunPluginToolBarClick(itemPluginToolBar.ice_dllfile_path, itemPluginToolBar.ice_dllfile_class);
+                    };
+                    //添加按钮
+                    ribbonControl.ToolbarItemLinks.Add(barButton);
+                }
+                #endregion
             }
             #endregion
             #region ApplicationMenu(Ribbon应用程序菜单)
@@ -133,7 +145,7 @@ namespace Main.Ribbon.ViewModels
                             barButton.ItemClick += delegate
                             {
                                 //运行菜单插件
-                                OperationReflect.RunMenuPluginClick(itemPluginMenu.ice_dllfile_path, itemPluginMenu.ice_dllfile_class);
+                                OperationReflect.RunPluginMenuClick(itemPluginMenu.ice_dllfile_path, itemPluginMenu.ice_dllfile_class);
                             };
                             //添加按钮
                             ribbonPageGroup.ItemLinks.Add(barButton);

@@ -24,5 +24,20 @@
             功能分组
             </summary>
         </member>
+        <member name="T:IceElves.Interface.ToolBarPluginInterface">
+            <summary>
+            工具栏插件接口
+            </summary>
+        </member>
+        <member name="M:IceElves.Interface.ToolBarPluginInterface.Click">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:IceElves.Interface.ToolBarPluginInterface.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
     </members>
 </doc>

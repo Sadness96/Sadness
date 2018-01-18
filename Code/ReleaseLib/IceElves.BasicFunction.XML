@@ -4,24 +4,39 @@
         <name>IceElves.BasicFunction</name>
     </assembly>
     <members>
-        <member name="T:IceElves.BasicFunction.Command.TestCommand">
+        <member name="T:IceElves.BasicFunction.Command.PluginMenu.TestCommand">
             <summary>
             测试Command
             </summary>
         </member>
-        <member name="M:IceElves.BasicFunction.Command.TestCommand.Click">
+        <member name="M:IceElves.BasicFunction.Command.PluginMenu.TestCommand.Click">
             <summary>
             Click Command
             </summary>
         </member>
-        <member name="P:IceElves.BasicFunction.Command.TestCommand.strFunctionName">
+        <member name="P:IceElves.BasicFunction.Command.PluginMenu.TestCommand.strFunctionName">
             <summary>
             功能名称
             </summary>
         </member>
-        <member name="P:IceElves.BasicFunction.Command.TestCommand.strFunctionGroup">
+        <member name="P:IceElves.BasicFunction.Command.PluginMenu.TestCommand.strFunctionGroup">
             <summary>
             功能分组
+            </summary>
+        </member>
+        <member name="T:IceElves.BasicFunction.Command.PluginToolBar.AboutCommand">
+            <summary>
+            关于Command
+            </summary>
+        </member>
+        <member name="M:IceElves.BasicFunction.Command.PluginToolBar.AboutCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:IceElves.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
+            <summary>
+            功能名称
             </summary>
         </member>
     </members>

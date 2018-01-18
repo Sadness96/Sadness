@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\TestCommand.cs" />
+    <Compile Include="Command\PluginMenu\TestCommand.cs" />
+    <Compile Include="Command\PluginToolBar\AboutCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

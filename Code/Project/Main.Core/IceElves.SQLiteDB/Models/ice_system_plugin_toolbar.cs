@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace IceElves.SQLiteDB.Models
 {
     /// <summary>
-    /// 系统菜单插件表数据模型
+    /// 工具栏插件表数据模型
     /// </summary>
-    public partial class ice_system_plugin_menu
+    public partial class ice_system_plugin_toolbar
     {
         /// <summary>
         /// 主键ID
@@ -28,14 +28,6 @@ namespace IceElves.SQLiteDB.Models
         /// </summary>
         public string ice_function_alias { get; set; }
         /// <summary>
-        /// 功能分组
-        /// </summary>
-        public string ice_function_group { get; set; }
-        /// <summary>
-        /// 按钮样式
-        /// </summary>
-        public int ice_button_style { get; set; }
-        /// <summary>
         /// 是否可见
         /// </summary>
         public bool ice_button_visible { get; set; }
@@ -52,20 +44,8 @@ namespace IceElves.SQLiteDB.Models
         /// </summary>
         public string ice_dllfile_class { get; set; }
         /// <summary>
-        /// RibbonPage 名称
+        /// 按钮图片(16x16)
         /// </summary>
-        public string ice_page_home { get; set; }
-        /// <summary>
-        /// RibbonPageGroup 名称
-        /// </summary>
-        public string ice_page_group { get; set; }
-        /// <summary>
-        /// 按钮小图片(16x16)
-        /// </summary>
-        public byte[] ice_image_small { get; set; }
-        /// <summary>
-        /// 按钮大图片(32x32)
-        /// </summary>
-        public byte[] ice_image_large { get; set; }
+        public byte[] ice_image { get; set; }
     }
 }

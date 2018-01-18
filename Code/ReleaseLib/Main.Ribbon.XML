@@ -53,9 +53,17 @@
             操作反射方法
             </summary>
         </member>
-        <member name="M:Main.Ribbon.Utils.OperationReflect.RunMenuPluginClick(System.String,System.String)">
+        <member name="M:Main.Ribbon.Utils.OperationReflect.RunPluginMenuClick(System.String,System.String)">
             <summary>
             运行菜单插件Click事件
+            </summary>
+            <param name="strDllPath">Dll路径</param>
+            <param name="strClassName">全类名</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:Main.Ribbon.Utils.OperationReflect.RunPluginToolBarClick(System.String,System.String)">
+            <summary>
+            运行工具栏插件Click事件
             </summary>
             <param name="strDllPath">Dll路径</param>
             <param name="strClassName">全类名</param>

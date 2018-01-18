@@ -111,12 +111,62 @@
         </member>
         <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_image_small">
             <summary>
-            按钮小图片
+            按钮小图片(16x16)
             </summary>
         </member>
         <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_menu.ice_image_large">
             <summary>
-            按钮大图片
+            按钮大图片(32x32)
+            </summary>
+        </member>
+        <member name="T:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar">
+            <summary>
+            工具栏插件表数据模型
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_number">
+            <summary>
+            显示序号
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_function_name">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_function_alias">
+            <summary>
+            功能别名
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_button_visible">
+            <summary>
+            是否可见
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_button_enabled">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_dllfile_path">
+            <summary>
+            类库文件路径
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_dllfile_class">
+            <summary>
+            类库文件 Class
+            </summary>
+        </member>
+        <member name="P:IceElves.SQLiteDB.Models.ice_system_plugin_toolbar.ice_image">
+            <summary>
+            按钮图片(16x16)
             </summary>
         </member>
         <member name="T:IceElves.SQLiteDB.Utils.OperationByte">

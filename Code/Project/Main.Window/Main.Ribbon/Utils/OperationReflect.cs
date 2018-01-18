@@ -20,7 +20,7 @@ namespace Main.Ribbon.Utils
         /// <param name="strDllPath">Dll路径</param>
         /// <param name="strClassName">全类名</param>
         /// <returns>成功返回true,失败返回false</returns>
-        public static bool RunMenuPluginClick(string strDllPath, string strClassName)
+        public static bool RunPluginMenuClick(string strDllPath, string strClassName)
         {
             try
             {
@@ -33,6 +33,39 @@ namespace Main.Ribbon.Utils
                     container.RegisterType<MenuPluginInterface>(new ContainerControlledLifetimeManager());
                     container.RegisterType(typeof(MenuPluginInterface), type);
                     var manager = container.Resolve<MenuPluginInterface>();
+                    manager.Click();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 运行工具栏插件Click事件
+        /// </summary>
+        /// <param name="strDllPath">Dll路径</param>
+        /// <param name="strClassName">全类名</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool RunPluginToolBarClick(string strDllPath, string strClassName)
+        {
+            try
+            {
+                //反射获得Class Type
+                Assembly assembly = Assembly.LoadFrom(strDllPath);
+                Type type = assembly.GetType(strClassName);
+                if (type != null)
+                {
+                    var container = new UnityContainer();
+                    container.RegisterType<ToolBarPluginInterface>(new ContainerControlledLifetimeManager());
+                    container.RegisterType(typeof(ToolBarPluginInterface), type);
+                    var manager = container.Resolve<ToolBarPluginInterface>();
                     manager.Click();
                     return true;
                 }
