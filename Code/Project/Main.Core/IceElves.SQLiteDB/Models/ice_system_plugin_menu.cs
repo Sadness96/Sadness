@@ -36,6 +36,14 @@ namespace IceElves.SQLiteDB.Models
         /// </summary>
         public int ice_button_style { get; set; }
         /// <summary>
+        /// 是否可见
+        /// </summary>
+        public bool ice_button_visible { get; set; }
+        /// <summary>
+        /// 是否启用
+        /// </summary>
+        public bool ice_button_enabled { get; set; }
+        /// <summary>
         /// 类库文件路径
         /// </summary>
         public string ice_dllfile_path { get; set; }

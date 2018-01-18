@@ -128,9 +128,11 @@ namespace Main.Ribbon.ViewModels
                             barButton.Content = itemPluginMenu.ice_function_name;
                             barButton.Glyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_small);
                             barButton.LargeGlyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_large);
+                            barButton.IsVisible = itemPluginMenu.ice_button_visible;
+                            barButton.IsEnabled = itemPluginMenu.ice_button_enabled;
                             barButton.ItemClick += delegate
                             {
-                                //Test Command
+                                //运行菜单插件
                                 OperationReflect.RunMenuPluginClick(itemPluginMenu.ice_dllfile_path, itemPluginMenu.ice_dllfile_class);
                             };
                             //添加按钮
