@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Main.Ribbon.Utils;
+using Main.Ribbon.Views;
 using Prism.Commands;
 using IceElves.SQLiteDB.Connect;
 
@@ -127,9 +128,11 @@ namespace Main.Ribbon.ViewModels
         /// </summary>
         private void StartMainRibbon()
         {
-            Main.Ribbon.Views.MainRibbon form = new Main.Ribbon.Views.MainRibbon();
-            form.CloseEvent += new Main.Ribbon.Views.MainRibbon.CloseDelegate(CloseEvent);
+            MainRibbon form = new MainRibbon();
+            form.CloseEvent += new MainRibbon.CloseDelegate(CloseEvent);
             form.ShowDialog();
+            //终止程序以及线程
+            System.Environment.Exit(0);
         }
 
         /// <summary>
