@@ -13,9 +13,9 @@ using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Editors.Settings;
 using Main.Ribbon.Utils;
 using Prism.Commands;
-using IceElves.SQLiteDB.Connect;
-using IceElves.SQLiteDB.Utils;
-using IceElves.SQLiteDB.Models;
+using Sadness.SQLiteDB.Connect;
+using Sadness.SQLiteDB.Utils;
+using Sadness.SQLiteDB.Models;
 
 namespace Main.Ribbon.ViewModels
 {

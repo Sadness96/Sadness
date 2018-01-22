@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sadness.Interface</name>
+    </assembly>
+    <members>
+        <member name="T:Sadness.Interface.MenuPluginInterface">
+            <summary>
+            菜单插件接口
+            </summary>
+        </member>
+        <member name="M:Sadness.Interface.MenuPluginInterface.Click">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:Sadness.Interface.MenuPluginInterface.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.Interface.MenuPluginInterface.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
+        <member name="T:Sadness.Interface.ToolBarPluginInterface">
+            <summary>
+            工具栏插件接口
+            </summary>
+        </member>
+        <member name="M:Sadness.Interface.ToolBarPluginInterface.Click">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:Sadness.Interface.ToolBarPluginInterface.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+    </members>
+</doc>

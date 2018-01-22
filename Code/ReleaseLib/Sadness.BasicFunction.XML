@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sadness.BasicFunction</name>
+    </assembly>
+    <members>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.TestCommand">
+            <summary>
+            测试Command
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.TestCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.TestCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.TestCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand">
+            <summary>
+            关于Command
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+    </members>
+</doc>

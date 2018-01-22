@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using Main.Ribbon.Utils;
 using Main.Ribbon.Views;
 using Prism.Commands;
-using IceElves.SQLiteDB.Connect;
+using Sadness.SQLiteDB.Connect;
 
 namespace Main.Ribbon.ViewModels
 {

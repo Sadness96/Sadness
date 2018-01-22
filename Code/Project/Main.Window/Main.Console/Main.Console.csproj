@@ -34,14 +34,6 @@
     <DocumentationFile>..\..\..\ReleaseLib\Main.Console.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="IceElves.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\IceElves.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="IceElves.SQLiteDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\IceElves.SQLiteDB.dll</HintPath>
-    </Reference>
     <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>
@@ -50,9 +42,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ReleaseLib\Sadness.FileIO.Helper.dll</HintPath>
     </Reference>
+    <Reference Include="Sadness.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ReleaseLib\Sadness.Interface.dll</HintPath>
+    </Reference>
     <Reference Include="Sadness.NPOI.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\ReleaseLib\Sadness.NPOI.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Sadness.SQLiteDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ReleaseLib\Sadness.SQLiteDB.dll</HintPath>
     </Reference>
     <Reference Include="Sadness.Utils.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
