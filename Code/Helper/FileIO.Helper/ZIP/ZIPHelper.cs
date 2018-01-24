@@ -158,44 +158,55 @@ namespace FileIO.Helper.ZIP
                     return false;
                 }
                 ZipInputStream inputStream = new ZipInputStream(File.OpenRead(strZipPath));
-                ZipEntry zipEntry = inputStream.GetNextEntry();
-                while (zipEntry != null)
+                ZipEntry zipEntry = null;
+                while ((zipEntry = inputStream.GetNextEntry()) != null)
                 {
                     if (!string.IsNullOrEmpty(zipEntry.Name))
                     {
                         string strFileName = Path.Combine(strDeCompressionPath, zipEntry.Name);
                         strFileName = strFileName.Replace('/', '\\');
-                        if (!Directory.Exists(System.IO.Path.GetDirectoryName(strFileName)))
+                        if (strFileName.EndsWith("\\"))
                         {
-                            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(strFileName));
+                            Directory.CreateDirectory(strFileName);
                         }
-                        FileStream fileStream = null;
-                        int intSize = 2048;
-                        byte[] btsData = new byte[intSize];
-                        while (true)
+                        else
                         {
-                            intSize = inputStream.Read(btsData, 0, btsData.Length);
-                            if (fileStream == null)
+                            FileStream fileStream = null;
+                            int intSize = 2048;
+                            byte[] btsData = new byte[intSize];
+                            while (true)
                             {
-                                fileStream = File.Create(strFileName);
+                                intSize = inputStream.Read(btsData, 0, btsData.Length);
+                                if (fileStream == null)
+                                {
+                                    fileStream = File.Create(strFileName);
+                                }
+                                if (intSize > 0)
+                                {
+                                    fileStream.Write(btsData, 0, btsData.Length);
+                                }
+                                else
+                                {
+                                    break;
+                                }
                             }
-                            if (intSize > 0)
+                            if (fileStream != null)
                             {
-                                fileStream.Write(btsData, 0, btsData.Length);
-                            }
-                            else
-                            {
-                                break;
+                                fileStream.Close();
+                                fileStream.Dispose();
                             }
                         }
-                        fileStream.Close();
-                        fileStream.Dispose();
                     }
-                    zipEntry = inputStream.GetNextEntry();
                 }
-                zipEntry = null;
-                inputStream.Close();
-                inputStream.Dispose();
+                if (zipEntry != null)
+                {
+                    zipEntry = null;
+                }
+                if (inputStream != null)
+                {
+                    inputStream.Close();
+                    inputStream.Dispose();
+                }
                 GC.Collect();
                 GC.Collect(1);
                 return true;
@@ -228,44 +239,55 @@ namespace FileIO.Helper.ZIP
                 {
                     inputStream.Password = strPassword;
                 }
-                ZipEntry zipEntry = inputStream.GetNextEntry();
-                while (zipEntry != null)
+                ZipEntry zipEntry = null;
+                while ((zipEntry = inputStream.GetNextEntry()) != null)
                 {
                     if (!string.IsNullOrEmpty(zipEntry.Name))
                     {
                         string strFileName = Path.Combine(strDeCompressionPath, zipEntry.Name);
                         strFileName = strFileName.Replace('/', '\\');
-                        if (!Directory.Exists(System.IO.Path.GetDirectoryName(strFileName)))
+                        if (strFileName.EndsWith("\\"))
                         {
-                            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(strFileName));
+                            Directory.CreateDirectory(strFileName);
                         }
-                        FileStream fileStream = null;
-                        int intSize = 2048;
-                        byte[] btsData = new byte[intSize];
-                        while (true)
+                        else
                         {
-                            intSize = inputStream.Read(btsData, 0, btsData.Length);
-                            if (fileStream == null)
+                            FileStream fileStream = null;
+                            int intSize = 2048;
+                            byte[] btsData = new byte[intSize];
+                            while (true)
                             {
-                                fileStream = File.Create(strFileName);
+                                intSize = inputStream.Read(btsData, 0, btsData.Length);
+                                if (fileStream == null)
+                                {
+                                    fileStream = File.Create(strFileName);
+                                }
+                                if (intSize > 0)
+                                {
+                                    fileStream.Write(btsData, 0, btsData.Length);
+                                }
+                                else
+                                {
+                                    break;
+                                }
                             }
-                            if (intSize > 0)
+                            if (fileStream != null)
                             {
-                                fileStream.Write(btsData, 0, btsData.Length);
-                            }
-                            else
-                            {
-                                break;
+                                fileStream.Close();
+                                fileStream.Dispose();
                             }
                         }
-                        fileStream.Close();
-                        fileStream.Dispose();
                     }
-                    zipEntry = inputStream.GetNextEntry();
                 }
-                zipEntry = null;
-                inputStream.Close();
-                inputStream.Dispose();
+                if (zipEntry != null)
+                {
+                    zipEntry = null;
+                }
+                if (inputStream != null)
+                {
+                    inputStream.Close();
+                    inputStream.Dispose();
+                }
                 GC.Collect();
                 GC.Collect(1);
                 return true;
