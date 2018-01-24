@@ -23,38 +23,7 @@ namespace FileIO.Helper.ZIP
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CompressionZip(string strZipPath, List<string> listFolderOrFilePath)
         {
-            try
-            {
-                ZipOutputStream ComStream = new ZipOutputStream(File.Create(strZipPath));
-                //压缩等级(0-9)
-                ComStream.SetLevel(9);
-                foreach (string strFolderOrFilePath in listFolderOrFilePath)
-                {
-                    if (Directory.Exists(strFolderOrFilePath))
-                    {
-                        //如果路径是文件目录
-                        CompressionZipDirectory(strFolderOrFilePath, ComStream, strFolderOrFilePath);
-                    }
-                    else if (File.Exists(strFolderOrFilePath))
-                    {
-                        //如果路径是文件路径
-                        FileStream fileStream = File.OpenRead(strFolderOrFilePath);
-                        byte[] btsLength = new byte[fileStream.Length];
-                        fileStream.Read(btsLength, 0, btsLength.Length);
-                        ZipEntry zipEntry = new ZipEntry(new FileInfo(strFolderOrFilePath).Name);
-                        ComStream.PutNextEntry(zipEntry);
-                        ComStream.Write(btsLength, 0, btsLength.Length);
-                    }
-                }
-                ComStream.Finish();
-                ComStream.Close();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                TXTHelper.Logs(ex.ToString());
-                return false;
-            }
+            return CompressionZip(strZipPath, listFolderOrFilePath, string.Empty);
         }
 
         /// <summary>
@@ -81,7 +50,7 @@ namespace FileIO.Helper.ZIP
                     if (Directory.Exists(strFolderOrFilePath))
                     {
                         //如果路径是文件目录
-                        CompressionZipDirectory(strFolderOrFilePath, ComStream, strFolderOrFilePath);
+                        CompressionZipDirectory(strFolderOrFilePath, ComStream, string.Empty);
                     }
                     else if (File.Exists(strFolderOrFilePath))
                     {
@@ -115,27 +84,36 @@ namespace FileIO.Helper.ZIP
         {
             try
             {
-                foreach (FileSystemInfo item in new DirectoryInfo(strSubPath).GetFileSystemInfos())
+                //创建当前文件夹
+                ZipEntry zipEntry = new ZipEntry(Path.Combine(strSubPath, Path.GetFileName(strRootPath) + "/"));
+                ComStream.PutNextEntry(zipEntry);
+                ComStream.Flush();
+                //遍历压缩目录
+                foreach (string strFolder in Directory.GetDirectories(strRootPath))
                 {
-                    if (Directory.Exists(item.FullName))
+                    CompressionZipDirectory(strFolder, ComStream, Path.Combine(strSubPath, Path.GetFileName(strRootPath)));
+                }
+                //遍历压缩文件
+                foreach (string strFileName in Directory.GetFiles(strRootPath))
+                {
+                    FileStream fileStream = File.OpenRead(strFileName);
+                    byte[] btsLength = new byte[fileStream.Length];
+                    fileStream.Read(btsLength, 0, btsLength.Length);
+                    zipEntry = new ZipEntry(Path.Combine(strSubPath, Path.GetFileName(strRootPath) + "/" + Path.GetFileName(strFileName)));
+                    ComStream.PutNextEntry(zipEntry);
+                    ComStream.Write(btsLength, 0, btsLength.Length);
+                    if (fileStream != null)
                     {
-                        //如果路径是文件目录
-                        CompressionZipDirectory(strRootPath, ComStream, item.FullName);
-                    }
-                    else if (File.Exists(item.FullName))
-                    {
-                        //如果路径是文件路径
-                        DirectoryInfo dirInfo = new DirectoryInfo(strRootPath);
-                        string strFullName = new FileInfo(item.FullName).FullName;
-                        string strRelativePath = dirInfo.Name + strFullName.Substring(dirInfo.FullName.Length, strFullName.Length - dirInfo.FullName.Length);
-                        FileStream fileStream = File.OpenRead(strFullName);
-                        byte[] btsLength = new byte[fileStream.Length];
-                        fileStream.Read(btsLength, 0, btsLength.Length);
-                        ZipEntry zipEntry = new ZipEntry(strRelativePath);
-                        ComStream.PutNextEntry(zipEntry);
-                        ComStream.Write(btsLength, 0, btsLength.Length);
+                        fileStream.Close();
+                        fileStream.Dispose();
                     }
                 }
+                if (zipEntry != null)
+                {
+                    zipEntry = null;
+                }
+                GC.Collect();
+                GC.Collect(1);
             }
             catch (Exception ex)
             {
@@ -151,71 +129,7 @@ namespace FileIO.Helper.ZIP
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DeCompressionZip(string strZipPath, string strDeCompressionPath)
         {
-            try
-            {
-                if (string.IsNullOrEmpty(strZipPath) || !File.Exists(strZipPath))
-                {
-                    return false;
-                }
-                ZipInputStream inputStream = new ZipInputStream(File.OpenRead(strZipPath));
-                ZipEntry zipEntry = null;
-                while ((zipEntry = inputStream.GetNextEntry()) != null)
-                {
-                    if (!string.IsNullOrEmpty(zipEntry.Name))
-                    {
-                        string strFileName = Path.Combine(strDeCompressionPath, zipEntry.Name);
-                        strFileName = strFileName.Replace('/', '\\');
-                        if (strFileName.EndsWith("\\"))
-                        {
-                            Directory.CreateDirectory(strFileName);
-                        }
-                        else
-                        {
-                            FileStream fileStream = null;
-                            int intSize = 2048;
-                            byte[] btsData = new byte[intSize];
-                            while (true)
-                            {
-                                intSize = inputStream.Read(btsData, 0, btsData.Length);
-                                if (fileStream == null)
-                                {
-                                    fileStream = File.Create(strFileName);
-                                }
-                                if (intSize > 0)
-                                {
-                                    fileStream.Write(btsData, 0, btsData.Length);
-                                }
-                                else
-                                {
-                                    break;
-                                }
-                            }
-                            if (fileStream != null)
-                            {
-                                fileStream.Close();
-                                fileStream.Dispose();
-                            }
-                        }
-                    }
-                }
-                if (zipEntry != null)
-                {
-                    zipEntry = null;
-                }
-                if (inputStream != null)
-                {
-                    inputStream.Close();
-                    inputStream.Dispose();
-                }
-                GC.Collect();
-                GC.Collect(1);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                TXTHelper.Logs(ex.ToString());
-                return false;
-            }
+            return DeCompressionZip(strZipPath, strDeCompressionPath, string.Empty);
         }
 
         /// <summary>
