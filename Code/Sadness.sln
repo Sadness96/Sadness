@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sadness.SQLiteDB", "Project
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sadness.BasicFunction", "Project\Main.Function\Sadness.BasicFunction\Sadness.BasicFunction.csproj", "{861CF039-418A-4041-A56C-0AC38976692A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main.Config", "Project\Main.Window\Main.Config\Main.Config.csproj", "{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{861CF039-418A-4041-A56C-0AC38976692A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{861CF039-418A-4041-A56C-0AC38976692A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{861CF039-418A-4041-A56C-0AC38976692A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,5 +96,6 @@ Global
 		{6EE57D44-8871-47C5-B748-A9669BE94029} = {BFAC6D75-3B5C-4236-86D4-61301B6AD1D1}
 		{30B4AE29-E2F5-4D03-88EF-A4F80E01F700} = {BFAC6D75-3B5C-4236-86D4-61301B6AD1D1}
 		{861CF039-418A-4041-A56C-0AC38976692A} = {1E2EF8D8-BB8C-4685-90FE-46F88D09C9A7}
+		{9CEC3FA9-2ABD-4865-9ECA-4DC8840F946C} = {F62E162E-2DBA-44BA-BD51-08007738C8C1}
 	EndGlobalSection
 EndGlobal
