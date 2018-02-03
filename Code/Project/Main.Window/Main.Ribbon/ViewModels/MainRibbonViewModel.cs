@@ -11,6 +11,7 @@ using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Ribbon;
 using DevExpress.Xpf.Bars;
 using DevExpress.Xpf.Editors.Settings;
+using Main.Ribbon.Models;
 using Main.Ribbon.Utils;
 using Prism.Commands;
 using Sadness.SQLiteDB.Connect;
@@ -75,7 +76,7 @@ namespace Main.Ribbon.ViewModels
                 #endregion
                 #region Ribbon控制:工具栏项目连接
                 //获得 ice_system_plugin_toolbar 表所有数据
-                List<ice_system_plugin_toolbar> listSystemPluginToolBar = OperationEntityList.GetEntityList<ice_system_plugin_toolbar>("ice_system_plugin_toolbar", string.Empty);
+                List<ice_system_plugin_toolbar> listSystemPluginToolBar = OperationEntityList.GetEntityList<ice_system_plugin_toolbar>(SystemTables.ice_system_plugin_toolbar, string.Empty);
                 foreach (ice_system_plugin_toolbar itemPluginToolBar in listSystemPluginToolBar)
                 {
                     //创建BarButtonItem
@@ -107,27 +108,27 @@ namespace Main.Ribbon.ViewModels
             if (defaultPageCategory != null)
             {
                 //获得 ice_system_plugin_menu 表所有数据
-                List<ice_system_plugin_menu> listSystemPluginMenu = OperationEntityList.GetEntityList<ice_system_plugin_menu>("ice_system_plugin_menu", string.Empty);
-                //获得 ice_page_home 分组出的数据
-                List<string> listPageHome = listSystemPluginMenu.Select(o => o.ice_page_home).Distinct().ToList();
-                //遍历添加分组
-                foreach (string strPageHome in listPageHome)
+                List<ice_system_plugin_menu> listSystemPluginMenu = OperationEntityList.GetEntityList<ice_system_plugin_menu>(SystemTables.ice_system_plugin_menu, string.Empty);
+                //获得 ice_system_plugin_menugroup 表所有数据
+                List<ice_system_plugin_menugroup> listSystemPluginMenuGroup = OperationEntityList.GetEntityList<ice_system_plugin_menugroup>(SystemTables.ice_system_plugin_menugroup, string.Empty);
+                //排序分组顺序
+                listSystemPluginMenuGroup = listSystemPluginMenuGroup.OrderBy(o => o.ice_number_home).OrderBy(o => o.ice_number_group).ToList();
+                //遍历添加Home分组
+                foreach (var itemSystemPluginMenuHome in listSystemPluginMenuGroup.Where(o => o.ice_page_ishome == true))
                 {
                     //创建RibbonPage
                     RibbonPage ribbonPageHome = new RibbonPage();
-                    ribbonPageHome.Caption = strPageHome;
-                    //获得 ice_page_group 分组出的数据
-                    List<string> listPageGroup = listSystemPluginMenu.Where(o => o.ice_page_home == strPageHome).Select(o => o.ice_page_group).Distinct().ToList();
-                    //遍历添加分组
-                    foreach (string strPageGroup in listPageGroup)
+                    ribbonPageHome.IsVisible = itemSystemPluginMenuHome.ice_page_visible;
+                    ribbonPageHome.Caption = itemSystemPluginMenuHome.ice_page_name;
+                    //遍历添加Group分组
+                    foreach (var itemSystemPluginMenuGroup in listSystemPluginMenuGroup.Where(o => o.ice_number_home == itemSystemPluginMenuHome.ice_number_home && o.ice_page_ishome == false))
                     {
                         //创建RibbonPageGroup
                         RibbonPageGroup ribbonPageGroup = new RibbonPageGroup();
-                        ribbonPageGroup.Caption = strPageGroup;
-                        //获得 ice_page_group 分组出的数据
-                        List<ice_system_plugin_menu> listPageHomeGroup = listSystemPluginMenu.Where(o => o.ice_page_home == strPageHome && o.ice_page_group == strPageGroup).ToList();
+                        ribbonPageGroup.IsVisible = itemSystemPluginMenuGroup.ice_page_visible;
+                        ribbonPageGroup.Caption = itemSystemPluginMenuGroup.ice_page_name;
                         //遍历添加按钮
-                        foreach (ice_system_plugin_menu itemPluginMenu in listPageHomeGroup)
+                        foreach (var itemPluginMenu in listSystemPluginMenu.Where(o => o.ice_page_home == itemSystemPluginMenuGroup.ice_number_home && o.ice_page_group == itemSystemPluginMenuGroup.ice_number_group))
                         {
                             //创建BarButtonItem
                             BarButtonItem barButton = new BarButtonItem();

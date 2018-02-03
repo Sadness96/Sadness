@@ -54,11 +54,11 @@ namespace Sadness.SQLiteDB.Models
         /// <summary>
         /// RibbonPage 名称
         /// </summary>
-        public string ice_page_home { get; set; }
+        public int ice_page_home { get; set; }
         /// <summary>
         /// RibbonPageGroup 名称
         /// </summary>
-        public string ice_page_group { get; set; }
+        public int ice_page_group { get; set; }
         /// <summary>
         /// 按钮小图片(16x16)
         /// </summary>

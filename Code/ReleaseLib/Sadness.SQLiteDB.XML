@@ -119,6 +119,42 @@
             按钮大图片(32x32)
             </summary>
         </member>
+        <member name="T:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup">
+            <summary>
+            系统菜单插件分组表数据模型
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_number_home">
+            <summary>
+            RibbonPage 序号
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_number_group">
+            <summary>
+            RibbonPageGroup 序号
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_page_name">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_page_ishome">
+            <summary>
+            True:RibbonPage
+            False:RibbonPageGroup
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_page_visible">
+            <summary>
+            是否可见
+            </summary>
+        </member>
         <member name="T:Sadness.SQLiteDB.Models.ice_system_plugin_toolbar">
             <summary>
             工具栏插件表数据模型

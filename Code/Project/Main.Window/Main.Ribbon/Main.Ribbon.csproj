@@ -101,6 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\SystemTables.cs" />
     <Compile Include="Utils\OperationImage.cs" />
     <Compile Include="Utils\OperationReflect.cs" />
     <Compile Include="ViewModels\MainLoginViewModel.cs" />
@@ -139,9 +140,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\MainLogin.xaml">
       <SubType>Designer</SubType>
