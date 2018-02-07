@@ -24,7 +24,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 创建Word(Office2003)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Excel的路径.doc</param>
+        /// <param name="strDataSourcePath">新建Word的路径.doc</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateWord_Office2003(string strDataSourcePath)
         {
@@ -51,7 +51,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 创建Word(Office2007)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Excel的路径.doc</param>
+        /// <param name="strDataSourcePath">新建Word的路径.doc</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateWord_Office2007(string strDataSourcePath)
         {
@@ -78,7 +78,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 获得Word文档中所有段落
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <returns>段落标签List</returns>
         public static List<string> GetWordParagraphText(string strDataSourcePath)
         {
@@ -107,7 +107,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 获得Word文档中所有表格
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <returns>段落标签List</returns>
         public static List<string> GetWordTableText(string strDataSourcePath)
         {
@@ -145,7 +145,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 获得Word文档中所有文本
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <returns>所有文本List</returns>
         public static List<string> GetWordAllText(string strDataSourcePath)
         {
@@ -178,7 +178,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 获得Word文档中所有替换标签('{标签}','#标签#')
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <returns>替换标签Dictionary(带标签,不带标签)</returns>
         public static Dictionary<string, string> GetWordAllLable(string strDataSourcePath)
         {
@@ -248,7 +248,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换文本标签
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
         /// <param name="strReplaceLabel">替换标签文本</param>
         /// <returns>成功返回替换数量,失败返回-1</returns>
@@ -314,7 +314,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换表格标签(DataTable替换)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
         /// <param name="dtReplaceLabel">替换标签DataTable</param>
         /// <returns>成功返回1,失败返回-1</returns>
@@ -379,7 +379,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换图片标签(使用DocX.dll类库,调用这个方法后NPOI无法读取文档)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
         /// <param name="strImagePath">替换的图片路径</param>
         /// <param name="iImageWidth">替换的图片宽度(小于0则显示原图宽度)</param>
@@ -434,7 +434,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换Word文档标签
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Word文件路径</param>
         /// <param name="listReplaceLabel">替换标签对应的替换内容(不带标签,替换内容Model)</param>
         /// <returns>成功返回替换行数,失败返回-1</returns>
         public static int ReplaceLabel(string strDataSourcePath, List<ReplaceLabelModel> listReplaceLabel)
