@@ -111,24 +111,22 @@ namespace Main.Ribbon.ViewModels
                 List<ice_system_plugin_menu> listSystemPluginMenu = OperationEntityList.GetEntityList<ice_system_plugin_menu>(SystemTables.ice_system_plugin_menu, string.Empty);
                 //获得 ice_system_plugin_menugroup 表所有数据
                 List<ice_system_plugin_menugroup> listSystemPluginMenuGroup = OperationEntityList.GetEntityList<ice_system_plugin_menugroup>(SystemTables.ice_system_plugin_menugroup, string.Empty);
-                //排序分组顺序
-                listSystemPluginMenuGroup = listSystemPluginMenuGroup.OrderBy(o => o.ice_number_home).OrderBy(o => o.ice_number_group).ToList();
-                //遍历添加Home分组
-                foreach (var itemSystemPluginMenuHome in listSystemPluginMenuGroup.Where(o => o.ice_page_ishome == true))
+                //遍历添加 Home 分组
+                foreach (var itemSystemPluginMenuHome in listSystemPluginMenuGroup.Where(o => o.ice_page_ishome).OrderBy(o => o.ice_number))
                 {
-                    //创建RibbonPage
+                    //创建 RibbonPage
                     RibbonPage ribbonPageHome = new RibbonPage();
                     ribbonPageHome.IsVisible = itemSystemPluginMenuHome.ice_page_visible;
                     ribbonPageHome.Caption = itemSystemPluginMenuHome.ice_page_name;
-                    //遍历添加Group分组
-                    foreach (var itemSystemPluginMenuGroup in listSystemPluginMenuGroup.Where(o => o.ice_number_home == itemSystemPluginMenuHome.ice_number_home && o.ice_page_ishome == false))
+                    //遍历添加 Group 分组
+                    foreach (var itemSystemPluginMenuGroup in listSystemPluginMenuGroup.Where(o => o.ice_parid == itemSystemPluginMenuHome.ice_id))
                     {
-                        //创建RibbonPageGroup
+                        //创建 RibbonPageGroup
                         RibbonPageGroup ribbonPageGroup = new RibbonPageGroup();
                         ribbonPageGroup.IsVisible = itemSystemPluginMenuGroup.ice_page_visible;
                         ribbonPageGroup.Caption = itemSystemPluginMenuGroup.ice_page_name;
                         //遍历添加按钮
-                        foreach (var itemPluginMenu in listSystemPluginMenu.Where(o => o.ice_page_home == itemSystemPluginMenuGroup.ice_number_home && o.ice_page_group == itemSystemPluginMenuGroup.ice_number_group))
+                        foreach (var itemPluginMenu in listSystemPluginMenu.Where(o => o.ice_page_parid == itemSystemPluginMenuGroup.ice_id))
                         {
                             //创建BarButtonItem
                             BarButtonItem barButton = new BarButtonItem();

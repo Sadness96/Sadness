@@ -99,14 +99,9 @@
             类库文件 Class
             </summary>
         </member>
-        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menu.ice_page_home">
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menu.ice_page_parid">
             <summary>
-            RibbonPage 名称
-            </summary>
-        </member>
-        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menu.ice_page_group">
-            <summary>
-            RibbonPageGroup 名称
+            功能所属分组:MenuGroup 表主键
             </summary>
         </member>
         <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menu.ice_image_small">
@@ -129,14 +124,16 @@
             主键ID
             </summary>
         </member>
-        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_number_home">
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_parid">
             <summary>
-            RibbonPage 序号
+            关联ID : RibbonPageGroup 关联至 RibbonPage
             </summary>
         </member>
-        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_number_group">
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_number">
             <summary>
-            RibbonPageGroup 序号
+            功能序号：
+            1.ice_page_ishome = true : RibbonPage序号
+            2.ice_page_ishome = false : RibbonPageGroup序号
             </summary>
         </member>
         <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_menugroup.ice_page_name">

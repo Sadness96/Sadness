@@ -16,13 +16,15 @@ namespace Sadness.SQLiteDB.Models
         /// </summary>
         public int ice_id { get; set; }
         /// <summary>
-        /// RibbonPage 序号
+        /// 关联ID : RibbonPageGroup 关联至 RibbonPage
         /// </summary>
-        public int ice_number_home { get; set; }
+        public int ice_parid { get; set; }
         /// <summary>
-        /// RibbonPageGroup 序号
+        /// 功能序号：
+        /// 1.ice_page_ishome = true : RibbonPage序号
+        /// 2.ice_page_ishome = false : RibbonPageGroup序号
         /// </summary>
-        public int ice_number_group { get; set; }
+        public int ice_number { get; set; }
         /// <summary>
         /// 分组名称
         /// </summary>

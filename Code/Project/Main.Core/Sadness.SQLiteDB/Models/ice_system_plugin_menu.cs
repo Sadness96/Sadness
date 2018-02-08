@@ -52,13 +52,9 @@ namespace Sadness.SQLiteDB.Models
         /// </summary>
         public string ice_dllfile_class { get; set; }
         /// <summary>
-        /// RibbonPage 名称
+        /// 功能所属分组:MenuGroup 表主键
         /// </summary>
-        public int ice_page_home { get; set; }
-        /// <summary>
-        /// RibbonPageGroup 名称
-        /// </summary>
-        public int ice_page_group { get; set; }
+        public int ice_page_parid { get; set; }
         /// <summary>
         /// 按钮小图片(16x16)
         /// </summary>

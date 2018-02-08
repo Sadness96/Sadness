@@ -10,11 +10,6 @@
             创建日期:2016年12月22日
             </summary>
         </member>
-        <member name="T:ADO.Helper.Access.AccessFieldType.FieldType">
-            <summary>
-            Access特定的数据类型。
-            </summary>
-        </member>
         <member name="M:ADO.Helper.Access.AccessFieldType.GetFieldType(System.String)">
             <summary>
             从字段类型Code获得字段类型
@@ -22,15 +17,15 @@
             <param name="strFieldTypeCode">字段类型Code</param>
             <returns>成功返回字段类型,失败返回-1</returns>
         </member>
+        <member name="T:ADO.Helper.Access.AccessFieldType.FieldType">
+            <summary>
+            Access特定的数据类型。
+            </summary>
+        </member>
         <member name="T:ADO.Helper.Access.AccessHelper">
             <summary>
             Access数据库帮助类
             创建日期:2016年12月21日
-            </summary>
-        </member>
-        <member name="P:ADO.Helper.Access.AccessHelper.strAccessConnection">
-            <summary>
-            Access连接字符串
             </summary>
         </member>
         <member name="F:ADO.Helper.Access.AccessHelper.Connection">
@@ -299,6 +294,11 @@
             <param name="dicCorrespondenceBetween">目标与源的字段名对应关系(目标字段名/源字段名)</param>
             <returns>成功返回执行条数,失败返回-1</returns>
         </member>
+        <member name="P:ADO.Helper.Access.AccessHelper.strAccessConnection">
+            <summary>
+            Access连接字符串
+            </summary>
+        </member>
         <member name="T:ADO.Helper.DatabaseConversion.DataProcessing">
             <summary>
             数据处理类
@@ -321,8 +321,8 @@
             <param name="dtDataSource">源数据(DataTable)</param>
             <returns>删除空行后的DataTable</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertToList``1(System.Data.DataTable)" -->
-        <!-- Badly formed XML comment ignored for member "M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertDataTable(System.Collections.IList)" -->
+        <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertToList``1(System.Data.DataTable)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertDataTable(System.Collections.IList)”忽略有格式错误的 XML 注释 -->
         <member name="T:ADO.Helper.DatabaseConversion.SqlProcessing">
             <summary>
             Sql语句处理类
@@ -354,11 +354,6 @@
             <summary>
             数据类型处理类
             创建日期:2016年12月22日
-            </summary>
-        </member>
-        <member name="T:ADO.Helper.DatabaseConversion.TypeProcessing.DataBase">
-            <summary>
-            数据库枚举
             </summary>
         </member>
         <member name="M:ADO.Helper.DatabaseConversion.TypeProcessing.FieldTypeProcessing(System.Collections.Generic.Dictionary{System.String,System.String},ADO.Helper.DatabaseConversion.TypeProcessing.DataBase)">
@@ -418,6 +413,11 @@
             <param name="strMaxLength">源字段长度</param>
             <returns>修改后字段类型</returns>
         </member>
+        <member name="T:ADO.Helper.DatabaseConversion.TypeProcessing.DataBase">
+            <summary>
+            数据库枚举
+            </summary>
+        </member>
         <member name="T:ADO.Helper.MySql.MySqlFieldType">
             <summary>
             MySql字段类型枚举类
@@ -433,11 +433,6 @@
             <summary>
             MySql数据库帮助类
             创建日期:2016年12月19日
-            </summary>
-        </member>
-        <member name="P:ADO.Helper.MySql.MySqlHelper.strMySqlConnection">
-            <summary>
-            MySql连接字符串
             </summary>
         </member>
         <member name="F:ADO.Helper.MySql.MySqlHelper.Connection">
@@ -716,6 +711,11 @@
             <param name="dicCorrespondenceBetween">目标与源的字段名对应关系(目标字段名/源字段名)</param>
             <returns>成功返回执行条数,失败返回-1</returns>
         </member>
+        <member name="P:ADO.Helper.MySql.MySqlHelper.strMySqlConnection">
+            <summary>
+            MySql连接字符串
+            </summary>
+        </member>
         <member name="T:ADO.Helper.Oracle.OracleFieldType">
             <summary>
             Oracle字段类型枚举类
@@ -731,11 +731,6 @@
             <summary>
             Oracle数据库帮助类
             创建日期:2016年12月14日
-            </summary>
-        </member>
-        <member name="P:ADO.Helper.Oracle.OracleHelper.strOracleConnection">
-            <summary>
-            Oracle连接字符串
             </summary>
         </member>
         <member name="F:ADO.Helper.Oracle.OracleHelper.Connection">
@@ -983,6 +978,11 @@
             <param name="dicCorrespondenceBetween">目标与源的字段名对应关系(目标字段名/源字段名)</param>
             <returns>成功返回执行条数,失败返回-1</returns>
         </member>
+        <member name="P:ADO.Helper.Oracle.OracleHelper.strOracleConnection">
+            <summary>
+            Oracle连接字符串
+            </summary>
+        </member>
         <member name="T:ADO.Helper.Properties.Resources">
             <summary>
               一个强类型的资源类，用于查找本地化的字符串等。
@@ -1014,11 +1014,6 @@
             <summary>
             SQLite数据库帮助类
             创建日期:2016年12月19日
-            </summary>
-        </member>
-        <member name="P:ADO.Helper.SQLite.SQLiteHelper.strSQLiteConnection">
-            <summary>
-            SQLite连接字符串
             </summary>
         </member>
         <member name="F:ADO.Helper.SQLite.SQLiteHelper.Connection">
@@ -1280,6 +1275,11 @@
             <param name="dicCorrespondenceBetween">目标与源的字段名对应关系(目标字段名/源字段名)</param>
             <returns>成功返回执行条数,失败返回-1</returns>
         </member>
+        <member name="P:ADO.Helper.SQLite.SQLiteHelper.strSQLiteConnection">
+            <summary>
+            SQLite连接字符串
+            </summary>
+        </member>
         <member name="T:ADO.Helper.SqlServer.SqlServerFieldType">
             <summary>
             SqlServer字段类型枚举类
@@ -1466,11 +1466,6 @@
             <summary>
             SqlServer数据库帮助类
             创建日期:2016年11月29日
-            </summary>
-        </member>
-        <member name="P:ADO.Helper.SqlServer.SqlServerHelper.strSqlServerConnection">
-            <summary>
-            SqlServer连接字符串
             </summary>
         </member>
         <member name="F:ADO.Helper.SqlServer.SqlServerHelper.Connection">
@@ -1769,6 +1764,11 @@
             <param name="dtSourceData">源数据DataTable</param>
             <param name="dicCorrespondenceBetween">目标与源的字段名对应关系(目标字段名/源字段名)</param>
             <returns>成功返回执行条数,失败返回-1</returns>
+        </member>
+        <member name="P:ADO.Helper.SqlServer.SqlServerHelper.strSqlServerConnection">
+            <summary>
+            SqlServer连接字符串
+            </summary>
         </member>
         <member name="T:ADO.Helper.TXT.TXTHelper">
             <summary>
