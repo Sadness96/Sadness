@@ -130,15 +130,28 @@ namespace Main.Ribbon.ViewModels
                         {
                             //创建BarButtonItem
                             BarButtonItem barButton = new BarButtonItem();
+                            //按钮样式
                             barButton.RibbonStyle = (RibbonItemStyles)Enum.Parse(typeof(RibbonItemStyles), Enum.GetName(typeof(RibbonItemStyles), itemPluginMenu.ice_button_style));
+                            //按钮名称
                             barButton.Content = itemPluginMenu.ice_function_name;
+                            //按钮小图片(16x16)
                             barButton.Glyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_small);
+                            //按钮大图片(32x32)
                             barButton.LargeGlyph = OperationImage.ByteArrayToImageSource(itemPluginMenu.ice_image_large);
+                            //按钮是否可见
                             barButton.IsVisible = itemPluginMenu.ice_button_visible;
+                            //按钮是否启用
                             barButton.IsEnabled = itemPluginMenu.ice_button_enabled;
+                            //按钮提示
+                            barButton.Hint = itemPluginMenu.ice_button_hint;
+                            //按钮快捷键(不为空且包含"+"则添加)
+                            if (!string.IsNullOrEmpty(itemPluginMenu.ice_button_keygesture) && itemPluginMenu.ice_button_keygesture.Contains("+"))
+                            {
+                                barButton.KeyGesture = ((new KeyGestureValueSerializer().ConvertFromString(itemPluginMenu.ice_button_keygesture, null)) as KeyGesture);
+                            }
+                            //按钮运行菜单插件
                             barButton.ItemClick += delegate
                             {
-                                //运行菜单插件
                                 OperationReflect.RunPluginMenuClick(itemPluginMenu.ice_dllfile_path, itemPluginMenu.ice_dllfile_class);
                             };
                             //添加按钮
