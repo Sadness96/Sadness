@@ -27,6 +27,11 @@ namespace Main.Ribbon.Models
         public static string ice_system_plugin_menugroup { get { return "ice_system_plugin_menugroup"; } }
 
         /// <summary>
+        /// 启动项插件表
+        /// </summary>
+        public static string ice_system_plugin_startup { get { return "ice_system_plugin_startup"; } }
+
+        /// <summary>
         /// 工具栏插件表
         /// </summary>
         public static string ice_system_plugin_toolbar { get { return "ice_system_plugin_toolbar"; } }

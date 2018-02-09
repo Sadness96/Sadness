@@ -24,6 +24,26 @@
             功能分组
             </summary>
         </member>
+        <member name="T:Sadness.Interface.StartupPluginInterface">
+            <summary>
+            启动项插件接口
+            </summary>
+        </member>
+        <member name="M:Sadness.Interface.StartupPluginInterface.StartupItem">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:Sadness.Interface.StartupPluginInterface.iStartupIndex">
+            <summary>
+            启动顺序
+            </summary>
+        </member>
+        <member name="P:Sadness.Interface.StartupPluginInterface.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
         <member name="T:Sadness.Interface.ToolBarPluginInterface">
             <summary>
             工具栏插件接口

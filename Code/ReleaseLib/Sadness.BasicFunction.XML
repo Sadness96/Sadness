@@ -6,7 +6,7 @@
     <members>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.TestCommand">
             <summary>
-            测试Command
+            功能按钮测试Command
             </summary>
         </member>
         <member name="M:Sadness.BasicFunction.Command.PluginMenu.TestCommand.Click">
@@ -22,6 +22,11 @@
         <member name="P:Sadness.BasicFunction.Command.PluginMenu.TestCommand.strFunctionGroup">
             <summary>
             功能分组
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Command.PluginStartup.StartupTestCommand">
+            <summary>
+            启动项测试Command
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand">

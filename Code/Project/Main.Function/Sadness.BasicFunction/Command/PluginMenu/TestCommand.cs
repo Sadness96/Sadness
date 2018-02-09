@@ -8,7 +8,7 @@ using Sadness.Interface;
 namespace Sadness.BasicFunction.Command.PluginMenu
 {
     /// <summary>
-    /// 测试Command
+    /// 功能按钮测试Command
     /// </summary>
     public class TestCommand : MenuPluginInterface
     {

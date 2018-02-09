@@ -77,7 +77,7 @@ namespace Main.Ribbon.ViewModels
                 #region Ribbon控制:工具栏项目连接
                 //获得 ice_system_plugin_toolbar 表所有数据
                 List<ice_system_plugin_toolbar> listSystemPluginToolBar = OperationEntityList.GetEntityList<ice_system_plugin_toolbar>(SystemTables.ice_system_plugin_toolbar, string.Empty);
-                foreach (ice_system_plugin_toolbar itemPluginToolBar in listSystemPluginToolBar)
+                foreach (var itemPluginToolBar in listSystemPluginToolBar)
                 {
                     //创建BarButtonItem
                     BarButtonItem barButton = new BarButtonItem();

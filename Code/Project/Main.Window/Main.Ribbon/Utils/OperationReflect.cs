@@ -79,5 +79,38 @@ namespace Main.Ribbon.Utils
                 return false;
             }
         }
+
+        /// <summary>
+        /// 运行启动项
+        /// </summary>
+        /// <param name="strDllPath">Dll路径</param>
+        /// <param name="strClassName">全类名</param>
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool RunPluginStartupItem(string strDllPath, string strClassName)
+        {
+            try
+            {
+                //反射获得Class Type
+                Assembly assembly = Assembly.LoadFrom(strDllPath);
+                Type type = assembly.GetType(strClassName);
+                if (type != null)
+                {
+                    var container = new UnityContainer();
+                    container.RegisterType<StartupPluginInterface>(new ContainerControlledLifetimeManager());
+                    container.RegisterType(typeof(StartupPluginInterface), type);
+                    var manager = container.Resolve<StartupPluginInterface>();
+                    manager.StartupItem();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

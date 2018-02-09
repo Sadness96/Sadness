@@ -54,6 +54,7 @@
     <Compile Include="Models\ice_system_images.cs" />
     <Compile Include="Models\ice_system_plugin_menu.cs" />
     <Compile Include="Models\ice_system_plugin_menugroup.cs" />
+    <Compile Include="Models\ice_system_plugin_startup.cs" />
     <Compile Include="Models\ice_system_plugin_toolbar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\OperationByte.cs" />

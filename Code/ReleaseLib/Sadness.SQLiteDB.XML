@@ -162,6 +162,36 @@
             是否可见
             </summary>
         </member>
+        <member name="T:Sadness.SQLiteDB.Models.ice_system_plugin_startup">
+            <summary>
+            启动项表数据模型
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_startup.ice_id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_startup.ice_number">
+            <summary>
+            启动顺序
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_startup.ice_function_name">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_startup.ice_dllfile_path">
+            <summary>
+            类库文件路径
+            </summary>
+        </member>
+        <member name="P:Sadness.SQLiteDB.Models.ice_system_plugin_startup.ice_dllfile_class">
+            <summary>
+            类库文件 Class
+            </summary>
+        </member>
         <member name="T:Sadness.SQLiteDB.Models.ice_system_plugin_toolbar">
             <summary>
             工具栏插件表数据模型

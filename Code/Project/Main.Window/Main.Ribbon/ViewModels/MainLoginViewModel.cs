@@ -8,10 +8,13 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Main.Ribbon.Models;
 using Main.Ribbon.Utils;
 using Main.Ribbon.Views;
 using Prism.Commands;
 using Sadness.SQLiteDB.Connect;
+using Sadness.SQLiteDB.Utils;
+using Sadness.SQLiteDB.Models;
 
 namespace Main.Ribbon.ViewModels
 {
@@ -43,6 +46,15 @@ namespace Main.Ribbon.ViewModels
         {
             //全局获得Window窗体
             this.window = window;
+            #region 按顺序执行启动项
+            //获得 ice_system_plugin_startup 表所有数据
+            List<ice_system_plugin_startup> listSystemPluginStartup = OperationEntityList.GetEntityList<ice_system_plugin_startup>(SystemTables.ice_system_plugin_startup, string.Empty);
+            foreach (var itemPluginStartup in listSystemPluginStartup)
+            {
+                //运行菜单插件
+                OperationReflect.RunPluginStartupItem(itemPluginStartup.ice_dllfile_path, itemPluginStartup.ice_dllfile_class);
+            }
+            #endregion
             //启动MainRibbon
             StartMainRibbon();
         }
