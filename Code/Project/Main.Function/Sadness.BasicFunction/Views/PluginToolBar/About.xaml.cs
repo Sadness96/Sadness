@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Sadness.BasicFunction.Views.PluginToolBar
@@ -18,7 +17,7 @@ namespace Sadness.BasicFunction.Views.PluginToolBar
     /// <summary>
     /// About.xaml 的交互逻辑
     /// </summary>
-    public partial class About : UserControl
+    public partial class About : Window
     {
         public About()
         {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sadness.Interface;
+using Sadness.BasicFunction.Views.PluginToolBar;
 
 namespace Sadness.BasicFunction.Command.PluginToolBar
 {
@@ -17,7 +18,8 @@ namespace Sadness.BasicFunction.Command.PluginToolBar
         /// </summary>
         public void Click()
         {
-            throw new NotImplementedException();
+            About form = new About();
+            form.ShowDialog();
         }
 
         /// <summary>

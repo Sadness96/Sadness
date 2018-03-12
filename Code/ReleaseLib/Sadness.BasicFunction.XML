@@ -44,5 +44,18 @@
             功能名称
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginToolBar.About">
+            <summary>
+            About.xaml 的交互逻辑
+            </summary>
+            <summary>
+            About
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginToolBar.About.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
     </members>
 </doc>

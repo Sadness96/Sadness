@@ -128,7 +128,17 @@
             Window窗体
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
         <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._mainTitle">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainTitle">
             <summary>
             应用程序标题
             </summary>
@@ -138,7 +148,17 @@
             应用程序图标
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainAppIcon">
+            <summary>
+            应用程序图标
+            </summary>
+        </member>
         <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._imgStartPicture">
+            <summary>
+            软件启动图片
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
             <summary>
             软件启动图片
             </summary>
@@ -156,26 +176,6 @@
         <member name="F:Main.Ribbon.ViewModels.MainLoginViewModel._loadedCommand">
             <summary>
             Load命令
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.window">
-            <summary>
-            Window窗体
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainTitle">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.MainAppIcon">
-            <summary>
-            应用程序图标
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.ImgStartPicture">
-            <summary>
-            软件启动图片
             </summary>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainLoginViewModel.LoadedCommand">
@@ -204,7 +204,17 @@
             Window窗体
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainTitle">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainTitle">
             <summary>
             应用程序标题
             </summary>
@@ -214,7 +224,17 @@
             主界面Ribbon风格
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
+            <summary>
+            主界面Ribbon风格
+            </summary>
+        </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainAppSmallIcon">
+            <summary>
+            应用程序小图标
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainAppSmallIcon">
             <summary>
             应用程序小图标
             </summary>
@@ -224,7 +244,17 @@
             应用程序大图标
             </summary>
         </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
         <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._mainApplicationButtonText">
+            <summary>
+            应用按钮文字
+            </summary>
+        </member>
+        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainApplicationButtonText">
             <summary>
             应用按钮文字
             </summary>
@@ -234,44 +264,14 @@
             类别对齐
             </summary>
         </member>
-        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._loadedCommand">
-            <summary>
-            Load命令
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.window">
-            <summary>
-            Window窗体
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainTitle">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonStyle">
-            <summary>
-            主界面Ribbon风格
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainAppSmallIcon">
-            <summary>
-            应用程序小图标
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainAppLargeIcon">
-            <summary>
-            应用程序大图标
-            </summary>
-        </member>
-        <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainApplicationButtonText">
-            <summary>
-            应用按钮文字
-            </summary>
-        </member>
         <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.MainRibbonPageCategoryAlignment">
             <summary>
             类别对齐
+            </summary>
+        </member>
+        <member name="F:Main.Ribbon.ViewModels.MainRibbonViewModel._loadedCommand">
+            <summary>
+            Load命令
             </summary>
         </member>
         <member name="P:Main.Ribbon.ViewModels.MainRibbonViewModel.LoadedCommand">
@@ -310,6 +310,16 @@
             MainRibbon.xaml 的构造函数
             </summary>
         </member>
+        <member name="T:Main.Ribbon.Views.MainRibbon.CloseDelegate">
+            <summary>
+            关闭委托
+            </summary>
+        </member>
+        <member name="E:Main.Ribbon.Views.MainRibbon.CloseEvent">
+            <summary>
+            关闭事件
+            </summary>
+        </member>
         <member name="M:Main.Ribbon.Views.MainRibbon.CloseEventDelegate">
             <summary>
             关闭登录窗口路由通知
@@ -318,16 +328,6 @@
         <member name="M:Main.Ribbon.Views.MainRibbon.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="E:Main.Ribbon.Views.MainRibbon.CloseEvent">
-            <summary>
-            关闭事件
-            </summary>
-        </member>
-        <member name="T:Main.Ribbon.Views.MainRibbon.CloseDelegate">
-            <summary>
-            关闭委托
             </summary>
         </member>
         <member name="T:Main.Ribbon.Properties.Resources">
