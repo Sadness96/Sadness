@@ -1,11 +1,11 @@
-﻿<Window x:Class="Sadness.BasicFunction.Views.PluginToolBar.About"
+﻿<Window x:Class="Sadness.BasicFunction.Views.PluginMenu.RegistrationTool"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Sadness.BasicFunction.Views.PluginToolBar"
+        xmlns:local="clr-namespace:Sadness.BasicFunction.Views.PluginMenu"
         mc:Ignorable="d"
-        Title="About" Height="280" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#505050">
+        Title="RegistrationTool" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#505050">
     <Grid>
 
     </Grid>

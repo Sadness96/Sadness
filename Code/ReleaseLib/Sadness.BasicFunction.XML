@@ -4,6 +4,26 @@
         <name>Sadness.BasicFunction</name>
     </assembly>
     <members>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.RegistrationToolCommand">
+            <summary>
+            注册工具
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.RegistrationToolCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.RegistrationToolCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.RegistrationToolCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.TestCommand">
             <summary>
             功能按钮测试Command
@@ -42,6 +62,19 @@
         <member name="P:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
             <summary>
             功能名称
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool">
+            <summary>
+            RegistrationTool.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RegistrationTool
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.Views.PluginToolBar.About">
