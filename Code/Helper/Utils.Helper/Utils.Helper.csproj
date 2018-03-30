@@ -59,6 +59,7 @@
     <Compile Include="Cookie\CookieHelper.cs" />
     <Compile Include="EMail\EMailHelper.cs" />
     <Compile Include="Encryption\AESHelper.cs" />
+    <Compile Include="Encryption\Base64Helper.cs" />
     <Compile Include="Encryption\CRC32Helper.cs" />
     <Compile Include="Encryption\DESHelper.cs" />
     <Compile Include="Encryption\FolderHelper.cs" />
