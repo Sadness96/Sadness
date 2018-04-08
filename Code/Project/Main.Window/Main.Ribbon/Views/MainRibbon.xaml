@@ -7,7 +7,8 @@
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
-        Title="{Binding MainTitle}" Height="379" Width="643"
+        Title="{Binding MainTitle}" Height="768" Width="1366"
+        WindowState="{Binding MainWindowState}"
         Icon="{Binding MainAppLargeIcon}">
     <Grid>
         <!--Load方法-->

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sadness.BasicFunction.ViewModels.PluginMenu;
 
 namespace Sadness.BasicFunction.Views.PluginMenu
 {
@@ -19,9 +20,13 @@ namespace Sadness.BasicFunction.Views.PluginMenu
     /// </summary>
     public partial class RegistrationTool : Window
     {
+        /// <summary>
+        /// RegistrationTool.xaml 的构造函数
+        /// </summary>
         public RegistrationTool()
         {
             InitializeComponent();
+            this.DataContext = new RegistrationToolViewModel();
         }
     }
 }

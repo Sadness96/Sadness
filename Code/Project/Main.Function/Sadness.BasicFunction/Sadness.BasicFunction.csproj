@@ -54,6 +54,7 @@
     <Compile Include="Command\PluginStartup\StartupTestCommand.cs" />
     <Compile Include="Command\PluginToolBar\AboutCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PluginMenu\RegistrationToolViewModel.cs" />
     <Compile Include="Views\PluginMenu\RegistrationTool.xaml.cs">
       <DependentUpon>RegistrationTool.xaml</DependentUpon>
     </Compile>
@@ -63,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PluginMenu\RegistrationTool.xaml">

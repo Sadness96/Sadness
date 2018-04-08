@@ -34,6 +34,8 @@ namespace Main.Ribbon.ViewModels
             LoadedCommand = new DelegateCommand<Window>(Window_Loaded);
             //设置软件标题
             MainTitle = "MainWindow";
+            //默认最大化窗体
+            MainWindowState = WindowState.Maximized;
             //修改基础样式(默认RibbonStyle.Office2007)
             MainRibbonStyle = RibbonStyle.Office2007;
             //设置软件图标
@@ -316,6 +318,25 @@ namespace Main.Ribbon.ViewModels
             set
             {
                 _loadedCommand = value;
+            }
+        }
+
+        /// <summary>
+        /// 指定是最小化、最大化还是还原窗口
+        /// </summary>
+        private WindowState _mainWindowState;
+        /// <summary>
+        /// 指定是最小化、最大化还是还原窗口
+        /// </summary>
+        public WindowState MainWindowState
+        {
+            get
+            {
+                return _mainWindowState;
+            }
+            set
+            {
+                _mainWindowState = value;
             }
         }
     }

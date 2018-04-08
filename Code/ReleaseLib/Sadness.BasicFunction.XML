@@ -64,12 +64,47 @@
             功能名称
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel">
+            <summary>
+            RegistrationTool.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.#ctor">
+            <summary>
+            RegistrationTool.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._background">
+            <summary>
+            应用程序背景
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Background">
+            <summary>
+            应用程序背景
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool">
             <summary>
             RegistrationTool.xaml 的交互逻辑
             </summary>
             <summary>
             RegistrationTool
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool.#ctor">
+            <summary>
+            RegistrationTool.xaml 的构造函数
             </summary>
         </member>
         <member name="M:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool.InitializeComponent">

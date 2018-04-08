@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sadness.BasicFunction.Views.PluginMenu"
         mc:Ignorable="d"
-        Title="RegistrationTool" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#505050">
+        Title="{Binding Title}" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Background="{Binding Background}">
     <Grid>
 
     </Grid>
