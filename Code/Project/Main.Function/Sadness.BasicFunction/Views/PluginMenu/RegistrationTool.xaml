@@ -5,9 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sadness.BasicFunction.Views.PluginMenu"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
-        Background="{Binding Background}">
+        Title="{Binding Title}" Height="350" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="{Binding MainAppLargeIcon}">
     <Grid>
-
+        <Label Content="网卡MAC地址:" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="mac" ItemsSource="{Binding ListMAC}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,10,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="CPU序列号:" HorizontalAlignment="Left" Margin="26,37,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cpu" ItemsSource="{Binding ListCPU}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,38,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="硬盘序列号:" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="desk" ItemsSource="{Binding ListDESK}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,65,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="内存条序列号:" HorizontalAlignment="Left" Margin="14,90,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="memory" ItemsSource="{Binding ListMemory}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,92,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="主板序列号:" HorizontalAlignment="Left" Margin="26,116,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="motherboard" ItemsSource="{Binding ListMotherboard}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,119,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="BIOS序列号:" HorizontalAlignment="Left" Margin="22,144,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="bios" ItemsSource="{Binding ListBIOS}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,146,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="显卡信息:" HorizontalAlignment="Left" Margin="38,171,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="video" ItemsSource="{Binding ListVideo}" SelectedIndex="0" HorizontalAlignment="Left" Margin="104,173,0,0" VerticalAlignment="Top" Width="380"/>
+        <Label Content="取网卡MAC地址、CPU序列号、硬盘序列号、内存序列号、主板序列号进行加密处理!" HorizontalAlignment="Left" Margin="22,195,0,0" VerticalAlignment="Top"/>
+        <Label Content="格式为：   XXXXX-XXXXX-XXXXX-XXXXX-XXXXX" HorizontalAlignment="Left" Margin="46,220,0,0" VerticalAlignment="Top"/>
+        <Label Content="注册请求码:" HorizontalAlignment="Left" Margin="26,244,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.025,0.423"/>
+        <TextBlock x:Name="RequestCode" Text="{Binding RequestCode}" HorizontalAlignment="Left" Height="23" Margin="104,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
+        <Label Content="注册激活码:" HorizontalAlignment="Left" Margin="26,272,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="ActivationCode" Text="{Binding ActivationCode}" HorizontalAlignment="Left" Height="23" Margin="104,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
     </Grid>
 </Window>

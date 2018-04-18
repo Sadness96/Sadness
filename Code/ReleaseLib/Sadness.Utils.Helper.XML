@@ -769,6 +769,32 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:Utils.Helper.Image.ImageHelper">
+            <summary>
+            图片帮助类
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.ByteArrayToBitMapImage(System.Byte[])">
+            <summary>
+            转化图片二进制流到BitmapImage
+            </summary>
+            <param name="byteArray">图片二进制流</param>
+            <returns>成功返回BitmapImage,失败返回null</returns>
+        </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.ByteArrayToImageSource(System.Byte[])">
+            <summary>
+            转化图片二进制流到ImageSource
+            </summary>
+            <param name="byteArray">图片二进制流</param>
+            <returns>成功返回ImageSource,失败返回null</returns>
+        </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.ByteArrayToBitmap(System.Byte[])">
+            <summary>
+            转化图片二进制流到Bitmap
+            </summary>
+            <param name="byteArray">图片二进制流</param>
+            <returns>成功返回Bitmap,失败返回null</returns>
+        </member>
         <member name="T:Utils.Helper.PCInformation.EncryptionHelper">
             <summary>
             加密注册码帮助类

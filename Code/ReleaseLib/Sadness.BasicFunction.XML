@@ -74,14 +74,14 @@
             RegistrationTool.xaml 的视图模型
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._Title">
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._title">
             <summary>
             应用程序标题
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._background">
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._mainAppLargeIcon">
             <summary>
-            应用程序背景
+            应用程序大图标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Title">
@@ -89,9 +89,59 @@
             应用程序标题
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Background">
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.MainAppLargeIcon">
             <summary>
-            应用程序背景
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListMAC">
+            <summary>
+            读取网卡MAC地址
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListCPU">
+            <summary>
+            读取CPU-ID
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListDESK">
+            <summary>
+            读取硬盘序列号
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListMemory">
+            <summary>
+            读取内存序列号
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListMotherboard">
+            <summary>
+            读取主板序列号
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListBIOS">
+            <summary>
+            读取BIOS序列号
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ListVideo">
+            <summary>
+            读取显卡信息
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._requestCode">
+            <summary>
+            注册请求码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.RequestCode">
+            <summary>
+            注册请求码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ActivationCode">
+            <summary>
+            注册激活码
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool">
