@@ -11,20 +11,22 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Sadness.BasicFunction.ViewModels.PluginMenu;
 
-namespace Sadness.BasicFunction.Views.PluginToolBar
+namespace Sadness.BasicFunction.Views.PluginMenu
 {
     /// <summary>
-    /// About.xaml 的交互逻辑
+    /// QRCode.xaml 的交互逻辑
     /// </summary>
-    public partial class About : Window
+    public partial class QRCode : Window
     {
         /// <summary>
-        /// About.xaml 的构造函数
+        /// QRCode.xaml 的构造函数
         /// </summary>
-        public About()
+        public QRCode()
         {
             InitializeComponent();
+            this.DataContext = new QRCodeViewModel();
         }
     }
 }

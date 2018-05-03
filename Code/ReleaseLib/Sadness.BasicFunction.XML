@@ -4,6 +4,26 @@
         <name>Sadness.BasicFunction</name>
     </assembly>
     <members>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand">
+            <summary>
+            二维码生成
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.RegistrationToolCommand">
             <summary>
             注册工具
@@ -49,6 +69,21 @@
             启动项测试Command
             </summary>
         </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginStartup.StartupTestCommand.StartupItem">
+            <summary>
+            菜单单击事件
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginStartup.StartupTestCommand.iStartupIndex">
+            <summary>
+            启动顺序
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginStartup.StartupTestCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand">
             <summary>
             关于Command
@@ -62,6 +97,16 @@
         <member name="P:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
             <summary>
             功能名称
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel">
+            <summary>
+            QRCode.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.#ctor">
+            <summary>
+            QRCode.xaml 的视图模型
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel">
@@ -144,6 +189,24 @@
             注册激活码
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.QRCode">
+            <summary>
+            QRCode.xaml 的交互逻辑
+            </summary>
+            <summary>
+            QRCode
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.QRCode.#ctor">
+            <summary>
+            QRCode.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.QRCode.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Views.PluginMenu.RegistrationTool">
             <summary>
             RegistrationTool.xaml 的交互逻辑
@@ -168,6 +231,11 @@
             </summary>
             <summary>
             About
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginToolBar.About.#ctor">
+            <summary>
+            About.xaml 的构造函数
             </summary>
         </member>
         <member name="M:Sadness.BasicFunction.Views.PluginToolBar.About.InitializeComponent">
