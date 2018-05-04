@@ -1,8 +1,31 @@
 ﻿<Window x:Class="Sadness.BasicFunction.Views.PluginMenu.QRCode"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="QRCode" Height="300" Width="300">
+        Title="{Binding Title}" Height="435" Width="650" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="{Binding MainAppLargeIcon}">
     <Grid>
-
+        <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" Text="信息：" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="46,11,0,0" TextWrapping="Wrap" Text="{Binding QRCodeText}" VerticalAlignment="Top" Width="486"/>
+        <Button Content="生成二维码" HorizontalAlignment="Left" Margin="537,12,0,0" VerticalAlignment="Top" Width="85" Command="{Binding GenerateQRCode}"/>
+        <Image Source="{Binding QRCodeLogo}"  HorizontalAlignment="Left" Height="100" Margin="496,46,0,0" VerticalAlignment="Top" Width="100"/>
+        <GroupBox Header="logo选择" HorizontalAlignment="Left" Margin="472,151,0,0" VerticalAlignment="Top" Height="84" Width="150">
+            <StackPanel>
+                <Button Content="选择图片" HorizontalAlignment="Left" Width="85" Margin="20,0,0,0" Command="{Binding ChoicePicture}"/>
+                <Button Content="清空图片" HorizontalAlignment="Left" Width="85" Margin="20,4,0,0" Command="{Binding EmptyPicture}"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="二维码导出" HorizontalAlignment="Left" Margin="472,240,0,0" VerticalAlignment="Top" Height="59" Width="150">
+            <StackPanel>
+                <Button Content="导出二维码" HorizontalAlignment="Left" Width="85" Margin="20,0,0,0" Command="{Binding ExportQRCode}"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="二维码识别" HorizontalAlignment="Left" Margin="472,304,0,0" VerticalAlignment="Top" Height="84" Width="150">
+            <StackPanel>
+                <Button Content="图片识别" HorizontalAlignment="Left" Width="85" Margin="20,0,0,0" Command="{Binding PictureDistinguish}"/>
+                <Button Content="动态识别" HorizontalAlignment="Left" Width="85" Margin="20,4,0,0" Command="{Binding DynamicDistinguish}"/>
+            </StackPanel>
+        </GroupBox>
+        <Border HorizontalAlignment="Left" Height="336" Margin="20,52,0,0" VerticalAlignment="Top" Width="447" CornerRadius="4" BorderBrush="Black" BorderThickness="1"/>
+        <Image Source="{Binding QRCodeSource}" HorizontalAlignment="Left" Height="320" Margin="85,60,0,0" VerticalAlignment="Top" Width="320"/>
     </Grid>
 </Window>

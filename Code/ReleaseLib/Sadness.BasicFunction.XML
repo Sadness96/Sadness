@@ -109,6 +109,116 @@
             QRCode.xaml 的视图模型
             </summary>
         </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._QRCodeLogo">
+            <summary>
+            二维码LOGO
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._QRCodeSource">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._QRCodeText">
+            <summary>
+            二维码文本
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._bISExistenceLogo">
+            <summary>
+            是否使用LOGO图片
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._QRCodeLogoPath">
+            <summary>
+            二维码LOGO图片
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._bitmapQRCode">
+            <summary>
+            全局拿到二维码点阵图(用于生成图片文件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogo">
+            <summary>
+            二维码LOGO
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeSource">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeText">
+            <summary>
+            二维码文本
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.BISExistenceLogo">
+            <summary>
+            是否使用LOGO图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogoPath">
+            <summary>
+            二维码LOGO图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.BitmapQRCode">
+            <summary>
+            全局拿到二维码点阵图(用于生成图片文件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.GenerateQRCode">
+            <summary>
+            生成二维码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.ChoicePicture">
+            <summary>
+            选择图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.EmptyPicture">
+            <summary>
+            清空图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.ExportQRCode">
+            <summary>
+            导出二维码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.PictureDistinguish">
+            <summary>
+            图片识别
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.DynamicDistinguish">
+            <summary>
+            动态识别
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel">
             <summary>
             RegistrationTool.xaml 的视图模型
