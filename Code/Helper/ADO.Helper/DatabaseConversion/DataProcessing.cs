@@ -153,5 +153,78 @@ namespace ADO.Helper.DatabaseConversion
             }
             return null;
         }
+
+        /// <summary>
+        /// DataTable分页查询
+        /// </summary>
+        /// <param name="dtDataSource">源数据(DataTable)</param>
+        /// <param name="iPageSize">每页条数</param>
+        /// <returns>每页保存在DataSet中</returns>
+        public static DataSet PagingQuery(DataTable dtDataSource, int iPageSize)
+        {
+            try
+            {
+                DataSet dataSet = new DataSet();
+                int iDataSourceCount = dtDataSource.Rows.Count;
+                int iNumberPages = (iDataSourceCount / iPageSize) + (iDataSourceCount % iPageSize > 0 ? 1 : 0);
+                for (int iPages = 1; iPages <= iNumberPages; iPages++)
+                {
+                    //填充数据
+                    DataTable dtPageData = dtDataSource.Clone();
+                    for (int iRows = (iPages - 1) * iPageSize; iRows < iPages * iPageSize && iRows < dtDataSource.Rows.Count; iRows++)
+                    {
+                        var newRow = dtPageData.NewRow();
+                        var oldRow = dtDataSource.Rows[iRows];
+                        foreach (DataColumn dataColumn in dtDataSource.Columns)
+                        {
+                            newRow[dataColumn.ColumnName] = oldRow[dataColumn.ColumnName];
+                        }
+                        dtPageData.Rows.Add(newRow);
+                    }
+                    dataSet.Tables.Add(dtPageData);
+                }
+                return dataSet;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// DataTable分页查询
+        /// </summary>
+        /// <param name="dtDataSource">源数据(DataTable)</param>
+        /// <param name="iPageNo">页码</param>
+        /// <param name="iPageSize">每页条数</param>
+        /// <returns>指定页码的DataTable数据</returns>
+        public static DataTable PagingQuery(DataTable dtDataSource, int iPageNo, int iPageSize)
+        {
+            try
+            {
+                int iDataSourceCount = dtDataSource.Rows.Count;
+                int iNumberPages = (iDataSourceCount / iPageSize) + (iDataSourceCount % iPageSize > 0 ? 1 : 0);
+                iPageNo = iPageNo <= 0 ? 1 : iPageNo;
+                //填充数据
+                DataTable dtPageData = dtDataSource.Clone();
+                for (int iRows = (iPageNo - 1) * iPageSize; iRows < iPageNo * iPageSize && iRows < dtDataSource.Rows.Count; iRows++)
+                {
+                    var newRow = dtPageData.NewRow();
+                    var oldRow = dtDataSource.Rows[iRows];
+                    foreach (DataColumn dataColumn in dtDataSource.Columns)
+                    {
+                        newRow[dataColumn.ColumnName] = oldRow[dataColumn.ColumnName];
+                    }
+                    dtPageData.Rows.Add(newRow);
+                }
+                return dtPageData;
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+            }
+            return null;
+        }
     }
 }
