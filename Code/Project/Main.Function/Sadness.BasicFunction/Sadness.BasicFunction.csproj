@@ -69,6 +69,10 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ReleaseLib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -85,9 +89,13 @@
     <Compile Include="Command\PluginToolBar\AboutCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PluginMenu\QRCodeViewModel.cs" />
+    <Compile Include="ViewModels\PluginMenu\RecognitionQRCodeViewModel.cs" />
     <Compile Include="ViewModels\PluginMenu\RegistrationToolViewModel.cs" />
     <Compile Include="Views\PluginMenu\QRCode.xaml.cs">
       <DependentUpon>QRCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PluginMenu\RecognitionQRCode.xaml.cs">
+      <DependentUpon>RecognitionQRCode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PluginMenu\RegistrationTool.xaml.cs">
       <DependentUpon>RegistrationTool.xaml</DependentUpon>
@@ -101,6 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PluginMenu\QRCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PluginMenu\RecognitionQRCode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

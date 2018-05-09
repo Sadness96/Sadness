@@ -10,8 +10,9 @@ using System.Windows.Media.Imaging;
 using Sadness.SQLiteDB.Connect;
 using Utils.Helper.Image;
 using Utils.Helper.QRCode;
-using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Commands;
+using Sadness.BasicFunction.Views.PluginMenu;
 
 namespace Sadness.BasicFunction.ViewModels.PluginMenu
 {
@@ -321,7 +322,8 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
             {
                 return new DelegateCommand(delegate()
                 {
-
+                    RecognitionQRCode form = new RecognitionQRCode();
+                    form.ShowDialog();
                 });
             }
         }

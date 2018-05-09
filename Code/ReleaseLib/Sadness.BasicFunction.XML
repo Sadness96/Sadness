@@ -219,6 +219,115 @@
             动态识别
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel">
+            <summary>
+            RecognitionQRCode.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.#ctor">
+            <summary>
+            RecognitionQRCode.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Window_Loaded(System.Windows.Window)">
+            <summary>
+            窗体Load事件
+            </summary>
+            <param name="window">主窗体</param>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._loadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._textFPS">
+            <summary>
+            FPS
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._recognitionBtn">
+            <summary>
+            识别二维码按钮
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._QRCodeClose">
+            <summary>
+            关闭按钮图片
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.timer">
+            <summary>
+            全局计时器
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Timer_RecognitionQRCode(System.Object,System.EventArgs)">
+            <summary>
+            计时器方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.GetWindowBitmap">
+            <summary>
+            获取窗口范围内的图像(Bitmap)
+            </summary>
+            <returns>图像Bitmap</returns>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.LoadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.TextFPS">
+            <summary>
+            FPS
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionBtn">
+            <summary>
+            识别二维码按钮
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.QRCodeClose">
+            <summary>
+            关闭按钮图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionQRCode">
+            <summary>
+            动态识别
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel">
             <summary>
             RegistrationTool.xaml 的视图模型
@@ -313,6 +422,38 @@
             </summary>
         </member>
         <member name="M:Sadness.BasicFunction.Views.PluginMenu.QRCode.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.RecognitionQRCode">
+            <summary>
+            RecognitionQRCode.xaml 的交互逻辑
+            </summary>
+            <summary>
+            RecognitionQRCode
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RecognitionQRCode.#ctor">
+            <summary>
+            RecognitionQRCode.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RecognitionQRCode.topSizeGrip_MouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            窗体拖动委托
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RecognitionQRCode.close_MouseDown(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            关闭窗体
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.RecognitionQRCode.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

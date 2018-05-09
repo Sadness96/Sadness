@@ -15,7 +15,8 @@ namespace Main.Console
     {
         static void Main(string[] args)
         {
-            MainImage.SaveImageByteArray("QRCodeLogo", @"C:\Users\XiaoHua\Desktop\logo.png");
+            //MainImage.SaveImageByteArray("QRCodeLogo", @"C:\Users\XiaoHua\Desktop\logo.png");
+            //MainImage.SaveImageByteArray("QRCodeClose", @"C:\Users\XiaoHua\Desktop\close.png");
         }
     }
 }
