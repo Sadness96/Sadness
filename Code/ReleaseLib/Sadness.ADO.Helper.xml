@@ -323,6 +323,23 @@
         </member>
         <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertToList``1(System.Data.DataTable)”忽略有格式错误的 XML 注释 -->
         <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertDataTable(System.Collections.IList)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ADO.Helper.DatabaseConversion.DataProcessing.PagingQuery(System.Data.DataTable,System.Int32)">
+            <summary>
+            DataTable分页查询
+            </summary>
+            <param name="dtDataSource">源数据(DataTable)</param>
+            <param name="iPageSize">每页条数</param>
+            <returns>每页保存在DataSet中</returns>
+        </member>
+        <member name="M:ADO.Helper.DatabaseConversion.DataProcessing.PagingQuery(System.Data.DataTable,System.Int32,System.Int32)">
+            <summary>
+            DataTable分页查询
+            </summary>
+            <param name="dtDataSource">源数据(DataTable)</param>
+            <param name="iPageNo">页码</param>
+            <param name="iPageSize">每页条数</param>
+            <returns>指定页码的DataTable数据</returns>
+        </member>
         <member name="T:ADO.Helper.DatabaseConversion.SqlProcessing">
             <summary>
             Sql语句处理类

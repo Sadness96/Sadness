@@ -4,6 +4,26 @@
         <name>Sadness.BasicFunction</name>
     </assembly>
     <members>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.EncryptionCommand">
+            <summary>
+            加密解密
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.EncryptionCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.EncryptionCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.EncryptionCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand">
             <summary>
             二维码生成
@@ -97,6 +117,86 @@
         <member name="P:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
             <summary>
             功能名称
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel">
+            <summary>
+            Encryption.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.#ctor">
+            <summary>
+            Encryption.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textAesSource">
+            <summary>
+            Aes加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textAesTarget">
+            <summary>
+            Aes加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textAesKey">
+            <summary>
+            Aes加密秘钥
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesSource">
+            <summary>
+            Aes加密源
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesTarget">
+            <summary>
+            Aes加密目标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesKey">
+            <summary>
+            Aes加密秘钥
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.AesEncrypt">
+            <summary>
+            Aes加密
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.AesDecrypt">
+            <summary>
+            Aes解密
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.AesEncryptFile">
+            <summary>
+            Aes加密文件
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.AesDecryptFile">
+            <summary>
+            Aes解密文件
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel">
@@ -406,6 +506,19 @@
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ActivationCode">
             <summary>
             注册激活码
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.Encryption">
+            <summary>
+            Encryption.xaml 的交互逻辑
+            </summary>
+            <summary>
+            Encryption
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.Encryption.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.Views.PluginMenu.QRCode">

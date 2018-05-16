@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +10,16 @@ using Sadness.BasicFunction.Views.PluginMenu;
 namespace Sadness.BasicFunction.Command.PluginMenu
 {
     /// <summary>
-    /// 二维码生成
+    /// 加密解密
     /// </summary>
-    public class QRCodeCommand : MenuPluginInterface
+    public class EncryptionCommand : MenuPluginInterface
     {
         /// <summary>
         /// Click Command
         /// </summary>
         public void Click()
         {
-            QRCode form = new QRCode();
+            Encryption form = new Encryption();
             form.ShowDialog();
         }
 
@@ -27,7 +28,7 @@ namespace Sadness.BasicFunction.Command.PluginMenu
         /// </summary>
         public string strFunctionName
         {
-            get { return "二维码生成"; }
+            get { return "加密解密"; }
         }
 
         /// <summary>
