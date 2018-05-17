@@ -9,19 +9,30 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
                         <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextAesSource}"/>
-                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="10,15,0,-40" VerticalAlignment="Top" Text="秘钥："/>
-                        <TextBox HorizontalAlignment="Left" Height="22" Margin="50,12,0,-40" VerticalAlignment="Top" Width="150" Text="{Binding TextAesKey}"/>
-                        <Button Content="加密" HorizontalAlignment="Left" Margin="210,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesEncrypt}"/>
-                        <Button Content="解密" HorizontalAlignment="Left" Margin="290,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesDecrypt}"/>
-                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="370,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesEncryptFile}"/>
-                        <Button Content="解密文件" HorizontalAlignment="Left" Margin="450,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesDecryptFile}"/>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,15,0,-40" VerticalAlignment="Top" Text="秘钥："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="30,12,0,-40" VerticalAlignment="Top" Width="175" Text="{Binding TextAesKey}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="215,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesEncrypt}"/>
+                        <Button Content="解密" HorizontalAlignment="Left" Margin="295,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesDecrypt}"/>
+                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesEncryptFile}"/>
+                        <Button Content="解密文件" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding AesDecryptFile}"/>
                         <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextAesTarget}"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="DES" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextDesSource}"/>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,15,0,-40" VerticalAlignment="Top" Text="秘钥："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="30,12,0,-40" VerticalAlignment="Top" Width="70" Text="{Binding TextDesKey}"/>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="105,15,0,-40" VerticalAlignment="Top" Text="向量："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="135,12,0,-40" VerticalAlignment="Top" Width="70" Text="{Binding TextDesIV}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="215,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding DesEncrypt}"/>
+                        <Button Content="解密" HorizontalAlignment="Left" Margin="295,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding DesDecrypt}"/>
+                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding DesEncryptFile}"/>
+                        <Button Content="解密文件" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding DesDecryptFile}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextDesTarget}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="RSA" Width="80">
