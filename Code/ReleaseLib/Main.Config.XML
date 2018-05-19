@@ -43,14 +43,14 @@
             Window窗体
             </summary>
         </member>
-        <member name="F:Main.Config.ViewModels.MainConfigViewModel._loadedCommand">
-            <summary>
-            Load命令
-            </summary>
-        </member>
         <member name="P:Main.Config.ViewModels.MainConfigViewModel.window">
             <summary>
             Window窗体
+            </summary>
+        </member>
+        <member name="F:Main.Config.ViewModels.MainConfigViewModel._loadedCommand">
+            <summary>
+            Load命令
             </summary>
         </member>
         <member name="P:Main.Config.ViewModels.MainConfigViewModel.LoadedCommand">

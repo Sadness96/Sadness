@@ -240,7 +240,7 @@
             <summary>
             图片Base64加密
             </summary>
-            <param name="strPlaintext">图片路径</param>
+            <param name="strImagePath">图片路径</param>
             <param name="imageFormat">指定图像格式</param>
             <returns>Base64密文</returns>
         </member>
@@ -620,6 +620,31 @@
             <param name="pbKeyState">指向一个256字节的数组,数组用于接收每个虚拟键的状态.</param>
             <returns>若函数调用成功,则返回非0值.若函数调用不成功,则返回值为0.若要获得更多的错误信息,可以调用GetLastError函数</returns>
         </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
+            <summary>
+            大写锁定状态
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
+            <summary>
+            鼠标当前X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
+            <summary>
+            鼠标当前Y坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
+            <summary>
+            鼠标按下时X坐标
+            </summary>
+        </member>
+        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
+            <summary>
+            鼠标按下时Y坐标
+            </summary>
+        </member>
         <member name="M:Utils.Helper.HookProc.RecordOperation.#ctor">
             <summary>
             记录操作
@@ -715,31 +740,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.CapsLockStatus">
-            <summary>
-            大写锁定状态
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseX">
-            <summary>
-            鼠标当前X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strCurrentMouseY">
-            <summary>
-            鼠标当前Y坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseX">
-            <summary>
-            鼠标按下时X坐标
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.HookProc.RecordOperation.strMouseDownMouseY">
-            <summary>
-            鼠标按下时Y坐标
             </summary>
         </member>
         <member name="T:Utils.Helper.HookProc.TestFormHookListeners">
@@ -1347,6 +1347,11 @@
             WaitForm 的构造函数
             </summary>
         </member>
+        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
+            <summary>
+            处理进度信息
+            </summary>
+        </member>
         <member name="M:Utils.Helper.WaitingMessage.WaitForm.Refresh">
             <summary>
             刷新页面
@@ -1372,11 +1377,6 @@
         <member name="F:Utils.Helper.WaitingMessage.WaitForm.lblProgressInfo">
             <summary>
             进度信息
-            </summary>
-        </member>
-        <member name="P:Utils.Helper.WaitingMessage.WaitForm.ProgressInfo">
-            <summary>
-            处理进度信息
             </summary>
         </member>
         <member name="T:Utils.Helper.WaitingMessage.WaitMessage">

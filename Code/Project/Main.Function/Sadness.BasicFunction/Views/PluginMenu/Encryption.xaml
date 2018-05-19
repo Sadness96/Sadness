@@ -37,32 +37,71 @@
             </TabItem>
             <TabItem Header="RSA" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextRsaSource}"/>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,15,0,-40" VerticalAlignment="Top" Text="公钥："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="30,12,0,-40" VerticalAlignment="Top" Width="110" Text="{Binding TextRsaPublicKey}"/>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="145,15,0,-40" VerticalAlignment="Top" Text="私钥："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="175,12,0,-40" VerticalAlignment="Top" Width="110" Text="{Binding TextRsaPrivateKey}"/>
+                        <Button Content="产生秘钥" HorizontalAlignment="Left" Margin="295,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding RsaGenerateKey}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding RsaEncrypt}"/>
+                        <Button Content="解密" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding RsaDecrypt}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextRsaTarget}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Base64" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextBase64Source}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="215,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding Base64Encrypt}"/>
+                        <Button Content="解密" HorizontalAlignment="Left" Margin="295,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding Base64Decrypt}"/>
+                        <Button Content="加密图片" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding Base64EncryptImage}"/>
+                        <Button Content="解密图片" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding Base64DecryptImage}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextBase64Target}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="MD5" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextMD5Source}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding MD5Encrypt}"/>
+                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding MD5EncryptFile}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextMD5Target}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="SHA1" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextSHA1Source}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding SHA1Encrypt}"/>
+                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding SHA1EncryptFile}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextSHA1Target}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="CRC32" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Text="{Binding TextCRC32Source}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="375,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding CRC32Encrypt}"/>
+                        <Button Content="加密文件" HorizontalAlignment="Left" Margin="455,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding CRC32EncryptFile}"/>
+                        <TextBox VerticalAlignment="Stretch" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" AcceptsReturn="True" Height="165" Margin="0,46,0,0" Text="{Binding TextCRC32Target}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
             <TabItem Header="Folder" Width="80">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,15,0,-40" VerticalAlignment="Top" Text="密码："/>
+                        <TextBox HorizontalAlignment="Left" Height="22" Margin="30,12,0,-40" VerticalAlignment="Top" Width="160" Text="{Binding TextFolderKey}"/>
+                        <Button Content="加密" HorizontalAlignment="Left" Margin="195,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding FolderEncrypt}"/>
+                        <Button Content="解密" HorizontalAlignment="Left" Margin="275,12,0,-40" VerticalAlignment="Top" Width="75" Height="23" Command="{Binding FolderDecrypt}"/>
+                        <Button Content="加密文件夹" HorizontalAlignment="Left" Margin="355,12,0,-40" VerticalAlignment="Top" Width="85" Height="23" Command="{Binding FolderEncryptPassword}"/>
+                        <Button Content="解密文件夹" HorizontalAlignment="Left" Margin="445,12,0,-40" VerticalAlignment="Top" Width="85" Height="23" Command="{Binding FolderDecryptPassword}"/>
+                    </StackPanel>
                 </ScrollViewer>
             </TabItem>
         </TabControl>

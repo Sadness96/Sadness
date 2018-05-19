@@ -57,7 +57,7 @@ namespace Utils.Helper.Encryption
         /// <summary>
         /// 图片Base64加密
         /// </summary>
-        /// <param name="strPlaintext">图片路径</param>
+        /// <param name="strImagePath">图片路径</param>
         /// <param name="imageFormat">指定图像格式</param>
         /// <returns>Base64密文</returns>
         public static string ImageBase64Encrypt(string strImagePath, ImageFormat imageFormat)
