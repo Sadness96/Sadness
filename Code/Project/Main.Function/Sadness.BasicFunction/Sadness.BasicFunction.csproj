@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\PluginMenu\EncryptionCommand.cs" />
+    <Compile Include="Command\PluginMenu\FileSharingCommand.cs" />
     <Compile Include="Command\PluginMenu\QRCodeCommand.cs" />
     <Compile Include="Command\PluginMenu\RegistrationToolCommand.cs" />
     <Compile Include="Command\PluginMenu\TestCommand.cs" />
@@ -91,11 +92,19 @@
     <Compile Include="Command\PluginToolBar\AboutCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PluginMenu\EncryptionViewModel.cs" />
+    <Compile Include="ViewModels\PluginMenu\FileSharingSettingsViewModel.cs" />
+    <Compile Include="ViewModels\PluginMenu\FileSharingViewModel.cs" />
     <Compile Include="ViewModels\PluginMenu\QRCodeViewModel.cs" />
     <Compile Include="ViewModels\PluginMenu\RecognitionQRCodeViewModel.cs" />
     <Compile Include="ViewModels\PluginMenu\RegistrationToolViewModel.cs" />
     <Compile Include="Views\PluginMenu\Encryption.xaml.cs">
       <DependentUpon>Encryption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PluginMenu\FileSharing.xaml.cs">
+      <DependentUpon>FileSharing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PluginMenu\FileSharingSettings.xaml.cs">
+      <DependentUpon>FileSharingSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PluginMenu\QRCode.xaml.cs">
       <DependentUpon>QRCode.xaml</DependentUpon>
@@ -115,6 +124,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PluginMenu\Encryption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PluginMenu\FileSharing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PluginMenu\FileSharingSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

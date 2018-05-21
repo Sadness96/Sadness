@@ -1,0 +1,29 @@
+﻿<Window x:Class="Sadness.BasicFunction.Views.PluginMenu.FileSharing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="{Binding Title}" Height="350" Width="525" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize"
+        Icon="{Binding MainAppLargeIcon}">
+    <Grid>
+        <Label Content="文件共享：" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="GridShare" HorizontalAlignment="Left" Margin="1,35,0,0" VerticalAlignment="Top" Height="275" Width="507" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" ItemsSource="{Binding GridShareInfo}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding name}" ClipboardContentBinding="{x:Null}" Header="共享名" Width="100"/>
+                <DataGridTextColumn Binding="{Binding path}" ClipboardContentBinding="{x:Null}" Header="文件夹路径" Width="200"/>
+                <DataGridTextColumn Binding="{Binding permissions}" ClipboardContentBinding="{x:Null}" Header="权限" Width="*"/>
+                <DataGridTextColumn Binding="{Binding type}" ClipboardContentBinding="{x:Null}" Header="描述" Width="*"/>
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding GridSelectionChanged}" CommandParameter="{Binding SelectedItem,ElementName=GridShare}"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding GridMouseDoubleClick}" CommandParameter="{Binding SelectedItem,ElementName=GridShare}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+        <Button Content="新增共享" HorizontalAlignment="Left" Margin="260,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding NewShare}"/>
+        <Button Content="修改共享" HorizontalAlignment="Left" Margin="340,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ModifyShare}"/>
+        <Button Content="删除共享" HorizontalAlignment="Left" Margin="420,8,0,0" VerticalAlignment="Top" Width="75" Command="{Binding DeleteShare}"/>
+    </Grid>
+</Window>

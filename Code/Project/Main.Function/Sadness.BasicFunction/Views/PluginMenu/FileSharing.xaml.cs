@@ -16,17 +16,17 @@ using Sadness.BasicFunction.ViewModels.PluginMenu;
 namespace Sadness.BasicFunction.Views.PluginMenu
 {
     /// <summary>
-    /// Encryption.xaml 的交互逻辑
+    /// FileSharing.xaml 的交互逻辑
     /// </summary>
-    public partial class Encryption : Window
+    public partial class FileSharing : Window
     {
         /// <summary>
-        /// Encryption.xaml 的构造函数
+        /// FileSharing.xaml 的构造函数
         /// </summary>
-        public Encryption()
+        public FileSharing()
         {
             InitializeComponent();
-            this.DataContext = new EncryptionViewModel();
+            this.DataContext = new FileSharingViewModel();
         }
     }
 }

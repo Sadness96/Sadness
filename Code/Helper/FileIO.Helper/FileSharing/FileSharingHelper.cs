@@ -94,20 +94,20 @@ namespace FileIO.Helper.FileSharing
         /// <param name="FolderPath">共享文件路径</param>
         /// <param name="ShareName">共享文件名称</param>
         /// <param name="Permissions">访问控制权限('完全控制':'FULL','只读':'READ','读取/写入':'CHANGE')</param>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public static int AddShareFolder(string FolderPath, string ShareName, string Permissions)
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool AddShareFolder(string FolderPath, string ShareName, string Permissions)
         {
             try
             {
                 //输入命令NET SHARE sharename=drive:path [/GRANT:user,[READ | CHANGE | FULL]
                 string cmd = string.Format(@"net share {0}={1} /grant:{2},{3}", ShareName, FolderPath, System.Environment.UserName, Permissions);
                 string strOutput = ImplementationCMD(cmd);
-                return strOutput.IndexOf("共享成功") > -1 ? 0 : -1;
+                return strOutput.IndexOf("共享成功") > -1 ? true : false;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
@@ -117,20 +117,20 @@ namespace FileIO.Helper.FileSharing
         /// <param name="FolderPath">共享文件路径</param>
         /// <param name="ShareName">共享文件名称</param>
         /// <param name="PermissionsType">访问控制权限(枚举)</param>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public static int AddShareFolder(string FolderPath, string ShareName, SharingPermissions.PermissionsType PermissionsType)
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool AddShareFolder(string FolderPath, string ShareName, SharingPermissions.PermissionsType PermissionsType)
         {
             try
             {
                 //输入命令NET SHARE sharename=drive:path [/GRANT:user,[READ | CHANGE | FULL]
                 string cmd = string.Format(@"net share {0}={1} /grant:{2},{3}", ShareName, FolderPath, System.Environment.UserName, PermissionsType);
                 string strOutput = ImplementationCMD(cmd);
-                return strOutput.IndexOf("共享成功") > -1 ? 0 : -1;
+                return strOutput.IndexOf("共享成功") > -1 ? true : false;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
@@ -138,20 +138,20 @@ namespace FileIO.Helper.FileSharing
         /// 删除共享
         /// </summary>
         /// <param name="FolderPath">共享文件夹路径</param>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public static int DeleteShareFolder(string FolderPath)
+        /// <returns>成功返回true,失败返回false</returns>
+        public static bool DeleteShareFolder(string FolderPath)
         {
             try
             {
                 //输入命令NET SHARE sharename \\computername /DELETE
                 string cmd = string.Format(@"net share {0} /delete /y", FolderPath);
                 string strOutput = ImplementationCMD(cmd);
-                return strOutput.IndexOf("已经删除") > -1 ? 0 : -1;
+                return strOutput.IndexOf("已经删除") > -1 ? true : false;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 

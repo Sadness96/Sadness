@@ -24,6 +24,26 @@
             功能分组
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.FileSharingCommand">
+            <summary>
+            文件共享
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.FileSharingCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.FileSharingCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.FileSharingCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.QRCodeCommand">
             <summary>
             二维码生成
@@ -134,17 +154,7 @@
             应用程序标题
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.Title">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._mainAppLargeIcon">
-            <summary>
-            应用程序大图标
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.MainAppLargeIcon">
             <summary>
             应用程序大图标
             </summary>
@@ -154,17 +164,7 @@
             Aes加密源
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesSource">
-            <summary>
-            Aes加密源
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textAesTarget">
-            <summary>
-            Aes加密目标
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesTarget">
             <summary>
             Aes加密目标
             </summary>
@@ -172,6 +172,118 @@
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textAesKey">
             <summary>
             Aes加密秘钥
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesSource">
+            <summary>
+            Des加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesTarget">
+            <summary>
+            Des加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesKey">
+            <summary>
+            Des加密秘钥
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesIV">
+            <summary>
+            Des加密向量
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaSource">
+            <summary>
+            Rsa加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaTarget">
+            <summary>
+            Rsa加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaPublicKey">
+            <summary>
+            Rsa加密公钥
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaPrivateKey">
+            <summary>
+            Rsa加密私钥
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textBase64Source">
+            <summary>
+            Base64加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textBase64Target">
+            <summary>
+            Base64加密目标
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.GetImageFormatFromPath(System.String)">
+            <summary>
+            根据图片路径获得图片格式(缺少MemoryBmp)
+            </summary>
+            <param name="strImagePath">图片路径</param>
+            <returns>图片格式</returns>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textMD5Source">
+            <summary>
+            MD5加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textMD5Target">
+            <summary>
+            MD5加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textSHA1Source">
+            <summary>
+            SHA1加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textSHA1Target">
+            <summary>
+            SHA1加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textCRC32Source">
+            <summary>
+            CRC32加密源
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textCRC32Target">
+            <summary>
+            CRC32加密目标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textFolderKey">
+            <summary>
+            Folder加密秘钥
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesSource">
+            <summary>
+            Aes加密源
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesTarget">
+            <summary>
+            Aes加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextAesKey">
@@ -199,19 +311,9 @@
             Aes解密文件
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesSource">
-            <summary>
-            Des加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextDesSource">
             <summary>
             Des加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesTarget">
-            <summary>
-            Des加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextDesTarget">
@@ -219,19 +321,9 @@
             Des加密目标
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesKey">
-            <summary>
-            Des加密秘钥
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextDesKey">
             <summary>
             Des加密秘钥
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textDesIV">
-            <summary>
-            Des加密向量
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextDesIV">
@@ -259,19 +351,9 @@
             Des解密文件
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaSource">
-            <summary>
-            Rsa加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextRsaSource">
             <summary>
             Rsa加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaTarget">
-            <summary>
-            Rsa加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextRsaTarget">
@@ -279,19 +361,9 @@
             Rsa加密目标
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaPublicKey">
-            <summary>
-            Rsa加密公钥
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextRsaPublicKey">
             <summary>
             Rsa加密公钥
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textRsaPrivateKey">
-            <summary>
-            Rsa加密私钥
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextRsaPrivateKey">
@@ -314,19 +386,9 @@
             Rsa解密
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textBase64Source">
-            <summary>
-            Base64加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextBase64Source">
             <summary>
             Base64加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textBase64Target">
-            <summary>
-            Base64加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextBase64Target">
@@ -354,26 +416,9 @@
             Base64解密图片
             </summary>
         </member>
-        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.GetImageFormatFromPath(System.String)">
-            <summary>
-            根据图片路径获得图片格式(缺少MemoryBmp)
-            </summary>
-            <param name="strImagePath">图片路径</param>
-            <returns>图片格式</returns>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textMD5Source">
-            <summary>
-            MD5加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextMD5Source">
             <summary>
             MD5加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textMD5Target">
-            <summary>
-            MD5加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextMD5Target">
@@ -391,19 +436,9 @@
             MD5加密文件
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textSHA1Source">
-            <summary>
-            SHA1加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextSHA1Source">
             <summary>
             SHA1加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textSHA1Target">
-            <summary>
-            SHA1加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextSHA1Target">
@@ -421,19 +456,9 @@
             SHA1加密文件
             </summary>
         </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textCRC32Source">
-            <summary>
-            CRC32加密源
-            </summary>
-        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextCRC32Source">
             <summary>
             SHA1加密源
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textCRC32Target">
-            <summary>
-            CRC32加密目标
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextCRC32Target">
@@ -449,11 +474,6 @@
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.CRC32EncryptFile">
             <summary>
             CRC32加密文件
-            </summary>
-        </member>
-        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textFolderKey">
-            <summary>
-            Folder加密秘钥
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.TextFolderKey">
@@ -481,6 +501,192 @@
             Folder解密(带密码)
             </summary>
         </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel">
+            <summary>
+            FileSharingSettings.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.#ctor">
+            <summary>
+            FileSharingSettings.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.#ctor(System.Data.DataRowView)">
+            <summary>
+            FileSharingSettings.xaml 的视图模型
+            </summary>
+            <param name="mySelectedElement">选中数据</param>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._SelectedItemRow">
+            <summary>
+            当前表格选中行数据
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._setSharing">
+            <summary>
+            设置共享
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._setSharingIndex">
+            <summary>
+            设置共享索引
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._setSharingValue">
+            <summary>
+            设置共享值
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._strSharingPath">
+            <summary>
+            共享路径
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel._strSharingName">
+            <summary>
+            共享名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.SelectedItemRow">
+            <summary>
+            当前表格选中行数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.SetSharing">
+            <summary>
+            设置共享
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.SetSharingIndex">
+            <summary>
+            设置共享索引
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.SetSharingValue">
+            <summary>
+            设置共享值
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.StrSharingPath">
+            <summary>
+            共享路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.StrSharingName">
+            <summary>
+            共享名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.SelectPath">
+            <summary>
+            选择文件路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.AddFile">
+            <summary>
+            新增共享文件
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingSettingsViewModel.Close">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel">
+            <summary>
+            FileSharing.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.#ctor">
+            <summary>
+            FileSharing.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel._gridShareInfo">
+            <summary>
+            共享信息
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel._SelectedItemRow">
+            <summary>
+            当前表格选中行数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.GridShareInfo">
+            <summary>
+            共享信息
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.SelectedItemRow">
+            <summary>
+            当前表格选中行数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.NewShare">
+            <summary>
+            新增共享
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.ModifyShare">
+            <summary>
+            修改共享
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.DeleteShare">
+            <summary>
+            删除共享
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.GridSelectionChanged">
+            <summary>
+            表格选中事件
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.FileSharingViewModel.GridMouseDoubleClick">
+            <summary>
+            表格双击事件
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel">
             <summary>
             QRCode.xaml 的视图模型
@@ -496,17 +702,7 @@
             应用程序标题
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.Title">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._mainAppLargeIcon">
-            <summary>
-            应用程序大图标
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.MainAppLargeIcon">
             <summary>
             应用程序大图标
             </summary>
@@ -516,17 +712,7 @@
             二维码LOGO
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogo">
-            <summary>
-            二维码LOGO
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._QRCodeSource">
-            <summary>
-            二维码
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeSource">
             <summary>
             二维码
             </summary>
@@ -536,17 +722,7 @@
             二维码文本
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeText">
-            <summary>
-            二维码文本
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._bISExistenceLogo">
-            <summary>
-            是否使用LOGO图片
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.BISExistenceLogo">
             <summary>
             是否使用LOGO图片
             </summary>
@@ -556,14 +732,44 @@
             二维码LOGO图片
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogoPath">
-            <summary>
-            二维码LOGO图片
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel._bitmapQRCode">
             <summary>
             全局拿到二维码点阵图(用于生成图片文件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogo">
+            <summary>
+            二维码LOGO
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeSource">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeText">
+            <summary>
+            二维码文本
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.BISExistenceLogo">
+            <summary>
+            是否使用LOGO图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.QRCodeLogoPath">
+            <summary>
+            二维码LOGO图片
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.QRCodeViewModel.BitmapQRCode">
@@ -622,17 +828,7 @@
             应用程序标题
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Title">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._mainAppLargeIcon">
-            <summary>
-            应用程序大图标
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.MainAppLargeIcon">
             <summary>
             应用程序大图标
             </summary>
@@ -642,17 +838,7 @@
             Window窗体
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.window">
-            <summary>
-            Window窗体
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._loadedCommand">
-            <summary>
-            Load命令
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.LoadedCommand">
             <summary>
             Load命令
             </summary>
@@ -662,17 +848,7 @@
             FPS
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.TextFPS">
-            <summary>
-            FPS
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel._recognitionBtn">
-            <summary>
-            识别二维码按钮
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionBtn">
             <summary>
             识别二维码按钮
             </summary>
@@ -682,19 +858,9 @@
             关闭按钮图片
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.QRCodeClose">
-            <summary>
-            关闭按钮图片
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.timer">
             <summary>
             全局计时器
-            </summary>
-        </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionQRCode">
-            <summary>
-            动态识别
             </summary>
         </member>
         <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Timer_RecognitionQRCode(System.Object,System.EventArgs)">
@@ -709,6 +875,46 @@
             获取窗口范围内的图像(Bitmap)
             </summary>
             <returns>图像Bitmap</returns>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.window">
+            <summary>
+            Window窗体
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.LoadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.TextFPS">
+            <summary>
+            FPS
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionBtn">
+            <summary>
+            识别二维码按钮
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.QRCodeClose">
+            <summary>
+            关闭按钮图片
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RecognitionQRCodeViewModel.RecognitionQRCode">
+            <summary>
+            动态识别
+            </summary>
         </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel">
             <summary>
@@ -725,14 +931,14 @@
             应用程序标题
             </summary>
         </member>
-        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Title">
-            <summary>
-            应用程序标题
-            </summary>
-        </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel._mainAppLargeIcon">
             <summary>
             应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.Title">
+            <summary>
+            应用程序标题
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.MainAppLargeIcon">
@@ -798,7 +1004,54 @@
             Encryption
             </summary>
         </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.Encryption.#ctor">
+            <summary>
+            Encryption.xaml 的构造函数
+            </summary>
+        </member>
         <member name="M:Sadness.BasicFunction.Views.PluginMenu.Encryption.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.FileSharing">
+            <summary>
+            FileSharing.xaml 的交互逻辑
+            </summary>
+            <summary>
+            FileSharing
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.FileSharing.#ctor">
+            <summary>
+            FileSharing.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.FileSharing.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.FileSharingSettings">
+            <summary>
+            FileSharingSettings.xaml 的交互逻辑
+            </summary>
+            <summary>
+            FileSharingSettings
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.FileSharingSettings.#ctor">
+            <summary>
+            FileSharingSettings.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.FileSharingSettings.#ctor(System.Data.DataRowView)">
+            <summary>
+            FileSharingSettings.xaml 的构造函数
+            </summary>
+            <param name="mySelectedElement">选中数据</param>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.FileSharingSettings.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

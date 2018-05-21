@@ -9,16 +9,16 @@ using Sadness.BasicFunction.Views.PluginMenu;
 namespace Sadness.BasicFunction.Command.PluginMenu
 {
     /// <summary>
-    /// 加密解密
+    /// 文件共享
     /// </summary>
-    public class EncryptionCommand : MenuPluginInterface
+    public class FileSharingCommand : MenuPluginInterface
     {
         /// <summary>
         /// Click Command
         /// </summary>
         public void Click()
         {
-            Encryption form = new Encryption();
+            FileSharing form = new FileSharing();
             form.ShowDialog();
         }
 
@@ -27,7 +27,7 @@ namespace Sadness.BasicFunction.Command.PluginMenu
         /// </summary>
         public string strFunctionName
         {
-            get { return "加密解密"; }
+            get { return "文件共享"; }
         }
 
         /// <summary>
