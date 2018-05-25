@@ -4,6 +4,26 @@
         <name>Sadness.BasicFunction</name>
     </assembly>
     <members>
+        <member name="T:Sadness.BasicFunction.Command.PluginMenu.DBConversionCommand">
+            <summary>
+            数据转换
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Command.PluginMenu.DBConversionCommand.Click">
+            <summary>
+            Click Command
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.DBConversionCommand.strFunctionName">
+            <summary>
+            功能名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Command.PluginMenu.DBConversionCommand.strFunctionGroup">
+            <summary>
+            功能分组
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Command.PluginMenu.EncryptionCommand">
             <summary>
             加密解密
@@ -137,6 +157,359 @@
         <member name="P:Sadness.BasicFunction.Command.PluginToolBar.AboutCommand.strFunctionName">
             <summary>
             功能名称
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Models.TablesTree">
+            <summary>
+            表名Tree数据模型
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TablesTree.Choose">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TablesTree.Table">
+            <summary>
+            表名
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Models.TableStructureGrid">
+            <summary>
+            表字段Grid数据模型
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.Choose">
+            <summary>
+            选择
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.SourceFieldName">
+            <summary>
+            源表列名(不允许修改)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.TargetFieldName">
+            <summary>
+            目标表列名
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.FieldType">
+            <summary>
+            表字段类型
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.FieldLength">
+            <summary>
+            表字段列长度
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.DecimalLength">
+            <summary>
+            表字段列小数位数
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.TableStructureGrid.PrimaryKey">
+            <summary>
+            是否主键
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel">
+            <summary>
+            DBConnection.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.#ctor(System.String)">
+            <summary>
+            DBConnection.xaml 的视图模型
+            </summary>
+            <param name="strDataBaseName">数据库名称 SqlServer/Oracle/MySql/Access/SQLite</param>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplaySqlServer">
+            <summary>
+            显示SqlServer
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplayOracle">
+            <summary>
+            显示Oracle
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplayMySql">
+            <summary>
+            显示MySql
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplayAccess">
+            <summary>
+            显示Access
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplaySQLite">
+            <summary>
+            显示SQLite
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._strIPAddress">
+            <summary>
+            IP地址/数据库
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._strDataBase">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._strUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._strPassword">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._strPath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strDataBaseName">
+            <summary>
+            数据库名称
+            SqlServer/Oracle/MySql/Access/SQLite
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.DisplaySqlServer">
+            <summary>
+            显示SqlServer
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.DisplayOracle">
+            <summary>
+            显示Oracle
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.DisplayMySql">
+            <summary>
+            显示MySql
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.DisplayAccess">
+            <summary>
+            显示Access
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.DisplaySQLite">
+            <summary>
+            显示SQLite
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strIPAddress">
+            <summary>
+            IP地址/数据库
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strDataBase">
+            <summary>
+            数据库名称
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strUserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strPassword">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strPath">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.IsOffaceString">
+            <summary>
+            Access数据库单选按钮
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.RadioButtonOfface">
+            <summary>
+            Access数据库单选按钮(单击事件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.SelectPath">
+            <summary>
+            选择文件路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.SavePath">
+            <summary>
+            选择文件保存路径
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.ConnectionDB">
+            <summary>
+            连接数据库(测试连接)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.Close">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel">
+            <summary>
+            DBConversion.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.#ctor">
+            <summary>
+            DBConversion.xaml 的视图模型
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._mainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._TreeList">
+            <summary>
+            表名Tree绑定数据
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._GridList">
+            <summary>
+            表字段Grid绑定数据
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._FieldTypeList">
+            <summary>
+            字段类型列绑定数据
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._SourceConnectionColour">
+            <summary>
+            源数据连接颜色
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._TargetConnectionColour">
+            <summary>
+            目标数据连接颜色
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._IsBusy">
+            <summary>
+            是否空闲
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.Title">
+            <summary>
+            应用程序标题
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.MainAppLargeIcon">
+            <summary>
+            应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.TreeList">
+            <summary>
+            表名Tree绑定数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.GridList">
+            <summary>
+            表字段Grid绑定数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.FieldTypeList">
+            <summary>
+            字段类型列绑定数据
+            </summary>
+        </member>
+        <!-- 对于成员“P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.DicTablesStructure”忽略有格式错误的 XML 注释 -->
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.SourceConnectionColour">
+            <summary>
+            源数据连接颜色
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.TargetConnectionColour">
+            <summary>
+            目标数据连接颜色
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.IsBusy">
+            <summary>
+            是否空闲
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.SourceConnectionString">
+            <summary>
+            源数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.TargetConnectionString">
+            <summary>
+            目标数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.IsSourceString">
+            <summary>
+            源数据库单选按钮
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.RadioButtonSource">
+            <summary>
+            源数据库单选按钮(单击事件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.IsTargetString">
+            <summary>
+            目标数据库单选按钮
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.RadioButtonTarget">
+            <summary>
+            目标数据库单选按钮(单击事件)
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.ConnectSourceData">
+            <summary>
+            连接源数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.ConnectTargetData">
+            <summary>
+            连接目标数据
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel">
@@ -994,6 +1367,48 @@
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.RegistrationToolViewModel.ActivationCode">
             <summary>
             注册激活码
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.DBConnection">
+            <summary>
+            DBConnection.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DBConnection
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.#ctor">
+            <summary>
+            DBConnection.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.#ctor(System.String)">
+            <summary>
+            DBConnection.xaml 的构造函数
+            </summary>
+            <param name="strDataBaseName">数据库名称 SqlServer/Oracle/MySql/Access/SQLite</param>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Views.PluginMenu.DBConversion">
+            <summary>
+            DBConversion.xaml 的交互逻辑
+            </summary>
+            <summary>
+            DBConversion
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConversion.#ctor">
+            <summary>
+            DBConversion.xaml 的构造函数
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConversion.InitializeComponent">
+            <summary>
+            InitializeComponent
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.Views.PluginMenu.Encryption">
