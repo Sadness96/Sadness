@@ -7,6 +7,12 @@
     <Grid>
         <GroupBox Header="SqlServer" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Height="225" Width="422" Visibility="{Binding DisplaySqlServer}">
             <Grid>
+                <!--Load方法-->
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=window}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <Label Content="IP地址：" HorizontalAlignment="Left" Margin="26,7,0,0" VerticalAlignment="Top"/>
                 <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,9,10,157"/>
                 <Label Content="数据库名：" HorizontalAlignment="Left" Margin="12,41,0,0" VerticalAlignment="Top"/>

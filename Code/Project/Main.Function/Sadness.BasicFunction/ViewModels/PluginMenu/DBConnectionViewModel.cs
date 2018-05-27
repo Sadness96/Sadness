@@ -6,15 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Input;
 using System.Drawing.Imaging;
 using System.Collections.ObjectModel;
 using Sadness.SQLiteDB.Connect;
 using Sadness.BasicFunction.Models;
-using Utils.Helper.TXT;
-using Utils.Helper.Image;
 using Prism.Mvvm;
+using Prism.Events;
 using Prism.Commands;
 using ADO.Helper.DatabaseConversion;
+using ADO.Helper.SqlServer;
+using ADO.Helper.Oracle;
+using ADO.Helper.MySql;
+using ADO.Helper.Access;
+using ADO.Helper.SQLite;
+using Utils.Helper.TXT;
+using Utils.Helper.Image;
 
 namespace Sadness.BasicFunction.ViewModels.PluginMenu
 {
@@ -26,15 +33,20 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         /// <summary>
         /// DBConnection.xaml 的视图模型
         /// </summary>
+        /// <param name="eventAggregator">Defines an interface to get instances of an event type.</param>
         /// <param name="strDataBaseName">数据库名称 SqlServer/Oracle/MySql/Access/SQLite</param>
-        public DBConnectionViewModel(string strDataBaseName)
+        public DBConnectionViewModel(IEventAggregator eventAggregator, string strDataBaseName)
         {
+            //委托Load方法
+            LoadedCommand = new DelegateCommand<Window>(Window_Loaded);
             //应用程序标题
             Title = "连接数据库";
             //设置软件图标
             MainAppLargeIcon = ImageHelper.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
             //赋值全局变量数据库名称
             this.strDataBaseName = strDataBaseName;
+            //赋值全局变量消息机制
+            this.eventAggregator = eventAggregator;
             //初始化控件
             if (strDataBaseName.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
             {
@@ -79,6 +91,16 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         }
 
         /// <summary>
+        /// Window窗体Load事件
+        /// </summary>
+        /// <param name="window">主窗体</param>
+        private void Window_Loaded(Window window)
+        {
+            //全局获得Window窗体
+            this.window = window;
+        }
+
+        /// <summary>
         /// 应用程序标题
         /// </summary>
         private string _title;
@@ -113,6 +135,49 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
             set
             {
                 _mainAppLargeIcon = value;
+            }
+        }
+
+        /// <summary>
+        /// 消息机制传递数据库连接信息
+        /// </summary>
+        private IEventAggregator eventAggregator;
+
+        /// <summary>
+        /// Load命令
+        /// </summary>
+        private ICommand _loadedCommand;
+        /// <summary>
+        /// Load命令
+        /// </summary>
+        public ICommand LoadedCommand
+        {
+            get
+            {
+                return _loadedCommand;
+            }
+            set
+            {
+                _loadedCommand = value;
+            }
+        }
+
+        /// <summary>
+        /// Window窗体
+        /// </summary>
+        private Window _window;
+        /// <summary>
+        /// Window窗体
+        /// </summary>
+        public Window window
+        {
+            get
+            {
+                return _window;
+            }
+            set
+            {
+                _window = value;
             }
         }
 
@@ -400,25 +465,115 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
             {
                 return new DelegateCommand(delegate()
                 {
-                    if (strDataBaseName == "SqlServer")
+                    if (strDataBaseName.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
                     {
-
+                        SqlServerHelper sqlHelper = new SqlServerHelper();
+                        sqlHelper.SqlServerConnectionString(strIPAddress, strDataBase, strUserName, strPassword);
+                        if (sqlHelper.Open() == 0)
+                        {
+                            //连接成功
+                            sqlHelper.Close();
+                            eventAggregator.GetEvent<EventConnection>().Publish(new Models.EventArgs() { strDataBaseName = TypeProcessing.DataBase.SqlServer.ToString(), strSqlConnection = sqlHelper.GetConnectionString() });
+                            this.window.Close();
+                        }
+                        else
+                        {
+                            //连接失败
+                            MessageBox.Show("连接失败!!!");
+                        }
                     }
-                    else if (strDataBaseName == "Oracle")
+                    else if (strDataBaseName.Equals(TypeProcessing.DataBase.Oracle.ToString()))
                     {
-
+                        OracleHelper sqlHelper = new OracleHelper();
+                        sqlHelper.OracleConnectionString(strIPAddress, strUserName, strPassword);
+                        if (sqlHelper.Open() == 0)
+                        {
+                            //连接成功
+                            sqlHelper.Close();
+                            eventAggregator.GetEvent<EventConnection>().Publish(new Models.EventArgs() { strDataBaseName = TypeProcessing.DataBase.Oracle.ToString(), strSqlConnection = sqlHelper.GetConnectionString() });
+                            this.window.Close();
+                        }
+                        else
+                        {
+                            //连接失败
+                            MessageBox.Show("连接失败!!!");
+                        }
                     }
-                    else if (strDataBaseName == "MySql")
+                    else if (strDataBaseName.Equals(TypeProcessing.DataBase.MySql.ToString()))
                     {
-
+                        MySqlHelper sqlHelper = new MySqlHelper();
+                        sqlHelper.MySqlConnectionString(strIPAddress, strUserName, strPassword, strDataBase);
+                        if (sqlHelper.Open() == 0)
+                        {
+                            //连接成功
+                            sqlHelper.Close();
+                            eventAggregator.GetEvent<EventConnection>().Publish(new Models.EventArgs() { strDataBaseName = TypeProcessing.DataBase.MySql.ToString(), strSqlConnection = sqlHelper.GetConnectionString() });
+                            this.window.Close();
+                        }
+                        else
+                        {
+                            //连接失败
+                            MessageBox.Show("连接失败!!!");
+                        }
                     }
-                    else if (strDataBaseName == "Access")
+                    else if (strDataBaseName.Equals(TypeProcessing.DataBase.Access.ToString()))
                     {
-
+                        AccessHelper sqlHelper = new AccessHelper();
+                        //判断是否需要新建数据库
+                        if (!string.IsNullOrEmpty(strPath) && !System.IO.File.Exists(strPath))
+                        {
+                            if (sqlHelper.CreateDataBase(strPath) == -1)
+                            {
+                                System.Windows.MessageBox.Show("创建数据库失败!!!");
+                            }
+                        }
+                        //连接数据库
+                        if (string.IsNullOrEmpty(IsOffaceString) || IsOffaceString == "offace2003")
+                        {
+                            sqlHelper.AccessConnectionPath_Office2003(strPath);
+                        }
+                        else
+                        {
+                            sqlHelper.AccessConnectionPath_Office2007(strPath);
+                        }
+                        if (sqlHelper.Open() == 0)
+                        {
+                            //连接成功
+                            sqlHelper.Close();
+                            eventAggregator.GetEvent<EventConnection>().Publish(new Models.EventArgs() { strDataBaseName = TypeProcessing.DataBase.Access.ToString(), strSqlConnection = sqlHelper.GetConnectionString() });
+                            this.window.Close();
+                        }
+                        else
+                        {
+                            //连接失败
+                            MessageBox.Show("连接失败!!!");
+                        }
                     }
-                    else if (strDataBaseName == "SQLite")
+                    else if (strDataBaseName.Equals(TypeProcessing.DataBase.SQLite.ToString()))
                     {
-
+                        SQLiteHelper sqlHelper = new SQLiteHelper();
+                        //判断是否需要新建数据库
+                        if (!string.IsNullOrEmpty(strPath) && !System.IO.File.Exists(strPath))
+                        {
+                            if (sqlHelper.CreateDataBase(strPath) == -1)
+                            {
+                                System.Windows.MessageBox.Show("创建数据库失败!!!");
+                            }
+                        }
+                        //连接数据库
+                        sqlHelper.SQLiteConnectionPath(strPath);
+                        if (sqlHelper.Open() == 0)
+                        {
+                            //连接成功
+                            sqlHelper.Close();
+                            eventAggregator.GetEvent<EventConnection>().Publish(new Models.EventArgs() { strDataBaseName = TypeProcessing.DataBase.SQLite.ToString(), strSqlConnection = sqlHelper.GetConnectionString() });
+                            this.window.Close();
+                        }
+                        else
+                        {
+                            //连接失败
+                            MessageBox.Show("连接失败!!!");
+                        }
                     }
                 });
             }

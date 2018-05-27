@@ -159,6 +159,48 @@
             功能名称
             </summary>
         </member>
+        <member name="F:Sadness.BasicFunction.Common.App.exitFrameCallback">
+            <summary>
+            表示一个用于调度程序操作的委托
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Common.App.DoEvents">
+            <summary>
+            刷新界面
+            </summary>
+        </member>
+        <member name="M:Sadness.BasicFunction.Common.App.ExitFrame(System.Object)">
+            <summary>
+            退出框架
+            </summary>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sadness.BasicFunction.Models.EventConnection">
+            <summary>
+            消息机制传递数据库连接信息
+            </summary>
+        </member>
+        <member name="T:Sadness.BasicFunction.Models.EventArgs">
+            <summary>
+            事件集合
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.EventArgs.strSourceOrTarget">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.EventArgs.strDataBaseName">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.Models.EventArgs.strSqlConnection">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
         <member name="T:Sadness.BasicFunction.Models.TablesTree">
             <summary>
             表名Tree数据模型
@@ -219,11 +261,18 @@
             DBConnection.xaml 的视图模型
             </summary>
         </member>
-        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.#ctor(System.String)">
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.#ctor(Prism.Events.IEventAggregator,System.String)">
             <summary>
             DBConnection.xaml 的视图模型
             </summary>
+            <param name="eventAggregator">Defines an interface to get instances of an event type.</param>
             <param name="strDataBaseName">数据库名称 SqlServer/Oracle/MySql/Access/SQLite</param>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.Window_Loaded(System.Windows.Window)">
+            <summary>
+            Window窗体Load事件
+            </summary>
+            <param name="window">主窗体</param>
         </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._title">
             <summary>
@@ -233,6 +282,21 @@
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._mainAppLargeIcon">
             <summary>
             应用程序大图标
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.eventAggregator">
+            <summary>
+            消息机制传递数据库连接信息
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._loadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._window">
+            <summary>
+            Window窗体
             </summary>
         </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel._DisplaySqlServer">
@@ -293,6 +357,16 @@
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.MainAppLargeIcon">
             <summary>
             应用程序大图标
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.LoadedCommand">
+            <summary>
+            Load命令
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.window">
+            <summary>
+            Window窗体
             </summary>
         </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConnectionViewModel.strDataBaseName">
@@ -431,6 +505,50 @@
             是否空闲
             </summary>
         </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.ParsingTableInformation(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            解析表信息(表字段类型字典解析为Models.TableStructureGrid)
+            目前长度不支持小数位数的读取
+            </summary>
+            <returns>表结构信息ObservableCollection集合</returns>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.DBTypeGoEnum(System.String)">
+            <summary>
+            根据数据库类型得到枚举类型
+            ADO.Helper.DatabaseConversion.TypeProcessing.DataBase
+            SqlServer/Oracle/MySql/Access/SQLite
+            </summary>
+            <param name="strDBType">数据库类型</param>
+            <returns>DataBase枚举类型</returns>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.DBTypeGoFieldType(System.String)">
+            <summary>
+            根据数据库类型得到字段类型
+            </summary>
+            <param name="strDBType">数据库类型</param>
+            <returns>目标数据库字段类型</returns>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.GridModelGoGridDic(System.Collections.ObjectModel.ObservableCollection{Sadness.BasicFunction.Models.TableStructureGrid})">
+            <summary>
+            根据Grid视图模型得到Grid字段类型字典
+            </summary>
+            <param name="listTableStructure">Grid视图模型</param>
+            <returns>Grid字段类型字典</returns>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.GetTargetAndSourceCorrespondenceBetween(System.Collections.ObjectModel.ObservableCollection{Sadness.BasicFunction.Models.TableStructureGrid})">
+            <summary>
+            获得目标与源的字段名对应关系
+            </summary>
+            <param name="listTableStructure">Grid视图模型</param>
+            <returns>目标与源的字段名对应关系(目标字段名/源字段名)</returns>
+        </member>
+        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.GetSourceDataTable(System.String)">
+            <summary>
+            得到源数据表的DataTable
+            </summary>
+            <param name="strTableName">源数据表名</param>
+            <returns>源数据表的DataTable</returns>
+        </member>
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.Title">
             <summary>
             应用程序标题
@@ -510,6 +628,21 @@
         <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.ConnectTargetData">
             <summary>
             连接目标数据
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.ReadStructureInformation">
+            <summary>
+            读取结构信息
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.SaveConversion">
+            <summary>
+            保存/转换
+            </summary>
+        </member>
+        <member name="P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.TreeClickEvents">
+            <summary>
+            表名Tree单击事件
             </summary>
         </member>
         <member name="T:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel">
@@ -1382,10 +1515,11 @@
             DBConnection.xaml 的构造函数
             </summary>
         </member>
-        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.#ctor(System.String)">
+        <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.#ctor(Prism.Events.IEventAggregator,System.String)">
             <summary>
             DBConnection.xaml 的构造函数
             </summary>
+            <param name="eventAggregator">Defines an interface to get instances of an event type.</param>
             <param name="strDataBaseName">数据库名称 SqlServer/Oracle/MySql/Access/SQLite</param>
         </member>
         <member name="M:Sadness.BasicFunction.Views.PluginMenu.DBConnection.InitializeComponent">
