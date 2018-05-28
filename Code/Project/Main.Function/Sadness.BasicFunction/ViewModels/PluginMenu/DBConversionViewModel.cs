@@ -347,7 +347,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         TreeList = new ObservableCollection<Models.TablesTree>();
                         DicTablesStructure = new Dictionary<string, ObservableCollection<Models.TableStructureGrid>>();
                         //对不同数据库进行判断
-                        if (IsSourceString == "SqlServer")
+                        if (IsSourceString.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
                         {
                             SqlServerHelper sqlHelper = new SqlServerHelper();
                             sqlHelper.SqlServerConnectionString(SourceConnectionString);
@@ -379,7 +379,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                             }
                             sqlHelper.Close();
                         }
-                        else if (IsSourceString == "Oracle")
+                        else if (IsSourceString.Equals(TypeProcessing.DataBase.Oracle.ToString()))
                         {
                             OracleHelper sqlHelper = new OracleHelper();
                             sqlHelper.OracleConnectionString(SourceConnectionString);
@@ -411,7 +411,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                             }
                             sqlHelper.Close();
                         }
-                        else if (IsSourceString == "MySql")
+                        else if (IsSourceString.Equals(TypeProcessing.DataBase.MySql.ToString()))
                         {
                             MySqlHelper sqlHelper = new MySqlHelper();
                             sqlHelper.MySqlConnectionString(SourceConnectionString);
@@ -443,7 +443,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                             }
                             sqlHelper.Close();
                         }
-                        else if (IsSourceString == "Access")
+                        else if (IsSourceString.Equals(TypeProcessing.DataBase.Access.ToString()))
                         {
                             AccessHelper sqlHelper = new AccessHelper();
                             sqlHelper.AccessConnectionString(SourceConnectionString);
@@ -475,7 +475,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                             }
                             sqlHelper.Close();
                         }
-                        else if (IsSourceString == "SQLite")
+                        else if (IsSourceString.Equals(TypeProcessing.DataBase.SQLite.ToString()))
                         {
                             SQLiteHelper sqlHelper = new SQLiteHelper();
                             sqlHelper.SQLiteConnectionString(SourceConnectionString);
@@ -556,7 +556,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                             DataTable dtSourceData = GetSourceDataTable(strTableName);
                             if (dtSourceData.Rows.Count < 1) { continue; }
                             //创建目标数据库连接:对不同数据库进行判断
-                            if (IsTargetString == "SqlServer")
+                            if (IsTargetString.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
                             {
                                 SqlServerHelper sqlHelper = new SqlServerHelper();
                                 sqlHelper.SqlServerConnectionString(TargetConnectionString);
@@ -581,7 +581,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                                 }
                                 sqlHelper.Close();
                             }
-                            else if (IsTargetString == "Oracle")
+                            else if (IsTargetString.Equals(TypeProcessing.DataBase.Oracle.ToString()))
                             {
                                 OracleHelper sqlHelper = new OracleHelper();
                                 sqlHelper.OracleConnectionString(TargetConnectionString);
@@ -603,7 +603,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                                 }
                                 sqlHelper.Close();
                             }
-                            else if (IsTargetString == "MySql")
+                            else if (IsTargetString.Equals(TypeProcessing.DataBase.MySql.ToString()))
                             {
                                 MySqlHelper sqlHelper = new MySqlHelper();
                                 sqlHelper.MySqlConnectionString(TargetConnectionString);
@@ -625,7 +625,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                                 }
                                 sqlHelper.Close();
                             }
-                            else if (IsTargetString == "Access")
+                            else if (IsTargetString.Equals(TypeProcessing.DataBase.Access.ToString()))
                             {
                                 AccessHelper sqlHelper = new AccessHelper();
                                 sqlHelper.AccessConnectionString(TargetConnectionString);
@@ -647,7 +647,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                                 }
                                 sqlHelper.Close();
                             }
-                            else if (IsTargetString == "SQLite")
+                            else if (IsTargetString.Equals(TypeProcessing.DataBase.SQLite.ToString()))
                             {
                                 SQLiteHelper sqlHelper = new SQLiteHelper();
                                 sqlHelper.SQLiteConnectionString(TargetConnectionString);
@@ -699,7 +699,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     catch (Exception ex)
                     {
                         //切换目标数据库后重新读取结构信息会触发错误
-                        ADO.Helper.TXT.TXTHelper.Logs(ex.ToString());
+                        TXTHelper.Logs(ex.ToString());
                     }
                 });
             }
@@ -744,28 +744,28 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         /// </summary>
         /// <param name="strDBType">数据库类型</param>
         /// <returns>DataBase枚举类型</returns>
-        private ADO.Helper.DatabaseConversion.TypeProcessing.DataBase DBTypeGoEnum(string strDBType)
+        private TypeProcessing.DataBase DBTypeGoEnum(string strDBType)
         {
-            ADO.Helper.DatabaseConversion.TypeProcessing.DataBase DBType = new ADO.Helper.DatabaseConversion.TypeProcessing.DataBase();
-            if (strDBType == "SqlServer")
+            TypeProcessing.DataBase DBType = new TypeProcessing.DataBase();
+            if (strDBType.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
             {
-                DBType = ADO.Helper.DatabaseConversion.TypeProcessing.DataBase.SqlServer;
+                DBType = TypeProcessing.DataBase.SqlServer;
             }
-            else if (strDBType == "Oracle")
+            else if (strDBType.Equals(TypeProcessing.DataBase.Oracle.ToString()))
             {
-                DBType = ADO.Helper.DatabaseConversion.TypeProcessing.DataBase.Oracle;
+                DBType = TypeProcessing.DataBase.Oracle;
             }
-            else if (strDBType == "MySql")
+            else if (strDBType.Equals(TypeProcessing.DataBase.MySql.ToString()))
             {
-                DBType = ADO.Helper.DatabaseConversion.TypeProcessing.DataBase.MySql;
+                DBType = TypeProcessing.DataBase.MySql;
             }
-            else if (strDBType == "Access")
+            else if (strDBType.Equals(TypeProcessing.DataBase.Access.ToString()))
             {
-                DBType = ADO.Helper.DatabaseConversion.TypeProcessing.DataBase.Access;
+                DBType = TypeProcessing.DataBase.Access;
             }
-            else if (strDBType == "SQLite")
+            else if (strDBType.Equals(TypeProcessing.DataBase.SQLite.ToString()))
             {
-                DBType = ADO.Helper.DatabaseConversion.TypeProcessing.DataBase.SQLite;
+                DBType = TypeProcessing.DataBase.SQLite;
             }
             return DBType;
         }
@@ -778,37 +778,37 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         private ObservableCollection<string> DBTypeGoFieldType(string strDBType)
         {
             ObservableCollection<string> listFieldType = new ObservableCollection<string>();
-            if (strDBType == "SqlServer")
+            if (strDBType.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
             {
-                foreach (ADO.Helper.SqlServer.SqlServerFieldType.FieldType item in Enum.GetValues(typeof(ADO.Helper.SqlServer.SqlServerFieldType.FieldType)))
+                foreach (SqlServerFieldType.FieldType item in Enum.GetValues(typeof(SqlServerFieldType.FieldType)))
                 {
                     listFieldType.Add(item.ToString());
                 }
             }
-            else if (strDBType == "Oracle")
+            else if (strDBType.Equals(TypeProcessing.DataBase.Oracle.ToString()))
             {
-                foreach (ADO.Helper.Oracle.OracleFieldType.FieldType item in Enum.GetValues(typeof(ADO.Helper.Oracle.OracleFieldType.FieldType)))
+                foreach (OracleFieldType.FieldType item in Enum.GetValues(typeof(OracleFieldType.FieldType)))
                 {
                     listFieldType.Add(item.ToString());
                 }
             }
-            else if (strDBType == "MySql")
+            else if (strDBType.Equals(TypeProcessing.DataBase.MySql.ToString()))
             {
-                foreach (ADO.Helper.MySql.MySqlFieldType.FieldType item in Enum.GetValues(typeof(ADO.Helper.MySql.MySqlFieldType.FieldType)))
+                foreach (MySqlFieldType.FieldType item in Enum.GetValues(typeof(MySqlFieldType.FieldType)))
                 {
                     listFieldType.Add(item.ToString());
                 }
             }
-            else if (strDBType == "Access")
+            else if (strDBType.Equals(TypeProcessing.DataBase.Access.ToString()))
             {
-                foreach (ADO.Helper.Access.AccessFieldType.FieldType item in Enum.GetValues(typeof(ADO.Helper.Access.AccessFieldType.FieldType)))
+                foreach (AccessFieldType.FieldType item in Enum.GetValues(typeof(AccessFieldType.FieldType)))
                 {
                     listFieldType.Add(item.ToString());
                 }
             }
-            else if (strDBType == "SQLite")
+            else if (strDBType.Equals(TypeProcessing.DataBase.SQLite.ToString()))
             {
-                foreach (ADO.Helper.SQLite.SQLiteFieldType.FieldType item in Enum.GetValues(typeof(ADO.Helper.SQLite.SQLiteFieldType.FieldType)))
+                foreach (SQLiteFieldType.FieldType item in Enum.GetValues(typeof(SQLiteFieldType.FieldType)))
                 {
                     listFieldType.Add(item.ToString());
                 }
@@ -861,7 +861,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
             dtSourceData.TableName = strTableName;
             string sqlSelect = string.Format("SELECT * FROM {0}", strTableName);
             //对不同数据库进行判断
-            if (IsSourceString == "SqlServer")
+            if (IsSourceString.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
             {
                 SqlServerHelper sqlHelper = new SqlServerHelper();
                 sqlHelper.SqlServerConnectionString(SourceConnectionString);
@@ -869,7 +869,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                 dtSourceData = sqlHelper.GetDataTable(sqlSelect);
                 sqlHelper.Close();
             }
-            else if (IsSourceString == "Oracle")
+            else if (IsSourceString.Equals(TypeProcessing.DataBase.Oracle.ToString()))
             {
                 OracleHelper sqlHelper = new OracleHelper();
                 sqlHelper.OracleConnectionString(SourceConnectionString);
@@ -877,7 +877,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                 dtSourceData = sqlHelper.GetDataTable(sqlSelect);
                 sqlHelper.Close();
             }
-            else if (IsSourceString == "MySql")
+            else if (IsSourceString.Equals(TypeProcessing.DataBase.MySql.ToString()))
             {
                 MySqlHelper sqlHelper = new MySqlHelper();
                 sqlHelper.MySqlConnectionString(SourceConnectionString);
@@ -885,7 +885,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                 dtSourceData = sqlHelper.GetDataTable(sqlSelect);
                 sqlHelper.Close();
             }
-            else if (IsSourceString == "Access")
+            else if (IsSourceString.Equals(TypeProcessing.DataBase.Access.ToString()))
             {
                 AccessHelper sqlHelper = new AccessHelper();
                 sqlHelper.AccessConnectionString(SourceConnectionString);
@@ -893,7 +893,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                 dtSourceData = sqlHelper.GetDataTable(sqlSelect);
                 sqlHelper.Close();
             }
-            else if (IsSourceString == "SQLite")
+            else if (IsSourceString.Equals(TypeProcessing.DataBase.SQLite.ToString()))
             {
                 SQLiteHelper sqlHelper = new SQLiteHelper();
                 sqlHelper.SQLiteConnectionString(SourceConnectionString);
