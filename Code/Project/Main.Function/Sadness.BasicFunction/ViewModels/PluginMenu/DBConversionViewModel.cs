@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -232,12 +233,46 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         /// <summary>
         /// 源数据库连接字符串
         /// </summary>
-        public string SourceConnectionString { get; set; }
+        private string _sourceConnectionString;
+        /// <summary>
+        /// 源数据库连接字符串
+        /// </summary>
+        public string SourceConnectionString
+        {
+            get
+            {
+                return _sourceConnectionString;
+            }
+            set
+            {
+                SetProperty(ref _sourceConnectionString, value);
+                //TODO:C#6.0新特性(nameof),可避免硬编码
+                //RaisePropertyChanged(nameof(SourceConnectionColour));
+                RaisePropertyChanged("SourceConnectionColour");
+            }
+        }
 
         /// <summary>
         /// 目标数据库连接字符串
         /// </summary>
-        public string TargetConnectionString { get; set; }
+        private string _targetConnectionString;
+        /// <summary>
+        /// 目标数据库连接字符串
+        /// </summary>
+        public string TargetConnectionString
+        {
+            get
+            {
+                return _targetConnectionString;
+            }
+            set
+            {
+                SetProperty(ref _targetConnectionString, value);
+                //TODO:C#6.0新特性(nameof),可避免硬编码
+                //RaisePropertyChanged(nameof(TargetConnectionColour));
+                RaisePropertyChanged("TargetConnectionColour");
+            }
+        }
 
         /// <summary>
         /// 源数据库单选按钮
@@ -258,7 +293,6 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         SourceConnectionString = string.Empty;
                     }
                     IsSourceString = eData;
-                    SourceConnectionColour = null;
                 });
             }
         }
@@ -282,7 +316,6 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         TargetConnectionString = string.Empty;
                     }
                     IsTargetString = eData;
-                    TargetConnectionColour = null;
                 });
             }
         }
@@ -302,7 +335,6 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         eventArg.strSourceOrTarget = "Source";
                         SourceConnectionString = eventArg.strSqlConnection;
-                        SourceConnectionColour = null;
                     });
                     dbcView.ShowDialog();
                 });
@@ -324,7 +356,6 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         eventArg.strSourceOrTarget = "Target";
                         TargetConnectionString = eventArg.strSqlConnection;
-                        TargetConnectionColour = null;
                     });
                     dbcView.ShowDialog();
                 });
