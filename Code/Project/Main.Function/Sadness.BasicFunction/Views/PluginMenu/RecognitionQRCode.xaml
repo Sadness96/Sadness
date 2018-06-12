@@ -53,7 +53,7 @@
         <TextBox x:Name="textFPS" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="20" Margin="35,7,0,8" Width="50" Text="{Binding TextFPS}"/>
         <Label Content="Size:" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="23" Margin="93,6,0,6" Foreground="White"/>
         <TextBox  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="20" Margin="130,7,0,8" Width="50" Text="{Binding Width , ElementName=window, Mode=TwoWay}"/>
-        <Label Content="X" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="23" Margin="182,6,0,6" Foreground="White"/>
+        <Label Content="X" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="23" Margin="187,6,0,6" Foreground="White"/>
         <TextBox  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="20" Margin="201,7,0,8" Width="50" Text="{Binding Height , ElementName=window, Mode=TwoWay}"/>
         <Rectangle Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" Width="85" Fill="Black" />
         <Button x:Name="Recognition" Content="{Binding RecognitionBtn}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Height="23" Margin="0,0,10,0" Width="85" Command="{Binding RecognitionQRCode}"/>
