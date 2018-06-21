@@ -125,7 +125,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </TreeView>
-                <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Height="306" Width="560" ItemsSource="{Binding GridList}" AutoGenerateColumns="False">
+                <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Height="306" Width="560" ItemsSource="{Binding GridList}" AutoGenerateColumns="False" CanUserAddRows="False" SelectionMode="Single">
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn Header="选择" Width="50" Binding="{Binding Choose}"/>
                         <DataGridTextColumn Header="源字段名" Width="100" Binding="{Binding SourceFieldName}"/>
