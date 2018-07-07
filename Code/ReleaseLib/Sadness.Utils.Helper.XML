@@ -936,6 +936,761 @@
             <param name="bitmapQRCode">二维码和条形码位图</param>
             <returns>成功返回true,失败返回false</returns>
         </member>
+        <member name="T:Utils.Helper.Redis.RedisHelper">
+            <summary>
+            Redis帮助类
+            https://github.com/liqingwen2015/Wen.Helpers/blob/master/Wen.Common/Redis
+            创建日期:2018年7月7日
+            </summary>
+        </member>
+        <member name="T:Utils.Helper.Redis.RedisHelper.OrderType">
+            <summary>
+            Redis 排序类型
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper.OrderType.Ascending">
+            <summary>
+            提升
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper.OrderType.Descending">
+            <summary>
+            下降
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.GetConnectionRedisMultiplexer">
+            <summary>
+            获取 Redis 连接对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.GetTransaction">
+            <summary>
+            获取事务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper._connMultiplexer">
+            <summary>
+            redis 连接对象
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper.DefaultKey">
+            <summary>
+            默认的 Key 值（用来当作 RedisKey 的前缀）
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper.Locker">
+            <summary>
+            锁
+            </summary>
+        </member>
+        <member name="F:Utils.Helper.Redis.RedisHelper._db">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.#cctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="db"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSet(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置 key 并保存字符串（如果 key 已存在，则覆盖值）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSet(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            保存多个 Key-value
+            </summary>
+            <param name="keyValuePairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringGet(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            获取字符串
+            </summary>
+            <param name="redisKey"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSet``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            存储一个对象（该对象会被序列化保存）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringGet``1(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            获取一个对象（会进行反序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSetAsync(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            保存一个字符串值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSetAsync(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            保存一组字符串值
+            </summary>
+            <param name="keyValuePairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringGetAsync(System.String,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            获取单个值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringSetAsync``1(System.String,``0,System.Nullable{System.TimeSpan})">
+            <summary>
+            存储一个对象（该对象会被序列化保存）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.StringGetAsync``1(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            获取一个对象（会进行反序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashExists(System.String,System.String)">
+            <summary>
+            判断该字段是否存在 hash 中
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashDelete(System.String,System.String)">
+            <summary>
+            从 hash 中移除指定字段
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashDelete(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            从 hash 中移除指定字段
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSet(System.String,System.String,System.String)">
+            <summary>
+            在 hash 设定值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSet(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            在 hash 中设定值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGet(System.String,System.String)">
+            <summary>
+            在 hash 中获取值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGet(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            在 hash 中获取值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashKeys(System.String)">
+            <summary>
+            从 hash 返回所有的字段值
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashValues(System.String)">
+            <summary>
+            返回 hash 中的所有值
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSet``1(System.String,System.String,``0)">
+            <summary>
+            在 hash 设定值（序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGet``1(System.String,System.String)">
+            <summary>
+            在 hash 中获取值（反序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashExistsAsync(System.String,System.String)">
+            <summary>
+            判断该字段是否存在 hash 中
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashDeleteAsync(System.String,System.String)">
+            <summary>
+            从 hash 中移除指定字段
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashDeleteAsync(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            从 hash 中移除指定字段
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSetAsync(System.String,System.String,System.String)">
+            <summary>
+            在 hash 设定值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSetAsync(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}})">
+            <summary>
+            在 hash 中设定值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGetAsync(System.String,System.String)">
+            <summary>
+            在 hash 中获取值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGetAsync(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            在 hash 中获取值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashFields"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashKeysAsync(System.String)">
+            <summary>
+            从 hash 返回所有的字段值
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashValuesAsync(System.String)">
+            <summary>
+            返回 hash 中的所有值
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashSetAsync``1(System.String,System.String,``0)">
+            <summary>
+            在 hash 设定值（序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.HashGetAsync``1(System.String,System.String)">
+            <summary>
+            在 hash 中获取值（反序列化）
+            </summary>
+            <param name="redisKey"></param>
+            <param name="hashField"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPop(System.String)">
+            <summary>
+            移除并返回存储在该键列表的第一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPop(System.String)">
+            <summary>
+            移除并返回存储在该键列表的最后一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRemove(System.String,System.String)">
+            <summary>
+            移除列表指定键上与该值相同的元素
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPush(System.String,System.String)">
+            <summary>
+            在列表尾部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPush(System.String,System.String)">
+            <summary>
+            在列表头部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLength(System.String)">
+            <summary>
+            返回列表上该键的长度，如果不存在，返回 0
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRange(System.String,System.Int64,System.Int64)">
+            <summary>
+            返回在该列表上键所对应的元素
+            </summary>
+            <param name="redisKey"></param>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPop``1(System.String)">
+            <summary>
+            移除并返回存储在该键列表的第一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPop``1(System.String)">
+            <summary>
+            移除并返回存储在该键列表的最后一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPush``1(System.String,``0)">
+            <summary>
+            在列表尾部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPush``1(System.String,``0)">
+            <summary>
+            在列表头部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPopAsync(System.String)">
+            <summary>
+            移除并返回存储在该键列表的第一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPopAsync(System.String)">
+            <summary>
+            移除并返回存储在该键列表的最后一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRemoveAsync(System.String,System.String)">
+            <summary>
+            移除列表指定键上与该值相同的元素
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPushAsync(System.String,System.String)">
+            <summary>
+            在列表尾部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPushAsync(System.String,System.String)">
+            <summary>
+            在列表头部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLengthAsync(System.String)">
+            <summary>
+            返回列表上该键的长度，如果不存在，返回 0
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRangeAsync(System.String,System.Int64,System.Int64)">
+            <summary>
+            返回在该列表上键所对应的元素
+            </summary>
+            <param name="redisKey"></param>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPopAsync``1(System.String)">
+            <summary>
+            移除并返回存储在该键列表的第一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPopAsync``1(System.String)">
+            <summary>
+            移除并返回存储在该键列表的最后一个元素
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListRightPushAsync``1(System.String,``0)">
+            <summary>
+            在列表尾部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ListLeftPushAsync``1(System.String,``0)">
+            <summary>
+            在列表头部插入值。如果键不存在，先创建再插入值
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetAdd(System.String,System.String,System.Double)">
+            <summary>
+            SortedSet 新增
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetRangeByRank(System.String,System.Int64,System.Int64,Utils.Helper.Redis.RedisHelper.OrderType)">
+            <summary>
+            在有序集合中返回指定范围的元素，默认情况下从低到高。
+            </summary>
+            <param name="redisKey"></param>
+            <param name="start"></param>
+            <param name="stop"></param>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetLength(System.String)">
+            <summary>
+            返回有序集合的元素个数
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetLength(System.String,System.String)">
+            <summary>
+            返回有序集合的元素个数
+            </summary>
+            <param name="redisKey"></param>
+            <param name="memebr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetAdd``1(System.String,``0,System.Double)">
+            <summary>
+            SortedSet 新增
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetIncrement(System.String,System.String,System.Double)">
+            <summary>
+            增量的得分排序的集合中的成员存储键值键按增量
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetAddAsync(System.String,System.String,System.Double)">
+            <summary>
+            SortedSet 新增
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetRangeByRankAsync(System.String)">
+            <summary>
+            在有序集合中返回指定范围的元素，默认情况下从低到高。
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetLengthAsync(System.String)">
+            <summary>
+            返回有序集合的元素个数
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetRemoveAsync(System.String,System.String)">
+            <summary>
+            返回有序集合的元素个数
+            </summary>
+            <param name="redisKey"></param>
+            <param name="memebr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetAddAsync``1(System.String,``0,System.Double)">
+            <summary>
+            SortedSet 新增
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="score"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.SortedSetIncrementAsync(System.String,System.String,System.Double)">
+            <summary>
+            增量的得分排序的集合中的成员存储键值键按增量
+            </summary>
+            <param name="redisKey"></param>
+            <param name="member"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyDelete(System.String)">
+            <summary>
+            移除指定 Key
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyDelete(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            移除指定 Key
+            </summary>
+            <param name="redisKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyExists(System.String)">
+            <summary>
+            校验 Key 是否存在
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyRename(System.String,System.String)">
+            <summary>
+            重命名 Key
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisNewKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyExpire(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置 Key 的时间
+            </summary>
+            <param name="redisKey"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyDeleteAsync(System.String)">
+            <summary>
+            移除指定 Key
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyDeleteAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            移除指定 Key
+            </summary>
+            <param name="redisKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyExistsAsync(System.String)">
+            <summary>
+            校验 Key 是否存在
+            </summary>
+            <param name="redisKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyRenameAsync(System.String,System.String)">
+            <summary>
+            重命名 Key
+            </summary>
+            <param name="redisKey"></param>
+            <param name="redisNewKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.KeyExpireAsync(System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            设置 Key 的时间
+            </summary>
+            <param name="redisKey"></param>
+            <param name="expiry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.AddKeyPrefix(System.String)">
+            <summary>
+            添加 Key 的前缀
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConvertStrings``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            转换为字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.AddRegisterEvent">
+            <summary>
+            添加注册事件
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_ConfigurationChangedBroadcast(System.Object,StackExchange.Redis.EndPointEventArgs)">
+            <summary>
+            重新配置广播时（通常意味着主从同步更改）
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_InternalError(System.Object,StackExchange.Redis.InternalErrorEventArgs)">
+            <summary>
+            发生内部错误时（主要用于调试）
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_HashSlotMoved(System.Object,StackExchange.Redis.HashSlotMovedEventArgs)">
+            <summary>
+            更改集群时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_ConfigurationChanged(System.Object,StackExchange.Redis.EndPointEventArgs)">
+            <summary>
+            配置更改时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_ErrorMessage(System.Object,StackExchange.Redis.RedisErrorEventArgs)">
+            <summary>
+            发生错误时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_ConnectionFailed(System.Object,StackExchange.Redis.ConnectionFailedEventArgs)">
+            <summary>
+            物理连接失败时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.ConnMultiplexer_ConnectionRestored(System.Object,StackExchange.Redis.ConnectionFailedEventArgs)">
+            <summary>
+            建立物理连接时
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.Serialize(System.Object)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.Deserialize``1(System.Byte[])">
+            <summary>
+            反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
         <member name="T:Utils.Helper.Reflect.ReflectHelper">
             <summary>
             反射帮助类(调用参考,没有价值)

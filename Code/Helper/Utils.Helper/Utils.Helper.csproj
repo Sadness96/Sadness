@@ -37,7 +37,11 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="StackExchange.Redis">
+      <HintPath>..\..\packages\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
@@ -90,6 +94,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="QRCode\QRCodeHelper.cs" />
+    <Compile Include="Redis\RedisHelper.cs" />
     <Compile Include="Reflect\ReflectHelper.cs" />
     <Compile Include="Registry\RegistryHelper.cs" />
     <Compile Include="Registry\SecondaryMenuModel.cs" />
