@@ -2179,5 +2179,53 @@
             线程上执行的方法
             </summary>
         </member>
+        <member name="T:Utils.Helper.WebApi.HttpClientHelper">
+            <summary>
+            HttpClient帮助类
+            创建日期:2018年8月27日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WebApi.HttpClientHelper.CreateGetHttpClient(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建Get请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <returns>Api返回值</returns>
+        </member>
+        <member name="M:Utils.Helper.WebApi.HttpClientHelper.CreatePostHttpClient(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建Post请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <returns>Api返回值</returns>
+        </member>
+        <member name="T:Utils.Helper.WebApi.HttpWebRequestHelper">
+            <summary>
+            HttpWebRequest帮助类
+            创建日期:2018年8月27日
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.WebApi.HttpWebRequestHelper.CreateGetHttpWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建Get请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <returns>Api返回值</returns>
+        </member>
+        <member name="M:Utils.Helper.WebApi.HttpWebRequestHelper.CreatePostHttpWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            创建Post请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <returns>Api返回值</returns>
+        </member>
     </members>
 </doc>
