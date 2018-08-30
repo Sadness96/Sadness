@@ -177,5 +177,32 @@ namespace Utils.Helper.CheckCorrectness
             }
             return true;//符合GB11643-1999标准    
         }
+
+        /// <summary>
+        /// 效验IP地址
+        /// </summary>
+        /// <param name="strInternetProtocol">IP地址</param>
+        /// <returns>效验通过返回true,失败返回false</returns>
+        public static bool CheckInternetProtocol(string strInternetProtocol)
+        {
+            try
+            {
+                string strRegexIP = @"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$";
+                Regex regexIP = new Regex(strRegexIP);
+                if (regexIP.IsMatch(strInternetProtocol))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return false;
+            }
+        }
     }
 }

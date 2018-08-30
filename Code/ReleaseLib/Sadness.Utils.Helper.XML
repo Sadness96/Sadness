@@ -45,6 +45,13 @@
             <param name="idNumber">身份证号</param>  
             <returns>效验通过返回true,失败返回false</returns>  
         </member>
+        <member name="M:Utils.Helper.CheckCorrectness.CheckCorrectnessHelper.CheckInternetProtocol(System.String)">
+            <summary>
+            效验IP地址
+            </summary>
+            <param name="strInternetProtocol">IP地址</param>
+            <returns>效验通过返回true,失败返回false</returns>
+        </member>
         <member name="T:Utils.Helper.ClosedForm.ClosedFormHelper">
             <summary>
             关闭窗体帮助类

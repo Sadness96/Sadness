@@ -10,6 +10,7 @@ using System.Drawing.Imaging;
 using Sadness.SQLiteDB.Connect;
 using ADO.Helper.DatabaseConversion;
 using Utils.Helper.Redis;
+using Utils.Helper.CheckCorrectness;
 using Newtonsoft.Json;
 
 namespace Main.Console
@@ -18,6 +19,14 @@ namespace Main.Console
     {
         static void Main(string[] args)
         {
+            bool b1 = CheckCorrectnessHelper.CheckInternetProtocol("36.102.228.108");
+            bool b2 = CheckCorrectnessHelper.CheckInternetProtocol("192.168.2.123");
+            bool b3 = CheckCorrectnessHelper.CheckInternetProtocol("255.255.255.255");
+            bool b4 = CheckCorrectnessHelper.CheckInternetProtocol("300.255.255.255");
+            bool b5 = CheckCorrectnessHelper.CheckInternetProtocol("256.255.255.0");
+            bool b6 = CheckCorrectnessHelper.CheckInternetProtocol("0.0.134.255");
+
+
             RedisHelper redis = new RedisHelper();
             //增
             List<test> list0 = new List<test>();
