@@ -802,6 +802,18 @@
             <param name="byteArray">图片二进制流</param>
             <returns>成功返回Bitmap,失败返回null</returns>
         </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.DeleteObject(System.IntPtr)">
+            <summary>
+            注销对象方法API
+            </summary>
+        </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.BitmapToImageSource(System.Drawing.Bitmap)">
+            <summary>
+            Bitmap 转 ImageSource
+            </summary>
+            <param name="bitmap">位图</param>
+            <returns>ImageSource</returns>
+        </member>
         <member name="T:Utils.Helper.PCInformation.EncryptionHelper">
             <summary>
             加密注册码帮助类
