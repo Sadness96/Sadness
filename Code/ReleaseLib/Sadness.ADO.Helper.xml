@@ -321,8 +321,8 @@
             <param name="dtDataSource">源数据(DataTable)</param>
             <returns>删除空行后的DataTable</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertToList``1(System.Data.DataTable)" -->
-        <!-- Badly formed XML comment ignored for member "M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertDataTable(System.Collections.IList)" -->
+        <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertToList``1(System.Data.DataTable)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:ADO.Helper.DatabaseConversion.DataProcessing.ConvertDataTable(System.Collections.IList)”忽略有格式错误的 XML 注释 -->
         <member name="M:ADO.Helper.DatabaseConversion.DataProcessing.PagingQuery(System.Data.DataTable,System.Int32)">
             <summary>
             DataTable分页查询

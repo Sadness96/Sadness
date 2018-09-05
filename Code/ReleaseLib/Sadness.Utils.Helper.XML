@@ -260,6 +260,13 @@
             <param name="imageFormat">指定图像格式</param>
             <returns>成功返回true,失败返回false</returns>
         </member>
+        <member name="M:Utils.Helper.Encryption.Base64Helper.GetImageFormatFromPath(System.String)">
+            <summary>
+            根据图片路径获得图片格式(缺少MemoryBmp)
+            </summary>
+            <param name="strImagePath">图片路径</param>
+            <returns>图片格式</returns>
+        </member>
         <member name="T:Utils.Helper.Encryption.CRC32Helper">
             <summary>
             循环沉余效验帮助类

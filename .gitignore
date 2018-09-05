@@ -1,8 +1,5 @@
 bin/
-
 obj/
-
 .vs/
-
-
 *.suo
+code/ReleaseLib/Logs/

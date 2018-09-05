@@ -66,6 +66,10 @@ namespace Utils.Helper.Encryption
             {
                 MemoryStream memoryStream = new MemoryStream();
                 Bitmap bitmap = new Bitmap(strImagePath);
+                if (imageFormat == null)
+                {
+                    imageFormat = GetImageFormatFromPath(strImagePath);
+                }
                 bitmap.Save(memoryStream, imageFormat);
                 byte[] bytes = memoryStream.GetBuffer();
                 return Convert.ToBase64String(bytes);
@@ -91,6 +95,10 @@ namespace Utils.Helper.Encryption
                 byte[] bytes = Convert.FromBase64String(strCiphertext);
                 MemoryStream memoryStream = new MemoryStream(bytes);
                 Bitmap bitmap = new Bitmap(memoryStream);
+                if (imageFormat == null)
+                {
+                    imageFormat = GetImageFormatFromPath(strSaveFilePath);
+                }
                 bitmap.Save(strSaveFilePath, imageFormat);
                 return true;
             }
@@ -98,6 +106,71 @@ namespace Utils.Helper.Encryption
             {
                 TXTHelper.Logs(ex.ToString());
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 根据图片路径获得图片格式(缺少MemoryBmp)
+        /// </summary>
+        /// <param name="strImagePath">图片路径</param>
+        /// <returns>图片格式</returns>
+        public static ImageFormat GetImageFormatFromPath(string strImagePath)
+        {
+            try
+            {
+                string strImageExtension = Path.GetExtension(strImagePath).ToLower();
+                if (string.IsNullOrEmpty(strImageExtension))
+                {
+                    return null;
+                }
+                else
+                {
+                    if (strImageExtension.Equals(".bmp") || strImageExtension.Equals(".rle") || strImageExtension.Equals(".dlb"))
+                    {
+                        return ImageFormat.Bmp;
+                    }
+                    else if (strImageExtension.Equals(".emf"))
+                    {
+                        return ImageFormat.Emf;
+                    }
+                    else if (strImageExtension.Equals(".exif"))
+                    {
+                        return ImageFormat.Exif;
+                    }
+                    else if (strImageExtension.Equals(".gif"))
+                    {
+                        return ImageFormat.Gif;
+                    }
+                    else if (strImageExtension.Equals(".ico"))
+                    {
+                        return ImageFormat.Icon;
+                    }
+                    else if (strImageExtension.Equals(".jpg") || strImageExtension.Equals(".jpeg") || strImageExtension.Equals(".jpe"))
+                    {
+                        return ImageFormat.Jpeg;
+                    }
+                    else if (strImageExtension.Equals(".png") || strImageExtension.Equals(".pns"))
+                    {
+                        return ImageFormat.Png;
+                    }
+                    else if (strImageExtension.Equals(".tif") || strImageExtension.Equals(".tiff"))
+                    {
+                        return ImageFormat.Tiff;
+                    }
+                    else if (strImageExtension.Equals(".wmf"))
+                    {
+                        return ImageFormat.Wmf;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return null;
             }
         }
     }

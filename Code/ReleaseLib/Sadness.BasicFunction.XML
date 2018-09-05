@@ -515,7 +515,7 @@
             字段类型列绑定数据
             </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.DicTablesStructure" -->
+        <!-- 对于成员“P:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel.DicTablesStructure”忽略有格式错误的 XML 注释 -->
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.DBConversionViewModel._SourceConnectionColour">
             <summary>
             源数据连接颜色
@@ -889,13 +889,6 @@
             <summary>
             Base64解密图片
             </summary>
-        </member>
-        <member name="M:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel.GetImageFormatFromPath(System.String)">
-            <summary>
-            根据图片路径获得图片格式(缺少MemoryBmp)
-            </summary>
-            <param name="strImagePath">图片路径</param>
-            <returns>图片格式</returns>
         </member>
         <member name="F:Sadness.BasicFunction.ViewModels.PluginMenu.EncryptionViewModel._textMD5Source">
             <summary>

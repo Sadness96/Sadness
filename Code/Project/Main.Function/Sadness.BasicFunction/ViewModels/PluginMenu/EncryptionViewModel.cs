@@ -643,7 +643,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     if (dialog.ShowDialog() == true)
                     {
                         string strFilePath = dialog.FileName;
-                        ImageFormat imfImage = GetImageFormatFromPath(strFilePath);
+                        ImageFormat imfImage = Base64Helper.GetImageFormatFromPath(strFilePath);
                         if (imfImage != null)
                         {
                             TextBase64Target = Base64Helper.ImageBase64Encrypt(strFilePath, imfImage);
@@ -680,7 +680,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     if (dialog.ShowDialog() == true)
                     {
                         string strFilePath = dialog.FileName;
-                        ImageFormat imfImage = GetImageFormatFromPath(strFilePath);
+                        ImageFormat imfImage = Base64Helper.GetImageFormatFromPath(strFilePath);
                         if (Base64Helper.ImageBase64Decrypt(TextBase64Source, strFilePath, imfImage))
                         {
                             TextBase64Target = "true";
@@ -691,71 +691,6 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         }
                     }
                 });
-            }
-        }
-
-        /// <summary>
-        /// 根据图片路径获得图片格式(缺少MemoryBmp)
-        /// </summary>
-        /// <param name="strImagePath">图片路径</param>
-        /// <returns>图片格式</returns>
-        private static ImageFormat GetImageFormatFromPath(string strImagePath)
-        {
-            try
-            {
-                string strImageExtension = Path.GetExtension(strImagePath).ToLower();
-                if (string.IsNullOrEmpty(strImageExtension))
-                {
-                    return null;
-                }
-                else
-                {
-                    if (strImageExtension.Equals(".bmp") || strImageExtension.Equals(".rle") || strImageExtension.Equals(".dlb"))
-                    {
-                        return ImageFormat.Bmp;
-                    }
-                    else if (strImageExtension.Equals(".emf"))
-                    {
-                        return ImageFormat.Emf;
-                    }
-                    else if (strImageExtension.Equals(".exif"))
-                    {
-                        return ImageFormat.Exif;
-                    }
-                    else if (strImageExtension.Equals(".gif"))
-                    {
-                        return ImageFormat.Gif;
-                    }
-                    else if (strImageExtension.Equals(".ico"))
-                    {
-                        return ImageFormat.Icon;
-                    }
-                    else if (strImageExtension.Equals(".jpg") || strImageExtension.Equals(".jpeg") || strImageExtension.Equals(".jpe"))
-                    {
-                        return ImageFormat.Jpeg;
-                    }
-                    else if (strImageExtension.Equals(".png") || strImageExtension.Equals(".pns"))
-                    {
-                        return ImageFormat.Png;
-                    }
-                    else if (strImageExtension.Equals(".tif") || strImageExtension.Equals(".tiff"))
-                    {
-                        return ImageFormat.Tiff;
-                    }
-                    else if (strImageExtension.Equals(".wmf"))
-                    {
-                        return ImageFormat.Wmf;
-                    }
-                    else
-                    {
-                        return null;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                TXTHelper.Logs(ex.ToString());
-                return null;
             }
         }
         #endregion
