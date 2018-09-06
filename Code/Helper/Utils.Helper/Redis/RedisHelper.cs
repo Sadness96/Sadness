@@ -1246,5 +1246,41 @@ namespace Utils.Helper.Redis
             }
         }
         #endregion private method
+
+        #region 补充方法 创建日期:2018年9月6日
+        /// <summary>
+        /// 获得Redis所有Key值
+        /// </summary>
+        /// <returns>Redis所有Key值</returns>
+        public List<string> GetAllKeys()
+        {
+            List<string> keyList = new List<string>();
+            foreach (var ep in _connMultiplexer.GetEndPoints())
+            {
+                var server = _connMultiplexer.GetServer(ep);
+                var keys = server.Keys(0, "*");
+                foreach (var item in keys)
+                {
+                    keyList.Add((string)item);
+                }
+            }
+            return keyList;
+        }
+
+        /// <summary>
+        /// 获得Redis所有Key值和Value值
+        /// </summary>
+        /// <returns>Redis所有Key值和Value值</returns>
+        public Dictionary<string, string> GetAllKeysValues()
+        {
+            Dictionary<string, string> dicAllKeysValues = new Dictionary<string, string>();
+            List<string> listAllKeys = GetAllKeys();
+            foreach (var item in listAllKeys)
+            {
+                dicAllKeysValues.Add(item, StringGet(item));
+            }
+            return dicAllKeysValues;
+        }
+        #endregion
     }
 }

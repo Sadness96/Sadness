@@ -1717,6 +1717,18 @@
             <param name="data"></param>
             <returns></returns>
         </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.GetAllKeys">
+            <summary>
+            获得Redis所有Key值
+            </summary>
+            <returns>Redis所有Key值</returns>
+        </member>
+        <member name="M:Utils.Helper.Redis.RedisHelper.GetAllKeysValues">
+            <summary>
+            获得Redis所有Key值和Value值
+            </summary>
+            <returns>Redis所有Key值和Value值</returns>
+        </member>
         <member name="T:Utils.Helper.Reflect.ReflectHelper">
             <summary>
             反射帮助类(调用参考,没有价值)
