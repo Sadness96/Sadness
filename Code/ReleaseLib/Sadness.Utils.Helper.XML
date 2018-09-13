@@ -2256,6 +2256,17 @@
             <param name="parameters">请求参数</param>
             <returns>Api返回值</returns>
         </member>
+        <member name="M:Utils.Helper.WebApi.HttpWebRequestHelper.CreateGetHttpWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Text.Encoding,System.Int32)">
+            <summary>
+            创建Get请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <param name="encoding">字符编码</param>
+            <param name="timout ">请求超时前等待的毫秒数,默认值是 100,000 毫秒（100 秒）</param>
+            <returns>Api返回值</returns>
+        </member>
         <member name="M:Utils.Helper.WebApi.HttpWebRequestHelper.CreatePostHttpWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
             <summary>
             创建Post请求
@@ -2263,6 +2274,17 @@
             <param name="url">Api访问地址</param>
             <param name="requestUrl">详细方法路径</param>
             <param name="parameters">请求参数</param>
+            <returns>Api返回值</returns>
+        </member>
+        <member name="M:Utils.Helper.WebApi.HttpWebRequestHelper.CreatePostHttpWebRequest(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Text.Encoding,System.Int32)">
+            <summary>
+            创建Post请求
+            </summary>
+            <param name="url">Api访问地址</param>
+            <param name="requestUrl">详细方法路径</param>
+            <param name="parameters">请求参数</param>
+            <param name="encoding">字符编码</param>
+            <param name="timout ">请求超时前等待的毫秒数,默认值是 100,000 毫秒（100 秒）</param>
             <returns>Api返回值</returns>
         </member>
     </members>
