@@ -801,6 +801,40 @@
             <param name="diclistFieldNameType">返回数据库表字段名和字段类型</param>
             <returns>成功返回XML的DataTable,失败返回NULL</returns>
         </member>
+        <member name="T:FileIO.Helper.ZIP.GZIPHelper">
+            <summary>
+            GZIP压缩帮助类
+            创建日期:2018年9月26日
+            </summary>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.GZIPHelper.CompressionGZIP(System.Byte[])">
+            <summary>
+            压缩GZIP数据
+            </summary>
+            <param name="bytesSourceData">源数据</param>
+            <returns>压缩数据</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.GZIPHelper.DeCompressionGZIP(System.Byte[])">
+            <summary>
+            解压缩GZIP数据
+            </summary>
+            <param name="bytesSourceData">源数据</param>
+            <returns>解压缩数据</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.GZIPHelper.CompressionStringGZIP(System.String)">
+            <summary>
+            压缩String类型GZIP数据
+            </summary>
+            <param name="strSourceData">源数据</param>
+            <returns>压缩数据(Base64)</returns>
+        </member>
+        <member name="M:FileIO.Helper.ZIP.GZIPHelper.DeCompressionStringGZIP(System.String)">
+            <summary>
+            解压缩String类型GZIP数据
+            </summary>
+            <param name="strSourceData">源数据(Base64)</param>
+            <returns>解压缩数据</returns>
+        </member>
         <member name="T:FileIO.Helper.ZIP.ZIP7Helper">
             <summary>
             7ZIP压缩文件帮助类(不支持分卷压缩)

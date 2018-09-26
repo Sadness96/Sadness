@@ -821,6 +821,13 @@
             <param name="bitmap">位图</param>
             <returns>ImageSource</returns>
         </member>
+        <member name="M:Utils.Helper.Image.ImageHelper.BitmapToByteArray(System.Drawing.Bitmap)">
+            <summary>
+            Bitmap 转 图片二进制流
+            </summary>
+            <param name="bitmap">位图</param>
+            <returns>图片二进制流</returns>
+        </member>
         <member name="T:Utils.Helper.PCInformation.EncryptionHelper">
             <summary>
             加密注册码帮助类
