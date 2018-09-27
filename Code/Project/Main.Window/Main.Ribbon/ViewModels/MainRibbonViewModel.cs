@@ -128,7 +128,7 @@ namespace Main.Ribbon.ViewModels
                         ribbonPageGroup.IsVisible = itemSystemPluginMenuGroup.ice_page_visible;
                         ribbonPageGroup.Caption = itemSystemPluginMenuGroup.ice_page_name;
                         //遍历添加按钮
-                        foreach (var itemPluginMenu in listSystemPluginMenu.Where(o => o.ice_page_parid == itemSystemPluginMenuGroup.ice_id))
+                        foreach (var itemPluginMenu in listSystemPluginMenu.Where(o => o.ice_page_parid == itemSystemPluginMenuGroup.ice_id).OrderBy(o => o.ice_number))
                         {
                             //创建BarButtonItem
                             BarButtonItem barButton = new BarButtonItem();
