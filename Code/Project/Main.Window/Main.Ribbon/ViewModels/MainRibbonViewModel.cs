@@ -114,7 +114,7 @@ namespace Main.Ribbon.ViewModels
                 //获得 ice_system_plugin_menugroup 表所有数据
                 List<ice_system_plugin_menugroup> listSystemPluginMenuGroup = OperationEntityList.GetEntityList<ice_system_plugin_menugroup>(SystemTables.ice_system_plugin_menugroup, string.Empty);
                 //遍历添加 Home 分组
-                foreach (var itemSystemPluginMenuHome in listSystemPluginMenuGroup.Where(o => o.ice_page_ishome).OrderBy(o => o.ice_number))
+                foreach (var itemSystemPluginMenuHome in listSystemPluginMenuGroup.Where(o => o.ice_page_ishome && o.ice_page_visible).OrderBy(o => o.ice_number))
                 {
                     //创建 RibbonPage
                     RibbonPage ribbonPageHome = new RibbonPage();
