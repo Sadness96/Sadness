@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -56,8 +57,7 @@ namespace Utils.Helper.Image
             {
                 Bitmap bitmap = ByteArrayToBitmap(byteArray);
                 IntPtr hBitmap = bitmap.GetHbitmap();
-                ImageSource imageSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-                return imageSource;
+                return System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             }
             catch (Exception ex)
             {
@@ -73,20 +73,17 @@ namespace Utils.Helper.Image
         /// <returns>成功返回Bitmap,失败返回null</returns>
         public static Bitmap ByteArrayToBitmap(byte[] byteArray)
         {
-            MemoryStream memoryStream = null;
             try
             {
-                memoryStream = new MemoryStream(byteArray);
-                return new Bitmap((System.Drawing.Image)new Bitmap(memoryStream));
+                using (MemoryStream memoryStream = new MemoryStream(byteArray))
+                {
+                    return new Bitmap((System.Drawing.Image)new Bitmap(memoryStream));
+                }
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
                 return null;
-            }
-            finally
-            {
-                memoryStream.Close();
             }
         }
 
@@ -114,6 +111,31 @@ namespace Utils.Helper.Image
             {
                 TXTHelper.Logs(ex.ToString());
                 return null;
+            }
+        }
+
+        /// <summary>
+        ///  Bitmap 转 图片二进制流
+        /// </summary>
+        /// <param name="bitmap">位图</param>
+        /// <param name="imageFormat">文件格式(Null默认Bmp)</param>
+        /// <returns>图片二进制流</returns>
+        public static byte[] BitmapToByteArray(Bitmap bitmap, ImageFormat imageFormat)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            try
+            {
+                bitmap.Save(memoryStream, imageFormat == null ? ImageFormat.Bmp : imageFormat);
+                return memoryStream.GetBuffer();
+            }
+            catch (Exception ex)
+            {
+                TXTHelper.Logs(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                memoryStream.Close();
             }
         }
     }
