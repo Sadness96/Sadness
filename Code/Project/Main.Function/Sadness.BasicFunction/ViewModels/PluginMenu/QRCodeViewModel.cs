@@ -27,7 +27,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         public QRCodeViewModel()
         {
             //应用程序标题
-            Title = "生成二维码";
+            Title = "生成二维码工具";
             //设置软件图标
             MainAppLargeIcon = ImageHelper.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
             //默认不使用LOGO

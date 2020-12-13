@@ -35,44 +35,18 @@
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Prism, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Prism.dll</HintPath>
+    <Reference Include="Prism">
+      <HintPath>..\..\..\packages\Prism.dll</HintPath>
     </Reference>
-    <Reference Include="Prism.Wpf, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Prism.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.FileIO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.FileIO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.Interface">
-      <HintPath>..\..\..\ReleaseLib\Sadness.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.NPOI.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.NPOI.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.SQLiteDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.SQLiteDB.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.Utils.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.Utils.Helper.dll</HintPath>
+    <Reference Include="Prism.Wpf">
+      <HintPath>..\..\..\packages\Prism.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\System.Windows.Interactivity.dll</HintPath>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\packages\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -132,7 +106,32 @@
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helper\ADO.Helper\ADO.Helper.csproj">
+      <Project>{ccb19b3f-63f9-4827-93d5-4a4039260f83}</Project>
+      <Name>ADO.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Helper\FileIO.Helper\FileIO.Helper.csproj">
+      <Project>{bc7859ec-cb9b-4d3f-869d-eda6cd4840c9}</Project>
+      <Name>FileIO.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Helper\NPOI.Helper\NPOI.Helper.csproj">
+      <Project>{7fb6f1b2-4a4a-410d-858c-405f3aa2dc65}</Project>
+      <Name>NPOI.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Helper\Utils.Helper\Utils.Helper.csproj">
+      <Project>{4cdc54fb-ae53-40f9-9ed8-eee00924b400}</Project>
+      <Name>Utils.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main.Core\Sadness.Interface\Sadness.Interface.csproj">
+      <Project>{6ee57d44-8871-47c5-b748-a9669be94029}</Project>
+      <Name>Sadness.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main.Core\Sadness.SQLiteDB\Sadness.SQLiteDB.csproj">
+      <Project>{30b4ae29-e2f5-4d03-88ef-a4f80e01f700}</Project>
+      <Name>Sadness.SQLiteDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\PluginMenu\DBConnection.xaml">
       <SubType>Designer</SubType>

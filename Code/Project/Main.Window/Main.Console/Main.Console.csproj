@@ -34,34 +34,11 @@
     <DocumentationFile>..\..\..\ReleaseLib\Main.Console.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\packages\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.FileIO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.FileIO.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.Interface.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.NPOI.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.NPOI.Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.SQLiteDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.SQLiteDB.dll</HintPath>
-    </Reference>
-    <Reference Include="Sadness.Utils.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.Utils.Helper.dll</HintPath>
-    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -70,6 +47,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -77,6 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Main.Core\Sadness.Interface\Sadness.Interface.csproj">
+      <Project>{6ee57d44-8871-47c5-b748-a9669be94029}</Project>
+      <Name>Sadness.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Main.Function\Sadness.BasicFunction\Sadness.BasicFunction.csproj">
+      <Project>{861cf039-418a-4041-a56c-0ac38976692a}</Project>
+      <Name>Sadness.BasicFunction</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -26,7 +26,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         public FileSharingViewModel()
         {
             //应用程序标题
-            Title = "文件共享";
+            Title = "文件共享工具";
             //设置软件图标
             MainAppLargeIcon = ImageHelper.ByteArrayToImageSource(MainImage.GetImageByteArray("AppLargeIcon"));
         }

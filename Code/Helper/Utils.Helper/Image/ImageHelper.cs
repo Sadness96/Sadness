@@ -55,9 +55,16 @@ namespace Utils.Helper.Image
         {
             try
             {
-                Bitmap bitmap = ByteArrayToBitmap(byteArray);
-                IntPtr hBitmap = bitmap.GetHbitmap();
-                return System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                if (byteArray != null)
+                {
+                    Bitmap bitmap = ByteArrayToBitmap(byteArray);
+                    IntPtr hBitmap = bitmap.GetHbitmap();
+                    return System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
+                }
+                else
+                {
+                    return null;
+                }
             }
             catch (Exception ex)
             {
