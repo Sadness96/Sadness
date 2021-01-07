@@ -112,7 +112,7 @@ namespace NPOI.Helper.Excel
                 }
                 IWorkbook iWorkBook = null;
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                     iWorkBook.CreateSheet(strSheetName);
@@ -121,7 +121,7 @@ namespace NPOI.Helper.Excel
                     fileStream2003.Close();
                     iWorkBook.Close();
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                     iWorkBook.CreateSheet(strSheetName);
@@ -160,12 +160,12 @@ namespace NPOI.Helper.Excel
                 }
                 ISheet iSheet = null;
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                     iSheet = iWorkBook.CreateSheet(strSheetName);
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                     iSheet = iWorkBook.CreateSheet(strSheetName);
@@ -200,7 +200,7 @@ namespace NPOI.Helper.Excel
                 }
                 IWorkbook iWorkBook = null;
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                     iWorkBook.RemoveSheetAt(iWorkBook.GetSheetIndex(strSheetName));
@@ -209,7 +209,7 @@ namespace NPOI.Helper.Excel
                     fileStream2003.Close();
                     iWorkBook.Close();
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                     iWorkBook.RemoveSheetAt(iWorkBook.GetSheetIndex(strSheetName));
@@ -247,11 +247,11 @@ namespace NPOI.Helper.Excel
                 Dictionary<int, string> dicAllSheet = new Dictionary<int, string>();
                 IWorkbook iWorkBook = null;
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                 }
@@ -289,11 +289,11 @@ namespace NPOI.Helper.Excel
                     return null;
                 }
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                 }
@@ -327,11 +327,11 @@ namespace NPOI.Helper.Excel
                     return null;
                 }
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                 }
@@ -370,7 +370,7 @@ namespace NPOI.Helper.Excel
                 {
                     FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
                     Dictionary<int, string> dicAllSheet = GetExcelAllSheet(strDataSourcePath);
-                    if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                    if (Path.GetExtension(strDataSourcePath) == ".xls")
                     {
                         //获取指定Sheet页
                         IWorkbook iWorkBook = new HSSFWorkbook(fileStream);
@@ -402,7 +402,7 @@ namespace NPOI.Helper.Excel
                         fileStream2003.Close();
                         iWorkBook.Close();
                     }
-                    else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                    else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                     {
                         //获取指定Sheet页
                         IWorkbook iWorkBook = new XSSFWorkbook(fileStream);
@@ -441,7 +441,7 @@ namespace NPOI.Helper.Excel
                 }
                 else
                 {
-                    if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                    if (Path.GetExtension(strDataSourcePath) == ".xls")
                     {
                         bool bCreare = CreateExcel_Office2003(strDataSourcePath, strSheetName);
                         bool bFill = FillString(strDataSourcePath, strSheetName, strTXT, iColumn, iRows);
@@ -454,7 +454,7 @@ namespace NPOI.Helper.Excel
                             return false;
                         }
                     }
-                    else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                    else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                     {
                         bool bCreare = CreateExcel_Office2007(strDataSourcePath, strSheetName);
                         bool bFill = FillString(strDataSourcePath, strSheetName, strTXT, iColumn, iRows);
@@ -577,7 +577,7 @@ namespace NPOI.Helper.Excel
                 {
                     FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
                     Dictionary<int, string> dicAllSheet = GetExcelAllSheet(strDataSourcePath);
-                    if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                    if (Path.GetExtension(strDataSourcePath) == ".xls")
                     {
                         IWorkbook iWorkBook = new HSSFWorkbook(fileStream);
                         ISheet iSheet = null;
@@ -642,7 +642,7 @@ namespace NPOI.Helper.Excel
                         fileStream2003.Close();
                         iWorkBook.Close();
                     }
-                    else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                    else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                     {
                         IWorkbook iWorkBook = new XSSFWorkbook(fileStream);
                         ISheet iSheet = null;
@@ -714,7 +714,7 @@ namespace NPOI.Helper.Excel
                 }
                 else
                 {
-                    if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                    if (Path.GetExtension(strDataSourcePath) == ".xls")
                     {
                         bool bCreare = CreateExcel_Office2003(strDataSourcePath, strSheetName);
                         bool bFill = FillDataTable(strDataSourcePath, strSheetName, dtSourceData, WhetherThereFieldName, iColumn, iRows);
@@ -727,7 +727,7 @@ namespace NPOI.Helper.Excel
                             return false;
                         }
                     }
-                    else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                    else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                     {
                         bool bCreare = CreateExcel_Office2007(strDataSourcePath, strSheetName);
                         bool bFill = FillDataTable(strDataSourcePath, strSheetName, dtSourceData, WhetherThereFieldName, iColumn, iRows);
@@ -963,11 +963,11 @@ namespace NPOI.Helper.Excel
                 DataTable dtTargetData = new DataTable();
                 FileStream fileStream = new FileStream(strDataSourcePath, FileMode.Open, FileAccess.Read);
                 IWorkbook iWorkBook = null;
-                if (System.IO.Path.GetExtension(strDataSourcePath) == ".xls")
+                if (Path.GetExtension(strDataSourcePath) == ".xls")
                 {
                     iWorkBook = new HSSFWorkbook(fileStream);
                 }
-                else if (System.IO.Path.GetExtension(strDataSourcePath) == ".xlsx")
+                else if (Path.GetExtension(strDataSourcePath) == ".xlsx")
                 {
                     iWorkBook = new XSSFWorkbook(fileStream);
                 }
@@ -1309,11 +1309,11 @@ namespace NPOI.Helper.Excel
                 if (!File.Exists(strTargetExcelPath))
                 {
                     //如果文件不存在则创建Excel
-                    if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xls")
+                    if (Path.GetExtension(strTargetExcelPath) == ".xls")
                     {
                         bool bCreare = CreateExcel_Office2003(strTargetExcelPath, strToSheetName);
                     }
-                    else if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xlsx")
+                    else if (Path.GetExtension(strTargetExcelPath) == ".xlsx")
                     {
                         bool bCreare = CreateExcel_Office2007(strTargetExcelPath, strToSheetName);
                     }
@@ -1341,14 +1341,14 @@ namespace NPOI.Helper.Excel
                 bool bCopySheet = CopySheetAt(iSourceWorkbook, iSourceSheet, iTargetWorkbook, iTargetSheet);
                 if (bCopySheet)
                 {
-                    if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xls")
+                    if (Path.GetExtension(strTargetExcelPath) == ".xls")
                     {
                         FileStream fileStream2003 = new FileStream(Path.ChangeExtension(strTargetExcelPath, "xls"), FileMode.Create);
                         iTargetWorkbook.Write(fileStream2003);
                         fileStream2003.Close();
                         iTargetWorkbook.Close();
                     }
-                    else if (System.IO.Path.GetExtension(strTargetExcelPath) == ".xlsx")
+                    else if (Path.GetExtension(strTargetExcelPath) == ".xlsx")
                     {
                         FileStream fileStream2007 = new FileStream(Path.ChangeExtension(strTargetExcelPath, "xlsx"), FileMode.Create);
                         iTargetWorkbook.Write(fileStream2007);
