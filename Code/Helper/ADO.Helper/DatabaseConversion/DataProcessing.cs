@@ -76,12 +76,12 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// DataTable转换为List<T>
+        /// DataTable转换为List
         /// </summary>
         /// <typeparam name="T">数据模型</typeparam>
         /// <param name="dtDataSource">源数据(DataTable)</param>
-        /// <returns>成功返回List<T>,失败返回null</returns>
-        public static List<T> ConvertToList<T>(DataTable dtDataSource) where T : class,new()
+        /// <returns>成功返回List,失败返回null</returns>
+        public static List<T> ConvertToList<T>(DataTable dtDataSource) where T : class, new()
         {
             try
             {
@@ -119,7 +119,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// List<T>转换为DataTable
+        /// List转换为DataTable
         /// </summary>
         /// <param name="listDataSource">源数据</param>
         /// <returns>成功返回DataTable,失败返回null</returns>
