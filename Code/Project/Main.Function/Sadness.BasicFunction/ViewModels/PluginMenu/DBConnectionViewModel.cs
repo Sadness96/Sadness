@@ -388,7 +388,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand<string>(delegate(string eData)
+                return new DelegateCommand<string>(delegate (string eData)
                 {
                     IsOffaceString = eData;
                 });
@@ -402,7 +402,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
                     Microsoft.Win32.OpenFileDialog dialog = new Microsoft.Win32.OpenFileDialog();
                     if (strDataBaseName == "Access")
@@ -432,7 +432,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
                     Microsoft.Win32.SaveFileDialog dialog = new Microsoft.Win32.SaveFileDialog();
                     dialog.Title = "新建数据库";
@@ -463,7 +463,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
                     if (strDataBaseName.Equals(TypeProcessing.DataBase.SqlServer.ToString()))
                     {

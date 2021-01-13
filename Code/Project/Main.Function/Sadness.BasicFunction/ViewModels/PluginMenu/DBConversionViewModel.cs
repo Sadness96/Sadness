@@ -286,7 +286,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand<string>(delegate(string eData)
+                return new DelegateCommand<string>(delegate (string eData)
                 {
                     if (eData != IsSourceString)
                     {
@@ -309,7 +309,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand<string>(delegate(string eData)
+                return new DelegateCommand<string>(delegate (string eData)
                 {
                     if (eData != IsTargetString)
                     {
@@ -327,16 +327,19 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
-                    IEventAggregator eventAggregator = new EventAggregator();
-                    DBConnection dbcView = new DBConnection(eventAggregator, IsSourceString);
-                    eventAggregator.GetEvent<EventConnection>().Subscribe((eventArg) =>
+                    if (!string.IsNullOrEmpty(IsSourceString))
                     {
-                        eventArg.strSourceOrTarget = "Source";
-                        SourceConnectionString = eventArg.strSqlConnection;
-                    });
-                    dbcView.ShowDialog();
+                        IEventAggregator eventAggregator = new EventAggregator();
+                        DBConnection dbcView = new DBConnection(eventAggregator, IsSourceString);
+                        eventAggregator.GetEvent<EventConnection>().Subscribe((eventArg) =>
+                        {
+                            eventArg.strSourceOrTarget = "Source";
+                            SourceConnectionString = eventArg.strSqlConnection;
+                        });
+                        dbcView.ShowDialog();
+                    }
                 });
             }
         }
@@ -348,16 +351,19 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
-                    IEventAggregator eventAggregator = new EventAggregator();
-                    DBConnection dbcView = new DBConnection(eventAggregator, IsTargetString);
-                    eventAggregator.GetEvent<EventConnection>().Subscribe((eventArg) =>
+                    if (!string.IsNullOrEmpty(IsTargetString))
                     {
-                        eventArg.strSourceOrTarget = "Target";
-                        TargetConnectionString = eventArg.strSqlConnection;
-                    });
-                    dbcView.ShowDialog();
+                        IEventAggregator eventAggregator = new EventAggregator();
+                        DBConnection dbcView = new DBConnection(eventAggregator, IsTargetString);
+                        eventAggregator.GetEvent<EventConnection>().Subscribe((eventArg) =>
+                        {
+                            eventArg.strSourceOrTarget = "Target";
+                            TargetConnectionString = eventArg.strSqlConnection;
+                        });
+                        dbcView.ShowDialog();
+                    }
                 });
             }
         }
@@ -369,7 +375,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
                     //判断是否符合转换要求
                     if (SourceConnectionColour == "#FF3FF831" && TargetConnectionColour == "#FF3FF831")
@@ -563,7 +569,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand(delegate()
+                return new DelegateCommand(delegate ()
                 {
                     //判断是否符合转换要求
                     if (SourceConnectionColour == "#FF3FF831" && TargetConnectionColour == "#FF3FF831")
@@ -720,7 +726,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
         {
             get
             {
-                return new DelegateCommand<object>(delegate(object eData)
+                return new DelegateCommand<object>(delegate (object eData)
                 {
                     Models.TablesTree SelectedItem = eData as Models.TablesTree;
                     try
