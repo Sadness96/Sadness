@@ -22,35 +22,35 @@
         </Grid.Style>
         <GroupBox Header="源数据库" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="45" Width="550">
             <StackPanel>
-                <RadioButton GroupName="Source" Content="SqlServer" HorizontalAlignment="Left" Height="23" Margin="25,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Source" Content="SqlServer" HorizontalAlignment="Left" Height="15" Margin="25,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonSource}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Source" Content="Oracle" HorizontalAlignment="Left" Height="23" Margin="130,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Source" Content="Oracle" HorizontalAlignment="Left" Height="15" Margin="130,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonSource}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Source" Content="MySql" HorizontalAlignment="Left" Height="23" Margin="235,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Source" Content="MySql" HorizontalAlignment="Left" Height="15" Margin="235,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonSource}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Source" Content="Access" HorizontalAlignment="Left" Height="23" Margin="340,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Source" Content="Access" HorizontalAlignment="Left" Height="15" Margin="340,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonSource}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Source" Content="SQLite" HorizontalAlignment="Left" Height="23" Margin="445,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Source" Content="SQLite" HorizontalAlignment="Left" Height="15" Margin="445,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonSource}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
@@ -61,35 +61,35 @@
         </GroupBox>
         <GroupBox Header="目标数据库" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="45" Width="550">
             <StackPanel>
-                <RadioButton GroupName="Target" Content="SqlServer" HorizontalAlignment="Left" Height="23" Margin="25,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Target" Content="SqlServer" HorizontalAlignment="Left" Height="15" Margin="25,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonTarget}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Target" Content="Oracle" HorizontalAlignment="Left" Height="23" Margin="130,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Target" Content="Oracle" HorizontalAlignment="Left" Height="15" Margin="130,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonTarget}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Target" Content="MySql" HorizontalAlignment="Left" Height="23" Margin="235,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Target" Content="MySql" HorizontalAlignment="Left" Height="15" Margin="235,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonTarget}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Target" Content="Access" HorizontalAlignment="Left" Height="23" Margin="340,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Target" Content="Access" HorizontalAlignment="Left" Height="15" Margin="340,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonTarget}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </RadioButton>
-                <RadioButton GroupName="Target" Content="SQLite" HorizontalAlignment="Left" Height="23" Margin="445,-6,0,-22" VerticalAlignment="Top">
+                <RadioButton GroupName="Target" Content="SQLite" HorizontalAlignment="Left" Height="15" Margin="445,5,0,-20" VerticalAlignment="Top">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding RadioButtonTarget}" CommandParameter="{Binding Content,RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"></i:InvokeCommandAction>
