@@ -100,10 +100,10 @@
         </GroupBox>
         <Ellipse Fill="{Binding SourceConnectionColour,Mode=TwoWay}" HorizontalAlignment="Left" Height="10" Margin="565,32,0,0" VerticalAlignment="Top" Width="10"/>
         <Ellipse Fill="{Binding TargetConnectionColour,Mode=TwoWay}" HorizontalAlignment="Left" Height="10" Margin="565,82,0,0" VerticalAlignment="Top" Width="10"/>
-        <Button x:Name="btnSource" Content="连接源" HorizontalAlignment="Left" Margin="590,26,0,0" VerticalAlignment="Top" Width="80" Command="{Binding ConnectSourceData}"/>
-        <Button x:Name="btnTarget" Content="连接目标" HorizontalAlignment="Left" Margin="590,76,0,0" VerticalAlignment="Top" Width="80" Command="{Binding ConnectTargetData}"/>
-        <Button x:Name="btnReadTables" Content="读取结构" HorizontalAlignment="Left" Margin="680,26,0,0" VerticalAlignment="Top" Width="80" Command="{Binding ReadStructureInformation}"/>
-        <Button x:Name="btnSave" Content="保存/转换" HorizontalAlignment="Left" Margin="680,76,0,0" VerticalAlignment="Top" Width="80" Command="{Binding SaveConversion}"/>
+        <Button x:Name="btnSource" Content="连接源" HorizontalAlignment="Left" Margin="590,26,0,0" VerticalAlignment="Top" Width="80" Height="22" Command="{Binding ConnectSourceData}"/>
+        <Button x:Name="btnTarget" Content="连接目标" HorizontalAlignment="Left" Margin="590,76,0,0" VerticalAlignment="Top" Width="80" Height="22" Command="{Binding ConnectTargetData}"/>
+        <Button x:Name="btnReadTables" Content="读取结构" HorizontalAlignment="Left" Margin="680,26,0,0" VerticalAlignment="Top" Width="80" Height="22" Command="{Binding ReadStructureInformation}"/>
+        <Button x:Name="btnSave" Content="保存/转换" HorizontalAlignment="Left" Margin="680,76,0,0" VerticalAlignment="Top" Width="80" Height="22" Command="{Binding SaveConversion}"/>
         <GroupBox Header="表结构信息" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" Height="348" Width="760">
             <Grid>
                 <TreeView x:Name="tree" HorizontalAlignment="Left" Height="306" Margin="0,0,0,0" VerticalAlignment="Top" Width="160" ItemsSource="{Binding TreeList,Mode=TwoWay}">

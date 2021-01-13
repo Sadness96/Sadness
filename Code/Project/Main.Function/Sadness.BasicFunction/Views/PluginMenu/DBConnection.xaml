@@ -14,43 +14,43 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
                 <Label Content="IP地址：" HorizontalAlignment="Left" Margin="26,7,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,9,10,157"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,10,45,171"/>
                 <Label Content="数据库名：" HorizontalAlignment="Left" Margin="12,41,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strDataBase}" Margin="86,43,10,123"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strDataBase}" Margin="86,43,45,137"/>
                 <Label Content="用户名：" HorizontalAlignment="Left" Margin="24,75,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,77,10,89"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,77,45,103"/>
                 <Label Content="密码：" HorizontalAlignment="Left" Margin="36,109,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,111,10,55"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,111,45,69"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Oracle" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Height="225" Width="422" Visibility="{Binding DisplayOracle}">
             <Grid>
                 <Label Content="数据库：" HorizontalAlignment="Left" Margin="24,12,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,14,10,152"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,14,45,166"/>
                 <Label Content="用户名：" HorizontalAlignment="Left" Margin="24,51,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,53,10,113"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,53,45,127"/>
                 <Label Content="口令：" HorizontalAlignment="Left" Margin="36,90,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,92,10,74"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,92,45,88"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="MySql" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Height="225" Width="422" Visibility="{Binding DisplayMySql}">
             <Grid>
                 <Label Content="IP地址：" HorizontalAlignment="Left" Margin="26,7,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,9,10,157"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strIPAddress}" Margin="86,9,45,171"/>
                 <Label Content="数据库名：" HorizontalAlignment="Left" Margin="12,41,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strDataBase}" Margin="86,43,10,123"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strDataBase}" Margin="86,43,45,137"/>
                 <Label Content="用户名：" HorizontalAlignment="Left" Margin="24,75,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,77,10,89"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strUserName}" Margin="86,77,45,103"/>
                 <Label Content="密码：" HorizontalAlignment="Left" Margin="36,109,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,111,10,55"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strPassword}" Margin="86,111,45,69"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Access" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Height="225" Width="422" Visibility="{Binding DisplayAccess}">
             <Grid>
                 <Label Content="路径：" HorizontalAlignment="Left" Margin="23,38,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strPath}" Margin="69,40,90,127"/>
-                <Button Content="…" HorizontalAlignment="Left" Margin="312,40,0,0" VerticalAlignment="Top" Width="35" Command="{Binding SelectPath}"/>
-                <Button Content="new" HorizontalAlignment="Left" Margin="350,40,0,0" VerticalAlignment="Top" Width="48" Command="{Binding SavePath}"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strPath}" Margin="69,40,103,140"/>
+                <Button Content="…" HorizontalAlignment="Left" Margin="312,40,0,0" VerticalAlignment="Top" Width="35" Height="22" Command="{Binding SelectPath}"/>
+                <Button Content="new" HorizontalAlignment="Left" Margin="350,40,0,0" VerticalAlignment="Top" Width="48" Height="22" Command="{Binding SavePath}"/>
                 <RadioButton GroupName="offace" Content="offace2003" HorizontalAlignment="Left" Height="23" Margin="104,101,0,0" VerticalAlignment="Top" IsChecked="True">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
@@ -70,9 +70,9 @@
         <GroupBox Header="SQLite" HorizontalAlignment="Left" Margin="7,7,0,0" VerticalAlignment="Top" Height="225" Width="422" Visibility="{Binding DisplaySQLite}">
             <Grid>
                 <Label Content="路径：" HorizontalAlignment="Left" Margin="23,61,0,0" VerticalAlignment="Top"/>
-                <TextBox TextWrapping="Wrap" Text="{Binding strPath}" Margin="69,63,90,104"/>
-                <Button Content="…" HorizontalAlignment="Left" Margin="312,63,0,0" VerticalAlignment="Top" Width="35" Command="{Binding SelectPath}"/>
-                <Button Content="new" HorizontalAlignment="Left" Margin="350,63,0,0" VerticalAlignment="Top" Width="48" Command="{Binding SavePath}"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding strPath}" Margin="69,63,103,117"/>
+                <Button Content="…" HorizontalAlignment="Left" Margin="312,63,0,0" VerticalAlignment="Top" Width="35" Height="22" Command="{Binding SelectPath}"/>
+                <Button Content="new" HorizontalAlignment="Left" Margin="350,63,0,0" VerticalAlignment="Top" Width="48" Height="22" Command="{Binding SavePath}"/>
             </Grid>
         </GroupBox>
         <Button Content="连接" HorizontalAlignment="Left" Margin="251,236,0,0" VerticalAlignment="Top" Width="75" Command="{Binding ConnectionDB}"/>
