@@ -23,16 +23,23 @@ namespace Utils.Helper.PCInformation
 
             try
             {
-                List<string> listMAC = new List<string>();
-                string strMac = "";
-                ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
-                ManagementObjectCollection moc = mc.GetInstances();
-                foreach (ManagementObject mo in moc)
+                // 虚拟网卡标识
+                List<string> listFictitious = new List<string>
                 {
-                    if ((bool)mo["IPEnabled"])
+                    "vmnetadapter",
+                    "ppoe",
+                    "bthpan",
+                    "tapvpn",
+                    "ndisip",
+                    "sinforvnic"
+                };
+                // 获取并过滤网卡Mac信息
+                List<string> listMAC = new List<string>();
+                foreach (ManagementObject mo in new ManagementClass("Win32_NetworkAdapterConfiguration").GetInstances())
+                {
+                    if ((bool)mo["IPEnabled"] && !listFictitious.Contains(mo["ServiceName"].ToString().ToLower()))
                     {
-                        strMac = mo["MacAddress"].ToString();
-                        listMAC.Add(strMac);
+                        listMAC.Add(mo["MacAddress"].ToString());
                     }
                 }
                 return listMAC;
