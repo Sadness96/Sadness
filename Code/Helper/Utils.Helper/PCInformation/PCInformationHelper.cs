@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Management;//WMI库
 using Utils.Helper.TXT;
+using System.Runtime.InteropServices;
 
 namespace Utils.Helper.PCInformation
 {
@@ -223,5 +224,42 @@ namespace Utils.Helper.PCInformation
                 return null;
             }
         }
+
+        /// <summary>
+        /// 获取系统用户列表
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> UserName()
+        {
+            var temp = new List<string>();
+            NetUserEnum(null, 0, 2, out IntPtr bufPtr, -1, out int EntriesRead, out int TotalEntries, out int Resume);
+            if (EntriesRead > 0)
+            {
+                USER_INFO_0[] Users = new USER_INFO_0[EntriesRead];
+                IntPtr iter = bufPtr;
+                for (int i = 0; i < EntriesRead; i++)
+                {
+                    Users[i] = (USER_INFO_0)Marshal.PtrToStructure(iter, typeof(USER_INFO_0));
+                    iter = (IntPtr)((int)iter + Marshal.SizeOf(typeof(USER_INFO_0)));
+                    temp.Add(Users[i].Username);
+                }
+                NetApiBufferFree(bufPtr);
+            }
+            return temp;
+        }
+
+        #region 验证操作系统用户名
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        public struct USER_INFO_0
+        {
+            public string Username;
+        }
+        [DllImport("Netapi32.dll ")]
+        extern static int NetUserEnum([MarshalAs(UnmanagedType.LPWStr)]
+        string servername, int level, int filter, out IntPtr bufptr, int prefmaxlen, out int entriesread, out int totalentries, out int resume_handle);
+
+        [DllImport("Netapi32.dll ")]
+        extern static int NetApiBufferFree(IntPtr Buffer);
+        #endregion
     }
 }

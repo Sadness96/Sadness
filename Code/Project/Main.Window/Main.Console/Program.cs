@@ -37,8 +37,7 @@ namespace Main.Console
             //输入打开程序
             while (true)
             {
-                int ReadIndex = -1;
-                int.TryParse(System.Console.ReadLine(), out ReadIndex);
+                int.TryParse(System.Console.ReadLine(), out int ReadIndex);
                 if (ReadIndex >= 0 && ReadIndex < dicApp.Count)
                 {
                     RunPluginClick(strBasicFunctionDll, dicApp.ElementAt(ReadIndex).Value);
@@ -48,8 +47,6 @@ namespace Main.Console
                     System.Console.WriteLine("输入无效,请重试!");
                 }
             }
-
-            System.Console.ReadKey();
         }
 
         /// <summary>
@@ -79,7 +76,7 @@ namespace Main.Console
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
