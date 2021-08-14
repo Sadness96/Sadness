@@ -159,6 +159,11 @@ namespace FileIO.Helper.ZIP
                     if (!string.IsNullOrEmpty(zipEntry.Name))
                     {
                         string strFileName = Path.Combine(strDeCompressionPath, zipEntry.Name);
+                        string strDirectory = Path.GetDirectoryName(strFileName);
+                        if (!Directory.Exists(strDirectory))
+                        {
+                            Directory.CreateDirectory(strDirectory);
+                        }
                         strFileName = strFileName.Replace('/', '\\');
                         if (strFileName.EndsWith("\\"))
                         {
