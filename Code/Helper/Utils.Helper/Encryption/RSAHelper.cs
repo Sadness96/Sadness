@@ -15,7 +15,7 @@ namespace Utils.Helper.Encryption
     public class RSAHelper
     {
         /// <summary>
-        /// RSA产生秘钥
+        /// Rsa 生成秘钥
         /// </summary>
         /// <param name="xmlPublicKey">公钥</param>
         /// <param name="xmlPrivateKey">私钥</param>
@@ -23,13 +23,14 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                RSACryptoServiceProvider rsaCrypto = new RSACryptoServiceProvider();
-                xmlPublicKey = rsaCrypto.ToXmlString(false);
-                xmlPrivateKey = rsaCrypto.ToXmlString(true);
+                using (RSA rsa = RSA.Create())
+                {
+                    xmlPublicKey = rsa.ToXmlString(false);
+                    xmlPrivateKey = rsa.ToXmlString(true);
+                }
             }
             catch (Exception ex)
             {
-                TXTHelper.Logs(ex.ToString());
                 xmlPublicKey = string.Empty;
                 xmlPrivateKey = string.Empty;
             }
