@@ -19,6 +19,11 @@ namespace Queue.Helper.RabbitMQ
         private string _exchangeName;
 
         /// <summary>
+        /// 消息回调
+        /// </summary>
+        public event Action<string> MessageCallback;
+
+        /// <summary>
         /// 构造函数
         /// </summary>
         /// <param name="hostName">IP</param>
@@ -72,10 +77,9 @@ namespace Queue.Helper.RabbitMQ
         /// 注册消费者
         /// </summary>
         /// <param name="queueName">队列名称</param>
-        /// <param name="callback">回调函数</param>
         /// <param name="durable">持久化</param>
         /// <param name="ttl">生存时间</param>
-        public void RegisterConsumer(string queueName, Action<string> callback, bool durable = true, TimeSpan? ttl = null)
+        public void RegisterConsumer(string queueName, bool durable = true, TimeSpan? ttl = null)
         {
             var arguments = new Dictionary<string, object>();
 
@@ -91,7 +95,8 @@ namespace Queue.Helper.RabbitMQ
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
-                callback(message);
+
+                MessageCallback?.Invoke(message);
             };
 
             _channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
