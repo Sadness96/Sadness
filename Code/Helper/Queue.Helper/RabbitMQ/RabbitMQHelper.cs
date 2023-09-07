@@ -33,6 +33,14 @@ namespace Queue.Helper.RabbitMQ
                 Port = port,
                 UserName = userName,
                 Password = password,
+                // 自动重连
+                AutomaticRecoveryEnabled = true,
+                // 恢复拓扑结构
+                TopologyRecoveryEnabled = true,
+                // 后台处理消息
+                UseBackgroundThreadsForIO = true,
+                // 心跳超时时间
+                RequestedHeartbeat = 60
             };
 
             _connection = factory.CreateConnection();
