@@ -33,7 +33,7 @@ namespace ADO.Helper.Oracle
         /// <summary>
         /// 直接传给帮助类 Oracle 连接字符串
         /// </summary>
-        /// <param name="OracleConnection">Oracle连接字符串</param>
+        /// <param name="OracleConnection">Oracle 连接字符串</param>
         public void OracleConnectionString(string OracleConnection)
         {
             strOracleConnection = OracleConnection;

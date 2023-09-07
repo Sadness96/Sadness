@@ -32,18 +32,18 @@ namespace ADO.Helper.MySql
         MySqlTransaction Transaction = null;
 
         /// <summary>
-        /// 直接传给帮助类MySql连接字符串
+        /// 直接传给帮助类 MySql 连接字符串
         /// </summary>
-        /// <param name="MySqlConnection">MySql连接字符串</param>
+        /// <param name="MySqlConnection">MySql 连接字符串</param>
         public void MySqlConnectionString(string MySqlConnection)
         {
             strMySqlConnection = MySqlConnection;
         }
 
         /// <summary>
-        /// 传给帮助类MySql连接字符串需要的信息(端口号默认3306)
+        /// 传给帮助类 MySql 连接字符串需要的信息(端口号默认3306)
         /// </summary>
-        /// <param name="server">IP地址</param>
+        /// <param name="server">IP 地址</param>
         /// <param name="id">用户名</param>
         /// <param name="password">密码</param>
         /// <param name="database">数据库名</param>
@@ -53,9 +53,9 @@ namespace ADO.Helper.MySql
         }
 
         /// <summary>
-        /// 传给帮助类MySql连接字符串需要的信息
+        /// 传给帮助类 MySql 连接字符串需要的信息
         /// </summary>
-        /// <param name="server">IP地址</param>
+        /// <param name="server">IP 地址</param>
         /// <param name="id">用户名</param>
         /// <param name="password">密码</param>
         /// <param name="database">数据库名</param>
