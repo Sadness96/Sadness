@@ -22,7 +22,7 @@ namespace Utils.Helper.PCInformation
         {
             try
             {
-                //读取电脑信息
+                // 读取电脑信息
                 List<string> listOriginal = new List<string>();
                 List<string> listEncryption = new List<string>();
                 listOriginal.Add(PCInformationHelper.MAC()[0]);
@@ -30,7 +30,7 @@ namespace Utils.Helper.PCInformation
                 listOriginal.Add(PCInformationHelper.DESK()[0]);
                 listOriginal.Add(PCInformationHelper.Memory()[0]);
                 listOriginal.Add(PCInformationHelper.Motherboard()[0]);
-                //对信息进行处理
+                // 对信息进行处理
                 foreach (string Encryption in listOriginal)
                 {
                     string strSecretKey = "";
@@ -55,7 +55,7 @@ namespace Utils.Helper.PCInformation
                     }
                     listEncryption.Add(strSecretKey);
                 }
-                //拼接申请码
+                // 拼接申请码
                 string strRequestCode = "";
                 foreach (string key in listEncryption)
                 {
@@ -78,9 +78,9 @@ namespace Utils.Helper.PCInformation
         {
             try
             {
-                //拆分激活码
+                // 拆分激活码
                 string[] strRequestCode = RequestCode.Split('-');
-                //对信息进行处理
+                // 对信息进行处理
                 List<string> listEncryption = new List<string>();
                 foreach (string Encryption in strRequestCode)
                 {
@@ -106,7 +106,7 @@ namespace Utils.Helper.PCInformation
                     }
                     listEncryption.Add(strSecretKey);
                 }
-                //拼接激活码
+                // 拼接激活码
                 string strActivationCode = "";
                 foreach (string key in listEncryption)
                 {

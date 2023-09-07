@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace FileIO.Helper.ZIP
 {
     /// <summary>
-    /// GZIP压缩帮助类
-    /// 创建日期:2018年9月26日
+    /// GZIP 压缩帮助类
+    /// 创建日期:2018年09月26日
     /// </summary>
     public class GZIPHelper
     {
         /// <summary>
-        /// 压缩GZIP数据
+        /// 压缩 GZIP 数据
         /// </summary>
         /// <param name="bytesSourceData">源数据</param>
         /// <returns>压缩数据</returns>
@@ -38,7 +38,7 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 解压缩GZIP数据
+        /// 解压缩 GZIP 数据
         /// </summary>
         /// <param name="bytesSourceData">源数据</param>
         /// <returns>解压缩数据</returns>
@@ -69,7 +69,7 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 压缩String类型GZIP数据
+        /// 压缩 String 类型 GZIP 数据
         /// </summary>
         /// <param name="strSourceData">源数据</param>
         /// <returns>压缩数据(Base64)</returns>
@@ -96,7 +96,7 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 解压缩String类型GZIP数据
+        /// 解压缩 String 类型 GZIP 数据
         /// </summary>
         /// <param name="strSourceData">源数据(Base64)</param>
         /// <returns>解压缩数据</returns>

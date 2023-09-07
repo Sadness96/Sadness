@@ -9,14 +9,14 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Shutdown
 {
     /// <summary>
-    /// Win32关机帮助类
-    /// 创建日期:2017年6月6日
+    /// Win32 关机帮助类
+    /// 创建日期:2017年06月06日
     /// </summary>
     public class ShutdownHelper
     {
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
         internal struct TokPriv1Luid
-        { public int Count; public long Luid; public int Attr;}
+        { public int Count; public long Luid; public int Attr; }
         [DllImport("kernel32.dll", ExactSpelling = true)]
         internal static extern IntPtr GetCurrentProcess();
         [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]

@@ -11,15 +11,15 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.XML
 {
     /// <summary>
-    /// XML文本帮助类
-    /// 创建日期:2017年4月28日
+    /// XML 文本帮助类
+    /// 创建日期:2017年04月28日
     /// </summary>
     public class XMLHelper
     {
         /// <summary>
-        /// 创建XML文档
+        /// 创建 XML 文档
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="rootNodeName">根节点名称(须指定一个根节点名称)</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateXmlDocument(string xmlFileName, string rootNodeName)
@@ -48,7 +48,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 在指定节点后添加节点
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <param name="strNodeName">添加节点名称</param>
         /// <returns>成功返回true,失败返回false</returns>
@@ -78,7 +78,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 移除指定节点的所有指定属性和子类。删除默认属性。
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool RemoveXmlNode(string xmlFileName, string strNodeNamePath)
@@ -107,7 +107,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 在指定节点上添加属性
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <param name="strAttribute">添加属性名称</param>
         /// <param name="strAttributeText">添加属性文本值</param>
@@ -139,7 +139,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 在指定节点上添加文本
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <param name="strInnerText">添加文本</param>
         /// <returns>成功返回true,失败返回false</returns>
@@ -168,7 +168,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 获得指定节点的指定属性值
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <param name="strAttribute">指定属性</param>
         /// <returns>指定节点的指定属性值</returns>
@@ -195,7 +195,7 @@ namespace FileIO.Helper.XML
         /// <summary>
         /// 获得指定节点的文本值
         /// </summary>
-        /// <param name="xmlFileName">XML文件路径</param>
+        /// <param name="xmlFileName">XML 文件路径</param>
         /// <param name="strNodeNamePath">指定节点名称路径("NodeNamePath"指定根节点,"//NodeNamePath"指定搜索到的第一个匹配节点)</param>
         /// <returns>指定节点的文本值</returns>
         public static string GetInnerText(string xmlFileName, string strNodeNamePath)
@@ -219,10 +219,10 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// DataTable转换为XML
+        /// DataTable 转换为 XML
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
-        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="strSource">XML 文件路径</param>
+        /// <param name="dtSourceData">DataTable 数据</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataTableConversionXML(string strSource, DataTable dtSourceData)
         {
@@ -285,10 +285,10 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// DataTable转换为XML(同步保存字段类型)
+        /// DataTable 转换为 XML(同步保存字段类型)
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
-        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="strSource">XML 文件路径</param>
+        /// <param name="dtSourceData">DataTable 数据</param>
         /// <param name="dicFieldNameType">数据库表字段名和字段类型</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataTableConversionXML(string strSource, DataTable dtSourceData, Dictionary<string, string> dicFieldNameType)
@@ -353,10 +353,10 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// DataSet转换为XML
+        /// DataSet 转换为 XML
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
-        /// <param name="dsSourceData">DataSet数据</param>
+        /// <param name="strSource">XML 文件路径</param>
+        /// <param name="dsSourceData">DataSet 数据</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataSetConversionXML(string strSource, DataSet dsSourceData)
         {
@@ -422,10 +422,10 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// DataSet转换为XML(同步保存字段类型)
+        /// DataSet 转换为 XML(同步保存字段类型)
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
-        /// <param name="dsSourceData">DataSet数据</param>
+        /// <param name="strSource">XML 文件路径</param>
+        /// <param name="dsSourceData">DataSet 数据</param>
         /// <param name="diclistFieldNameType">数据库表字段名和字段类型</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataSetConversionXML(string strSource, DataSet dsSourceData, Dictionary<string, Dictionary<string, string>> diclistFieldNameType)
@@ -493,9 +493,9 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// XML转换为DataTable
+        /// XML 转换为 DataTable
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
+        /// <param name="strSource">XML 文件路径</param>
         /// <returns>成功返回XML的DataTable,失败返回NULL</returns>
         public static DataTable XMLConversionDataTable(string strSource)
         {
@@ -581,9 +581,9 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// XML转换为DataTable(返回字段类型)
+        /// XML 转换为 DataTable(返回字段类型)
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
+        /// <param name="strSource">XML 文件路径</param>
         /// <param name="dicFieldNameType">返回数据库表字段名和字段类型</param>
         /// <returns>成功返回XML的DataTable,失败返回NULL</returns>
         public static DataTable XMLConversionDataTable(string strSource, out Dictionary<string, string> dicFieldNameType)
@@ -680,9 +680,9 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// XML转换为DataSet
+        /// XML 转换为 DataSet
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
+        /// <param name="strSource">XML 文件路径</param>
         /// <returns>成功返回XML的DataTable,失败返回NULL</returns>
         public static DataSet XMLConversionDataSet(string strSource)
         {
@@ -772,9 +772,9 @@ namespace FileIO.Helper.XML
         }
 
         /// <summary>
-        /// XML转换为DataSet(返回字段类型)
+        /// XML 转换为 DataSet(返回字段类型)
         /// </summary>
-        /// <param name="strSource">XML文件路径</param>
+        /// <param name="strSource">XML 文件路径</param>
         /// <param name="diclistFieldNameType">返回数据库表字段名和字段类型</param>
         /// <returns>成功返回XML的DataTable,失败返回NULL</returns>
         public static DataSet XMLConversionDataSet(string strSource, out Dictionary<string, Dictionary<string, string>> diclistFieldNameType)

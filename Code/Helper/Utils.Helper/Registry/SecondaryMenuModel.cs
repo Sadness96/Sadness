@@ -8,7 +8,7 @@ namespace Utils.Helper.Registry
 {
     /// <summary>
     /// 二级菜单数据模型
-    /// 创建日期:2017年6月22日
+    /// 创建日期:2017年06月22日
     /// </summary>
     public class SecondaryMenuModel
     {

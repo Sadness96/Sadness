@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ADO.Helper.SQLite
 {
     /// <summary>
-    /// SQLite字段类型枚举类
+    /// SQLite 字段类型枚举类
     /// 创建日期:2016年12月19日
     /// </summary>
     public class SQLiteFieldType
     {
         /// <summary>
-        /// SQLite特定的数据类型。
+        /// SQLite 特定的数据类型。
         /// </summary>
         public enum FieldType
         {

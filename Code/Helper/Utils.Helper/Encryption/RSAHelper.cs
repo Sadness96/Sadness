@@ -9,8 +9,8 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Encryption
 {
     /// <summary>
-    /// RSA加密解密帮助类
-    /// 创建日期:2017年6月16日
+    /// RSA 加密解密帮助类
+    /// 创建日期:2017年06月16日
     /// </summary>
     public class RSAHelper
     {
@@ -37,11 +37,11 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// RSA加密
+        /// RSA 加密
         /// </summary>
         /// <param name="strPlaintext">明文</param>
         /// <param name="xmlPublicKey">公钥</param>
-        /// <returns>RSA密文</returns>
+        /// <returns>RSA 密文</returns>
         public static string RSAEncrypt(string strPlaintext, string xmlPublicKey)
         {
             try
@@ -62,9 +62,9 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// RSA解密
+        /// RSA 解密
         /// </summary>
-        /// <param name="strCiphertext">RSA密文</param>
+        /// <param name="strCiphertext">RSA 密文</param>
         /// <param name="xmlPrivateKey">私钥</param>
         /// <returns>明文</returns>
         public static string RSADecrypt(string strCiphertext, string xmlPrivateKey)

@@ -11,13 +11,13 @@ using ADO.Helper.TXT;
 namespace ADO.Helper.MySql
 {
     /// <summary>
-    /// MySql数据库帮助类
+    /// MySql 数据库帮助类
     /// 创建日期:2016年12月19日
     /// </summary>
     public class MySqlHelper
     {
         /// <summary>
-        /// MySql连接字符串
+        /// MySql 连接字符串
         /// </summary>
         public static string strMySqlConnection { get; set; }
 

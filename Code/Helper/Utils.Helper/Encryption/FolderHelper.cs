@@ -11,7 +11,7 @@ namespace Utils.Helper.Encryption
 {
     /// <summary>
     /// 文件夹加密解密帮助类(可破解)
-    /// 创建日期:2017年12月4日
+    /// 创建日期:2017年12月04日
     /// </summary>
     public class FolderHelper
     {

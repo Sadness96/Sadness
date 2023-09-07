@@ -11,12 +11,12 @@ namespace Utils.Helper.PCInformation
 {
     /// <summary>
     /// 获取电脑信息帮助类
-    /// 创建日期:2017年6月6日
+    /// 创建日期:2017年06月06日
     /// </summary>
     public class PCInformationHelper
     {
         /// <summary>
-        /// 读取网卡MAC地址
+        /// 读取网卡 MAC 地址
         /// </summary>
         /// <returns>成功返回网卡MAC地址,失败返回NULL</returns>
         public static List<string> MAC()
@@ -34,7 +34,7 @@ namespace Utils.Helper.PCInformation
                     "ndisip",
                     "sinforvnic"
                 };
-                // 获取并过滤网卡Mac信息
+                // 获取并过滤网卡 Mac 信息
                 List<string> listMAC = new List<string>();
                 foreach (ManagementObject mo in new ManagementClass("Win32_NetworkAdapterConfiguration").GetInstances())
                 {
@@ -53,7 +53,7 @@ namespace Utils.Helper.PCInformation
         }
 
         /// <summary>
-        /// 读取CPU-ID
+        /// 读取 CPU-ID
         /// </summary>
         /// <returns>成功返回CPU-ID,失败返回NULL</returns>
         public static List<string> CPU()
@@ -66,9 +66,9 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Manufacturer = 处理器制造商
-                    //Name = 处理器名字
-                    //Processorid = CPU-ID
+                    // Manufacturer = 处理器制造商
+                    // Name = 处理器名字
+                    // Processorid = CPU-ID
                     strMac = mo["Processorid"].ToString();
                     listCPU.Add(strMac);
                 }
@@ -96,8 +96,8 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Model = 硬盘信息
-                    //SerialNumber = 硬盘序列号
+                    // Model = 硬盘信息
+                    // SerialNumber = 硬盘序列号
                     strMac = mo["SerialNumber"].ToString();
                     listDESK.Add(strMac);
                 }
@@ -124,8 +124,8 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Manufacturer = 内存生产商
-                    //SerialNumber = 序列号
+                    // Manufacturer = 内存生产商
+                    // SerialNumber = 序列号
                     strMac = mo["SerialNumber"].ToString();
                     listMemory.Add(strMac);
                 }
@@ -152,9 +152,9 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Manufacturer = 主板制造商
-                    //Product = 主板型号
-                    //SerialNumber = 序列号
+                    // Manufacturer = 主板制造商
+                    // Product = 主板型号
+                    // SerialNumber = 序列号
                     strMac = mo["SerialNumber"].ToString();
                     listMotherboard.Add(strMac);
                 }
@@ -181,10 +181,10 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Manufacturer = BIOS制造商名称
-                    //SerialNumber = BIOS序列号
-                    //ReleaseDate = 出厂日期
-                    //Version = 版本号
+                    // Manufacturer = BIOS制造商名称
+                    // SerialNumber = BIOS序列号
+                    // ReleaseDate = 出厂日期
+                    // Version = 版本号
                     strMac = mo["SerialNumber"].ToString();
                     listBIOS.Add(strMac);
                 }
@@ -211,8 +211,8 @@ namespace Utils.Helper.PCInformation
                 ManagementObjectCollection moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc)
                 {
-                    //Name = 显卡信息
-                    //DriverVersion = 驱动程序版本
+                    // Name = 显卡信息
+                    // DriverVersion = 驱动程序版本
                     strMac = mo["Name"].ToString();
                     listVideo.Add(strMac);
                 }

@@ -10,12 +10,12 @@ namespace Utils.Helper.Encryption
 {
     /// <summary>
     /// 循环沉余效验帮助类
-    /// 创建日期:2017年6月16日
+    /// 创建日期:2017年06月16日
     /// </summary>
     public class CRC32Helper
     {
         /// <summary>
-        /// CRC32加密(8位小写)
+        /// CRC32 加密(8位小写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
         /// <returns>CRC32密文(8位小写)</returns>
@@ -39,10 +39,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// CRC32加密(8位大写)
+        /// CRC32 加密(8位大写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>CRC32密文(8位大写)</returns>
+        /// <returns>CRC32 密文(8位大写)</returns>
         public static string CRC32Encrypt_8Upper(string strPlaintext)
         {
             try
@@ -63,25 +63,25 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件CRC32值(8位小写)
+        /// 获取文件 CRC32 值(8位小写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件CRC32值(8位小写)</returns>
+        /// <returns>文件 CRC32 值(8位小写)</returns>
         public static string FileCRC32Encrypt_8Lower(string strFilePath)
         {
             try
             {
                 String hashCRC32 = String.Empty;
-                //检查文件是否存在,如果文件存在则进行计算,否则返回空值
-                if (System.IO.File.Exists(strFilePath))
+                // 检查文件是否存在,如果文件存在则进行计算,否则返回空值
+                if (File.Exists(strFilePath))
                 {
-                    using (System.IO.FileStream fileStream = new System.IO.FileStream(strFilePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    using (FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read))
                     {
-                        //计算文件的CSC32值
+                        // 计算文件的 CSC32 值
                         Crc32 calculator = new Crc32();
                         Byte[] buffer = calculator.ComputeHash(fileStream);
                         calculator.Clear();
-                        //将字节数组转换成十六进制的字符串形式
+                        // 将字节数组转换成十六进制的字符串形式
                         StringBuilder stringBuilder = new StringBuilder();
                         for (int i = 0; i < buffer.Length; i++)
                         {
@@ -100,25 +100,25 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件CRC32值(8位大写)
+        /// 获取文件 CRC32 值(8位大写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件CRC32值(8位大写)</returns>
+        /// <returns>文件 CRC32 值(8位大写)</returns>
         public static string FileCRC32Encrypt_8Upper(string strFilePath)
         {
             try
             {
                 String hashCRC32 = String.Empty;
-                //检查文件是否存在,如果文件存在则进行计算,否则返回空值
-                if (System.IO.File.Exists(strFilePath))
+                // 检查文件是否存在,如果文件存在则进行计算,否则返回空值
+                if (File.Exists(strFilePath))
                 {
-                    using (System.IO.FileStream fileStream = new System.IO.FileStream(strFilePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+                    using (FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read))
                     {
-                        //计算文件的CSC32值
+                        // 计算文件的 CSC32 值
                         Crc32 calculator = new Crc32();
                         Byte[] buffer = calculator.ComputeHash(fileStream);
                         calculator.Clear();
-                        //将字节数组转换成十六进制的字符串形式
+                        // 将字节数组转换成十六进制的字符串形式
                         StringBuilder stringBuilder = new StringBuilder();
                         for (int i = 0; i < buffer.Length; i++)
                         {
@@ -265,6 +265,7 @@ namespace Utils.Helper.Encryption
             }
             return createTable;
         }
+
         private static UInt32 CalculateHash(UInt32[] table, UInt32 seed, byte[] buffer, int start, int size)
         {
             UInt32 crc = seed;
@@ -277,6 +278,7 @@ namespace Utils.Helper.Encryption
             }
             return crc;
         }
+
         private byte[] UInt32ToBigEndianBytes(UInt32 x)
         {
             return new byte[] { (byte)((x >> 24) & 0xff), (byte)((x >> 16) & 0xff), (byte)((x >> 8) & 0xff), (byte)(x & 0xff) };

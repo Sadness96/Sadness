@@ -10,7 +10,7 @@ namespace Utils.Helper.CheckCorrectness
 {
     /// <summary>
     /// 效验正确性帮助类
-    /// 创建日期:2017年6月18日
+    /// 创建日期:2017年06月18日
     /// </summary>
     public class CheckCorrectnessHelper
     {
@@ -23,21 +23,21 @@ namespace Utils.Helper.CheckCorrectness
         {
             try
             {
-                //+86替换成空(只考虑中国大陆手机号)
+                // +86 替换成空(只考虑中国大陆手机号)
                 if (strPhoneNumber.Length == 14)
                 {
                     strPhoneNumber.Replace("+86", string.Empty);
                 }
-                //中国电信正则表达式匹配
+                // 中国电信正则表达式匹配
                 string strRegexChinaTelecom = @"^1[3578][01379]\d{8}$";
                 Regex regexChinaTelecom = new Regex(strRegexChinaTelecom);
-                //中国移动正则表达式匹配
+                // 中国移动正则表达式匹配
                 string strRegexChinaMobile = @"^(134[012345678]\d{7}|1[34578][012356789]\d{8})$";
                 Regex regexChinaMobile = new Regex(strRegexChinaMobile);
-                //中国联通正则表达式匹配
+                // 中国联通正则表达式匹配
                 string strRegexChinaUnicom = @"^1[34578][01256]\d{8}$";
                 Regex regexChinaUnicom = new Regex(strRegexChinaUnicom);
-                //验证手机号
+                // 验证手机号
                 if (regexChinaTelecom.IsMatch(strPhoneNumber) || regexChinaMobile.IsMatch(strPhoneNumber) || regexChinaUnicom.IsMatch(strPhoneNumber))
                 {
                     return true;
@@ -55,7 +55,7 @@ namespace Utils.Helper.CheckCorrectness
         }
 
         /// <summary>
-        /// 效验E-Mail
+        /// 效验 E-Mail
         /// </summary>
         /// <param name="strEMail">E-Mail</param>
         /// <returns>效验通过返回true,失败返回false</returns>
@@ -63,7 +63,7 @@ namespace Utils.Helper.CheckCorrectness
         {
             try
             {
-                //邮箱正则表达式匹配
+                // 邮箱正则表达式匹配
                 string strRegexEMail = @"^\s*([A-Za-z0-9_-]+(\.\w+)*@(\w+\.)+\w{2,5})\s*$";
                 Regex regexEMail = new Regex(strRegexEMail);
                 if (regexEMail.IsMatch(strEMail))
@@ -112,7 +112,7 @@ namespace Utils.Helper.CheckCorrectness
         }
 
         /// <summary>
-        /// 15位身份证号验证
+        /// 15 位身份证号验证
         /// </summary>
         /// <param name="idNumber">身份证号</param>
         /// <returns>效验通过返回true,失败返回false</returns>
@@ -121,24 +121,28 @@ namespace Utils.Helper.CheckCorrectness
             long n = 0;
             if (long.TryParse(idNumber, out n) == false || n < Math.Pow(10, 14))
             {
-                return false;//数字验证  
+                // 数字验证
+                return false;
             }
             string address = "11x22x35x44x53x12x23x36x45x54x13x31x37x46x61x14x32x41x50x62x15x33x42x51x63x21x34x43x52x64x65x71x81x82x91";
             if (address.IndexOf(idNumber.Remove(2)) == -1)
             {
-                return false;//省份验证  
+                // 省份验证
+                return false;
             }
             string birth = idNumber.Substring(6, 6).Insert(4, "-").Insert(2, "-");
             DateTime time = new DateTime();
             if (DateTime.TryParse(birth, out time) == false)
             {
-                return false;//生日验证  
+                // 生日验证
+                return false;
             }
-            return true;//符合15位身份证标准  
+            // 符合15位身份证标准
+            return true;
         }
 
         /// <summary>  
-        /// 18位身份证号码验证  
+        /// 18 位身份证号码验证  
         /// </summary>  
         /// <param name="idNumber">身份证号</param>  
         /// <returns>效验通过返回true,失败返回false</returns>  
@@ -147,18 +151,21 @@ namespace Utils.Helper.CheckCorrectness
             long n = 0;
             if (long.TryParse(idNumber.Remove(17), out n) == false || n < Math.Pow(10, 16) || long.TryParse(idNumber.Replace('x', '0').Replace('X', '0'), out n) == false)
             {
-                return false;//数字验证    
+                // 数字验证
+                return false;
             }
             string address = "11x22x35x44x53x12x23x36x45x54x13x31x37x46x61x14x32x41x50x62x15x33x42x51x63x21x34x43x52x64x65x71x81x82x91";
             if (address.IndexOf(idNumber.Remove(2)) == -1)
             {
-                return false;//省份验证    
+                // 省份验证
+                return false;
             }
             string birth = idNumber.Substring(6, 8).Insert(6, "-").Insert(4, "-");
             DateTime time = new DateTime();
             if (DateTime.TryParse(birth, out time) == false)
             {
-                return false;//生日验证    
+                // 生日验证
+                return false;
             }
             string[] arrVarifyCode = ("1,0,x,9,8,7,6,5,4,3,2").Split(',');
             string[] Wi = ("7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2").Split(',');
@@ -173,15 +180,17 @@ namespace Utils.Helper.CheckCorrectness
             Console.WriteLine("Y的理论值: " + y);
             if (arrVarifyCode[y] != idNumber.Substring(17, 1).ToLower())
             {
-                return false;//校验码验证    
+                // 校验码验证
+                return false;
             }
-            return true;//符合GB11643-1999标准    
+            // 符合 GB11643-1999 标准
+            return true;
         }
 
         /// <summary>
-        /// 效验IP地址
+        /// 效验 IP 地址
         /// </summary>
-        /// <param name="strInternetProtocol">IP地址</param>
+        /// <param name="strInternetProtocol">IP 地址</param>
         /// <returns>效验通过返回true,失败返回false</returns>
         public static bool CheckInternetProtocol(string strInternetProtocol)
         {

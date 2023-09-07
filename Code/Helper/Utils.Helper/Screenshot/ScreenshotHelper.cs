@@ -12,7 +12,7 @@ namespace Utils.Helper.Screenshot
 {
     /// <summary>
     /// 屏幕截图帮助类
-    /// 创建日期:2017年6月21日
+    /// 创建日期:2017年06月21日
     /// </summary>
     public class ScreenshotHelper
     {
@@ -24,21 +24,21 @@ namespace Utils.Helper.Screenshot
         {
             try
             {
-                //得到屏幕工作区域宽度
-                //double x = SystemParameters.WorkArea.Width;
-                //得到屏幕工作区域高度
-                //double y = SystemParameters.WorkArea.Height;
-                //得到屏幕整体宽度
+                // 得到屏幕工作区域宽度
+                // double x = SystemParameters.WorkArea.Width;
+                // 得到屏幕工作区域高度
+                // double y = SystemParameters.WorkArea.Height;
+                // 得到屏幕整体宽度
                 double dPrimaryScreenWidth = SystemParameters.PrimaryScreenWidth;
-                //得到屏幕整体高度
+                // 得到屏幕整体高度
                 double dPrimaryScreenHeight = SystemParameters.PrimaryScreenHeight;
-                //初始化使用指定的大小(屏幕大小)的 System.Drawing.Bitmap 类的新实例.
+                // 初始化使用指定的大小(屏幕大小)的 System.Drawing.Bitmap 类的新实例.
                 Bitmap bitmapScreenshot = new Bitmap((int)dPrimaryScreenWidth, (int)dPrimaryScreenHeight);
-                //从指定的载入原创建新的 System.Drawing.Graphics.
+                // 从指定的载入原创建新的 System.Drawing.Graphics.
                 Graphics graphicsScreenshot = Graphics.FromImage(bitmapScreenshot);
-                //获取或设置绘制到此 System.Drawing.Graphics 的渲染质量:高质量 低速度合成.
+                // 获取或设置绘制到此 System.Drawing.Graphics 的渲染质量:高质量 低速度合成.
                 graphicsScreenshot.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-                //截取电脑屏幕:从屏幕到 System.Drawing.Graphics 的绘图图面.
+                // 截取电脑屏幕:从屏幕到 System.Drawing.Graphics 的绘图图面.
                 graphicsScreenshot.CopyFromScreen((int)0, (int)0, (int)0, (int)0, new System.Drawing.Size((int)dPrimaryScreenWidth, (int)dPrimaryScreenHeight));
                 return bitmapScreenshot;
             }
@@ -52,8 +52,8 @@ namespace Utils.Helper.Screenshot
         /// <summary>
         /// 截取指定位置截图
         /// </summary>
-        /// <param name="iStartX">截取起始坐标X</param>
-        /// <param name="iStartY">截取起始坐标Y</param>
+        /// <param name="iStartX">截取起始坐标 X</param>
+        /// <param name="iStartY">截取起始坐标 Y</param>
         /// <param name="iInterceptWidth">截取宽度</param>
         /// <param name="iInterceptHeight">截取高度</param>
         /// <returns>截图Bitmap</returns>
@@ -61,13 +61,13 @@ namespace Utils.Helper.Screenshot
         {
             try
             {
-                //初始化使用指定的大小(屏幕大小)的 System.Drawing.Bitmap 类的新实例.
+                // 初始化使用指定的大小(屏幕大小)的 System.Drawing.Bitmap 类的新实例.
                 Bitmap bitmapScreenshot = new Bitmap((int)iInterceptWidth, (int)iInterceptHeight);
-                //从指定的载入原创建新的 System.Drawing.Graphics.
+                // 从指定的载入原创建新的 System.Drawing.Graphics.
                 Graphics graphicsScreenshot = Graphics.FromImage(bitmapScreenshot);
-                //获取或设置绘制到此 System.Drawing.Graphics 的渲染质量:高质量 低速度合成.
+                // 获取或设置绘制到此 System.Drawing.Graphics 的渲染质量:高质量 低速度合成.
                 graphicsScreenshot.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-                //截取电脑屏幕:从屏幕到 System.Drawing.Graphics 的绘图图面.
+                // 截取电脑屏幕:从屏幕到 System.Drawing.Graphics 的绘图图面.
                 graphicsScreenshot.CopyFromScreen(iStartX, iStartY, (int)0, (int)0, new System.Drawing.Size((int)iInterceptWidth, (int)iInterceptHeight));
                 return bitmapScreenshot;
             }

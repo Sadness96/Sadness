@@ -10,16 +10,16 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Encryption
 {
     /// <summary>
-    /// MD5加密帮助类
-    /// 创建日期:2017年6月16日
+    /// MD5 加密帮助类
+    /// 创建日期:2017年06月16日
     /// </summary>
     public class MD5Helper
     {
         /// <summary>
-        /// MD5加密(16位小写)
+        /// MD5 加密(16位小写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>MD5密文(16位小写)</returns>
+        /// <returns>MD5 密文(16位小写)</returns>
         public static string MD5Encrypt_16Lower(string strPlaintext)
         {
             try
@@ -38,10 +38,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// MD5加密(16位大写)
+        /// MD5 加密(16位大写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>MD5密文(16位小写)</returns>
+        /// <returns>MD5 密文(16位小写)</returns>
         public static string MD5Encrypt_16Upper(string strPlaintext)
         {
             try
@@ -60,10 +60,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// MD5加密(32位小写)
+        /// MD5 加密(32位小写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>MD5密文(32位小写)</returns>
+        /// <returns>MD5 密文(32位小写)</returns>
         public static string MD5Encrypt_32Lower(string strPlaintext)
         {
             try
@@ -82,10 +82,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// MD5加密(32位大写)
+        /// MD5 加密(32位大写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>MD5密文(32位小写)</returns>
+        /// <returns>MD5 密文(32位小写)</returns>
         public static string MD5Encrypt_32Upper(string strPlaintext)
         {
             try
@@ -104,10 +104,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件MD5值(32位小写)
+        /// 获取文件 MD5 值(32位小写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件MD5值(32位小写)</returns>
+        /// <returns>文件 MD5 值(32位小写)</returns>
         public static string FileMD5Encrypt_32Lower(string strFilePath)
         {
             try
@@ -131,10 +131,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件MD5值(32位大写)
+        /// 获取文件 MD5 值(32位大写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件MD5值(32位大写)</returns>
+        /// <returns>文件 MD5 值(32位大写)</returns>
         public static string FileMD5Encrypt_32Upper(string strFilePath)
         {
             try

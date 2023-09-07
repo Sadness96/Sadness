@@ -10,7 +10,7 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.FTPSharing
 {
     /// <summary>
-    /// FTPSharing文件共享帮助类(基于Serv-U搭建的FTP)
+    /// FTPSharing 文件共享帮助类(基于Serv-U搭建的FTP)
     /// 创建日期:2017年5月24日
     /// </summary>
     public class FTPSharingHelper

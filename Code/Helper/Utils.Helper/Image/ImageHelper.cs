@@ -20,7 +20,7 @@ namespace Utils.Helper.Image
     public class ImageHelper
     {
         /// <summary>
-        /// 转化图片二进制流到BitmapImage
+        /// 转化图片二进制流到 BitmapImage
         /// </summary>
         /// <param name="byteArray">图片二进制流</param>
         /// <returns>成功返回BitmapImage,失败返回null</returns>
@@ -47,7 +47,7 @@ namespace Utils.Helper.Image
         }
 
         /// <summary>
-        /// 转化图片二进制流到ImageSource
+        /// 转化图片二进制流到 ImageSource
         /// </summary>
         /// <param name="byteArray">图片二进制流</param>
         /// <returns>成功返回ImageSource,失败返回null</returns>
@@ -74,7 +74,7 @@ namespace Utils.Helper.Image
         }
 
         /// <summary>
-        /// 转化图片二进制流到Bitmap
+        /// 转化图片二进制流到 Bitmap
         /// </summary>
         /// <param name="byteArray">图片二进制流</param>
         /// <returns>成功返回Bitmap,失败返回null</returns>

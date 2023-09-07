@@ -10,13 +10,13 @@ using ADO.Helper.TXT;
 namespace ADO.Helper.Oracle
 {
     /// <summary>
-    /// Oracle数据库帮助类
+    /// Oracle 数据库帮助类
     /// 创建日期:2016年12月14日
     /// </summary>
     public class OracleHelper
     {
         /// <summary>
-        /// Oracle连接字符串
+        /// Oracle 连接字符串
         /// </summary>
         public static string strOracleConnection { get; set; }
 
@@ -31,7 +31,7 @@ namespace ADO.Helper.Oracle
         OracleTransaction Transaction = null;
 
         /// <summary>
-        /// 直接传给帮助类Oracle连接字符串
+        /// 直接传给帮助类 Oracle 连接字符串
         /// </summary>
         /// <param name="OracleConnection">Oracle连接字符串</param>
         public void OracleConnectionString(string OracleConnection)
@@ -40,7 +40,7 @@ namespace ADO.Helper.Oracle
         }
 
         /// <summary>
-        /// 传给帮助类Oracle连接字符串需要的信息
+        /// 传给帮助类 Oracle 连接字符串需要的信息
         /// </summary>
         /// <param name="Source">IP地址和数据库名(可选)</param>
         /// <param name="Id">用户名</param>

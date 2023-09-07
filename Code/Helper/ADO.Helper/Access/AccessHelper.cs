@@ -11,7 +11,7 @@ using ADO.Helper.TXT;
 namespace ADO.Helper.Access
 {
     /// <summary>
-    /// Access数据库帮助类
+    /// Access 数据库帮助类
     /// 创建日期:2016年12月21日
     /// </summary>
     public class AccessHelper

@@ -10,8 +10,8 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.INI
 {
     /// <summary>
-    /// INI文本帮助类
-    /// 创建日期:2017年5月10日
+    /// INI 文本帮助类
+    /// 创建日期:2017年05月10日
     /// </summary>
     public class INIHelper
     {

@@ -16,15 +16,15 @@ using Novacode;
 namespace NPOI.Helper.Word
 {
     /// <summary>
-    /// Word帮助类
-    /// 创建日期:2017年6月2日
+    /// Word 帮助类
+    /// 创建日期:2017年06月2日
     /// </summary>
     public class WordHelper
     {
         /// <summary>
-        /// 创建Word(Office2003)
+        /// 创建 Word(Office2003)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Word的路径.doc</param>
+        /// <param name="strDataSourcePath">新建 Word 的路径 .doc</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateWord_Office2003(string strDataSourcePath)
         {
@@ -49,9 +49,9 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 创建Word(Office2007)
+        /// 创建 Word(Office2007)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Word的路径.doc</param>
+        /// <param name="strDataSourcePath">新建 Word 的路径 .doc</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateWord_Office2007(string strDataSourcePath)
         {
@@ -76,10 +76,10 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 获得Word文档中所有段落
+        /// 获得 Word 文档中所有段落
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
-        /// <returns>段落标签List</returns>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
+        /// <returns>段落标签 List</returns>
         public static List<string> GetWordParagraphText(string strDataSourcePath)
         {
             try
@@ -105,10 +105,10 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 获得Word文档中所有表格
+        /// 获得 Word 文档中所有表格
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
-        /// <returns>段落标签List</returns>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
+        /// <returns>段落标签 List</returns>
         public static List<string> GetWordTableText(string strDataSourcePath)
         {
             try
@@ -143,10 +143,10 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 获得Word文档中所有文本
+        /// 获得 Word 文档中所有文本
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
-        /// <returns>所有文本List</returns>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
+        /// <returns>所有文本 List</returns>
         public static List<string> GetWordAllText(string strDataSourcePath)
         {
             try
@@ -176,10 +176,10 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 获得Word文档中所有替换标签('{标签}','#标签#')
+        /// 获得 Word 文档中所有替换标签('{标签}','#标签#')
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
-        /// <returns>替换标签Dictionary(带标签,不带标签)</returns>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
+        /// <returns>替换标签 Dictionary(带标签,不带标签)</returns>
         public static Dictionary<string, string> GetWordAllLable(string strDataSourcePath)
         {
             try
@@ -248,7 +248,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换文本标签
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
         /// <param name="strReplaceLabel">替换标签文本</param>
         /// <returns>成功返回替换数量,失败返回-1</returns>
@@ -314,9 +314,9 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换表格标签(DataTable替换)
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
-        /// <param name="dtReplaceLabel">替换标签DataTable</param>
+        /// <param name="dtReplaceLabel">替换标签 DataTable</param>
         /// <returns>成功返回1,失败返回-1</returns>
         public static int ReplaceDataTableLabel(string strDataSourcePath, string strLabelName, DataTable dtReplaceLabel)
         {
@@ -379,7 +379,7 @@ namespace NPOI.Helper.Word
         /// <summary>
         /// 替换图片标签(使用DocX.dll类库,调用这个方法后NPOI无法读取文档)
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
         /// <param name="strLabelName">标签名称(带标签符号)</param>
         /// <param name="strImagePath">替换的图片路径</param>
         /// <param name="iImageWidth">替换的图片宽度(小于0则显示原图宽度)</param>
@@ -394,29 +394,29 @@ namespace NPOI.Helper.Word
                     return -1;
                 }
                 int iNumber = 0;
-                //使用DocX.dll类库
+                // 使用 DocX.dll 类库
                 DocX mDocX = DocX.Load(strDataSourcePath);
-                //遍历段落
+                // 遍历段落
                 foreach (Paragraph wordParagraph in mDocX.Paragraphs)
                 {
                     if (wordParagraph.Text.IndexOf(strLabelName) >= 0)
                     {
-                        //添加图片
+                        // 添加图片
                         Novacode.Image pImag = mDocX.AddImage(strImagePath);
                         Picture pPicture = pImag.CreatePicture();
-                        //如果传入宽度小于0,则以原始大小插入
+                        // 如果传入宽度小于0,则以原始大小插入
                         if (iImageWidth >= 0)
                         {
                             pPicture.Width = iImageWidth;
                         }
-                        //如果传入高度小于0,则以原始大小插入
+                        // 如果传入高度小于0,则以原始大小插入
                         if (iImageHeight >= 0)
                         {
                             pPicture.Height = iImageHeight;
                         }
-                        //将图像插入到段落后面
+                        // 将图像插入到段落后面
                         wordParagraph.InsertPicture(pPicture);
-                        //清空文本(清空放在前面会导致替换失败文字消失)
+                        // 清空文本(清空放在前面会导致替换失败文字消失)
                         wordParagraph.ReplaceText(strLabelName, string.Empty);
                         iNumber++;
                     }
@@ -432,9 +432,9 @@ namespace NPOI.Helper.Word
         }
 
         /// <summary>
-        /// 替换Word文档标签
+        /// 替换 Word 文档标签
         /// </summary>
-        /// <param name="strDataSourcePath">Word文件路径</param>
+        /// <param name="strDataSourcePath">Word 文件路径</param>
         /// <param name="listReplaceLabel">替换标签对应的替换内容(不带标签,替换内容Model)</param>
         /// <returns>成功返回替换行数,失败返回-1</returns>
         public static int ReplaceLabel(string strDataSourcePath, List<ReplaceLabelModel> listReplaceLabel)
@@ -446,16 +446,16 @@ namespace NPOI.Helper.Word
                     return -1;
                 }
                 int iNumber = 0;
-                //由于替换完图片之后会导致NPOI无法读取,所以暂时保存替换图片的标签
+                // 由于替换完图片之后会导致NPOI无法读取,所以暂时保存替换图片的标签
                 Dictionary<string, ReplaceLabelModel> dicReplaceImageLabel = new Dictionary<string, ReplaceLabelModel>();
-                //遍历文档中的标签(先替换文本和表格)
+                // 遍历文档中的标签(先替换文本和表格)
                 foreach (var vAllLabel in GetWordAllLable(strDataSourcePath))
                 {
                     //获得与文档中匹配的标签
                     List<ReplaceLabelModel> listMatchingLabel = listReplaceLabel.Where(x => x.strLabelName == vAllLabel.Value).ToList();
                     if (listMatchingLabel.Count >= 1)
                     {
-                        //使用第一个匹配到的标签替换
+                        // 使用第一个匹配到的标签替换
                         ReplaceLabelModel ReplaceLabel = listMatchingLabel[0];
                         if (ReplaceLabel.lableType == ReplaceLabelType.LabelType.Text)
                         {
@@ -473,10 +473,10 @@ namespace NPOI.Helper.Word
                         }
                     }
                 }
-                //替换图片,这里储存的都是确定Word中存在标签
+                // 替换图片,这里储存的都是确定Word中存在标签
                 foreach (var vReplaceLabel in dicReplaceImageLabel)
                 {
-                    //默认原图大小,替换前修改图片大小
+                    // 认原图大小,替换前修改图片大小
                     ReplaceImageLabel(strDataSourcePath, vReplaceLabel.Key, vReplaceLabel.Value.strReplaceImagePath, -1, -1);
                     iNumber++;
                 }

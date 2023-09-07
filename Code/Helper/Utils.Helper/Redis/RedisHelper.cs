@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Utils.Helper.Redis
 {
     /// <summary>
-    /// Redis帮助类
+    /// Redis 帮助类
     /// https://github.com/liqingwen2015/Wen.Helpers/blob/master/Wen.Common/Redis
     /// 创建日期:2018年7月7日
     /// </summary>

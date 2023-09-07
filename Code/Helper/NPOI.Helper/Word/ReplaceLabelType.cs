@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace NPOI.Helper.Word
 {
     /// <summary>
-    /// 替换Word模板数据类型枚举类
-    /// 创建日期:2017年6月5日
+    /// 替换 Word 模板数据类型枚举类
+    /// 创建日期:2017年06月05日
     /// </summary>
     public class ReplaceLabelType
     {

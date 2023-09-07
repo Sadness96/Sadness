@@ -12,12 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;//添加位图引用,需引用System.Drawing.dll
+using System.Drawing; // 添加位图引用,需引用System.Drawing.dll
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
 using Microsoft.Win32;
 using Utils.Helper.TXT;
-using ZXing;//添加二维码,zxing.dll
+using ZXing; // 添加二维码,zxing.dll
 using ZXing.QrCode;
 using ZXing.Common;
 using ZXing.Rendering;
@@ -32,7 +32,7 @@ namespace Utils.Helper.QRCode
     public class QRCodeHelper
     {
         /// <summary>
-        /// 注销对象方法API
+        /// 注销对象方法 API
         /// </summary>
         [DllImport("gdi32")]
         private static extern int DeleteObject(IntPtr o);
@@ -48,19 +48,19 @@ namespace Utils.Helper.QRCode
         {
             try
             {
-                //构造二维码写码器
+                // 构造二维码写码器
                 MultiFormatWriter writer = new MultiFormatWriter();
                 Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>();
                 hint.Add(EncodeHintType.CHARACTER_SET, "UTF-8");
                 hint.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
                 hint.Add(EncodeHintType.MARGIN, 1);
-                //生成二维码 
+                // 生成二维码 
                 BitMatrix bitMatrix = writer.encode(strContent, BarcodeFormat.QR_CODE, iWidth, iHeigth, hint);
                 BarcodeWriter barcodeWriter = new BarcodeWriter();
                 Bitmap bitmapQRCode = barcodeWriter.Write(bitMatrix);
-                //获取二维码实际尺寸(去掉二维码两边空白后的实际尺寸)
+                // 获取二维码实际尺寸(去掉二维码两边空白后的实际尺寸)
                 int[] rectangle = bitMatrix.getEnclosingRectangle();
-                //将img转换成bmp格式，否则后面无法创建Graphics对象
+                // 将 img 转换成 bmp 格式，否则后面无法创建 Graphics 对象
                 Bitmap bitmapQRCodeBMP = new Bitmap(bitmapQRCode.Width, bitmapQRCode.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 using (Graphics g = Graphics.FromImage(bitmapQRCodeBMP))
                 {
@@ -84,25 +84,25 @@ namespace Utils.Helper.QRCode
         /// <param name="strContent">二维码文本</param>
         /// <param name="iWidth">二维码宽度</param>
         /// <param name="iHeigth">二维码高度</param>
-        /// <param name="strLogoPath">LOGO图片路径</param>
+        /// <param name="strLogoPath">LOGO 图片路径</param>
         /// <returns>二维码位图</returns>
         public static Bitmap GetQRCode_logo(string strContent, int iWidth, int iHeigth, string strLogoPath)
         {
             try
             {
-                //构造二维码写码器
+                // 构造二维码写码器
                 MultiFormatWriter writer = new MultiFormatWriter();
                 Dictionary<EncodeHintType, object> hint = new Dictionary<EncodeHintType, object>();
                 hint.Add(EncodeHintType.CHARACTER_SET, "UTF-8");
                 hint.Add(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
                 hint.Add(EncodeHintType.MARGIN, 1);
-                //生成二维码 
+                // 生成二维码 
                 BitMatrix bitMatrix = writer.encode(strContent, BarcodeFormat.QR_CODE, iWidth, iHeigth, hint);
                 BarcodeWriter barcodeWriter = new BarcodeWriter();
                 Bitmap bitmapQRCode = barcodeWriter.Write(bitMatrix);
-                //获取二维码实际尺寸(去掉二维码两边空白后的实际尺寸)
+                // 获取二维码实际尺寸(去掉二维码两边空白后的实际尺寸)
                 int[] rectangle = bitMatrix.getEnclosingRectangle();
-                //将img转换成bmp格式，否则后面无法创建Graphics对象
+                // 将 img 转换成 bmp 格式，否则后面无法创建 Graphics 对象
                 Bitmap bitmapQRCodeBMP = new Bitmap(bitmapQRCode.Width, bitmapQRCode.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 using (Graphics g = Graphics.FromImage(bitmapQRCodeBMP))
                 {
@@ -111,13 +111,13 @@ namespace Utils.Helper.QRCode
                     g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
                     g.DrawImage(bitmapQRCode, 0, 0);
                 }
-                //获得LOGO位图并计算插入图片的大小和位置
+                // 获得 LOGO 位图并计算插入图片的大小和位置
                 Bitmap bitmapLogo = new Bitmap(strLogoPath);
                 int middleW = Math.Min((int)(rectangle[2] / 3.5), bitmapLogo.Width);
                 int middleH = Math.Min((int)(rectangle[3] / 3.5), bitmapLogo.Height);
                 int middleL = (bitmapQRCode.Width - middleW) / 2;
                 int middleT = (bitmapQRCode.Height - middleH) / 2;
-                //将二维码插入图片(白底)
+                // 将二维码插入图片(白底)
                 Graphics myGraphic = Graphics.FromImage(bitmapQRCodeBMP);
                 myGraphic.DrawImage(bitmapLogo, middleL, middleT, middleW, middleH);
                 return bitmapQRCodeBMP;

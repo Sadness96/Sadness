@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FileIO.Helper.TXT
 {
     /// <summary>
-    /// TXT文本帮助类
+    /// TXT 文本帮助类
     /// 创建日期:2016年12月8日
     /// </summary>
     public class TXTHelper
@@ -153,7 +153,7 @@ namespace FileIO.Helper.TXT
         }
 
         /// <summary>
-        /// ADO.Helper帮助类日志文件
+        /// 帮助类日志文件
         /// </summary>
         /// <param name="strLogs">异常信息</param>
         /// <returns>成功返回0,失败返回-1</returns>

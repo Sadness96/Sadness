@@ -9,8 +9,8 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.Folder
 {
     /// <summary>
-    /// Folder文件夹帮助类
-    /// 创建日期:2017年5月8日
+    /// Folder 文件夹帮助类
+    /// 创建日期:2017年05月08日
     /// </summary>
     public class FolderHelper
     {

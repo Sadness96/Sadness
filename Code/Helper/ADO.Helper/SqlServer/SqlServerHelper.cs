@@ -10,7 +10,7 @@ using ADO.Helper.TXT;
 namespace ADO.Helper.SqlServer
 {
     /// <summary>
-    /// SqlServer数据库帮助类
+    /// SqlServer 数据库帮助类
     /// 创建日期:2016年11月29日
     /// </summary>
     public class SqlServerHelper

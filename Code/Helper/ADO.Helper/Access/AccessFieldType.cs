@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ADO.Helper.Access
 {
     /// <summary>
-    /// Access字段类型枚举类
+    /// Access 字段类型枚举类
     /// 创建日期:2016年12月22日
     /// </summary>
     public class AccessFieldType
     {
         /// <summary>
-        /// Access特定的数据类型。
+        /// Access 特定的数据类型。
         /// </summary>
         public enum FieldType
         {
@@ -58,9 +58,9 @@ namespace ADO.Helper.Access
         }
 
         /// <summary>
-        /// 从字段类型Code获得字段类型
+        /// 从字段类型 Code 获得字段类型
         /// </summary>
-        /// <param name="strFieldTypeCode">字段类型Code</param>
+        /// <param name="strFieldTypeCode">字段类型 Code</param>
         /// <returns>成功返回字段类型,失败返回-1</returns>
         public static string GetFieldType(string strFieldTypeCode)
         {

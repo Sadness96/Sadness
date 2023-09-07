@@ -10,7 +10,7 @@ namespace Utils.Helper.ClosedForm
 {
     /// <summary>
     /// 关闭窗体帮助类
-    /// 创建日期:2017年6月6日
+    /// 创建日期:2017年06月06日
     /// </summary>
     public class ClosedFormHelper
     {

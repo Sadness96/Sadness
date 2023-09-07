@@ -10,13 +10,13 @@ using ADO.Helper.TXT;
 namespace ADO.Helper.SQLite
 {
     /// <summary>
-    /// SQLite数据库帮助类
+    /// SQLite 数据库帮助类
     /// 创建日期:2016年12月19日
     /// </summary>
     public class SQLiteHelper
     {
         /// <summary>
-        /// SQLite连接字符串
+        /// SQLite 连接字符串
         /// </summary>
         public static string strSQLiteConnection { get; set; }
 

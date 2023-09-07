@@ -15,16 +15,16 @@ using NPOI.XSSF.UserModel;
 namespace NPOI.Helper.Excel
 {
     /// <summary>
-    /// Excel帮助类
-    /// 创建日期:2017年5月27日
+    /// Excel 帮助类
+    /// 创建日期:2017年05月27日
     /// </summary>
     public class ExcelHelper
     {
         /// <summary>
-        /// 创建Excel(Office2003)
+        /// 创建 Excel(Office2003)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Excel的路径.xls</param>
-        /// <param name="strSheetName">Sheet名称,如果为空则创建三个默认Sheet页</param>
+        /// <param name="strDataSourcePath">新建 Excel 的路径 .xls</param>
+        /// <param name="strSheetName">Sheet 名称,如果为空则创建三个默认 Sheet 页</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateExcel_Office2003(string strDataSourcePath, string strSheetName)
         {
@@ -59,10 +59,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 创建Excel(Office2007)
+        /// 创建 Excel(Office2007)
         /// </summary>
-        /// <param name="strDataSourcePath">新建Excel的路径.xlsx</param>
-        /// <param name="strSheetName">Sheet名称,如果为空则创建三个默认Sheet页</param>
+        /// <param name="strDataSourcePath">新建 Excel 的路径 .xlsx</param>
+        /// <param name="strSheetName">Sheet 名称,如果为空则创建三个默认 Sheet 页</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateExcel_Office2007(string strDataSourcePath, string strSheetName)
         {
@@ -97,10 +97,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中添加分页
+        /// 在指定 Excel 中添加分页
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">需要添加的Sheet名称</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">需要添加的 Sheet 名称</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CreateExcelSheet(string strDataSourcePath, string strSheetName)
         {
@@ -144,10 +144,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中添加分页
+        /// 在指定 Excel 中添加分页
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">需要添加的Sheet名称</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">需要添加的 Sheet 名称</param>
         /// <returns>成功返回Excel工作表,失败返回null</returns>
         public static ISheet CreateExcelSheetAt(string strDataSourcePath, string strSheetName, out IWorkbook iWorkBook)
         {
@@ -185,10 +185,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中删除分页(至少有一个Sheet分页文件才能打开)
+        /// 在指定 Excel 中删除分页(至少有一个Sheet分页文件才能打开)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">需要删除的Sheet名称</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">需要删除的 Sheet 名称</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool RemoveExcelSheet(string strDataSourcePath, string strSheetName)
         {
@@ -232,9 +232,9 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 获得指定Excel中所有Sheet
+        /// 获得指定 Excel 中所有 Sheet
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
         /// <returns>Excel中所有Sheet字典(序号,Sheet名)</returns>
         public static Dictionary<int, string> GetExcelAllSheet(string strDataSourcePath)
         {
@@ -274,10 +274,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 获得指定Excel中的指定Sheet页
+        /// 获得指定 Excel 中的指定 Sheet 页
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">Excel中所有Sheet名</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">Excel 中所有 Sheet 名</param>
         /// <returns>成功返回Excel工作表,失败返回null</returns>
         public static ISheet GetExcelSheetAt(string strDataSourcePath, string strSheetName, out IWorkbook iWorkBook)
         {
@@ -312,10 +312,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 获得指定Excel中的指定Sheet页
+        /// 获得指定 Excel 中的指定 Sheet 页
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="iNumberOfSheet">Excel中所有Sheet序号</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="iNumberOfSheet">Excel 中所有 Sheet 序号</param>
         /// <returns>成功返回Excel工作表,失败返回null</returns>
         public static ISheet GetExcelSheetAt(string strDataSourcePath, int iNumberOfSheet, out IWorkbook iWorkBook)
         {
@@ -350,10 +350,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中指定Sheet指定位置填充文本
+        /// 在指定 Excel 中指定 Sheet 指定位置填充文本
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径(如果文件不存在则重新创建)</param>
-        /// <param name="strSheetName">需要填充的Sheet名称(如果没有则添加,如果冲突则使用冲突Sheet)</param>
+        /// <param name="strDataSourcePath">Excel 文件路径(如果文件不存在则重新创建)</param>
+        /// <param name="strSheetName">需要填充的 Sheet 名称(如果没有则添加,如果冲突则使用冲突Sheet)</param>
         /// <param name="strTXT">需要填充的文本</param>
         /// <param name="iRows">填充行</param>
         /// <param name="iColumn">填充列</param>
@@ -482,10 +482,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中指定Sheet指定位置填充DataTable(仅拷贝,不提供保存方法)
+        /// 在指定 Excel 中指定 Sheet 指定位置填充 DataTable(仅拷贝,不提供保存方法)
         /// </summary>
-        /// <param name="iDataSourceSheet">指定Excel元数据Sheet页</param>
-        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="iDataSourceSheet">指定 Excel 元数据 Sheet 页</param>
+        /// <param name="dtSourceData">DataTable 数据</param>
         /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
         /// <param name="iRows">起始行</param>
         /// <param name="iColumn">起始列</param>
@@ -556,11 +556,11 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 在指定Excel中指定Sheet指定位置填充DataTable
+        /// 在指定 Excel 中指定 Sheet 指定位置填充 DataTable
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径(如果文件不存在则重新创建)</param>
-        /// <param name="strSheetName">需要填充的Sheet名称(如果没有则添加,如果冲突则使用冲突Sheet)</param>
-        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="strDataSourcePath">Excel 文件路径(如果文件不存在则重新创建)</param>
+        /// <param name="strSheetName">需要填充的 Sheet 名称(如果没有则添加,如果冲突则使用冲突Sheet)</param>
+        /// <param name="dtSourceData">DataTable 数据</param>
         /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
         /// <param name="iRows">起始行</param>
         /// <param name="iColumn">起始列</param>
@@ -755,12 +755,12 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// DataTable转换为Excel
-        /// 存在文件则新建DataTableName的分页(如果分页名冲突则或为空则使用默认名称)
+        /// DataTable 转换为 Excel
+        /// 存在文件则新建 DataTableName 的分页(如果分页名冲突则或为空则使用默认名称)
         /// 不存在文件则新建(Excel,名称为DataTableName,如果没有则使用默认名称)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="dtSourceData">DataTable数据</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="dtSourceData">DataTable 数据</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataTableConversionExcel(string strDataSourcePath, DataTable dtSourceData)
         {
@@ -793,12 +793,12 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// DataSet转换为Excel
-        /// 存在文件则新建DataTableName的分页(如果分页名冲突则或为空则使用默认名称)
+        /// DataSet 转换为 Excel
+        /// 存在文件则新建 DataTableName 的分页(如果分页名冲突则或为空则使用默认名称)
         /// 不存在文件则新建(Excel,名称为DataTableName,如果没有则使用默认名称)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="dsSourceData">DataTable数据</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="dsSourceData">DataTable 数据</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DataSetConversionExcel(string strDataSourcePath, DataSet dsSourceData)
         {
@@ -831,9 +831,9 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 获得指定Excel指定分页指定起始终止位置的DataTable
+        /// 获得指定 Excel 指定分页指定起始终止位置的 DataTable
         /// </summary>
-        /// <param name="iDataSourceSheet">指定Excel元数据Sheet页</param>
+        /// <param name="iDataSourceSheet">指定 Excel 元数据 Sheet 页</param>
         /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
         /// <param name="iStartRows">起始行</param>
         /// <param name="iStartColumn">起始列</param>
@@ -851,7 +851,7 @@ namespace NPOI.Helper.Excel
                 DataTable dtTargetData = new DataTable();
                 if (WhetherThereFieldName)
                 {
-                    //构建DataTable列(第一行为列名)
+                    // 构建DataTable列(第一行为列名)
                     IRow iRowFirst = iDataSourceSheet.GetRow(iStartRows);
                     for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
                     {
@@ -865,7 +865,7 @@ namespace NPOI.Helper.Excel
                             }
                         }
                     }
-                    //构建DataTable行(第二行往下为数据)
+                    // 构建DataTable行(第二行往下为数据)
                     for (int iRowNum = iStartRows + 1; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
@@ -893,7 +893,7 @@ namespace NPOI.Helper.Excel
                 }
                 else
                 {
-                    //构建DataTable列,以读取第一行的长度填充列名(使用默认命名初始化列名Column1)
+                    // 构建DataTable列,以读取第一行的长度填充列名(使用默认命名初始化列名Column1)
                     IRow iRowFirst = iDataSourceSheet.GetRow(iStartRows);
                     for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
                     {
@@ -906,7 +906,7 @@ namespace NPOI.Helper.Excel
                             }
                         }
                     }
-                    //构建DataTable行(第一行往下为数据)
+                    // 构建DataTable行(第一行往下为数据)
                     for (int iRowNum = iStartRows; iRowNum <= (iStopRows <= 0 ? iDataSourceSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iDataSourceSheet.GetRow(iRowNum);
@@ -942,10 +942,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 获得指定Excel指定分页指定起始终止位置的DataTable
+        /// 获得指定 Excel 指定分页指定起始终止位置的 DataTable
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">分页Sheet名称</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">分页 Sheet 名称</param>
         /// <param name="WhetherThereFieldName">是否有列名(true保留DataTable字段名)</param>
         /// <param name="iStartRows">起始行</param>
         /// <param name="iStartColumn">起始列</param>
@@ -985,7 +985,7 @@ namespace NPOI.Helper.Excel
                 }
                 if (WhetherThereFieldName)
                 {
-                    //构建DataTable列(第一行为列名)
+                    // 构建 DataTable 列(第一行为列名)
                     IRow iRowFirst = iSheet.GetRow(iStartRows);
                     for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
                     {
@@ -999,7 +999,7 @@ namespace NPOI.Helper.Excel
                             }
                         }
                     }
-                    //构建DataTable行(第二行往下为数据)
+                    // 构建 DataTable 行(第二行往下为数据)
                     for (int iRowNum = iStartRows + 1; iRowNum <= (iStopRows <= 0 ? iSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iSheet.GetRow(iRowNum);
@@ -1027,7 +1027,7 @@ namespace NPOI.Helper.Excel
                 }
                 else
                 {
-                    //构建DataTable列,以读取第一行的长度填充列名(使用默认命名初始化列名Column1)
+                    // 构建 DataTable 列,以读取第一行的长度填充列名(使用默认命名初始化列名Column1)
                     IRow iRowFirst = iSheet.GetRow(iStartRows);
                     for (int iFirst = iStartColumn; iFirst <= (iStopColumn <= 0 ? (iRowFirst.LastCellNum) : iStopColumn); iFirst++)
                     {
@@ -1040,7 +1040,7 @@ namespace NPOI.Helper.Excel
                             }
                         }
                     }
-                    //构建DataTable行(第一行往下为数据)
+                    // 构建 DataTable 行(第一行往下为数据)
                     for (int iRowNum = iStartRows; iRowNum <= (iStopRows <= 0 ? iSheet.LastRowNum : iStopRows); iRowNum++)
                     {
                         IRow iRowData = iSheet.GetRow(iRowNum);
@@ -1076,10 +1076,10 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// Excel指定分页转换为DataTable(如果分页为空,默认第一个分页)
+        /// Excel 指定分页转换为 DataTable(如果分页为空,默认第一个分页)
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
-        /// <param name="strSheetName">分页Sheet名称</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
+        /// <param name="strSheetName">分页 Sheet 名称</param>
         /// <returns>成功返回Excel的DataTable,失败返回NULL</returns>
         public static DataTable ExcelConversionDataTable(string strDataSourcePath, string strSheetName)
         {
@@ -1099,9 +1099,9 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// Excel所有分页转换为DataSet
+        /// Excel 所有分页转换为 DataSet
         /// </summary>
-        /// <param name="strDataSourcePath">Excel文件路径</param>
+        /// <param name="strDataSourcePath">Excel 文件路径</param>
         /// <returns>成功返回Excel的DataSet,失败返回NULL</returns>
         public static DataSet ExcelConversionDataSet(string strDataSourcePath)
         {
@@ -1134,22 +1134,22 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 拷贝Sheet页到另一个Sheet页(浅拷贝,不提供保存方法)
-        /// Office2003单Sheet页仅支持4000个样式
+        /// 拷贝 Sheet 页到另一个 Sheet 页(浅拷贝,不提供保存方法)
+        /// Office2003 单 Sheet 页仅支持 4000 个样式
         /// </summary>
-        /// <param name="iSourceWorkbook">源Excel工作簿</param>
-        /// <param name="iFromSheet">源Sheet页</param>
-        /// <param name="iTargetWorkbook">目标Excel工作簿</param>
-        /// <param name="iToSheet">目标Sheet页</param>
+        /// <param name="iSourceWorkbook">源 Excel 工作簿</param>
+        /// <param name="iFromSheet">源 Sheet 页</param>
+        /// <param name="iTargetWorkbook">目标 Excel 工作簿</param>
+        /// <param name="iToSheet">目标 Sheet 页</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CopySheetAt(IWorkbook iSourceWorkbook, ISheet iFromSheet, IWorkbook iTargetWorkbook, ISheet iToSheet)
         {
             try
             {
-                //拷贝数据
+                // 拷贝数据
                 DataTable dtExcelFromData = GetDataTable(iFromSheet, false, 0, 0, 0, 0);
                 iToSheet = FillDataTable(iToSheet, dtExcelFromData, false, 0, 0);
-                //拷贝单元格合并
+                // 拷贝单元格合并
                 for (int iMergedRegions = 0; iMergedRegions < iFromSheet.NumMergedRegions; iMergedRegions++)
                 {
                     iToSheet.AddMergedRegion(iFromSheet.GetMergedRegion(iMergedRegions));
@@ -1164,26 +1164,26 @@ namespace NPOI.Helper.Excel
                     {
                         continue;
                     }
-                    //设置行高
+                    // 设置行高
                     short sFromHeight = iFromRowData.Height;
                     iToRowData.Height = sFromHeight;
-                    //遍历Sheet页列
+                    // 遍历Sheet页列
                     for (int iRowCell = 0; iRowCell <= iFromRowData.LastCellNum; iRowCell++)
                     {
-                        //设置列宽
+                        // 设置列宽
                         int iFromColumnWidth = iFromSheet.GetColumnWidth(iRowNum) / 256;
                         iToSheet.SetColumnWidth(iRowNum, iFromColumnWidth * 256);
-                        //复制数据
+                        // 复制数据
                         ICell iFromCell = iFromRowData.GetCell(iRowCell);
                         if (iFromCell != null)
                         {
-                            //获得源Sheet页的样式
+                            // 获得源Sheet页的样式
                             ICellStyle iFromCellStyle = iFromCell.CellStyle;
-                            //获得目标Excel指定Cell
+                            // 获得目标Excel指定Cell
                             ICell iToCell = iToRowData.GetCell(iRowCell);
                             if (iToCell == null) continue;
                             #region 复制单元格样式
-                            //指定Cell创新目标Excel工作簿新样式
+                            // 指定Cell创新目标Excel工作簿新样式
                             ICellStyle iToNewCellStyle = null;
                             foreach (ICellStyle vCellStyle in listCellStyle)
                             {
@@ -1208,7 +1208,7 @@ namespace NPOI.Helper.Excel
                                     vCellStyle.TopBorderColor == iFromCellStyle.TopBorderColor &&
                                     vCellStyle.VerticalAlignment == iFromCellStyle.VerticalAlignment &&
                                     vCellStyle.WrapText == iFromCellStyle.WrapText &&
-                                    //字体比对
+                                    // 字体比对
                                     iVToFont.Color == iFromFont.Color &&
                                     iVToFont.FontHeightInPoints == iFromFont.FontHeightInPoints &&
                                     iVToFont.FontName == iFromFont.FontName &&
@@ -1223,43 +1223,43 @@ namespace NPOI.Helper.Excel
                             }
                             if (iToNewCellStyle == null)
                             {
-                                //创建新样式
+                                // 创建新样式
                                 iToNewCellStyle = iTargetWorkbook.CreateCellStyle();
-                                //复制样式
-                                iToNewCellStyle.Alignment = iFromCellStyle.Alignment;//对齐
-                                iToNewCellStyle.BorderBottom = iFromCellStyle.BorderBottom;//下边框
-                                iToNewCellStyle.BorderLeft = iFromCellStyle.BorderLeft;//左边框
-                                iToNewCellStyle.BorderRight = iFromCellStyle.BorderRight;//右边框
-                                iToNewCellStyle.BorderTop = iFromCellStyle.BorderTop;//上边框
-                                iToNewCellStyle.BottomBorderColor = iFromCellStyle.BottomBorderColor;//下边框颜色
-                                iToNewCellStyle.DataFormat = iFromCellStyle.DataFormat;//数据格式
-                                iToNewCellStyle.FillBackgroundColor = iFromCellStyle.FillBackgroundColor;//填充背景色
-                                iToNewCellStyle.FillForegroundColor = iFromCellStyle.FillForegroundColor;//填充前景色
-                                iToNewCellStyle.FillPattern = iFromCellStyle.FillPattern;//填充图案
-                                iToNewCellStyle.Indention = iFromCellStyle.Indention;//压痕
-                                iToNewCellStyle.IsHidden = iFromCellStyle.IsHidden;//隐藏
-                                iToNewCellStyle.IsLocked = iFromCellStyle.IsLocked;//锁定
-                                iToNewCellStyle.LeftBorderColor = iFromCellStyle.LeftBorderColor;//左边框颜色
-                                iToNewCellStyle.RightBorderColor = iFromCellStyle.RightBorderColor;//右边框颜色
-                                iToNewCellStyle.Rotation = iFromCellStyle.Rotation;//旋转
-                                iToNewCellStyle.TopBorderColor = iFromCellStyle.TopBorderColor;//上边框颜色
-                                iToNewCellStyle.VerticalAlignment = iFromCellStyle.VerticalAlignment;//垂直对齐
-                                iToNewCellStyle.WrapText = iFromCellStyle.WrapText;//文字换行
-                                //复制字体
+                                // 复制样式
+                                iToNewCellStyle.Alignment = iFromCellStyle.Alignment; // 对齐
+                                iToNewCellStyle.BorderBottom = iFromCellStyle.BorderBottom;// 下边框
+                                iToNewCellStyle.BorderLeft = iFromCellStyle.BorderLeft; // 左边框
+                                iToNewCellStyle.BorderRight = iFromCellStyle.BorderRight; // 右边框
+                                iToNewCellStyle.BorderTop = iFromCellStyle.BorderTop; // 上边框
+                                iToNewCellStyle.BottomBorderColor = iFromCellStyle.BottomBorderColor; // 下边框颜色
+                                iToNewCellStyle.DataFormat = iFromCellStyle.DataFormat; // 数据格式
+                                iToNewCellStyle.FillBackgroundColor = iFromCellStyle.FillBackgroundColor; // 填充背景色
+                                iToNewCellStyle.FillForegroundColor = iFromCellStyle.FillForegroundColor; // 填充前景色
+                                iToNewCellStyle.FillPattern = iFromCellStyle.FillPattern; // 填充图案
+                                iToNewCellStyle.Indention = iFromCellStyle.Indention; // 压痕
+                                iToNewCellStyle.IsHidden = iFromCellStyle.IsHidden; // 隐藏
+                                iToNewCellStyle.IsLocked = iFromCellStyle.IsLocked; // 锁定
+                                iToNewCellStyle.LeftBorderColor = iFromCellStyle.LeftBorderColor; // 左边框颜色
+                                iToNewCellStyle.RightBorderColor = iFromCellStyle.RightBorderColor; // 右边框颜色
+                                iToNewCellStyle.Rotation = iFromCellStyle.Rotation; // 旋转
+                                iToNewCellStyle.TopBorderColor = iFromCellStyle.TopBorderColor; // 上边框颜色
+                                iToNewCellStyle.VerticalAlignment = iFromCellStyle.VerticalAlignment; // 垂直对齐
+                                iToNewCellStyle.WrapText = iFromCellStyle.WrapText; // 文字换行
+                                // 复制字体
                                 IFont iFromFont = iFromCellStyle.GetFont(iSourceWorkbook);
                                 IFont iToFont = iTargetWorkbook.CreateFont();
-                                iToFont.Color = iFromFont.Color;//颜色
-                                iToFont.FontHeightInPoints = iFromFont.FontHeightInPoints;//字号
-                                iToFont.FontName = iFromFont.FontName;//字体
-                                iToFont.IsBold = iFromFont.IsBold;//加粗
-                                iToFont.IsItalic = iFromFont.IsItalic;//斜体
-                                iToFont.IsStrikeout = iFromFont.IsStrikeout;//删除线
-                                iToFont.Underline = iFromFont.Underline;//下划线
+                                iToFont.Color = iFromFont.Color; // 颜色
+                                iToFont.FontHeightInPoints = iFromFont.FontHeightInPoints; // 字号
+                                iToFont.FontName = iFromFont.FontName; // 字体
+                                iToFont.IsBold = iFromFont.IsBold; // 加粗
+                                iToFont.IsItalic = iFromFont.IsItalic; // 斜体
+                                iToFont.IsStrikeout = iFromFont.IsStrikeout; // 删除线
+                                iToFont.Underline = iFromFont.Underline; // 下划线
                                 iToNewCellStyle.SetFont(iToFont);
-                                //保存到缓存集合中
+                                // 保存到缓存集合中
                                 listCellStyle.Add(iToNewCellStyle);
                             }
-                            //复制样式到指定表格中
+                            // 复制样式到指定表格中
                             iToCell.CellStyle = iToNewCellStyle;
                             #endregion
                         }
@@ -1275,12 +1275,12 @@ namespace NPOI.Helper.Excel
         }
 
         /// <summary>
-        /// 拷贝Sheet页到另一个Sheet页
+        /// 拷贝 Sheet 页到另一个 Sheet 页
         /// </summary>
-        /// <param name="strSourceExcelPath">源Excel路径</param>
-        /// <param name="strFromSheetName">源Excel拷贝Sheet</param>
-        /// <param name="strTargetExcelPath">目标Excel路径</param>
-        /// <param name="strToSheetName">目标Excel拷贝Sheet</param>
+        /// <param name="strSourceExcelPath">源 Excel 路径</param>
+        /// <param name="strFromSheetName">源 Excel 拷贝 Sheet</param>
+        /// <param name="strTargetExcelPath">目标 Excel 路径</param>
+        /// <param name="strToSheetName">目标 Excel 拷贝 Sheet</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CopySheet(string strSourceExcelPath, string strFromSheetName, string strTargetExcelPath, string strToSheetName)
         {
@@ -1296,7 +1296,7 @@ namespace NPOI.Helper.Excel
                     TXTHelper.Logs(string.Format("源Sheet页和目标Sheet页参数为空!"));
                     return false;
                 }
-                //获得源数据和目标数据的Sheet页
+                // 获得源数据和目标数据的Sheet页
                 IWorkbook iSourceWorkbook = null;
                 ISheet iSourceSheet = GetExcelSheetAt(strSourceExcelPath, strFromSheetName, out iSourceWorkbook);
                 IWorkbook iTargetWorkbook = null;
@@ -1308,7 +1308,7 @@ namespace NPOI.Helper.Excel
                 }
                 if (!File.Exists(strTargetExcelPath))
                 {
-                    //如果文件不存在则创建Excel
+                    // 如果文件不存在则创建Excel
                     if (Path.GetExtension(strTargetExcelPath) == ".xls")
                     {
                         bool bCreare = CreateExcel_Office2003(strTargetExcelPath, strToSheetName);
@@ -1326,7 +1326,7 @@ namespace NPOI.Helper.Excel
                 }
                 else
                 {
-                    //如果文件存在则判断是否存在执行Sheet
+                    // 如果文件存在则判断是否存在执行Sheet
                     Dictionary<int, string> dicAllSheet = GetExcelAllSheet(strTargetExcelPath);
                     if (dicAllSheet.ContainsValue(strToSheetName))
                     {
@@ -1337,7 +1337,7 @@ namespace NPOI.Helper.Excel
                         iTargetSheet = CreateExcelSheetAt(strTargetExcelPath, strToSheetName, out iTargetWorkbook);
                     }
                 }
-                //调用Sheet拷贝Sheet方法
+                // 调用Sheet拷贝Sheet方法
                 bool bCopySheet = CopySheetAt(iSourceWorkbook, iSourceSheet, iTargetWorkbook, iTargetSheet);
                 if (bCopySheet)
                 {

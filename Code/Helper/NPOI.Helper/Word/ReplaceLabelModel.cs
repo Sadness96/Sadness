@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace NPOI.Helper.Word
 {
     /// <summary>
-    /// 替换Word模板Model
-    /// 创建日期:2017年6月15日
+    /// 替换 Word 模板 Model
+    /// 创建日期:2017年06月15日
     /// </summary>
     public class ReplaceLabelModel
     {

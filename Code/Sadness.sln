@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helper", "Helper", "{B1F57832-416D-4B64-8E2D-631AA83BA15F}"
 EndProject
@@ -28,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sadness.SQLiteDB", "Project\Main.Core\Sadness.SQLiteDB\Sadness.SQLiteDB.csproj", "{30B4AE29-E2F5-4D03-88EF-A4F80E01F700}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sadness.BasicFunction", "Project\Main.Function\Sadness.BasicFunction\Sadness.BasicFunction.csproj", "{861CF039-418A-4041-A56C-0AC38976692A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queue.Helper", "Helper\Queue.Helper\Queue.Helper.csproj", "{256CCD6E-7C62-4607-91FC-A250351A64AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{861CF039-418A-4041-A56C-0AC38976692A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{861CF039-418A-4041-A56C-0AC38976692A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{861CF039-418A-4041-A56C-0AC38976692A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256CCD6E-7C62-4607-91FC-A250351A64AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256CCD6E-7C62-4607-91FC-A250351A64AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256CCD6E-7C62-4607-91FC-A250351A64AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256CCD6E-7C62-4607-91FC-A250351A64AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{6EE57D44-8871-47C5-B748-A9669BE94029} = {BFAC6D75-3B5C-4236-86D4-61301B6AD1D1}
 		{30B4AE29-E2F5-4D03-88EF-A4F80E01F700} = {BFAC6D75-3B5C-4236-86D4-61301B6AD1D1}
 		{861CF039-418A-4041-A56C-0AC38976692A} = {1E2EF8D8-BB8C-4685-90FE-46F88D09C9A7}
+		{256CCD6E-7C62-4607-91FC-A250351A64AB} = {B1F57832-416D-4B64-8E2D-631AA83BA15F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04162FA0-CEA7-45C8-908D-174E51403161}

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ADO.Helper.SqlServer
 {
     /// <summary>
-    /// SqlServer字段类型枚举类
+    /// SqlServer 字段类型枚举类
     /// 创建日期:2016年12月14日
     /// </summary>
     public class SqlServerFieldType

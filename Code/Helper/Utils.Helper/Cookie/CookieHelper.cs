@@ -10,15 +10,15 @@ namespace Utils.Helper.Cookie
 {
     /// <summary>
     /// 浏览器缓存帮助类
-    /// 创建日期:2017年7月31日
+    /// 创建日期:2017年07月31日
     /// </summary>
     public class CookieHelper
     {
         /// <summary>
         /// 添加Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <param name="strCookieValue">Cookie值</param>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <param name="strCookieValue">Cookie 值</param>
         /// <param name="dtExpires">到期时间(如果为空默认为7天)</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool SetCookie(string strCookieName, string strCookieValue, DateTime dtExpires)
@@ -29,7 +29,7 @@ namespace Utils.Helper.Cookie
                 {
                     return false;
                 }
-                //如果指定Cookie不存在则创建,存在则修改
+                // 如果指定 Cookie 不存在则创建,存在则修改
                 if (HttpContext.Current.Request.Cookies[strCookieName] == null)
                 {
                     HttpCookie httpCookie = new HttpCookie(strCookieName);
@@ -51,10 +51,10 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 添加带有子键的Cookie
+        /// 添加带有子键的 Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <param name="dicCookieValue">Cookie子键值</param>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <param name="dicCookieValue">Cookie 子键值</param>
         /// <param name="dtExpires">到期时间(如果为空默认为7天)</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool SetCookie(string strCookieName, Dictionary<string, string> dicCookieValue, DateTime dtExpires)
@@ -65,7 +65,7 @@ namespace Utils.Helper.Cookie
                 {
                     return false;
                 }
-                //如果指定Cookie不存在则创建,存在则修改
+                // 如果指定 Cookie 不存在则创建,存在则修改
                 if (HttpContext.Current.Request.Cookies[strCookieName] == null)
                 {
                     HttpCookie httpCookie = new HttpCookie(strCookieName);
@@ -93,10 +93,10 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 获取Cookie
+        /// 获取 Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <returns>指定Cookie的Value值</returns>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <returns>指定 Cookie 的 Value 值</returns>
         public static string GetCookie(string strCookieName)
         {
             try
@@ -118,11 +118,11 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 获取子键Cookie
+        /// 获取子键 Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <param name="strCookieSubkey">Cookie子键名</param>
-        /// <returns>指定Cookie子键的Value值</returns>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <param name="strCookieSubkey">Cookie 子键名</param>
+        /// <returns>指定 Cookie 子键的 Value 值</returns>
         public static string GetCookie(string strCookieName, string strCookieSubkey)
         {
             try
@@ -144,10 +144,10 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 修改指定Cookie
+        /// 修改指定 Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <param name="strCookieValue">Cookie值</param>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <param name="strCookieValue">Cookie 值</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool ModifyCookie(string strCookieName, string strCookieValue)
         {
@@ -176,11 +176,11 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 修改指定子键Cookie
+        /// 修改指定子键 Cookie
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
-        /// <param name="strCookieSubkey">Cookie子键名</param>
-        /// <param name="strCookieValue">Cookie子键值</param>
+        /// <param name="strCookieName">Cookie 名</param>
+        /// <param name="strCookieSubkey">Cookie 子键名</param>
+        /// <param name="strCookieValue">Cookie 子键值</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool ModifyCookie(string strCookieName, string strCookieSubkey, string strCookieValue)
         {
@@ -209,7 +209,7 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 移除所有Cookie
+        /// 移除所有 Cookie
         /// </summary>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool RemoveAllCookie()
@@ -232,9 +232,9 @@ namespace Utils.Helper.Cookie
         }
 
         /// <summary>
-        /// 移除指定Cookie(测试无效)
+        /// 移除指定 Cookie(测试无效)
         /// </summary>
-        /// <param name="strCookieName">Cookie名</param>
+        /// <param name="strCookieName">Cookie 名</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool RemoveCookie(string strCookieName)
         {

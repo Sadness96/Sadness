@@ -10,8 +10,8 @@ using Utils.Helper.CheckCorrectness;
 namespace Utils.Helper.EMail
 {
     /// <summary>
-    /// E-Mail邮件帮助类
-    /// 创建日期:2017年6月18日
+    /// E-Mail 邮件帮助类
+    /// 创建日期:2017年06月18日
     /// </summary>
     public class EMailHelper
     {
@@ -59,11 +59,11 @@ namespace Utils.Helper.EMail
                 mailMessage.SubjectEncoding = Encoding.UTF8;
                 mailMessage.Body = strBody;
                 mailMessage.BodyEncoding = Encoding.UTF8;
-                //是否是HTML邮件
+                // 是否是HTML邮件
                 mailMessage.IsBodyHtml = false;
-                //邮件优先级
+                // 邮件优先级
                 mailMessage.Priority = MailPriority.High;
-                //使用163邮箱SMTP发送
+                // 使用 163 邮箱 SMTP 发送
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Host = "smtp.163.com";
                 smtpClient.UseDefaultCredentials = true;
@@ -123,11 +123,11 @@ namespace Utils.Helper.EMail
                 mailMessage.SubjectEncoding = Encoding.UTF8;
                 mailMessage.Body = strBody;
                 mailMessage.BodyEncoding = Encoding.UTF8;
-                //是否是HTML邮件
+                // 是否是 HTML 邮件
                 mailMessage.IsBodyHtml = false;
-                //邮件优先级
+                // 邮件优先级
                 mailMessage.Priority = MailPriority.High;
-                //使用163邮箱SMTP发送
+                // 使用 163 邮箱 SMTP 发送
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Host = "smtp.qq.com";
                 smtpClient.UseDefaultCredentials = true;

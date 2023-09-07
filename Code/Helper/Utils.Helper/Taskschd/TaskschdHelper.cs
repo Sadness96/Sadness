@@ -10,7 +10,7 @@ namespace Utils.Helper.Taskschd
 {
     /// <summary>
     /// 任务计划帮助类
-    /// 创建日期:2017年9月18日
+    /// 创建日期:2017年09月18日
     /// </summary>
     public class TaskschdHelper
     {
@@ -33,29 +33,35 @@ namespace Utils.Helper.Taskschd
                     DeleteTaskschd(strTaskName);
                 }
 
-                //new scheduler
+                // new scheduler
                 TaskSchedulerClass scheduler = new TaskSchedulerClass();
-                //pc-name/ip,username,domain,password
+                // pc-name/ip,username,domain,password
                 scheduler.Connect(null, null, null, null);
-                //get scheduler folder
+                // get scheduler folder
                 ITaskFolder folder = scheduler.GetFolder("\\");
 
-                //set base attr 
+                // set base attr 
                 ITaskDefinition task = scheduler.NewTask(0);
-                task.RegistrationInfo.Author = strCreator;//creator
-                task.RegistrationInfo.Description = strDescription;//description
+                // creator
+                task.RegistrationInfo.Author = strCreator;
+                // description
+                task.RegistrationInfo.Description = strDescription;
 
-                //set trigger  (IDailyTrigger ITimeTrigger)
+                // set trigger  (IDailyTrigger ITimeTrigger)
                 ITimeTrigger tt = (ITimeTrigger)task.Triggers.Create(_TASK_TRIGGER_TYPE2.TASK_TRIGGER_TIME);
-                tt.Repetition.Interval = strInterval;// format PT1H1M==1小时1分钟 设置的值最终都会转成分钟加入到触发器
-                tt.StartBoundary = strStartBoundary;//start time
+                // format PT1H1M==1小时1分钟 设置的值最终都会转成分钟加入到触发器
+                tt.Repetition.Interval = strInterval;
+                // start time
+                tt.StartBoundary = strStartBoundary;
 
-                //set action
+                // set action
                 IExecAction action = (IExecAction)task.Actions.Create(_TASK_ACTION_TYPE.TASK_ACTION_EXEC);
-                action.Path = strPath;//计划任务调用的程序路径
-
-                task.Settings.ExecutionTimeLimit = "PT0S"; //运行任务时间超时停止任务吗? PTOS 不开启超时
-                task.Settings.DisallowStartIfOnBatteries = false;//只有在交流电源下才执行
+                // 计划任务调用的程序路径
+                action.Path = strPath;
+                // 运行任务时间超时停止任务吗? PTOS 不开启超时
+                task.Settings.ExecutionTimeLimit = "PT0S";
+                // 只有在交流电源下才执行
+                task.Settings.DisallowStartIfOnBatteries = false;
                 task.Settings.RunOnlyIfIdle = false;//仅当计算机空闲下才执行
 
                 IRegisteredTask regTask = folder.RegisterTaskDefinition(strTaskName, task,
@@ -64,13 +70,13 @@ namespace Utils.Helper.Taskschd
                                                                     _TASK_LOGON_TYPE.TASK_LOGON_INTERACTIVE_TOKEN,
                                                                     "");
                 IRunningTask runTask = regTask.Run(null);
-                //return runTask.State;
+                // return runTask.State;
                 return true;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                //return _TASK_STATE.TASK_STATE_UNKNOWN;
+                // return _TASK_STATE.TASK_STATE_UNKNOWN;
                 return false;
             }
         }

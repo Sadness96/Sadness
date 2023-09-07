@@ -12,18 +12,18 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.WebApi
 {
     /// <summary>
-    /// HttpClient帮助类
-    /// 创建日期:2018年8月27日
+    /// HttpClient 帮助类
+    /// 创建日期:2018年08月27日
     /// </summary>
     public class HttpClientHelper
     {
         /// <summary>
-        /// 创建Get请求
+        /// 创建 Get 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
-        /// <returns>Api返回值</returns>
+        /// <returns>Api 返回值</returns>
         public static string CreateGetHttpClient(string url, string requestUrl, IDictionary<string, string> parameters)
         {
             try
@@ -58,12 +58,12 @@ namespace Utils.Helper.WebApi
         }
 
         /// <summary>
-        /// 创建Post请求
+        /// 创建 Post 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
-        /// <returns>Api返回值</returns>
+        /// <returns>Api 返回值</returns>
         public static string CreatePostHttpClient(string url, string requestUrl, IDictionary<string, string> parameters)
         {
             try
@@ -83,7 +83,7 @@ namespace Utils.Helper.WebApi
         /// <summary>
         /// 单文件下载
         /// </summary>
-        /// <param name="baseAddress">Api访问地址</param>
+        /// <param name="baseAddress">Api 访问地址</param>
         /// <param name="requestUrl">请求地址</param>
         /// <param name="parameters">请求参数</param>
         /// <param name="saveFilePath">保存文件路径</param>
@@ -109,7 +109,7 @@ namespace Utils.Helper.WebApi
                 }
                 httpClient.Timeout = TimeSpan.FromMinutes(20);
 
-                //拼接参数
+                // 拼接参数
                 StringBuilder builder = new StringBuilder();
                 builder.Append(baseAddress);
                 builder.Append(requestUrl);
@@ -132,7 +132,7 @@ namespace Utils.Helper.WebApi
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        //保存文件
+                        // 保存文件
                         using (FileStream fs = File.Create(saveFilePath))
                         {
                             Stream stream = await response.Content.ReadAsStreamAsync();

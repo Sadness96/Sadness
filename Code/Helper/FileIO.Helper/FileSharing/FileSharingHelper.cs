@@ -12,8 +12,8 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.FileSharing
 {
     /// <summary>
-    /// FileSharing文件共享帮助类
-    /// 创建日期:2017年5月23日
+    /// FileSharing 文件共享帮助类
+    /// 创建日期:2017年05月23日
     /// </summary>
     public class FileSharingHelper
     {

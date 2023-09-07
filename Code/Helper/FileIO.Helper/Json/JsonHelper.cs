@@ -12,8 +12,8 @@ using Newtonsoft.Json.Converters;
 namespace FileIO.Helper.Json
 {
     /// <summary>
-    /// Json文本帮助类
-    /// 创建日期:2017年5月22日
+    /// Json 文本帮助类
+    /// 创建日期:2017年05月22日
     /// </summary>
     public class JsonHelper
     {

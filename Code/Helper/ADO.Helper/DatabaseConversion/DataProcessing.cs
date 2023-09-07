@@ -17,7 +17,7 @@ namespace ADO.Helper.DatabaseConversion
     public class DataProcessing
     {
         /// <summary>
-        /// 对DataTable进行筛选过滤
+        /// 对 DataTable 进行筛选过滤
         /// </summary>
         /// <param name="dtDataSource">源数据(DataTable)</param>
         /// <param name="sqlFilterConditions">过滤条件(WHERE语句)</param>
@@ -38,7 +38,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// 删除DataTable中的空行
+        /// 删除 DataTable 中的空行
         /// 弱引用,可直接修改参数
         /// </summary>
         /// <param name="dtDataSource">源数据(DataTable)</param>
@@ -76,7 +76,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// DataTable转换为List
+        /// DataTable 转换为 List
         /// </summary>
         /// <typeparam name="T">数据模型</typeparam>
         /// <param name="dtDataSource">源数据(DataTable)</param>
@@ -119,7 +119,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// List转换为DataTable
+        /// List 转换为 DataTable
         /// </summary>
         /// <param name="listDataSource">源数据</param>
         /// <returns>成功返回DataTable,失败返回null</returns>
@@ -155,7 +155,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// DataTable分页查询
+        /// DataTable 分页查询
         /// </summary>
         /// <param name="dtDataSource">源数据(DataTable)</param>
         /// <param name="iPageSize">每页条数</param>
@@ -193,7 +193,7 @@ namespace ADO.Helper.DatabaseConversion
         }
 
         /// <summary>
-        /// DataTable分页查询
+        /// DataTable 分页查询
         /// </summary>
         /// <param name="dtDataSource">源数据(DataTable)</param>
         /// <param name="iPageNo">页码</param>

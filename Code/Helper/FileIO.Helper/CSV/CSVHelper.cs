@@ -11,7 +11,7 @@ using FileIO.Helper.TXT;
 namespace FileIO.Helper.CSV
 {
     /// <summary>
-    /// CSV逗号分隔值帮助类
+    /// CSV 逗号分隔值帮助类
     /// 创建日期:2017年6月21日
     /// </summary>
     public class CSVHelper

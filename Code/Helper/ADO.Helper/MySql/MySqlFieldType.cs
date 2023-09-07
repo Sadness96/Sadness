@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ADO.Helper.MySql
 {
     /// <summary>
-    /// MySql字段类型枚举类
+    /// MySql 字段类型枚举类
     /// 创建日期:2016年12月19日
     /// </summary>
     public class MySqlFieldType
     {
         /// <summary>
-        /// MySql特定的数据类型。
+        /// MySql 特定的数据类型。
         /// </summary>
         public enum FieldType
         {

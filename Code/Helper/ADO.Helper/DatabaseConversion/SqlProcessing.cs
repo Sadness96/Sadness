@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace ADO.Helper.DatabaseConversion
 {
     /// <summary>
-    /// Sql语句处理类
-    /// 创建日期:2017年4月24日
+    /// Sql 语句处理类
+    /// 创建日期:2017年04月24日
     /// </summary>
     public class SqlProcessing
     {

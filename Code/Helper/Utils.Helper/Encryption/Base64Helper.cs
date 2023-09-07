@@ -11,13 +11,13 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Encryption
 {
     /// <summary>
-    /// Base64加密帮助类
-    /// 创建日期:2018年3月30日
+    /// Base64 加密帮助类
+    /// 创建日期:2018年03月30日
     /// </summary>
     public class Base64Helper
     {
         /// <summary>
-        /// Base64加密
+        /// Base64 加密
         /// </summary>
         /// <param name="strPlaintext">明文</param>
         /// <returns>Base64密文</returns>
@@ -36,9 +36,9 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// Base64解密
+        /// Base64 解密
         /// </summary>
-        /// <param name="strCiphertext">Base64密文</param>
+        /// <param name="strCiphertext">Base64 密文</param>
         /// <returns>明文</returns>
         public static string Base64Decrypt(string strCiphertext)
         {
@@ -55,11 +55,11 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 图片Base64加密
+        /// 图片 Base64 加密
         /// </summary>
         /// <param name="strImagePath">图片路径</param>
         /// <param name="imageFormat">指定图像格式</param>
-        /// <returns>Base64密文</returns>
+        /// <returns>Base64 密文</returns>
         public static string ImageBase64Encrypt(string strImagePath, ImageFormat imageFormat)
         {
             try
@@ -82,9 +82,9 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 图片Base64解密
+        /// 图片 Base64 解密
         /// </summary>
-        /// <param name="strCiphertext">Base64密文</param>
+        /// <param name="strCiphertext">Base64 密文</param>
         /// <param name="strSaveFilePath">解密图片目录</param>
         /// <param name="imageFormat">指定图像格式</param>
         /// <returns>成功返回true,失败返回false</returns>

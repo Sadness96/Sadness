@@ -10,15 +10,15 @@ using ICSharpCode.SharpZipLib.Zip;
 namespace FileIO.Helper.ZIP
 {
     /// <summary>
-    /// ZIP压缩文件帮助类
-    /// 创建日期:2017年5月25日
+    /// ZIP 压缩文件帮助类
+    /// 创建日期:2017年05月25日
     /// </summary>
     public class ZIPHelper
     {
         /// <summary>
-        /// 压缩ZIP文件
+        /// 压缩 ZIP 文件
         /// </summary>
-        /// <param name="strZipPath">ZIP压缩文件保存位置</param>
+        /// <param name="strZipPath">ZIP 压缩文件保存位置</param>
         /// <param name="listFolderOrFilePath">需要压缩的文件夹或文件</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool CompressionZip(string strZipPath, List<string> listFolderOrFilePath)
@@ -27,9 +27,9 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 压缩ZIP文件(加密)
+        /// 压缩 ZIP 文件(加密)
         /// </summary>
-        /// <param name="strZipPath">ZIP压缩文件保存位置</param>
+        /// <param name="strZipPath">ZIP 压缩文件保存位置</param>
         /// <param name="listFolderOrFilePath">需要压缩的文件夹或文件</param>
         /// <param name="strPassword">压缩文件密码</param>
         /// <returns>成功返回true,失败返回false</returns>
@@ -38,9 +38,9 @@ namespace FileIO.Helper.ZIP
             try
             {
                 ZipOutputStream ComStream = new ZipOutputStream(File.Create(strZipPath));
-                //压缩等级(0-9)
+                // 压缩等级(0-9)
                 ComStream.SetLevel(9);
-                //压缩文件加密
+                // 压缩文件加密
                 if (!string.IsNullOrEmpty(strPassword))
                 {
                     ComStream.Password = strPassword;
@@ -49,12 +49,12 @@ namespace FileIO.Helper.ZIP
                 {
                     if (Directory.Exists(strFolderOrFilePath))
                     {
-                        //如果路径是文件目录
+                        // 如果路径是文件目录
                         CompressionZipDirectory(strFolderOrFilePath, ComStream, string.Empty);
                     }
                     else if (File.Exists(strFolderOrFilePath))
                     {
-                        //如果路径是文件路径
+                        // 如果路径是文件路径
                         FileStream fileStream = File.OpenRead(strFolderOrFilePath);
                         byte[] btsLength = new byte[fileStream.Length];
                         fileStream.Read(btsLength, 0, btsLength.Length);
@@ -75,25 +75,25 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 压缩ZIP文件夹
+        /// 压缩 ZIP 文件夹
         /// </summary>
         /// <param name="strRootPath">根目录路径</param>
-        /// <param name="ComStream">ZIP文件输出流</param>
+        /// <param name="ComStream">ZIP 文件输出流</param>
         /// <param name="strSubPath">子目录路径</param>
         private static void CompressionZipDirectory(string strRootPath, ZipOutputStream ComStream, string strSubPath)
         {
             try
             {
-                //创建当前文件夹
+                // 创建当前文件夹
                 ZipEntry zipEntry = new ZipEntry(Path.Combine(strSubPath, Path.GetFileName(strRootPath) + "/"));
                 ComStream.PutNextEntry(zipEntry);
                 ComStream.Flush();
-                //遍历压缩目录
+                // 遍历压缩目录
                 foreach (string strFolder in Directory.GetDirectories(strRootPath))
                 {
                     CompressionZipDirectory(strFolder, ComStream, Path.Combine(strSubPath, Path.GetFileName(strRootPath)));
                 }
-                //遍历压缩文件
+                // 遍历压缩文件
                 foreach (string strFileName in Directory.GetFiles(strRootPath))
                 {
                     FileStream fileStream = File.OpenRead(strFileName);
@@ -122,9 +122,9 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 解压缩ZIP文件
+        /// 解压缩 ZIP 文件
         /// </summary>
-        /// <param name="strZipPath">ZIP压缩文件保存位置</param>
+        /// <param name="strZipPath">ZIP 压缩文件保存位置</param>
         /// <param name="strDeCompressionPath">需要解压到的指定位置</param>
         /// <returns>成功返回true,失败返回false</returns>
         public static bool DeCompressionZip(string strZipPath, string strDeCompressionPath)
@@ -133,9 +133,9 @@ namespace FileIO.Helper.ZIP
         }
 
         /// <summary>
-        /// 解压缩ZIP文件(加密)
+        /// 解压缩 ZIP 文件(加密)
         /// </summary>
-        /// <param name="strZipPath">ZIP压缩文件保存位置</param>
+        /// <param name="strZipPath">ZIP 压缩文件保存位置</param>
         /// <param name="strDeCompressionPath">需要解压到的指定位置</param>
         /// <param name="strPassword">压缩文件密码</param>
         /// <returns>成功返回true,失败返回false</returns>
@@ -148,7 +148,7 @@ namespace FileIO.Helper.ZIP
                     return false;
                 }
                 ZipInputStream inputStream = new ZipInputStream(File.OpenRead(strZipPath));
-                //压缩文件解密
+                // 压缩文件解密
                 if (!string.IsNullOrEmpty(strPassword))
                 {
                     inputStream.Password = strPassword;

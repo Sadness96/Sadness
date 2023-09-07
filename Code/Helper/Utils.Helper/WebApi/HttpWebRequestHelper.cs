@@ -10,18 +10,18 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.WebApi
 {
     /// <summary>
-    /// HttpWebRequest帮助类
-    /// 创建日期:2018年8月27日
+    /// HttpWebRequest 帮助类
+    /// 创建日期:2018年08月27日
     /// </summary>
     public class HttpWebRequestHelper
     {
         /// <summary>
-        /// 创建Get请求
+        /// 创建 Get 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
-        /// <returns>Api返回值</returns>
+        /// <returns>Api 返回值</returns>
         public static string CreateGetHttpWebRequest(string url, string requestUrl, IDictionary<string, string> parameters)
         {
             try
@@ -57,14 +57,14 @@ namespace Utils.Helper.WebApi
         }
 
         /// <summary>
-        /// 创建Get请求
+        /// 创建 Get 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
         /// <param name="encoding">字符编码</param>
         /// <param name="timout ">请求超时前等待的毫秒数,默认值是 100,000 毫秒（100 秒）</param>
-        /// <returns>Api返回值</returns>
+        /// <returns>Api 返回值</returns>
         public static string CreateGetHttpWebRequest(string url, string requestUrl, IDictionary<string, string> parameters, Encoding encoding, int timout)
         {
             try
@@ -101,9 +101,9 @@ namespace Utils.Helper.WebApi
         }
 
         /// <summary>
-        /// 创建Post请求
+        /// 创建 Post 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
         /// <returns>Api返回值</returns>
@@ -115,7 +115,7 @@ namespace Utils.Helper.WebApi
                 request.ProtocolVersion = HttpVersion.Version10;
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
-                //如果需要POST数据
+                // 如果需要 POST 数据
                 if (!(parameters == null || parameters.Count == 0))
                 {
                     StringBuilder buffer = new StringBuilder();
@@ -149,14 +149,14 @@ namespace Utils.Helper.WebApi
         }
 
         /// <summary>
-        /// 创建Post请求
+        /// 创建 Post 请求
         /// </summary>
-        /// <param name="url">Api访问地址</param>
+        /// <param name="url">Api 访问地址</param>
         /// <param name="requestUrl">详细方法路径</param>
         /// <param name="parameters">请求参数</param>
         /// <param name="encoding">字符编码</param>
         /// <param name="timout ">请求超时前等待的毫秒数,默认值是 100,000 毫秒（100 秒）</param>
-        /// <returns>Api返回值</returns>
+        /// <returns>Api 返回值</returns>
         public static string CreatePostHttpWebRequest(string url, string requestUrl, IDictionary<string, string> parameters, Encoding encoding, int timout)
         {
             try
@@ -166,7 +166,7 @@ namespace Utils.Helper.WebApi
                 request.Method = "POST";
                 request.ContentType = "application/x-www-form-urlencoded";
                 request.Timeout = timout;
-                //如果需要POST数据
+                // 如果需要 POST 数据
                 if (!(parameters == null || parameters.Count == 0))
                 {
                     StringBuilder buffer = new StringBuilder();

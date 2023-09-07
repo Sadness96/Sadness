@@ -13,7 +13,7 @@ namespace Utils.Helper.HookProc
 {
     /// <summary>
     /// 钩子程序帮助类
-    /// 创建日期:2017年6月7日
+    /// 创建日期:2017年06月07日
     /// </summary>
     public class HookProcHelper
     {

@@ -10,13 +10,13 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Encryption
 {
     /// <summary>
-    /// DES加密解密帮助类
-    /// 创建日期:2017年6月16日
+    /// DES 加密解密帮助类
+    /// 创建日期:2017年06月16日
     /// </summary>
     public class DESHelper
     {
         /// <summary>
-        /// DES加密
+        /// DES 加密
         /// </summary>
         /// <param name="strPlaintext">明文</param>
         /// <param name="strKey">秘钥(8位)</param>
@@ -51,9 +51,9 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// DES解密
+        /// DES 解密
         /// </summary>
-        /// <param name="strCiphertext">DES密文</param>
+        /// <param name="strCiphertext">DES 密文</param>
         /// <param name="strKey">秘钥(8位)</param>
         /// <param name="strIV">向量(8位)</param>
         /// <returns>明文</returns>
@@ -86,7 +86,7 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 文件DES加密
+        /// 文件 DES 加密
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
         /// <param name="strSaveFilePath">加密文件目录</param>
@@ -130,7 +130,7 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 文件DES解密
+        /// 文件 DES 解密
         /// </summary>
         /// <param name="strFilePath">被加密的文件路径</param>
         /// <param name="strSaveFilePath">解密文件目录</param>

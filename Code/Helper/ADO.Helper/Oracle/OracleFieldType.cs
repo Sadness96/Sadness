@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace ADO.Helper.Oracle
 {
     /// <summary>
-    /// Oracle字段类型枚举类
+    /// Oracle 字段类型枚举类
     /// 创建日期:2016年12月16日
     /// </summary>
     public class OracleFieldType
     {
         /// <summary>
-        /// Oracle特定的数据类型。
+        /// Oracle 特定的数据类型。
         /// </summary>
         public enum FieldType
         {

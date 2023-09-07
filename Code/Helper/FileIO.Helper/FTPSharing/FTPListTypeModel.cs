@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace FileIO.Helper.FTPSharing
 {
     /// <summary>
-    /// FTP-FTP-LIST命令返回参数数据模型
-    /// 创建日期:2017年5月25日
+    /// FTP-FTP-LIST 命令返回参数数据模型
+    /// 创建日期:2017年05月25日
     /// </summary>
     public class FTPListTypeModel
     {

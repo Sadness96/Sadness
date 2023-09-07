@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace FileIO.Helper.Json
 {
     /// <summary>
-    /// DataTable数据模型
-    /// 创建日期:2017年5月23日
+    /// DataTable 数据模型
+    /// 创建日期:2017年05月23日
     /// </summary>
     public class DataTableModel
     {

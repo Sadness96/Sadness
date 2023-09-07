@@ -10,16 +10,16 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Encryption
 {
     /// <summary>
-    /// SHA1加密帮助类
-    /// 创建日期:2017年6月16日
+    /// SHA1 加密帮助类
+    /// 创建日期:2017年06月16日
     /// </summary>
     public class SHA1Helper
     {
         /// <summary>
-        /// SHA1加密(40位小写)
+        /// SHA1 加密(40位小写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>SHA1密文(40位小写)</returns>
+        /// <returns>SHA1 密文(40位小写)</returns>
         public static string SHA1Encrypt_40Lower(string strPlaintext)
         {
             try
@@ -40,10 +40,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// SHA1加密(40位大写)
+        /// SHA1 加密(40位大写)
         /// </summary>
         /// <param name="strPlaintext">明文</param>
-        /// <returns>SHA1密文(40位大写)</returns>
+        /// <returns>SHA1 密文(40位大写)</returns>
         public static string SHA1Encrypt_40Upper(string strPlaintext)
         {
             try
@@ -64,10 +64,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件SHA1值(40位小写)
+        /// 获取文件 SHA1 值(40位小写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件SHA1值(40位小写)</returns>
+        /// <returns>文件 SHA1 值(40位小写)</returns>
         public static string FileSHA1Encrypt_40Lower(string strFilePath)
         {
             try
@@ -91,10 +91,10 @@ namespace Utils.Helper.Encryption
         }
 
         /// <summary>
-        /// 获取文件SHA1值(40位大写)
+        /// 获取文件 SHA1 值(40位大写)
         /// </summary>
         /// <param name="strFilePath">文件路径</param>
-        /// <returns>文件SHA1值(40位大写)</returns>
+        /// <returns>文件 SHA1 值(40位大写)</returns>
         public static string FileSHA1Encrypt_40Upper(string strFilePath)
         {
             try

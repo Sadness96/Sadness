@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADO.Helper.TXT
+namespace Queue.Helper.TXT
 {
     /// <summary>
     /// TXT 文本帮助类

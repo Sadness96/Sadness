@@ -11,7 +11,7 @@ namespace Utils.Helper.Reflect
 {
     /// <summary>
     /// 反射帮助类(调用参考,没有价值)
-    /// 创建日期:2017年8月16日
+    /// 创建日期:2017年08月16日
     /// </summary>
     public class ReflectHelper
     {
