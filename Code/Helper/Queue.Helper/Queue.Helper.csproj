@@ -33,6 +33,9 @@
     <DocumentationFile>..\..\ReleaseLib\Sadness.Queue.Helper.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\packages\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
