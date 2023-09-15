@@ -63,37 +63,6 @@ namespace Queue.Helper.Socket
         }
 
         /// <summary>
-        /// 发送消息给所有客户端
-        /// </summary>
-        /// <param name="data">消息</param>
-        public void SendDataToAll(string data)
-        {
-            lock (clients)
-            {
-                foreach (var client in clients)
-                {
-                    SendData(client, data);
-                }
-            }
-        }
-
-        /// <summary>
-        /// 发送消息给指定客户端
-        /// </summary>
-        /// <param name="client">客户端</param>
-        /// <param name="data">消息</param>
-        public void SendDataToClient(TcpClient client, string data)
-        {
-            if (!clients.Contains(client))
-            {
-                Console.WriteLine($"Client not connected to the server.");
-                return;
-            }
-
-            SendData(client, data);
-        }
-
-        /// <summary>
         /// 监听客户端连接请求线程
         /// </summary>
         private void ListenForClients()
@@ -151,10 +120,41 @@ namespace Queue.Helper.Socket
         }
 
         /// <summary>
+        /// 发送消息给所有客户端
+        /// </summary>
+        /// <param name="data">消息</param>
+        public void SendDataToAll(string data)
+        {
+            lock (clients)
+            {
+                foreach (var client in clients)
+                {
+                    SendData(client, data);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 发送消息给指定客户端
+        /// </summary>
+        /// <param name="client">客户端</param>
+        /// <param name="data">消息</param>
+        public void SendDataToClient(TcpClient client, string data)
+        {
+            if (!clients.Contains(client))
+            {
+                Console.WriteLine($"Client not connected to the server.");
+                return;
+            }
+
+            SendData(client, data);
+        }
+
+        /// <summary>
         /// 发送消息
         /// </summary>
-        /// <param name="client"></param>
-        /// <param name="data"></param>
+        /// <param name="client">客户端连接</param>
+        /// <param name="data">数据</param>
         private void SendData(TcpClient client, string data)
         {
             byte[] buffer = Encoding.UTF8.GetBytes(data);

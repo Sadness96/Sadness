@@ -50,6 +50,8 @@
     <Compile Include="RabbitMQ\RabbitMQHelper.cs" />
     <Compile Include="Socket\TcpClientHelper.cs" />
     <Compile Include="Socket\TcpServerHelper.cs" />
+    <Compile Include="Socket\UdpClientHelper.cs" />
+    <Compile Include="Socket\UdpServerHelper.cs" />
     <Compile Include="TXT\TXTHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

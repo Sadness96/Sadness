@@ -60,22 +60,6 @@ namespace Queue.Helper.Socket
         }
 
         /// <summary>
-        /// 发送消息
-        /// </summary>
-        /// <param name="data">消息</param>
-        public void SendData(string data)
-        {
-            if (!IsConnected)
-            {
-                Console.WriteLine($"Client is not connected to a server.");
-                return;
-            }
-
-            byte[] buffer = Encoding.UTF8.GetBytes(data);
-            client.GetStream().Write(buffer, 0, buffer.Length);
-        }
-
-        /// <summary>
         /// 接收数据回调
         /// </summary>
         /// <param name="ar"></param>
@@ -104,6 +88,22 @@ namespace Queue.Helper.Socket
             {
                 Console.WriteLine(ex.ToString());
             }
+        }
+
+        /// <summary>
+        /// 发送消息
+        /// </summary>
+        /// <param name="data">消息</param>
+        public void SendData(string data)
+        {
+            if (!IsConnected)
+            {
+                Console.WriteLine($"Client is not connected to a server.");
+                return;
+            }
+
+            byte[] buffer = Encoding.UTF8.GetBytes(data);
+            client.GetStream().Write(buffer, 0, buffer.Length);
         }
     }
 }
