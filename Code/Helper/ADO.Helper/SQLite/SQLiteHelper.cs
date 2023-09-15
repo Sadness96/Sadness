@@ -31,16 +31,16 @@ namespace ADO.Helper.SQLite
         SQLiteTransaction Transaction = null;
 
         /// <summary>
-        /// 直接传给帮助类SQLite连接字符串
+        /// 直接传给帮助类 SQLite 连接字符串
         /// </summary>
-        /// <param name="SQLiteConnection">SQLite连接字符串</param>
+        /// <param name="SQLiteConnection">SQLite 连接字符串</param>
         public void SQLiteConnectionString(string SQLiteConnection)
         {
             strSQLiteConnection = SQLiteConnection;
         }
 
         /// <summary>
-        /// 传给帮助类SQLite连接字符串需要的信息
+        /// 传给帮助类 SQLite 连接字符串需要的信息
         /// </summary>
         /// <param name="source">数据库文件路径</param>
         public void SQLiteConnectionPath(string source)

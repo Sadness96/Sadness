@@ -31,19 +31,19 @@ namespace ADO.Helper.SqlServer
         SqlTransaction Transaction = null;
 
         /// <summary>
-        /// 直接传给帮助类SqlServer连接字符串
+        /// 直接传给帮助类 SqlServer 连接字符串
         /// </summary>
-        /// <param name="SqlServerConnection">SqlServer连接字符串</param>
+        /// <param name="SqlServerConnection">SqlServer 连接字符串</param>
         public void SqlServerConnectionString(string SqlServerConnection)
         {
             strSqlServerConnection = SqlServerConnection;
         }
 
         /// <summary>
-        /// 传给帮助类SqlServer连接字符串需要的信息
-        /// 使用Windows身份验证(SSPI)
+        /// 传给帮助类 SqlServer 连接字符串需要的信息
+        /// 使用 Windows 身份验证(SSPI)
         /// </summary>
-        /// <param name="server">IP地址</param>
+        /// <param name="server">IP 地址</param>
         /// <param name="database">数据库名</param>
         public void SqlServerConnectionString(string server, string database)
         {
@@ -51,10 +51,10 @@ namespace ADO.Helper.SqlServer
         }
 
         /// <summary>
-        /// 传给帮助类SqlServer连接字符串需要的信息
-        /// 使用SqlServer身份验证(用户名,密码)
+        /// 传给帮助类 SqlServer 连接字符串需要的信息
+        /// 使用 SqlServer 身份验证(用户名,密码)
         /// </summary>
-        /// <param name="server">IP地址</param>
+        /// <param name="server">IP 地址</param>
         /// <param name="database">数据库名</param>
         /// <param name="uid">用户名</param>
         /// <param name="pwd">密码</param>
