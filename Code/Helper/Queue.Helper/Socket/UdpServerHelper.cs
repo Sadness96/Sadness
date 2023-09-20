@@ -103,15 +103,17 @@ namespace Queue.Helper.Socket
         /// </summary>
         /// <param name="client">客户端</param>
         /// <param name="data">消息</param>
-        public void SendDataToClient(IPEndPoint client, string data)
+        /// <returns>发送是否成功</returns>
+        public bool SendDataToClient(IPEndPoint client, string data)
         {
             if (!clients.Contains(client))
             {
                 Console.WriteLine($"Client not connected to the server.");
-                return;
+                return false;
             }
 
             SendData(client, data);
+            return true;
         }
 
         /// <summary>
