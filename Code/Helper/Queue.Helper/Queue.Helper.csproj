@@ -52,6 +52,8 @@
     <Compile Include="Socket\TcpServerHelper.cs" />
     <Compile Include="Socket\UdpClientHelper.cs" />
     <Compile Include="Socket\UdpServerHelper.cs" />
+    <Compile Include="Socket\WebSocketClientHelper.cs" />
+    <Compile Include="Socket\WebSocketServerHelper.cs" />
     <Compile Include="TXT\TXTHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
