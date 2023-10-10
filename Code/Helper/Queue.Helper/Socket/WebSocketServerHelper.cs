@@ -12,7 +12,7 @@ namespace Queue.Helper.Socket
     /// <summary>
     /// WebSocket 服务端帮助类
     /// </summary>
-    public class WebSocketServer
+    public class WebSocketServerHelper
     {
         private HttpListener listener;
         private CancellationTokenSource cancellationTokenSource;
