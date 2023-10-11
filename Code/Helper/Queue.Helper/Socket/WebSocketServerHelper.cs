@@ -26,14 +26,14 @@ namespace Queue.Helper.Socket
         /// <summary>
         /// 启动
         /// </summary>
-        /// <param name="url">http://localhost:8080/</param>
+        /// <param name="port"></param>
         /// <returns></returns>
-        public async Task Start(string url)
+        public async Task Start(int port)
         {
-            Console.WriteLine($"WebSocket Server listen:{url}");
+            Console.WriteLine($"WebSocket Server listen port:{port}");
 
             listener = new HttpListener();
-            listener.Prefixes.Add(url);
+            listener.Prefixes.Add($"http://127.0.0.1:{port}/");
             listener.Start();
 
             cancellationTokenSource = new CancellationTokenSource();
@@ -130,7 +130,14 @@ namespace Queue.Helper.Socket
         /// <returns></returns>
         public async Task SendToClientAsync(WebSocket client, string data)
         {
-            await client.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(data)), WebSocketMessageType.Text, true, cancellationTokenSource.Token);
+            try
+            {
+                await client.SendAsync(new ArraySegment<byte>(Encoding.UTF8.GetBytes(data)), WebSocketMessageType.Text, true, cancellationTokenSource.Token);
+            }
+            catch (Exception)
+            {
+                // 客户端已断开连接
+            }
         }
     }
 }
