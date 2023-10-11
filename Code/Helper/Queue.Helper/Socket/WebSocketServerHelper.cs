@@ -25,6 +25,7 @@ namespace Queue.Helper.Socket
 
         /// <summary>
         /// 启动
+        /// 监听所有 IP 上的端口需要以管理员权限运行
         /// </summary>
         /// <param name="port"></param>
         /// <returns></returns>
@@ -33,7 +34,7 @@ namespace Queue.Helper.Socket
             Console.WriteLine($"WebSocket Server listen port:{port}");
 
             listener = new HttpListener();
-            listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+            listener.Prefixes.Add($"http://*:{port}/");
             listener.Start();
 
             cancellationTokenSource = new CancellationTokenSource();
