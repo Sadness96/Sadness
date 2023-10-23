@@ -469,7 +469,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         SqlServerHelper sqlHelper = new SqlServerHelper();
                         sqlHelper.SqlServerConnectionString(strIPAddress, strDataBase, strUserName, strPassword);
-                        if (sqlHelper.Open() == 0)
+                        if (sqlHelper.Open())
                         {
                             //连接成功
                             sqlHelper.Close();
@@ -486,7 +486,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         OracleHelper sqlHelper = new OracleHelper();
                         sqlHelper.OracleConnectionString(strIPAddress, strUserName, strPassword);
-                        if (sqlHelper.Open() == 0)
+                        if (sqlHelper.Open())
                         {
                             //连接成功
                             sqlHelper.Close();
@@ -503,7 +503,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         MySqlHelper sqlHelper = new MySqlHelper();
                         sqlHelper.MySqlConnectionString(strIPAddress, strUserName, strPassword, strDataBase);
-                        if (sqlHelper.Open() == 0)
+                        if (sqlHelper.Open())
                         {
                             //连接成功
                             sqlHelper.Close();
@@ -536,7 +536,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         {
                             sqlHelper.AccessConnectionPath_Office2007(strPath);
                         }
-                        if (sqlHelper.Open() == 0)
+                        if (sqlHelper.Open())
                         {
                             //连接成功
                             sqlHelper.Close();
@@ -562,7 +562,7 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                         }
                         //连接数据库
                         sqlHelper.SQLiteConnectionPath(strPath);
-                        if (sqlHelper.Open() == 0)
+                        if (sqlHelper.Open())
                         {
                             //连接成功
                             sqlHelper.Close();

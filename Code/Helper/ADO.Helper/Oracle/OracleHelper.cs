@@ -18,7 +18,7 @@ namespace ADO.Helper.Oracle
         /// <summary>
         /// Oracle 连接字符串
         /// </summary>
-        public static string strOracleConnection { get; set; }
+        private static string strOracleConnection { get; set; }
 
         /// <summary>
         /// 表示一个到 Oracle 数据库的打开的连接
@@ -62,119 +62,105 @@ namespace ADO.Helper.Oracle
         /// <summary>
         /// 使用所指定的属性设置打开数据库连接
         /// </summary>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public int Open()
+        /// <returns>成功返回true,失败返回false</returns>
+        public bool Open()
         {
             try
             {
                 Connection = new OracleConnection(strOracleConnection);
                 Connection.Open();
-                if (Connection.State == ConnectionState.Open)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
+                return Connection.State == ConnectionState.Open;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
         /// <summary>
         /// 关闭与数据库的连接
         /// </summary>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public int Close()
+        /// <returns>成功返回true,失败返回false</returns>
+        public bool Close()
         {
             try
             {
                 Connection.Close();
-                if (Connection.State == ConnectionState.Closed)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return -1;
-                }
+                return Connection.State == ConnectionState.Closed;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
         /// <summary>
         /// 开始事务
         /// </summary>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public int BeginTransaction()
+        /// <returns>成功返回true,失败返回false</returns>
+        public bool BeginTransaction()
         {
             try
             {
                 Transaction = Connection.BeginTransaction();
-                return 0;
+                return true;
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
         /// <summary>
         /// 提交事务
         /// </summary>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public int CommitTransaction()
+        /// <returns>成功返回true,失败返回false</returns>
+        public bool CommitTransaction()
         {
             try
             {
                 if (Transaction != null)
                 {
                     Transaction.Commit();
-                    return 0;
+                    return true;
                 }
                 else
                 {
-                    return -1;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
         /// <summary>
         /// 回滚事务
         /// </summary>
-        /// <returns>成功返回0,失败返回-1</returns>
-        public int RollbackTransaction()
+        /// <returns>成功返回true,失败返回false</returns>
+        public bool RollbackTransaction()
         {
             try
             {
                 if (Transaction != null)
                 {
                     Transaction.Rollback();
-                    return 0;
+                    return true;
                 }
                 else
                 {
-                    return -1;
+                    return false;
                 }
             }
             catch (Exception ex)
             {
                 TXTHelper.Logs(ex.ToString());
-                return -1;
+                return false;
             }
         }
 
