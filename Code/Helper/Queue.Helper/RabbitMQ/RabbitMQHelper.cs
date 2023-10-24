@@ -45,7 +45,7 @@ namespace Queue.Helper.RabbitMQ
                 // 后台处理消息
                 UseBackgroundThreadsForIO = true,
                 // 心跳超时时间
-                RequestedHeartbeat = 60
+                RequestedHeartbeat = TimeSpan.FromMilliseconds(60)
             };
 
             _connection = factory.CreateConnection();

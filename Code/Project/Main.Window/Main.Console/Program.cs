@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using Sadness.BasicFunction.Views.PluginMenu;
 using System.Windows;
 using System.Reflection;
-using Microsoft.Practices.Unity;
 using Sadness.Interface;
+using Unity;
+using Unity.Lifetime;
 
 namespace Main.Console
 {
