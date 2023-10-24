@@ -33,10 +33,6 @@
     <DocumentationFile>..\..\..\ReleaseLib\Sadness.SQLiteDB.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sadness.ADO.Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ReleaseLib\Sadness.ADO.Helper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -61,7 +57,12 @@
     <Compile Include="Utils\OperationByte.cs" />
     <Compile Include="Utils\OperationEntityList.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Helper\ADO.Helper\ADO.Helper.csproj">
+      <Project>{ccb19b3f-63f9-4827-93d5-4a4039260f83}</Project>
+      <Name>ADO.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
