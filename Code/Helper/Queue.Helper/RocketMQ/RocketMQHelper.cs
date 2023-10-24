@@ -10,6 +10,7 @@ namespace Queue.Helper.RocketMQ
     /// <summary>
     /// RocketMQ 消息队列帮助类
     /// 创建日期:2023年10月24日
+    /// 调用程序也需要引用部分依赖
     /// </summary>
     public class RocketMQHelper
     {
