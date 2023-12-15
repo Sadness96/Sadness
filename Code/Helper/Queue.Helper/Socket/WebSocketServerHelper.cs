@@ -21,7 +21,7 @@ namespace Queue.Helper.Socket
         /// <summary>
         /// 收到数据回调
         /// </summary>
-        public event Action<WebSocket, string> OnDataReceived;
+        public event Action<WebSocket, IPEndPoint, string> OnDataReceived;
 
         /// <summary>
         /// 启动
@@ -86,7 +86,7 @@ namespace Queue.Helper.Socket
                     if (result.MessageType == WebSocketMessageType.Text)
                     {
                         string message = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                        OnDataReceived.Invoke(webSocket, message);
+                        OnDataReceived.Invoke(webSocket, context.Request.RemoteEndPoint, message);
                     }
                     else if (result.MessageType == WebSocketMessageType.Close)
                     {

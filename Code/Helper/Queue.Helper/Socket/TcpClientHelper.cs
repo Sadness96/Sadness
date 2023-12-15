@@ -56,6 +56,7 @@ namespace Queue.Helper.Socket
         public void Disconnect()
         {
             client?.Close();
+            client?.Dispose();
             client = null;
         }
 
