@@ -24,8 +24,8 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                System.Security.Cryptography.SHA1 sha1Crypto = new SHA1CryptoServiceProvider();
-                byte[] bytes_sha1_in = UTF8Encoding.Default.GetBytes(strPlaintext);
+                SHA1 sha1Crypto = new SHA1CryptoServiceProvider();
+                byte[] bytes_sha1_in = Encoding.Default.GetBytes(strPlaintext);
                 byte[] bytes_sha1_out = sha1Crypto.ComputeHash(bytes_sha1_in);
                 string str_sha1_out = BitConverter.ToString(bytes_sha1_out);
                 str_sha1_out = str_sha1_out.Replace("-", "");
@@ -48,8 +48,8 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                System.Security.Cryptography.SHA1 sha1Crypto = new SHA1CryptoServiceProvider();
-                byte[] bytes_sha1_in = UTF8Encoding.Default.GetBytes(strPlaintext);
+                SHA1 sha1Crypto = new SHA1CryptoServiceProvider();
+                byte[] bytes_sha1_in = Encoding.Default.GetBytes(strPlaintext);
                 byte[] bytes_sha1_out = sha1Crypto.ComputeHash(bytes_sha1_in);
                 string str_sha1_out = BitConverter.ToString(bytes_sha1_out);
                 str_sha1_out = str_sha1_out.Replace("-", "");
@@ -73,7 +73,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read);
-                System.Security.Cryptography.SHA1 sha1 = new SHA1CryptoServiceProvider();
+                SHA1 sha1 = new SHA1CryptoServiceProvider();
                 byte[] byteHash = sha1.ComputeHash(fileStream);
                 fileStream.Close();
                 StringBuilder stringBuilder = new StringBuilder();
@@ -100,7 +100,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read);
-                System.Security.Cryptography.SHA1 sha1 = new SHA1CryptoServiceProvider();
+                SHA1 sha1 = new SHA1CryptoServiceProvider();
                 byte[] byteHash = sha1.ComputeHash(fileStream);
                 fileStream.Close();
                 StringBuilder stringBuilder = new StringBuilder();

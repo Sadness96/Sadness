@@ -24,7 +24,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 Crc32 crc32Crypto = new Crc32();
-                byte[] bytes_crc32_in = UTF8Encoding.Default.GetBytes(strPlaintext);
+                byte[] bytes_crc32_in = Encoding.Default.GetBytes(strPlaintext);
                 byte[] bytes_crc32_out = crc32Crypto.ComputeHash(bytes_crc32_in);
                 string str_crc32_out = BitConverter.ToString(bytes_crc32_out);
                 str_crc32_out = str_crc32_out.Replace("-", "");
@@ -48,7 +48,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 Crc32 crc32Crypto = new Crc32();
-                byte[] bytes_crc32_in = UTF8Encoding.Default.GetBytes(strPlaintext);
+                byte[] bytes_crc32_in = Encoding.Default.GetBytes(strPlaintext);
                 byte[] bytes_crc32_out = crc32Crypto.ComputeHash(bytes_crc32_in);
                 string str_crc32_out = BitConverter.ToString(bytes_crc32_out);
                 str_crc32_out = str_crc32_out.Replace("-", "");
@@ -71,7 +71,7 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                String hashCRC32 = String.Empty;
+                string hashCRC32 = string.Empty;
                 // 检查文件是否存在,如果文件存在则进行计算,否则返回空值
                 if (File.Exists(strFilePath))
                 {
@@ -79,7 +79,7 @@ namespace Utils.Helper.Encryption
                     {
                         // 计算文件的 CSC32 值
                         Crc32 calculator = new Crc32();
-                        Byte[] buffer = calculator.ComputeHash(fileStream);
+                        byte[] buffer = calculator.ComputeHash(fileStream);
                         calculator.Clear();
                         // 将字节数组转换成十六进制的字符串形式
                         StringBuilder stringBuilder = new StringBuilder();
@@ -116,7 +116,7 @@ namespace Utils.Helper.Encryption
                     {
                         // 计算文件的 CSC32 值
                         Crc32 calculator = new Crc32();
-                        Byte[] buffer = calculator.ComputeHash(fileStream);
+                        byte[] buffer = calculator.ComputeHash(fileStream);
                         calculator.Clear();
                         // 将字节数组转换成十六进制的字符串形式
                         StringBuilder stringBuilder = new StringBuilder();
@@ -212,7 +212,7 @@ namespace Utils.Helper.Encryption
         /// </summary>
         /// <param name="buffer"></param>
         /// <returns></returns>
-        public static UInt32 Compute(byte[] buffer)
+        public static uint Compute(byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(DefaultPolynomial), DefaultSeed, buffer, 0, buffer.Length);
         }
@@ -223,7 +223,7 @@ namespace Utils.Helper.Encryption
         /// <param name="seed"></param>
         /// <param name="buffer"></param>
         /// <returns></returns>
-        public static UInt32 Compute(UInt32 seed, byte[] buffer)
+        public static uint Compute(uint seed, byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(DefaultPolynomial), seed, buffer, 0, buffer.Length);
         }
@@ -235,21 +235,21 @@ namespace Utils.Helper.Encryption
         /// <param name="seed"></param>
         /// <param name="buffer"></param>
         /// <returns></returns>
-        public static UInt32 Compute(UInt32 polynomial, UInt32 seed, byte[] buffer)
+        public static uint Compute(uint polynomial, uint seed, byte[] buffer)
         {
             return ~CalculateHash(InitializeTable(polynomial), seed, buffer, 0, buffer.Length);
         }
 
-        private static UInt32[] InitializeTable(UInt32 polynomial)
+        private static uint[] InitializeTable(uint polynomial)
         {
             if (polynomial == DefaultPolynomial && defaultTable != null)
             {
                 return defaultTable;
             }
-            UInt32[] createTable = new UInt32[256];
+            uint[] createTable = new uint[256];
             for (int i = 0; i < 256; i++)
             {
-                UInt32 entry = (UInt32)i;
+                uint entry = (uint)i;
                 for (int j = 0; j < 8; j++)
                 {
                     if ((entry & 1) == 1)
@@ -266,9 +266,9 @@ namespace Utils.Helper.Encryption
             return createTable;
         }
 
-        private static UInt32 CalculateHash(UInt32[] table, UInt32 seed, byte[] buffer, int start, int size)
+        private static uint CalculateHash(uint[] table, uint seed, byte[] buffer, int start, int size)
         {
-            UInt32 crc = seed;
+            uint crc = seed;
             for (int i = start; i < size; i++)
             {
                 unchecked
@@ -279,7 +279,7 @@ namespace Utils.Helper.Encryption
             return crc;
         }
 
-        private byte[] UInt32ToBigEndianBytes(UInt32 x)
+        private byte[] UInt32ToBigEndianBytes(uint x)
         {
             return new byte[] { (byte)((x >> 24) & 0xff), (byte)((x >> 16) & 0xff), (byte)((x >> 8) & 0xff), (byte)(x & 0xff) };
         }

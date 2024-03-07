@@ -24,15 +24,14 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                MD5CryptoServiceProvider md5Crypto = new MD5CryptoServiceProvider();
-                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(UTF8Encoding.Default.GetBytes(strPlaintext)), 4, 8);
+                MD5 md5Crypto = MD5.Create();
+                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(Encoding.Default.GetBytes(strPlaintext)), 4, 8);
                 strCiphertext = strCiphertext.Replace("-", "");
                 strCiphertext = strCiphertext.ToLower();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -46,15 +45,14 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                MD5CryptoServiceProvider md5Crypto = new MD5CryptoServiceProvider();
-                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(UTF8Encoding.Default.GetBytes(strPlaintext)), 4, 8);
+                MD5 md5Crypto = MD5.Create();
+                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(Encoding.Default.GetBytes(strPlaintext)), 4, 8);
                 strCiphertext = strCiphertext.Replace("-", "");
                 strCiphertext = strCiphertext.ToUpper();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -68,15 +66,14 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                MD5CryptoServiceProvider md5Crypto = new MD5CryptoServiceProvider();
-                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(UTF8Encoding.Default.GetBytes(strPlaintext)));
+                MD5 md5Crypto = MD5.Create();
+                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(Encoding.Default.GetBytes(strPlaintext)));
                 strCiphertext = strCiphertext.Replace("-", "");
                 strCiphertext = strCiphertext.ToLower();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -90,15 +87,14 @@ namespace Utils.Helper.Encryption
         {
             try
             {
-                MD5CryptoServiceProvider md5Crypto = new MD5CryptoServiceProvider();
-                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(UTF8Encoding.Default.GetBytes(strPlaintext)));
+                MD5 md5Crypto = MD5.Create();
+                string strCiphertext = BitConverter.ToString(md5Crypto.ComputeHash(Encoding.Default.GetBytes(strPlaintext)));
                 strCiphertext = strCiphertext.Replace("-", "");
                 strCiphertext = strCiphertext.ToUpper();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -113,7 +109,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read);
-                System.Security.Cryptography.MD5 md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                MD5 md5 = MD5.Create();
                 byte[] byteHash = md5.ComputeHash(fileStream);
                 fileStream.Close();
                 StringBuilder stringBuilder = new StringBuilder();
@@ -123,9 +119,8 @@ namespace Utils.Helper.Encryption
                 }
                 return stringBuilder.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -140,7 +135,7 @@ namespace Utils.Helper.Encryption
             try
             {
                 FileStream fileStream = new FileStream(strFilePath, FileMode.Open, FileAccess.Read);
-                System.Security.Cryptography.MD5 md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                MD5 md5 = MD5.Create();
                 byte[] byteHash = md5.ComputeHash(fileStream);
                 fileStream.Close();
                 StringBuilder stringBuilder = new StringBuilder();
@@ -150,9 +145,8 @@ namespace Utils.Helper.Encryption
                 }
                 return stringBuilder.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
