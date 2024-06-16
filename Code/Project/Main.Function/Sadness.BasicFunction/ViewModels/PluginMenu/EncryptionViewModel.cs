@@ -744,10 +744,10 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                 return new DelegateCommand(delegate ()
                 {
                     StringBuilder strTarget = new StringBuilder();
-                    strTarget.Append(string.Format("16位小写:{0}\n", MD5Helper.MD5Encrypt_16Lower(TextMD5Source)));
-                    strTarget.Append(string.Format("16位大写:{0}\n", MD5Helper.MD5Encrypt_16Upper(TextMD5Source)));
-                    strTarget.Append(string.Format("32位小写:{0}\n", MD5Helper.MD5Encrypt_32Lower(TextMD5Source)));
-                    strTarget.Append(string.Format("32位大写:{0}", MD5Helper.MD5Encrypt_32Upper(TextMD5Source)));
+                    strTarget.Append(string.Format("16位小写:{0}\n", MD5Helper.MD5Encrypt16(TextMD5Source, true)));
+                    strTarget.Append(string.Format("16位大写:{0}\n", MD5Helper.MD5Encrypt16(TextMD5Source, false)));
+                    strTarget.Append(string.Format("32位小写:{0}\n", MD5Helper.MD5Encrypt32(TextMD5Source, true)));
+                    strTarget.Append(string.Format("32位大写:{0}", MD5Helper.MD5Encrypt32(TextMD5Source, false)));
                     TextMD5Target = strTarget.ToString();
                 });
             }
@@ -769,8 +769,8 @@ namespace Sadness.BasicFunction.ViewModels.PluginMenu
                     {
                         string strFilePath = dialog.FileName;
                         StringBuilder strTarget = new StringBuilder();
-                        strTarget.Append(string.Format("32位小写:{0}\n", MD5Helper.FileMD5Encrypt_32Lower(strFilePath)));
-                        strTarget.Append(string.Format("32位大写:{0}", MD5Helper.FileMD5Encrypt_32Upper(strFilePath)));
+                        strTarget.Append(string.Format("32位小写:{0}\n", MD5Helper.FileMD5Encrypt32(strFilePath, true)));
+                        strTarget.Append(string.Format("32位大写:{0}", MD5Helper.FileMD5Encrypt32(strFilePath, false)));
                         TextMD5Target = strTarget.ToString();
                     }
                 });
