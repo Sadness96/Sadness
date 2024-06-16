@@ -21,7 +21,7 @@ namespace Queue.Helper.Socket
         /// <summary>
         /// 收到数据回调
         /// </summary>
-        public event Action<EndPoint, string> OnDataReceived;
+        public event Action<TcpClient, string> OnDataReceived;
 
         /// <summary>
         ///  Socket Tcp 服务端构造函数
@@ -101,7 +101,11 @@ namespace Queue.Helper.Socket
                     if (bytesRead > 0)
                     {
                         string receivedData = Encoding.UTF8.GetString(buffer, 0, bytesRead);
-                        OnDataReceived?.Invoke(client.Client.RemoteEndPoint, receivedData);
+                        OnDataReceived?.Invoke(client, receivedData);
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
                 catch

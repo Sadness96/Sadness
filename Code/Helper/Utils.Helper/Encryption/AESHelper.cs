@@ -30,7 +30,7 @@ namespace Utils.Helper.Encryption
                     return string.Empty;
                 }
                 strKey = strKey.Length < 32 ? strKey.PadRight(32, '0') : strKey.Substring(0, 32);
-                Byte[] toEncryptArray = Encoding.UTF8.GetBytes(strPlaintext);
+                byte[] toEncryptArray = Encoding.UTF8.GetBytes(strPlaintext);
                 RijndaelManaged rijndaelManaged = new RijndaelManaged
                 {
                     Key = Encoding.UTF8.GetBytes(strKey),
@@ -38,7 +38,7 @@ namespace Utils.Helper.Encryption
                     Padding = PaddingMode.PKCS7
                 };
                 ICryptoTransform pCryptoTransform = rijndaelManaged.CreateEncryptor();
-                Byte[] resultArray = pCryptoTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+                byte[] resultArray = pCryptoTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
                 return Convert.ToBase64String(resultArray, 0, resultArray.Length);
             }
             catch (Exception ex)
@@ -63,7 +63,7 @@ namespace Utils.Helper.Encryption
                     return string.Empty;
                 }
                 strKey = strKey.Length < 32 ? strKey.PadRight(32, '0') : strKey.Substring(0, 32);
-                Byte[] toEncryptArray = Convert.FromBase64String(strCiphertext);
+                byte[] toEncryptArray = Convert.FromBase64String(strCiphertext);
                 RijndaelManaged rijndaelManaged = new RijndaelManaged
                 {
                     Key = Encoding.UTF8.GetBytes(strKey),
@@ -71,7 +71,7 @@ namespace Utils.Helper.Encryption
                     Padding = PaddingMode.PKCS7
                 };
                 ICryptoTransform pCryptoTransform = rijndaelManaged.CreateDecryptor();
-                Byte[] resultArray = pCryptoTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+                byte[] resultArray = pCryptoTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
                 return Encoding.UTF8.GetString(resultArray);
             }
             catch (Exception ex)

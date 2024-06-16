@@ -27,8 +27,8 @@ namespace Utils.Helper.Encryption
             try
             {
                 DESCryptoServiceProvider desCrypto = new DESCryptoServiceProvider();
-                desCrypto.Key = UTF8Encoding.Default.GetBytes(strKey);
-                desCrypto.IV = UTF8Encoding.UTF8.GetBytes(strIV);
+                desCrypto.Key = Encoding.Default.GetBytes(strKey);
+                desCrypto.IV = Encoding.UTF8.GetBytes(strIV);
                 using (ICryptoTransform cryptoTransform = desCrypto.CreateEncryptor())
                 {
                     byte[] byteBaseUTF8 = Encoding.UTF8.GetBytes(strPlaintext);
@@ -62,8 +62,8 @@ namespace Utils.Helper.Encryption
             try
             {
                 DESCryptoServiceProvider desCrypto = new DESCryptoServiceProvider();
-                desCrypto.Key = UTF8Encoding.Default.GetBytes(strKey);
-                desCrypto.IV = UTF8Encoding.UTF8.GetBytes(strIV);
+                desCrypto.Key = Encoding.Default.GetBytes(strKey);
+                desCrypto.IV = Encoding.UTF8.GetBytes(strIV);
                 using (ICryptoTransform cryptoTransform = desCrypto.CreateDecryptor())
                 {
                     byte[] byteBase64 = Convert.FromBase64String(strCiphertext);
@@ -98,8 +98,8 @@ namespace Utils.Helper.Encryption
             try
             {
                 DESCryptoServiceProvider desCrypto = new DESCryptoServiceProvider();
-                desCrypto.Key = UTF8Encoding.Default.GetBytes(strKey);
-                desCrypto.IV = UTF8Encoding.UTF8.GetBytes(strIV);
+                desCrypto.Key = Encoding.Default.GetBytes(strKey);
+                desCrypto.IV = Encoding.UTF8.GetBytes(strIV);
                 FileStream fileStream = File.OpenRead(strFilePath);
                 byte[] byteFileStream = new byte[fileStream.Length];
                 fileStream.Read(byteFileStream, 0, (int)fileStream.Length);
@@ -142,8 +142,8 @@ namespace Utils.Helper.Encryption
             try
             {
                 DESCryptoServiceProvider desCrypto = new DESCryptoServiceProvider();
-                desCrypto.Key = UTF8Encoding.Default.GetBytes(strKey);
-                desCrypto.IV = UTF8Encoding.UTF8.GetBytes(strIV);
+                desCrypto.Key = Encoding.Default.GetBytes(strKey);
+                desCrypto.IV = Encoding.UTF8.GetBytes(strIV);
                 FileStream fileStream = File.OpenRead(strFilePath);
                 byte[] byteFileStream = new byte[fileStream.Length];
                 fileStream.Read(byteFileStream, 0, (int)fileStream.Length);

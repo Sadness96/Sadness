@@ -31,9 +31,8 @@ namespace Utils.Helper.Encryption
                 strCiphertext = isLower ? strCiphertext.ToLower() : strCiphertext.ToUpper();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -54,9 +53,8 @@ namespace Utils.Helper.Encryption
                 strCiphertext = isLower ? strCiphertext.ToLower() : strCiphertext.ToUpper();
                 return strCiphertext;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -80,9 +78,8 @@ namespace Utils.Helper.Encryption
                 }
                 return stringBuilder.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
         }
@@ -100,9 +97,8 @@ namespace Utils.Helper.Encryption
             {
                 return FileMD5Encrypt32(fileStream, isLower);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                TXTHelper.Logs(ex.ToString());
                 return string.Empty;
             }
             finally

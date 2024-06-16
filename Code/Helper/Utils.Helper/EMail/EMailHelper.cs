@@ -67,7 +67,7 @@ namespace Utils.Helper.EMail
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Host = "smtp.163.com";
                 smtpClient.UseDefaultCredentials = true;
-                smtpClient.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new System.Net.NetworkCredential(strSender, strSenderPassword);
                 smtpClient.Send(mailMessage);
                 return true;
@@ -131,7 +131,7 @@ namespace Utils.Helper.EMail
                 SmtpClient smtpClient = new SmtpClient();
                 smtpClient.Host = "smtp.qq.com";
                 smtpClient.UseDefaultCredentials = true;
-                smtpClient.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.Credentials = new System.Net.NetworkCredential(strSender, strAuthorizationCode);
                 smtpClient.Send(mailMessage);
                 return true;

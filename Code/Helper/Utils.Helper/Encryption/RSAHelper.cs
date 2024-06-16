@@ -31,6 +31,7 @@ namespace Utils.Helper.Encryption
             }
             catch (Exception ex)
             {
+                TXTHelper.Logs(ex.ToString());
                 xmlPublicKey = string.Empty;
                 xmlPrivateKey = string.Empty;
             }
