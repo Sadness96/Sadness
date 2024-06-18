@@ -17,6 +17,7 @@ namespace Queue.Helper.Socket
         private UdpClient udpClient;
         private IPEndPoint serverEndPoint;
         private Thread receiveThread;
+        bool receiveThreadRunning = false;
 
         /// <summary>
         /// 收到数据回调
@@ -35,34 +36,45 @@ namespace Queue.Helper.Socket
 
             IPEndPoint localEndPoint = new IPEndPoint(IPAddress.Any, 0);
             udpClient.Client.Bind(localEndPoint);
+        }
 
-            receiveThread = new Thread(ReceiveCallback);
+        /// <summary>
+        /// 启动
+        /// </summary>
+        public void Start()
+        {
+            receiveThreadRunning = true;
+            receiveThread = new Thread(ReceiveData);
             receiveThread.Start();
         }
 
         /// <summary>
-        /// 断开连接释放资源
+        /// 停止
         /// </summary>
-        public void Disconnect()
+        public void Stop()
         {
-            receiveThread?.Abort();
+            receiveThreadRunning = false;
+            receiveThread?.Join();
             udpClient?.Close();
             udpClient = null;
         }
 
         /// <summary>
-        /// 接收数据回调
+        /// 接收数据线程
         /// </summary>
-        private void ReceiveCallback()
+        private void ReceiveData()
         {
             IPEndPoint senderEndPoint = new IPEndPoint(IPAddress.Any, 0);
             while (true)
             {
                 try
                 {
-                    byte[] receivedData = udpClient.Receive(ref senderEndPoint);
-                    string message = Encoding.UTF8.GetString(receivedData);
-                    OnDataReceived?.Invoke(message);
+                    if (udpClient != null)
+                    {
+                        byte[] receivedData = udpClient.Receive(ref senderEndPoint);
+                        string message = Encoding.UTF8.GetString(receivedData);
+                        OnDataReceived?.Invoke(message);
+                    }
                 }
                 catch (SocketException e)
                 {
@@ -78,8 +90,11 @@ namespace Queue.Helper.Socket
         /// <param name="data">消息</param>
         public void SendData(string data)
         {
-            byte[] sendData = Encoding.UTF8.GetBytes(data);
-            udpClient.Send(sendData, sendData.Length, serverEndPoint);
+            if (udpClient != null)
+            {
+                byte[] sendData = Encoding.UTF8.GetBytes(data);
+                udpClient.Send(sendData, sendData.Length, serverEndPoint);
+            }
         }
     }
 }

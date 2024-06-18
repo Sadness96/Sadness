@@ -17,6 +17,7 @@ namespace Queue.Helper.Socket
         private UdpClient udpServer;
         private List<IPEndPoint> clients;
         private Thread receiveThread;
+        bool receiveThreadRunning = false;
 
         /// <summary>
         /// 收到数据回调
@@ -40,6 +41,7 @@ namespace Queue.Helper.Socket
         /// </summary>
         public void Start()
         {
+            receiveThreadRunning = true;
             receiveThread = new Thread(ReceiveData);
             receiveThread.Start();
         }
@@ -49,8 +51,11 @@ namespace Queue.Helper.Socket
         /// </summary>
         public void Stop()
         {
-            receiveThread?.Abort();
+            receiveThreadRunning = false;
+            receiveThread?.Join();
             udpServer?.Close();
+            udpServer = null;
+            clients.Clear();
         }
 
         /// <summary>
@@ -59,20 +64,22 @@ namespace Queue.Helper.Socket
         private void ReceiveData()
         {
             IPEndPoint clientEndPoint = new IPEndPoint(IPAddress.Any, 0);
-            while (true)
+            while (receiveThreadRunning)
             {
                 try
                 {
-                    byte[] receivedBytes = udpServer.Receive(ref clientEndPoint);
-                    string receivedData = Encoding.UTF8.GetString(receivedBytes);
-                    OnDataReceived?.Invoke(clientEndPoint, receivedData);
-
-                    if (!clients.Contains(clientEndPoint))
+                    if (udpServer != null)
                     {
-                        Console.WriteLine($"Add client connection:{clientEndPoint}");
-                        clients.Add(clientEndPoint);
-                    }
+                        byte[] receivedBytes = udpServer.Receive(ref clientEndPoint);
+                        string receivedData = Encoding.UTF8.GetString(receivedBytes);
+                        OnDataReceived?.Invoke(clientEndPoint, receivedData);
 
+                        if (!clients.Contains(clientEndPoint))
+                        {
+                            Console.WriteLine($"Add client connection:{clientEndPoint}");
+                            clients.Add(clientEndPoint);
+                        }
+                    }
                 }
                 catch (SocketException)
                 {
@@ -123,8 +130,11 @@ namespace Queue.Helper.Socket
         /// <param name="data">数据</param>
         private void SendData(IPEndPoint client, string data)
         {
-            byte[] sendData = Encoding.UTF8.GetBytes(data);
-            udpServer.Send(sendData, sendData.Length, client);
+            if (udpServer != null)
+            {
+                byte[] sendData = Encoding.UTF8.GetBytes(data);
+                udpServer.Send(sendData, sendData.Length, client);
+            }
         }
     }
 }
