@@ -110,6 +110,7 @@
     <Compile Include="Socket\TcpClientHelper.cs" />
     <Compile Include="Socket\TcpServerHelper.cs" />
     <Compile Include="Socket\UdpClientHelper.cs" />
+    <Compile Include="Socket\UdpMulticastHelper.cs" />
     <Compile Include="Socket\UdpServerHelper.cs" />
     <Compile Include="Socket\WebSocketClientHelper.cs" />
     <Compile Include="Socket\WebSocketServerHelper.cs" />
