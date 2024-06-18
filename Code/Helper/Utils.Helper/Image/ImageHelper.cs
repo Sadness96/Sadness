@@ -15,10 +15,32 @@ using Utils.Helper.TXT;
 namespace Utils.Helper.Image
 {
     /// <summary>
-    /// 图片帮助类
+    /// 图像帮助类
     /// </summary>
     public class ImageHelper
     {
+        /// <summary>
+        /// 以只读方式加载图片
+        /// </summary>
+        /// <param name="imagePath">图片路径</param>
+        /// <returns></returns>
+        public static BitmapImage ImageToBitmapImage(string imagePath)
+        {
+            try
+            {
+                BitmapImage bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.UriSource = new Uri(imagePath);
+                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                bitmap.EndInit();
+                return bitmap;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// 转化图片二进制流到 BitmapImage
         /// </summary>
@@ -28,7 +50,7 @@ namespace Utils.Helper.Image
         {
             try
             {
-                using (var memoryStream = new System.IO.MemoryStream(byteArray))
+                using (var memoryStream = new MemoryStream(byteArray))
                 {
                     BitmapImage bitmapImage = new BitmapImage();
                     bitmapImage.BeginInit();
@@ -84,7 +106,7 @@ namespace Utils.Helper.Image
             {
                 using (MemoryStream memoryStream = new MemoryStream(byteArray))
                 {
-                    return new Bitmap((System.Drawing.Image)new Bitmap(memoryStream));
+                    return new Bitmap(memoryStream);
                 }
             }
             catch (Exception ex)
@@ -110,7 +132,7 @@ namespace Utils.Helper.Image
             try
             {
                 IntPtr hBitmap = bitmap.GetHbitmap();
-                BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, System.Windows.Media.Imaging.BitmapSizeOptions.FromEmptyOptions());
+                BitmapSource bitmapSource = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(hBitmap, IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
                 DeleteObject(hBitmap);
                 return bitmapSource;
             }
